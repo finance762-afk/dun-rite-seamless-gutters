@@ -28,8 +28,25 @@ $currentPage = $currentPage ?? '';
           <li><a href="/services/custom-downspouts/">Custom Downspouts</a></li>
         </ul>
       </li>
-      <li>
-        <a href="/service-areas/" <?php if ($currentPage === 'service-areas' || strpos($currentPage, 'area-') === 0) echo 'aria-current="page"'; ?>>Service Areas</a>
+      <li class="has-dropdown">
+        <a href="/service-areas/" <?php if ($currentPage === 'service-areas') echo 'aria-current="page"'; ?>>Service Areas</a>
+        <ul class="dropdown dropdown--wide" role="menu" style="display:none">
+          <li><a href="/service-areas/madison/">Madison <span class="dropdown-badge">HQ</span></a></li>
+          <li><a href="/service-areas/bolton/">Bolton</a></li>
+          <li><a href="/service-areas/brandon/">Brandon</a></li>
+          <li><a href="/service-areas/canton/">Canton</a></li>
+          <li><a href="/service-areas/clinton/">Clinton</a></li>
+          <li><a href="/service-areas/florence/">Florence</a></li>
+          <li><a href="/service-areas/flowood/">Flowood</a></li>
+          <li><a href="/service-areas/gluckstadt/">Gluckstadt</a></li>
+          <li><a href="/service-areas/jackson/">Jackson</a></li>
+          <li><a href="/service-areas/pearl/">Pearl</a></li>
+          <li><a href="/service-areas/raymond/">Raymond</a></li>
+          <li><a href="/service-areas/richland/">Richland</a></li>
+          <li><a href="/service-areas/ridgeland/">Ridgeland</a></li>
+          <li><a href="/service-areas/terry/">Terry</a></li>
+          <li class="dropdown-footer-link"><a href="/service-areas/">View All Service Areas →</a></li>
+        </ul>
       </li>
       <li>
         <a href="/about/" <?php if ($currentPage === 'about') echo 'aria-current="page"'; ?>>About</a>

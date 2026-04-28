@@ -58,6 +58,7 @@
 <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
 <link rel="dns-prefetch" href="https://unpkg.com">
 <link rel="dns-prefetch" href="https://i.imgur.com">
+<link rel="dns-prefetch" href="https://images.unsplash.com">
 <link rel="dns-prefetch" href="https://formsubmit.co">
 <link rel="dns-prefetch" href="https://cdn.jsdelivr.net">
 <link rel="dns-prefetch" href="https://www.googletagmanager.com">
@@ -74,7 +75,7 @@
 <?php endif; ?>
 
 <!-- Stylesheet -->
-<link rel="stylesheet" href="/assets/css/styles.css?v=9">
+<link rel="stylesheet" href="/assets/css/styles.css?v=10">
 
 <?php if (!empty($useSwiper)): ?>
 <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/swiper@11/swiper-bundle.min.css">

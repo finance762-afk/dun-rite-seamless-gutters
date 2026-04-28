@@ -7,9 +7,9 @@
 $pageTitle       = "Dun-Rite Seamless Gutters | Madison, MS Gutter Installation | Est. 1996";
 $pageDescription = "Mississippi's seamless gutter specialists since 1996. Aluminum, copper, gutter guards, cleaning, repair. 25-year warranty. Free estimates across the greater Jackson area. Call (601) 750-1800.";
 $canonicalUrl    = "https://dunrite-gutters.com/";
-$ogImage         = "https://i.imgur.com/GO8sZjl.jpeg";
+$ogImage         = "https://images.unsplash.com/photo-1665442348932-6e16d72fe163?q=80&w=1600&auto=format&fit=crop";
 $currentPage     = "home";
-$heroImage       = "https://i.imgur.com/GO8sZjl.jpeg";
+$heroImage       = "https://images.unsplash.com/photo-1665442348932-6e16d72fe163?q=80&w=1600&auto=format&fit=crop";
 
 /* ----------------------------------------------------------------------
    Consolidated @graph schema
@@ -170,8 +170,8 @@ include $_SERVER['DOCUMENT_ROOT'] . '/includes/head.php';
        SECTION 1 — HERO (100vh) — with reusable hero contact form
        ==================================================================== -->
   <section class="hero" aria-label="Hero">
-    <img src="https://i.imgur.com/GO8sZjl.jpeg"
-         alt="Yellow brick Madison MS home with white seamless gutters by Dun-Rite"
+    <img src="https://images.unsplash.com/photo-1665442348932-6e16d72fe163?q=80&w=1600&auto=format&fit=crop"
+         alt="Mississippi home exterior with seamless gutters by Dun-Rite Seamless Gutters"
          class="hero-bg"
          width="1920" height="1080"
          loading="eager"
@@ -269,61 +269,141 @@ include $_SERVER['DOCUMENT_ROOT'] . '/includes/head.php';
       </div>
 
       <div class="services-grid">
-        <a href="/services/seamless-gutter-installation/" class="service-card card-tint-1 reveal-up reveal-delay-1">
-          <div class="service-icon"><i data-lucide="ruler"></i></div>
-          <h3>Seamless Gutter Installation</h3>
-          <p>Custom-formed on-site in 5-inch and 6-inch profiles. No seams, no leaks.</p>
-          <span class="service-link">Learn more &rarr;</span>
-        </a>
+        <article class="service-card-with-image card-tint-1 reveal-up reveal-delay-1">
+          <div class="service-card__image">
+            <img src="https://i.imgur.com/3nVl1Ha.jpeg" alt="Seamless gutter installation on yellow two-story Mississippi home" width="600" height="360" loading="lazy">
+          </div>
+          <div class="service-card__body">
+            <div class="service-card__icon"><i data-lucide="ruler"></i></div>
+            <h3>Seamless Gutter Installation</h3>
+            <p class="service-card__desc">Custom-formed on-site in 5-inch and 6-inch K-style profiles. No seams, no leaks.</p>
+            <ul>
+              <li>.032 gauge aluminum standard</li>
+              <li>25+ baked-enamel colors</li>
+              <li>Same-day install on most homes</li>
+            </ul>
+            <a href="/services/seamless-gutter-installation/" class="service-card__cta">Learn more</a>
+          </div>
+        </article>
 
-        <a href="/services/aluminum-gutters/" class="service-card card-tint-2 reveal-up reveal-delay-2">
-          <div class="service-icon"><i data-lucide="shield"></i></div>
-          <h3>Aluminum Gutters</h3>
-          <p>Lightweight, rust-proof, available in dozens of baked-enamel colors.</p>
-          <span class="service-link">Learn more &rarr;</span>
-        </a>
+        <article class="service-card-with-image card-tint-2 reveal-up reveal-delay-2">
+          <div class="service-card__image">
+            <img src="https://i.imgur.com/8tTXO7O.jpeg" alt="Aluminum gutters installed on modern white-sided Mississippi home" width="600" height="360" loading="lazy">
+          </div>
+          <div class="service-card__body">
+            <div class="service-card__icon"><i data-lucide="shield"></i></div>
+            <h3>Aluminum Gutters</h3>
+            <p class="service-card__desc">Lightweight, rust-proof aluminum in dozens of factory finishes.</p>
+            <ul>
+              <li>Rust-proof for life</li>
+              <li>20–30 year service life</li>
+              <li>Most affordable material</li>
+            </ul>
+            <a href="/services/aluminum-gutters/" class="service-card__cta">Learn more</a>
+          </div>
+        </article>
 
-        <a href="/services/copper-gutters/" class="service-card card-tint-3 copper-feature reveal-up reveal-delay-3">
-          <div class="service-icon"><i data-lucide="sparkles"></i></div>
-          <h3>Copper Gutters</h3>
-          <p>Specialty copper installations that develop a natural patina. Built to last 50+ years.</p>
-          <span class="service-link">Learn more &rarr;</span>
-        </a>
+        <article class="service-card-with-image card-tint-3 reveal-up reveal-delay-3">
+          <div class="service-card__image">
+            <img src="https://i.imgur.com/OWQAw0g.jpeg" alt="Hand-soldered copper gutters with standing-seam awning" width="600" height="360" loading="lazy">
+          </div>
+          <div class="service-card__body">
+            <div class="service-card__icon"><i data-lucide="sparkles"></i></div>
+            <h3>Copper Gutters</h3>
+            <p class="service-card__desc">Specialty hand-soldered copper installations that develop a natural patina.</p>
+            <ul>
+              <li>50+ year service life</li>
+              <li>Develops protective patina</li>
+              <li>Decorative profiles available</li>
+            </ul>
+            <a href="/services/copper-gutters/" class="service-card__cta">Learn more</a>
+          </div>
+        </article>
 
-        <a href="/services/gutter-guards/" class="service-card card-tint-1 reveal-up reveal-delay-4">
-          <div class="service-icon"><i data-lucide="filter"></i></div>
-          <h3>Gutter Guards &amp; Leaf Protection</h3>
-          <p>Mesh and screen systems that keep debris out and water flowing.</p>
-          <span class="service-link">Learn more &rarr;</span>
-        </a>
+        <article class="service-card-with-image card-tint-1 reveal-up reveal-delay-1">
+          <div class="service-card__image">
+            <img src="https://i.imgur.com/EtRNOH2.jpeg" alt="Close-up of installed gutter guard mesh leaf protection" width="600" height="360" loading="lazy">
+          </div>
+          <div class="service-card__body">
+            <div class="service-card__icon"><i data-lucide="filter"></i></div>
+            <h3>Gutter Guards &amp; Leaf Protection</h3>
+            <p class="service-card__desc">Mesh and screen systems that keep debris out and water flowing.</p>
+            <ul>
+              <li>Compatible with new or existing</li>
+              <li>Reduces cleaning frequency</li>
+              <li>Mesh, screen, and foam options</li>
+            </ul>
+            <a href="/services/gutter-guards/" class="service-card__cta">Learn more</a>
+          </div>
+        </article>
 
-        <a href="/services/gutter-cleaning/" class="service-card card-tint-2 reveal-up reveal-delay-1">
-          <div class="service-icon"><i data-lucide="droplets"></i></div>
-          <h3>Gutter Cleaning</h3>
-          <p>Twice-yearly cleanings to prevent overflow, fascia damage, and foundation issues.</p>
-          <span class="service-link">Learn more &rarr;</span>
-        </a>
+        <article class="service-card-with-image card-tint-3 reveal-up reveal-delay-2">
+          <div class="service-card__image">
+            <img src="https://i.imgur.com/jAqOpHk.jpeg" alt="Gloved hand removing leaves from clogged residential gutter" width="600" height="360" loading="lazy">
+          </div>
+          <div class="service-card__body">
+            <div class="service-card__icon"><i data-lucide="droplets"></i></div>
+            <h3>Gutter Cleaning</h3>
+            <p class="service-card__desc">Twice-yearly cleanings to prevent overflow, fascia damage, and foundation issues.</p>
+            <ul>
+              <li>Spring + fall scheduling</li>
+              <li>Full debris removal</li>
+              <li>Downspout flushing included</li>
+            </ul>
+            <a href="/services/gutter-cleaning/" class="service-card__cta">Learn more</a>
+          </div>
+        </article>
 
-        <a href="/services/gutter-repair-replacement/" class="service-card card-tint-3 reveal-up reveal-delay-2">
-          <div class="service-icon"><i data-lucide="wrench"></i></div>
-          <h3>Gutter Repair &amp; Replacement</h3>
-          <p>Fix sagging gutters, replace damaged sections, or full system replacement.</p>
-          <span class="service-link">Learn more &rarr;</span>
-        </a>
+        <article class="service-card-with-image card-tint-2 reveal-up reveal-delay-3">
+          <div class="service-card__image">
+            <img src="https://i.imgur.com/Hr2Nlwl.jpeg" alt="Worker installing replacement gutters on Mississippi home" width="600" height="360" loading="lazy">
+          </div>
+          <div class="service-card__body">
+            <div class="service-card__icon"><i data-lucide="wrench"></i></div>
+            <h3>Gutter Repair &amp; Replacement</h3>
+            <p class="service-card__desc">Fix sagging gutters, replace damaged sections, or full system replacement.</p>
+            <ul>
+              <li>Same-day estimates</li>
+              <li>Insurance claim support</li>
+              <li>Storm damage specialists</li>
+            </ul>
+            <a href="/services/gutter-repair-replacement/" class="service-card__cta">Learn more</a>
+          </div>
+        </article>
 
-        <a href="/services/commercial-gutters/" class="service-card card-tint-1 reveal-up reveal-delay-3">
-          <div class="service-icon"><i data-lucide="building-2"></i></div>
-          <h3>Commercial Gutters</h3>
-          <p>Large-scale rain carrying systems for office buildings, retail, and multi-family.</p>
-          <span class="service-link">Learn more &rarr;</span>
-        </a>
+        <article class="service-card-with-image card-tint-1 reveal-up reveal-delay-1">
+          <div class="service-card__image">
+            <img src="https://i.imgur.com/F4Wh56M.jpeg" alt="Commercial building gutter installation in Mississippi" width="600" height="360" loading="lazy">
+          </div>
+          <div class="service-card__body">
+            <div class="service-card__icon"><i data-lucide="building-2"></i></div>
+            <h3>Commercial Gutters</h3>
+            <p class="service-card__desc">Large-scale rain-carrying systems for office, retail, and multi-family.</p>
+            <ul>
+              <li>Oversized 7-inch and 8-inch profiles</li>
+              <li>Multi-building complexes</li>
+              <li>Builder partnerships</li>
+            </ul>
+            <a href="/services/commercial-gutters/" class="service-card__cta">Learn more</a>
+          </div>
+        </article>
 
-        <a href="/services/custom-downspouts/" class="service-card card-tint-2 reveal-up reveal-delay-4">
-          <div class="service-icon"><i data-lucide="arrow-down-to-line"></i></div>
-          <h3>Custom Downspouts</h3>
-          <p>Round, square, decorative, and oversized downspouts in any color.</p>
-          <span class="service-link">Learn more &rarr;</span>
-        </a>
+        <article class="service-card-with-image card-tint-3 reveal-up reveal-delay-2">
+          <div class="service-card__image">
+            <img src="https://i.imgur.com/iX7CNj7.jpeg" alt="Custom downspout drainage installation at building foundation" width="600" height="360" loading="lazy">
+          </div>
+          <div class="service-card__body">
+            <div class="service-card__icon"><i data-lucide="arrow-down-to-line"></i></div>
+            <h3>Custom Downspouts</h3>
+            <p class="service-card__desc">Round, square, decorative, and oversized downspouts in any color.</p>
+            <ul>
+              <li>Custom-sized for high flow</li>
+              <li>Underground drainage tie-ins</li>
+              <li>Decorative copper options</li>
+            </ul>
+            <a href="/services/custom-downspouts/" class="service-card__cta">Learn more</a>
+          </div>
+        </article>
       </div>
     </div>
 

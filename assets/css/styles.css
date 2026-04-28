@@ -603,11 +603,32 @@ p + p { margin-top: var(--space-sm); }
 
 .navbar.scrolled {
   height: var(--nav-height-scrolled);
-  background: rgba(15, 76, 129, 0.88);
-  backdrop-filter: blur(12px);
-  -webkit-backdrop-filter: blur(12px);
-  border-bottom: 1px solid rgba(255, 255, 255, 0.10);
-  box-shadow: var(--shadow-md);
+  background: rgba(15, 76, 129, 0.78);
+  backdrop-filter: blur(20px) saturate(180%);
+  -webkit-backdrop-filter: blur(20px) saturate(180%);
+  border-bottom: 1px solid rgba(255, 255, 255, 0.18);
+  box-shadow:
+    0 8px 32px rgba(10, 56, 99, 0.28),
+    0 1px 0 rgba(255, 255, 255, 0.12) inset;
+  position: fixed;
+}
+
+.navbar.scrolled::before {
+  content: '';
+  position: absolute;
+  inset: 0;
+  background: linear-gradient(
+    180deg,
+    rgba(255, 255, 255, 0.06) 0%,
+    rgba(255, 255, 255, 0) 50%
+  );
+  pointer-events: none;
+  z-index: 0;
+}
+
+.navbar.scrolled .navbar-inner {
+  position: relative;
+  z-index: 1;
 }
 
 .navbar-inner {
@@ -655,39 +676,98 @@ p + p { margin-top: var(--space-sm); }
 .nav-links a {
   color: #fff;
   font-weight: 500;
-  font-size: 0.95rem;
+  font-size: 0.92rem;
+  letter-spacing: 0.06em;
+  text-transform: uppercase;
   position: relative;
-  padding: 8px 0;
+  padding: 10px 0;
   display: inline-block;
-  transition: color var(--transition-fast);
+  transition:
+    color var(--transition-fast),
+    font-weight var(--transition-fast),
+    letter-spacing var(--transition-fast);
+  text-shadow: 0 1px 2px rgba(0, 0, 0, 0.25);
 }
 
+.nav-links a:hover,
+.nav-links a:focus-visible {
+  font-weight: 700;
+  letter-spacing: 0.08em;
+  color: #fff;
+}
+
+/* Refined underline — gradient + bouncier curve */
 .nav-links a::after {
   content: '';
   position: absolute;
-  bottom: 0;
-  left: 0;
+  bottom: 4px;
+  left: 50%;
   width: 0;
   height: 2px;
-  background: var(--color-accent);
-  transition: width var(--transition-base);
+  background: linear-gradient(
+    90deg,
+    transparent 0%,
+    var(--color-accent) 20%,
+    var(--color-accent) 80%,
+    transparent 100%
+  );
+  transform: translateX(-50%);
+  transition: width 350ms cubic-bezier(0.34, 1.56, 0.64, 1);
+  border-radius: 2px;
 }
 
 .nav-links a:hover::after,
-.nav-links a[aria-current="page"]::after { width: 100%; }
+.nav-links a[aria-current="page"]::after,
+.nav-links a:focus-visible::after { width: 100%; }
+
+/* Dropdown trigger caret indicator */
+.has-dropdown > a::before {
+  content: '';
+  display: inline-block;
+  width: 0;
+  height: 0;
+  border-left: 4px solid transparent;
+  border-right: 4px solid transparent;
+  border-top: 4px solid currentColor;
+  margin-left: 6px;
+  vertical-align: middle;
+  transition: transform var(--transition-fast);
+  opacity: 0.7;
+}
+
+.has-dropdown:hover > a::before {
+  transform: rotate(180deg);
+  opacity: 1;
+}
 
 .nav-cta {
   background: var(--color-accent);
   color: #fff !important;
   padding: 10px 22px !important;
   border-radius: var(--radius-md);
-  font-weight: 600;
-  transition: background var(--transition-fast), transform var(--transition-fast);
+  font-weight: 700;
+  letter-spacing: 0.04em;
+  text-transform: none !important;
+  font-size: 0.95rem !important;
+  box-shadow:
+    0 4px 12px rgba(184, 115, 51, 0.4),
+    0 1px 0 rgba(255, 255, 255, 0.2) inset;
+  transition:
+    transform var(--transition-fast),
+    box-shadow var(--transition-fast),
+    background var(--transition-fast);
+  text-shadow: none !important;
 }
+
 .nav-cta::after { display: none !important; }
-.nav-cta:hover {
+
+.nav-cta:hover,
+.nav-cta:focus-visible {
   background: var(--color-accent-dark);
-  transform: translateY(-1px);
+  transform: translateY(-2px);
+  box-shadow:
+    0 6px 16px rgba(184, 115, 51, 0.5),
+    0 1px 0 rgba(255, 255, 255, 0.25) inset;
 }
 
 /* DROPDOWN — CRITICAL EXACT RULES */
@@ -3063,4 +3143,204 @@ body { padding-top: 0; }
 .grid-404 a span {
   color: var(--color-primary);
   font-weight: 600;
+}
+
+/* ==========================================================================
+   Z) WIDE DROPDOWN VARIANT (Service Areas — 14 cities, 2-col grid)
+   ========================================================================== */
+.dropdown--wide {
+  min-width: 460px !important;
+  padding: var(--space-sm) var(--space-md) !important;
+  display: none;
+}
+
+.has-dropdown:hover .dropdown--wide,
+.has-dropdown:focus-within .dropdown--wide {
+  display: grid !important;
+  grid-template-columns: 1fr 1fr;
+  gap: 2px var(--space-sm);
+}
+
+.dropdown--wide li {
+  list-style: none;
+  margin: 0;
+  padding: 0;
+}
+
+.dropdown--wide a {
+  display: block;
+  padding: 8px var(--space-sm);
+  color: var(--color-text) !important;
+  font-size: 0.92rem;
+  white-space: nowrap;
+  border-radius: 4px;
+  transition: background var(--transition-fast);
+}
+
+.dropdown--wide a:hover {
+  background: rgba(var(--color-primary-rgb), 0.08);
+  color: var(--color-primary) !important;
+}
+
+.dropdown--wide .dropdown-badge {
+  display: inline-block;
+  margin-left: 6px;
+  padding: 2px 7px;
+  background: var(--color-accent);
+  color: #fff;
+  border-radius: 999px;
+  font-size: 0.65rem;
+  font-weight: 700;
+  letter-spacing: 0.05em;
+  vertical-align: middle;
+}
+
+.dropdown--wide .dropdown-footer-link {
+  grid-column: 1 / -1;
+  border-top: 1px solid rgba(var(--color-primary-rgb), 0.12);
+  margin-top: 4px;
+  padding-top: 4px;
+}
+
+.dropdown--wide .dropdown-footer-link a {
+  color: var(--color-primary) !important;
+  font-weight: 600;
+  font-size: 0.88rem;
+}
+
+@media (max-width: 1023px) {
+  .dropdown--wide { display: none !important; }
+}
+
+/* ==========================================================================
+   AA) HOMEPAGE SERVICE CARD WITH IMAGE
+   ========================================================================== */
+.service-card-with-image {
+  display: flex;
+  flex-direction: column;
+  background: #fff;
+  border-radius: var(--radius-md);
+  overflow: hidden;
+  box-shadow: var(--shadow-md);
+  transition: transform var(--transition-base), box-shadow var(--transition-base);
+}
+
+.service-card-with-image:hover {
+  transform: translateY(-6px);
+  box-shadow: var(--shadow-lg);
+}
+
+.service-card-with-image .service-card__image {
+  position: relative;
+  width: 100%;
+  aspect-ratio: 5 / 3;
+  overflow: hidden;
+  background: var(--color-bg-alt);
+}
+
+.service-card-with-image .service-card__image img {
+  width: 100%;
+  height: 100%;
+  object-fit: cover;
+  display: block;
+  transition: transform 600ms cubic-bezier(0.2, 0.8, 0.2, 1);
+}
+
+.service-card-with-image:hover .service-card__image img {
+  transform: scale(1.06);
+}
+
+.service-card-with-image .service-card__body {
+  padding: var(--space-md);
+  flex: 1;
+  display: flex;
+  flex-direction: column;
+}
+
+.service-card-with-image.card-tint-1 .service-card__body { background: var(--color-card-tint-1); }
+.service-card-with-image.card-tint-2 .service-card__body { background: var(--color-card-tint-2); }
+.service-card-with-image.card-tint-3 .service-card__body { background: var(--color-card-tint-3); }
+
+.service-card-with-image .service-card__icon {
+  width: 44px;
+  height: 44px;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  background: #fff;
+  border-radius: 50%;
+  margin: -32px auto var(--space-sm);
+  box-shadow: var(--shadow-md);
+  position: relative;
+  z-index: 2;
+  border: 2px solid var(--color-accent);
+}
+
+.service-card-with-image .service-card__icon i {
+  width: 22px;
+  height: 22px;
+  color: var(--color-accent);
+}
+
+.service-card-with-image h3 {
+  font-size: 1.15rem;
+  margin-bottom: var(--space-xs);
+  text-align: center;
+}
+
+.service-card-with-image .service-card__desc {
+  font-size: 0.92rem;
+  color: var(--color-text-light);
+  margin-bottom: var(--space-sm);
+  text-align: center;
+}
+
+.service-card-with-image ul {
+  list-style: none;
+  padding: 0;
+  margin: 0 0 var(--space-md);
+  font-size: 0.85rem;
+}
+
+.service-card-with-image ul li {
+  padding: 4px 0;
+  position: relative;
+  padding-left: 18px;
+}
+
+.service-card-with-image ul li::before {
+  content: '';
+  position: absolute;
+  left: 4px;
+  top: 12px;
+  width: 6px;
+  height: 6px;
+  border-radius: 50%;
+  background: var(--color-accent);
+}
+
+.service-card-with-image .service-card__cta {
+  margin-top: auto;
+  text-align: center;
+  color: var(--color-accent);
+  font-weight: 600;
+  font-size: 0.92rem;
+  text-decoration: none;
+  padding-top: var(--space-sm);
+  border-top: 1px solid rgba(var(--color-primary-rgb), 0.12);
+  transition: color var(--transition-fast);
+}
+
+.service-card-with-image .service-card__cta:hover {
+  color: var(--color-accent-dark);
+}
+
+.service-card-with-image .service-card__cta::after {
+  content: ' →';
+  display: inline-block;
+  transition: transform var(--transition-fast);
+}
+
+.service-card-with-image .service-card__cta:hover::after {
+  transform: translateX(4px);
 }
