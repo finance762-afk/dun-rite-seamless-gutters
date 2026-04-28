@@ -1,0 +1,31 @@
+# Dun-Rite Seamless Gutters, Inc. — robots.txt
+# https://dunrite-gutters.com/
+
+User-agent: *
+Allow: /
+
+# Disallow noindex pages
+Disallow: /thank-you/
+
+# Disallow form processor URLs
+Disallow: /includes/
+
+# AI crawler permissions (explicit allow for transparency)
+User-agent: GPTBot
+Allow: /
+
+User-agent: Claude-Web
+Allow: /
+
+User-agent: ClaudeBot
+Allow: /
+
+User-agent: PerplexityBot
+Allow: /
+
+User-agent: Google-Extended
+Allow: /
+
+# Sitemaps
+Sitemap: https://dunrite-gutters.com/sitemap.xml
+Sitemap: https://dunrite-gutters.com/sitemap-images.xml
