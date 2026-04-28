@@ -16,17 +16,17 @@
 <!-- Google Search Console Verification -->
 <meta name="google-site-verification" content="GSC_VERIFICATION_CODE_HERE" />
 
-<!-- Google Analytics 4 -->
-<script async src="https://www.googletagmanager.com/gtag/js?id=G-XXXXXXXXXX"></script>
+<!-- Google Analytics 4 — replace G-MEASUREMENT_ID with the client's GA4 Measurement ID -->
+<!-- <script async src="https://www.googletagmanager.com/gtag/js?id=G-MEASUREMENT_ID"></script>
 <script>
   window.dataLayer = window.dataLayer || [];
   function gtag(){dataLayer.push(arguments);}
   gtag('js', new Date());
-  gtag('config', 'G-XXXXXXXXXX', {
+  gtag('config', 'G-MEASUREMENT_ID', {
     'send_page_view': true,
     'anonymize_ip': true
   });
-</script>
+</script> -->
 
 <title><?php echo htmlspecialchars($pageTitle ?? 'Dun-Rite Seamless Gutters, Inc.'); ?></title>
 <meta name="description" content="<?php echo htmlspecialchars($pageDescription ?? ''); ?>">
