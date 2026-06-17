@@ -1,4 +1,5 @@
 <?php
+require_once __DIR__ . '/site-config.php';
 /**
  * Dun-Rite Seamless Gutters, Inc. — head.php
  * Required PHP variables before include:
@@ -14,7 +15,9 @@
 <meta name="viewport" content="width=device-width, initial-scale=1.0">
 
 <!-- Google Search Console Verification -->
-<meta name="google-site-verification" content="GSC_VERIFICATION_CODE_HERE" />
+<?php if (!empty($gscVerification)): ?>
+  <meta name="google-site-verification" content="<?php echo htmlspecialchars($gscVerification, ENT_QUOTES, 'UTF-8'); ?>">
+  <?php endif; ?>
 
 <!-- Google Analytics 4 — replace G-MEASUREMENT_ID with the client's GA4 Measurement ID -->
 <!-- <script async src="https://www.googletagmanager.com/gtag/js?id=G-MEASUREMENT_ID"></script>
@@ -83,6 +86,7 @@
 
 <!-- JSON-LD Schema -->
 <?php if (!empty($schemaMarkup)) echo $schemaMarkup; ?>
+<?php require_once __DIR__ . '/edit-mode.php'; ?>
 </head>
 <body>
 <a class="skip-link" href="#main-content">Skip to content</a>
