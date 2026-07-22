@@ -62,7 +62,6 @@ require_once __DIR__ . '/site-config.php';
 <link rel="dns-prefetch" href="https://unpkg.com">
 <link rel="dns-prefetch" href="https://i.imgur.com">
 <link rel="dns-prefetch" href="https://images.unsplash.com">
-<link rel="dns-prefetch" href="https://formsubmit.co">
 <link rel="dns-prefetch" href="https://cdn.jsdelivr.net">
 <link rel="dns-prefetch" href="https://www.googletagmanager.com">
 
