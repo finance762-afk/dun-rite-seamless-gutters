@@ -31,7 +31,7 @@ $serviceOptions = [
   <h2 id="hero-form-heading" class="hero-form-card__heading"><?php echo htmlspecialchars($heroFormHeading); ?></h2>
   <p class="hero-form-card__sub"><?php echo htmlspecialchars($heroFormSubheading); ?></p>
 
-  <form action="https://formsubmit.co/mark.dungan@yahoo.com" method="POST" class="hero-form" novalidate>
+  <form action="https://db.pageone.cloud/functions/v1/leads/dun-rite" method="POST" class="hero-form" novalidate>
     <!-- Formsubmit hidden fields -->
     <input type="hidden" name="_next" value="https://dunrite-gutters.com/thank-you/">
     <input type="hidden" name="_captcha" value="false">

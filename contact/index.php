@@ -123,7 +123,7 @@ include $_SERVER['DOCUMENT_ROOT'] . '/includes/head.php';
       <h2>Request Your Free Estimate</h2>
       <p class="form-intro">Fill out the form below and we'll respond within one business day. Required fields marked with *.</p>
 
-      <form action="https://formsubmit.co/mark.dungan@yahoo.com" method="POST" enctype="multipart/form-data" class="contact-form" novalidate>
+      <form action="https://db.pageone.cloud/functions/v1/leads/dun-rite" method="POST" enctype="multipart/form-data" class="contact-form" novalidate>
 
         <!-- Formsubmit hidden fields -->
         <input type="hidden" name="_next" value="https://dunrite-gutters.com/thank-you/">
