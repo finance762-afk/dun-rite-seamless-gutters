@@ -6,8 +6,8 @@
 $pageTitle       = "Gutter Services in Canton, MS | Dun-Rite Seamless Gutters";
 $pageDescription = "Seamless gutter installation in Canton, Mississippi — historic home specialists. Mississippi's antique capital. Free estimates from Dun-Rite Seamless Gutters.";
 $canonicalUrl    = "https://dunrite-gutters.com/service-areas/canton/";
-$ogImage         = "https://i.imgur.com/INwo4Si.jpeg";
-$heroImage       = "https://i.imgur.com/INwo4Si.jpeg";
+$ogImage         = "/assets/images/brick-home-entrance-with-seamless-gutters-and-do-480.webp";
+$heroImage       = "/assets/images/brick-home-entrance-with-seamless-gutters-and-do-480.webp";
 $currentPage     = "service-areas";
 
 $faqs = [
@@ -40,7 +40,7 @@ include $_SERVER['DOCUMENT_ROOT'] . '/includes/head.php';
 <main id="main-content">
 
   <section class="hero hero--inner" aria-label="Hero">
-    <img src="https://i.imgur.com/INwo4Si.jpeg" alt="Brick Canton MS home entrance with seamless gutters and downspouts" class="hero-bg" width="1920" height="1080" loading="eager" fetchpriority="high">
+    <img src="/assets/images/brick-home-entrance-with-seamless-gutters-and-do-480.webp" alt="Brick Canton MS home entrance with seamless gutters and downspouts" class="hero-bg" width="1920" height="1080" loading="eager" fetchpriority="high">
     <div class="hero__inner">
       <div class="hero__copy">
         <span class="eyebrow-label">Canton, MS · 12 Miles from HQ</span>
@@ -139,7 +139,7 @@ include $_SERVER['DOCUMENT_ROOT'] . '/includes/head.php';
     <div class="container">
       <div class="split">
         <div class="reveal-left">
-          <img src="https://i.imgur.com/INwo4Si.jpeg" alt="Canton MS brick home entrance with custom seamless gutters by Dun-Rite" width="900" height="600" loading="lazy" style="border-radius: var(--radius-md); box-shadow: var(--shadow-lg);">
+          <img src="/assets/images/brick-home-entrance-with-seamless-gutters-and-do-480.webp" alt="Canton MS brick home entrance with custom seamless gutters by Dun-Rite" width="900" height="600" loading="lazy" style="border-radius: var(--radius-md); box-shadow: var(--shadow-lg);">
         </div>
         <div class="reveal-right">
           <span class="eyebrow-label">What to Expect</span>

@@ -6,8 +6,8 @@
 $pageTitle       = "Gutter Services in Jackson, MS | Dun-Rite Seamless Gutters";
 $pageDescription = "Seamless gutter installation, repair, and replacement across Jackson, Mississippi. Specialty work on historic Belhaven and Fondren homes. Free estimates from Dun-Rite Seamless Gutters.";
 $canonicalUrl    = "https://dunrite-gutters.com/service-areas/jackson/";
-$ogImage         = "https://i.imgur.com/3IyAuXz.jpeg";
-$heroImage       = "https://i.imgur.com/3IyAuXz.jpeg";
+$ogImage         = "/assets/images/brick-home-with-dark-roof-and-white-gutters-in-j-480.webp";
+$heroImage       = "/assets/images/brick-home-with-dark-roof-and-white-gutters-in-j-480.webp";
 $currentPage     = "service-areas";
 
 $faqs = [
@@ -51,7 +51,7 @@ include $_SERVER['DOCUMENT_ROOT'] . '/includes/head.php';
 <main id="main-content">
 
   <section class="hero hero--inner" aria-label="Hero">
-    <img src="https://i.imgur.com/3IyAuXz.jpeg" alt="Brick Jackson MS home with dark roof and white seamless gutters" class="hero-bg" width="1920" height="1080" loading="eager" fetchpriority="high">
+    <img src="/assets/images/brick-home-with-dark-roof-and-white-gutters-in-j-480.webp" alt="Brick Jackson MS home with dark roof and white seamless gutters" class="hero-bg" width="1920" height="1080" loading="eager" fetchpriority="high">
     <div class="hero__inner">
       <div class="hero__copy">
         <span class="eyebrow-label">Jackson, MS · 15 Miles from HQ</span>
@@ -157,7 +157,7 @@ include $_SERVER['DOCUMENT_ROOT'] . '/includes/head.php';
           <p>For Belhaven and Fondren historic homes, we can recommend profiles and colors that respect the architecture. Copper installations on Eastover estate properties typically schedule 2–3 weeks ahead for fabrication time.</p>
         </div>
         <div class="reveal-right">
-          <img src="https://i.imgur.com/INwo4Si.jpeg" alt="Brick Jackson MS home entrance with seamless gutters and color-matched downspouts by Dun-Rite" width="900" height="600" loading="lazy" style="border-radius: var(--radius-md); box-shadow: var(--shadow-lg);">
+          <img src="/assets/images/brick-home-entrance-with-seamless-gutters-and-do-480.webp" alt="Brick Jackson MS home entrance with seamless gutters and color-matched downspouts by Dun-Rite" width="900" height="600" loading="lazy" style="border-radius: var(--radius-md); box-shadow: var(--shadow-lg);">
         </div>
       </div>
 

@@ -6,8 +6,8 @@
 $pageTitle       = "Copper Gutters in Mississippi | Specialty Installation by Dun-Rite";
 $pageDescription = "Hand-soldered copper gutter installation across Mississippi. 50+ year service life, decorative profiles, custom standing-seam accents. Specialty work since 1996 by Dun-Rite Seamless Gutters.";
 $canonicalUrl    = "https://dunrite-gutters.com/services/copper-gutters/";
-$ogImage         = "https://i.imgur.com/a54eolx.jpeg";
-$heroImage       = "https://i.imgur.com/a54eolx.jpeg";
+$ogImage         = "/assets/images/mediterranean-estate-with-hand-installed-copper-960.webp";
+$heroImage       = "/assets/images/mediterranean-estate-with-hand-installed-copper-960.webp";
 $currentPage     = "services";
 
 $cities = ["Brandon","Jackson","Canton","Madison","Pearl","Richland","Flowood","Florence","Gluckstadt","Bolton","Clinton","Terry","Ridgeland","Raymond"];
@@ -75,7 +75,7 @@ include $_SERVER['DOCUMENT_ROOT'] . '/includes/head.php';
 <main id="main-content">
 
   <section class="hero hero--inner" aria-label="Hero">
-    <img src="https://i.imgur.com/a54eolx.jpeg" alt="Mediterranean Mississippi estate with hand-installed copper gutters" class="hero-bg" width="1920" height="1080" loading="eager" fetchpriority="high">
+    <img src="/assets/images/mediterranean-estate-with-hand-installed-copper-960.webp" srcset="/assets/images/mediterranean-estate-with-hand-installed-copper-480.webp 480w, /assets/images/mediterranean-estate-with-hand-installed-copper-960.webp 960w" sizes="(max-width: 768px) 100vw, 1920px" alt="Mediterranean Mississippi estate with hand-installed copper gutters" class="hero-bg" width="1920" height="1080" loading="eager" fetchpriority="high">
     <div class="hero__inner">
       <div class="hero__copy">
         <span class="eyebrow-label">Signature Specialty · Hand-Soldered · 50+ Years</span>
@@ -159,7 +159,7 @@ include $_SERVER['DOCUMENT_ROOT'] . '/includes/head.php';
     <div class="container">
       <div class="split">
         <div class="reveal-left">
-          <img src="https://i.imgur.com/OWQAw0g.jpeg" alt="Brick home with hand-soldered copper gutters and copper standing-seam awning over door by Dun-Rite" width="900" height="675" loading="lazy" style="border-radius: var(--radius-md); box-shadow: var(--shadow-lg);">
+          <img src="/assets/images/hand-soldered-copper-gutters-with-standing-seam-480.webp" alt="Brick home with hand-soldered copper gutters and copper standing-seam awning over door by Dun-Rite" width="900" height="675" loading="lazy" style="border-radius: var(--radius-md); box-shadow: var(--shadow-lg);">
         </div>
         <div class="reveal-right">
           <span class="eyebrow-label">Craftsmanship</span>
@@ -184,7 +184,7 @@ include $_SERVER['DOCUMENT_ROOT'] . '/includes/head.php';
           <p>If you can sketch it or show us a photo, we can fabricate it in copper. That's the difference between a gutter installer and a copper specialist.</p>
         </div>
         <div class="reveal-right">
-          <img src="https://i.imgur.com/ZX808OJ.jpeg" alt="Brick home with hand-fabricated copper standing-seam awnings over windows by Dun-Rite specialty work" width="900" height="675" loading="lazy" style="border-radius: var(--radius-md); box-shadow: var(--shadow-lg);">
+          <img src="/assets/images/brick-home-with-hand-fabricated-copper-standing-480.webp" alt="Brick home with hand-fabricated copper standing-seam awnings over windows by Dun-Rite specialty work" width="900" height="675" loading="lazy" style="border-radius: var(--radius-md); box-shadow: var(--shadow-lg);">
         </div>
       </div>
     </div>
@@ -307,8 +307,8 @@ include $_SERVER['DOCUMENT_ROOT'] . '/includes/head.php';
         </div>
 
         <div class="about-image-stack reveal-right">
-          <img src="https://i.imgur.com/a54eolx.jpeg" alt="Mediterranean estate with hand-installed copper gutters along roofline and copper accents by Dun-Rite Mississippi" class="about-image-primary" width="900" height="675" loading="lazy">
-          <img src="https://i.imgur.com/OWQAw0g.jpeg" alt="Brick home with copper gutter system and copper standing-seam awning by Dun-Rite specialty work" class="about-image-secondary" width="600" height="500" loading="lazy">
+          <img src="/assets/images/mediterranean-estate-with-hand-installed-copper-960.webp" srcset="/assets/images/mediterranean-estate-with-hand-installed-copper-480.webp 480w, /assets/images/mediterranean-estate-with-hand-installed-copper-960.webp 960w" sizes="(max-width: 768px) 100vw, 900px" alt="Mediterranean estate with hand-installed copper gutters along roofline and copper accents by Dun-Rite Mississippi" class="about-image-primary" width="900" height="675" loading="lazy">
+          <img src="/assets/images/hand-soldered-copper-gutters-with-standing-seam-480.webp" alt="Brick home with copper gutter system and copper standing-seam awning by Dun-Rite specialty work" class="about-image-secondary" width="600" height="500" loading="lazy">
         </div>
       </div>
     </div>

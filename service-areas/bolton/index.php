@@ -6,8 +6,8 @@
 $pageTitle       = "Gutter Services in Bolton, MS | Dun-Rite Seamless Gutters";
 $pageDescription = "Seamless gutter installation in Bolton, Mississippi — rural Hinds County. Larger acreage, mature trees, custom rural builds. Free estimates from Dun-Rite Seamless Gutters.";
 $canonicalUrl    = "https://dunrite-gutters.com/service-areas/bolton/";
-$ogImage         = "https://i.imgur.com/u0mERob.jpeg";
-$heroImage       = "https://i.imgur.com/u0mERob.jpeg";
+$ogImage         = "/assets/images/bolton-ms-rural-home-with-skylight-and-seamless-480.webp";
+$heroImage       = "/assets/images/bolton-ms-rural-home-with-skylight-and-seamless-480.webp";
 $currentPage     = "service-areas";
 
 $faqs = [
@@ -39,7 +39,7 @@ include $_SERVER['DOCUMENT_ROOT'] . '/includes/head.php';
 <main id="main-content">
 
   <section class="hero hero--inner" aria-label="Hero">
-    <img src="https://i.imgur.com/u0mERob.jpeg" alt="Bolton MS rural home with skylight and seamless gutter system" class="hero-bg" width="1920" height="1080" loading="eager" fetchpriority="high">
+    <img src="/assets/images/bolton-ms-rural-home-with-skylight-and-seamless-480.webp" alt="Bolton MS rural home with skylight and seamless gutter system" class="hero-bg" width="1920" height="1080" loading="eager" fetchpriority="high">
     <div class="hero__inner">
       <div class="hero__copy">
         <span class="eyebrow-label">Bolton, MS · 28 Miles from HQ</span>
@@ -145,7 +145,7 @@ include $_SERVER['DOCUMENT_ROOT'] . '/includes/head.php';
           <p>28 miles from Madison HQ. Free travel.</p>
         </div>
         <div class="reveal-right">
-          <img src="https://i.imgur.com/Hr2Nlwl.jpeg" alt="Bolton MS rural acreage home with seamless gutter installation by Dun-Rite" width="900" height="600" loading="lazy" style="border-radius: var(--radius-md); box-shadow: var(--shadow-lg);">
+          <img src="/assets/images/worker-installing-replacement-gutters-on-mississ-480.webp" alt="Bolton MS rural acreage home with seamless gutter installation by Dun-Rite" width="900" height="600" loading="lazy" style="border-radius: var(--radius-md); box-shadow: var(--shadow-lg);">
         </div>
       </div>
 

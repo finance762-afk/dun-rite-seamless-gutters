@@ -6,8 +6,8 @@
 $pageTitle       = "Gutter Services in Ridgeland, MS | Dun-Rite Seamless Gutters";
 $pageDescription = "Seamless gutter installation in Ridgeland, Mississippi — including Bridgewater, Trace Harbor, and Lake Castle. Closest neighbor to Madison HQ. Free estimates from Dun-Rite Seamless Gutters.";
 $canonicalUrl    = "https://dunrite-gutters.com/service-areas/ridgeland/";
-$ogImage         = "https://i.imgur.com/GO8sZjl.jpeg";
-$heroImage       = "https://i.imgur.com/GO8sZjl.jpeg";
+$ogImage         = "/assets/images/yellow-brick-ridgeland-ms-home-with-white-seamle-480.webp";
+$heroImage       = "/assets/images/yellow-brick-ridgeland-ms-home-with-white-seamle-480.webp";
 $currentPage     = "service-areas";
 
 $faqs = [
@@ -40,7 +40,7 @@ include $_SERVER['DOCUMENT_ROOT'] . '/includes/head.php';
 <main id="main-content">
 
   <section class="hero hero--inner" aria-label="Hero">
-    <img src="https://i.imgur.com/GO8sZjl.jpeg" alt="Yellow brick Ridgeland MS home with white seamless gutters" class="hero-bg" width="1920" height="1080" loading="eager" fetchpriority="high">
+    <img src="/assets/images/yellow-brick-ridgeland-ms-home-with-white-seamle-480.webp" alt="Yellow brick Ridgeland MS home with white seamless gutters" class="hero-bg" width="1920" height="1080" loading="eager" fetchpriority="high">
     <div class="hero__inner">
       <div class="hero__copy">
         <span class="eyebrow-label">Ridgeland, MS · 3 Miles from HQ</span>
@@ -139,7 +139,7 @@ include $_SERVER['DOCUMENT_ROOT'] . '/includes/head.php';
     <div class="container">
       <div class="split">
         <div class="reveal-left">
-          <img src="https://i.imgur.com/INwo4Si.jpeg" alt="Brick Ridgeland MS home with seamless gutter system and downspouts by Dun-Rite" width="900" height="600" loading="lazy" style="border-radius: var(--radius-md); box-shadow: var(--shadow-lg);">
+          <img src="/assets/images/brick-home-entrance-with-seamless-gutters-and-do-480.webp" alt="Brick Ridgeland MS home with seamless gutter system and downspouts by Dun-Rite" width="900" height="600" loading="lazy" style="border-radius: var(--radius-md); box-shadow: var(--shadow-lg);">
         </div>
         <div class="reveal-right">
           <span class="eyebrow-label">What to Expect</span>

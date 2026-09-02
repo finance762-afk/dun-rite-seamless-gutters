@@ -36,8 +36,8 @@ $schemaGraph = [
       "name"        => "Dun-Rite Seamless Gutters, Inc.",
       "alternateName" => "Dun-Rite Gutters",
       "url"         => "https://dunrite-gutters.com",
-      "logo"        => "https://i.imgur.com/xRVJ7rY.jpeg",
-      "image"       => "https://i.imgur.com/xRVJ7rY.jpeg",
+      "logo"        => "/assets/images/logo.jpeg",
+      "image"       => "/assets/images/logo.jpeg",
       "telephone"   => "+16017501800",
       "email"       => "mark.dungan@yahoo.com",
       "priceRange"  => "$$",
@@ -92,7 +92,7 @@ $schemaGraph = [
       "@id"          => "https://dunrite-gutters.com/#org",
       "name"         => "Dun-Rite Seamless Gutters, Inc.",
       "url"          => "https://dunrite-gutters.com",
-      "logo"         => "https://i.imgur.com/xRVJ7rY.jpeg",
+      "logo"         => "/assets/images/logo.jpeg",
       "foundingDate" => "1996"
     ],
     [
@@ -208,7 +208,7 @@ include $_SERVER['DOCUMENT_ROOT'] . '/includes/head.php';
   <section class="trust-strip" aria-label="Industry accreditations">
     <div class="container">
       <span class="eyebrow-label trust-strip__eyebrow">Trusted &amp; Accredited</span>
-      <img src="https://i.imgur.com/WbrtNRS.png"
+      <img src="/assets/images/dun-rite-seamless-gutters-is-homeadvisor-approve-480.webp"
            alt="Dun-Rite Seamless Gutters is HomeAdvisor approved, BBB accredited, and a member of the Home Builders Association"
            class="trust-strip__img"
            width="700" height="120"
@@ -271,7 +271,7 @@ include $_SERVER['DOCUMENT_ROOT'] . '/includes/head.php';
       <div class="services-grid">
         <article class="service-card-with-image card-tint-1 reveal-up reveal-delay-1">
           <div class="service-card__image">
-            <img src="https://i.imgur.com/3nVl1Ha.jpeg" alt="Seamless gutter installation on yellow two-story Mississippi home" width="600" height="360" loading="lazy">
+            <img src="/assets/images/seamless-gutter-installation-on-yellow-two-story-480.webp" alt="Seamless gutter installation on yellow two-story Mississippi home" width="600" height="360" loading="lazy">
           </div>
           <div class="service-card__body">
             <div class="service-card__icon"><i data-lucide="ruler"></i></div>
@@ -288,7 +288,7 @@ include $_SERVER['DOCUMENT_ROOT'] . '/includes/head.php';
 
         <article class="service-card-with-image card-tint-2 reveal-up reveal-delay-2">
           <div class="service-card__image">
-            <img src="https://i.imgur.com/8tTXO7O.jpeg" alt="Aluminum gutters installed on modern white-sided Mississippi home" width="600" height="360" loading="lazy">
+            <img src="/assets/images/aluminum-gutters-installed-on-modern-white-sided-480.webp" alt="Aluminum gutters installed on modern white-sided Mississippi home" width="600" height="360" loading="lazy">
           </div>
           <div class="service-card__body">
             <div class="service-card__icon"><i data-lucide="shield"></i></div>
@@ -305,7 +305,7 @@ include $_SERVER['DOCUMENT_ROOT'] . '/includes/head.php';
 
         <article class="service-card-with-image card-tint-3 reveal-up reveal-delay-3">
           <div class="service-card__image">
-            <img src="https://i.imgur.com/OWQAw0g.jpeg" alt="Hand-soldered copper gutters with standing-seam awning" width="600" height="360" loading="lazy">
+            <img src="/assets/images/hand-soldered-copper-gutters-with-standing-seam-480.webp" alt="Hand-soldered copper gutters with standing-seam awning" width="600" height="360" loading="lazy">
           </div>
           <div class="service-card__body">
             <div class="service-card__icon"><i data-lucide="sparkles"></i></div>
@@ -322,7 +322,7 @@ include $_SERVER['DOCUMENT_ROOT'] . '/includes/head.php';
 
         <article class="service-card-with-image card-tint-1 reveal-up reveal-delay-1">
           <div class="service-card__image">
-            <img src="https://i.imgur.com/EtRNOH2.jpeg" alt="Close-up of installed gutter guard mesh leaf protection" width="600" height="360" loading="lazy">
+            <img src="/assets/images/close-up-of-installed-gutter-guard-mesh-leaf-pro-480.webp" alt="Close-up of installed gutter guard mesh leaf protection" width="600" height="360" loading="lazy">
           </div>
           <div class="service-card__body">
             <div class="service-card__icon"><i data-lucide="filter"></i></div>
@@ -339,7 +339,7 @@ include $_SERVER['DOCUMENT_ROOT'] . '/includes/head.php';
 
         <article class="service-card-with-image card-tint-3 reveal-up reveal-delay-2">
           <div class="service-card__image">
-            <img src="https://i.imgur.com/jAqOpHk.jpeg" alt="Gloved hand removing leaves from clogged residential gutter" width="600" height="360" loading="lazy">
+            <img src="/assets/images/gloved-hand-removing-leaves-from-clogged-residen-480.webp" alt="Gloved hand removing leaves from clogged residential gutter" width="600" height="360" loading="lazy">
           </div>
           <div class="service-card__body">
             <div class="service-card__icon"><i data-lucide="droplets"></i></div>
@@ -356,7 +356,7 @@ include $_SERVER['DOCUMENT_ROOT'] . '/includes/head.php';
 
         <article class="service-card-with-image card-tint-2 reveal-up reveal-delay-3">
           <div class="service-card__image">
-            <img src="https://i.imgur.com/Hr2Nlwl.jpeg" alt="Worker installing replacement gutters on Mississippi home" width="600" height="360" loading="lazy">
+            <img src="/assets/images/worker-installing-replacement-gutters-on-mississ-480.webp" alt="Worker installing replacement gutters on Mississippi home" width="600" height="360" loading="lazy">
           </div>
           <div class="service-card__body">
             <div class="service-card__icon"><i data-lucide="wrench"></i></div>
@@ -373,7 +373,7 @@ include $_SERVER['DOCUMENT_ROOT'] . '/includes/head.php';
 
         <article class="service-card-with-image card-tint-1 reveal-up reveal-delay-1">
           <div class="service-card__image">
-            <img src="https://i.imgur.com/F4Wh56M.jpeg" alt="Commercial building gutter installation in Mississippi" width="600" height="360" loading="lazy">
+            <img src="/assets/images/commercial-building-gutter-installation-in-missi-480.webp" alt="Commercial building gutter installation in Mississippi" width="600" height="360" loading="lazy">
           </div>
           <div class="service-card__body">
             <div class="service-card__icon"><i data-lucide="building-2"></i></div>
@@ -390,7 +390,7 @@ include $_SERVER['DOCUMENT_ROOT'] . '/includes/head.php';
 
         <article class="service-card-with-image card-tint-3 reveal-up reveal-delay-2">
           <div class="service-card__image">
-            <img src="https://i.imgur.com/iX7CNj7.jpeg" alt="Custom downspout drainage installation at building foundation" width="600" height="360" loading="lazy">
+            <img src="/assets/images/custom-downspout-drainage-installation-at-buildi-480.webp" alt="Custom downspout drainage installation at building foundation" width="600" height="360" loading="lazy">
           </div>
           <div class="service-card__body">
             <div class="service-card__icon"><i data-lucide="arrow-down-to-line"></i></div>
@@ -450,12 +450,12 @@ include $_SERVER['DOCUMENT_ROOT'] . '/includes/head.php';
         </div>
 
         <div class="about-image-stack reveal-right">
-          <img src="https://i.imgur.com/qJMX4SH.png"
+          <img src="/assets/images/mark-dungan-owner-of-dun-rite-seamless-gutters-s-960.webp" srcset="/assets/images/mark-dungan-owner-of-dun-rite-seamless-gutters-s-480.webp 480w, /assets/images/mark-dungan-owner-of-dun-rite-seamless-gutters-s-960.webp 960w" sizes="(max-width: 768px) 100vw, 800px"
                alt="Mark Dungan, owner of Dun-Rite Seamless Gutters since 1996"
                class="about-image-primary"
                width="800" height="900"
                loading="lazy">
-          <img src="https://i.imgur.com/lHGkpv5.jpeg"
+          <img src="/assets/images/brick-stucco-mississippi-home-with-arched-entry-480.webp"
                alt="Brick stucco Mississippi home with arched entry and white seamless gutters by Dun-Rite"
                class="about-image-secondary"
                width="600" height="500"
@@ -534,7 +534,7 @@ include $_SERVER['DOCUMENT_ROOT'] . '/includes/head.php';
           <a href="/services/copper-gutters/" class="btn-primary">View Copper Gutter Service &rarr;</a>
         </div>
         <div class="reveal-right">
-          <img src="https://i.imgur.com/a54eolx.jpeg"
+          <img src="/assets/images/mediterranean-estate-with-hand-installed-copper-960.webp" srcset="/assets/images/mediterranean-estate-with-hand-installed-copper-480.webp 480w, /assets/images/mediterranean-estate-with-hand-installed-copper-960.webp 960w" sizes="(max-width: 768px) 100vw, 900px"
                alt="Mediterranean estate with hand-installed copper gutters and copper accents by Dun-Rite Seamless Gutters in Mississippi"
                width="900" height="675"
                loading="lazy">
@@ -562,31 +562,31 @@ include $_SERVER['DOCUMENT_ROOT'] . '/includes/head.php';
 
       <div class="gallery-grid">
         <div class="gallery-item reveal-up reveal-delay-1">
-          <img src="https://i.imgur.com/3nVl1Ha.jpeg" alt="Yellow two-story home with white seamless gutters in Madison MS by Dun-Rite" width="600" height="450" loading="lazy">
+          <img src="/assets/images/seamless-gutter-installation-on-yellow-two-story-480.webp" alt="Yellow two-story home with white seamless gutters in Madison MS by Dun-Rite" width="600" height="450" loading="lazy">
         </div>
         <div class="gallery-item reveal-up reveal-delay-2">
-          <img src="https://i.imgur.com/3IyAuXz.jpeg" alt="Brick home with dark roof and white gutters in Jackson area by Dun-Rite" width="600" height="450" loading="lazy">
+          <img src="/assets/images/brick-home-with-dark-roof-and-white-gutters-in-j-480.webp" alt="Brick home with dark roof and white gutters in Jackson area by Dun-Rite" width="600" height="450" loading="lazy">
         </div>
         <div class="gallery-item reveal-up reveal-delay-3">
-          <img src="https://i.imgur.com/8tTXO7O.jpeg" alt="Modern white-sided Mississippi home with dark seamless gutters by Dun-Rite" width="600" height="450" loading="lazy">
+          <img src="/assets/images/aluminum-gutters-installed-on-modern-white-sided-480.webp" alt="Modern white-sided Mississippi home with dark seamless gutters by Dun-Rite" width="600" height="450" loading="lazy">
         </div>
         <div class="gallery-item reveal-up reveal-delay-4">
-          <img src="https://i.imgur.com/lHGkpv5.jpeg" alt="Brick stucco home with arched entryway and seamless gutters by Dun-Rite" width="600" height="450" loading="lazy">
+          <img src="/assets/images/brick-stucco-mississippi-home-with-arched-entry-480.webp" alt="Brick stucco home with arched entryway and seamless gutters by Dun-Rite" width="600" height="450" loading="lazy">
         </div>
         <div class="gallery-item reveal-up reveal-delay-1">
-          <img src="https://i.imgur.com/OWQAw0g.jpeg" alt="Brick home with copper gutters and copper standing-seam awning by Dun-Rite" width="600" height="450" loading="lazy">
+          <img src="/assets/images/hand-soldered-copper-gutters-with-standing-seam-480.webp" alt="Brick home with copper gutters and copper standing-seam awning by Dun-Rite" width="600" height="450" loading="lazy">
         </div>
         <div class="gallery-item reveal-up reveal-delay-2">
-          <img src="https://i.imgur.com/INwo4Si.jpeg" alt="Brick home entrance with seamless gutters and downspouts by Dun-Rite" width="600" height="450" loading="lazy">
+          <img src="/assets/images/brick-home-entrance-with-seamless-gutters-and-do-480.webp" alt="Brick home entrance with seamless gutters and downspouts by Dun-Rite" width="600" height="450" loading="lazy">
         </div>
         <div class="gallery-item reveal-up reveal-delay-3">
-          <img src="https://i.imgur.com/dRN7AE6.jpeg" alt="Two-story Mississippi home with balcony and seamless gutter installation by Dun-Rite" width="600" height="450" loading="lazy">
+          <img src="/assets/images/two-story-mississippi-home-with-balcony-and-seam-480.webp" alt="Two-story Mississippi home with balcony and seamless gutter installation by Dun-Rite" width="600" height="450" loading="lazy">
         </div>
         <div class="gallery-item reveal-up reveal-delay-4">
-          <img src="https://i.imgur.com/gwDHcvD.jpeg" alt="Close-up of newly installed black seamless gutters on tile roofline" width="600" height="450" loading="lazy">
+          <img src="/assets/images/close-up-of-newly-installed-black-seamless-gutte-480.webp" alt="Close-up of newly installed black seamless gutters on tile roofline" width="600" height="450" loading="lazy">
         </div>
         <div class="gallery-item reveal-up reveal-delay-1">
-          <img src="https://i.imgur.com/RzYB8p1.jpeg" alt="Color sample lineup of seamless gutter options including white, black, and copper by Dun-Rite" width="600" height="450" loading="lazy">
+          <img src="/assets/images/color-sample-lineup-of-seamless-gutter-options-i-480.webp" alt="Color sample lineup of seamless gutter options including white, black, and copper by Dun-Rite" width="600" height="450" loading="lazy">
         </div>
       </div>
 

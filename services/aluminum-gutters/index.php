@@ -6,8 +6,8 @@
 $pageTitle       = "Aluminum Gutters Installation in Madison, MS | Dun-Rite";
 $pageDescription = "Aluminum seamless gutter installation across central Mississippi. Lightweight, rust-proof, 25+ color options, 25-year warranty. Free estimates from Dun-Rite Seamless Gutters.";
 $canonicalUrl    = "https://dunrite-gutters.com/services/aluminum-gutters/";
-$ogImage         = "https://i.imgur.com/8tTXO7O.jpeg";
-$heroImage       = "https://i.imgur.com/8tTXO7O.jpeg";
+$ogImage         = "/assets/images/aluminum-gutters-installed-on-modern-white-sided-480.webp";
+$heroImage       = "/assets/images/aluminum-gutters-installed-on-modern-white-sided-480.webp";
 $currentPage     = "services";
 
 $cities = ["Brandon","Jackson","Canton","Madison","Pearl","Richland","Flowood","Florence","Gluckstadt","Bolton","Clinton","Terry","Ridgeland","Raymond"];
@@ -72,7 +72,7 @@ include $_SERVER['DOCUMENT_ROOT'] . '/includes/head.php';
 <main id="main-content">
 
   <section class="hero hero--inner" aria-label="Hero">
-    <img src="https://i.imgur.com/8tTXO7O.jpeg" alt="Modern white-sided Mississippi home with dark aluminum seamless gutters" class="hero-bg" width="1920" height="1080" loading="eager" fetchpriority="high">
+    <img src="/assets/images/aluminum-gutters-installed-on-modern-white-sided-480.webp" alt="Modern white-sided Mississippi home with dark aluminum seamless gutters" class="hero-bg" width="1920" height="1080" loading="eager" fetchpriority="high">
     <div class="hero__inner">
       <div class="hero__copy">
         <span class="eyebrow-label">Rust-proof · Lightweight · 25+ Colors</span>
@@ -160,7 +160,7 @@ include $_SERVER['DOCUMENT_ROOT'] . '/includes/head.php';
           <p>The 30% material upcharge from .027 to .032 is typically less than $200 on a residential install. The added 10–15 years of dent-free life is worth it every time.</p>
         </div>
         <div class="reveal-right">
-          <img src="https://i.imgur.com/oaW4wFF.jpeg" alt="Dark blue/black metal seamless aluminum gutter installed on wood-sided home eave in Mississippi" width="900" height="600" loading="lazy" style="border-radius: var(--radius-md); box-shadow: var(--shadow-lg);">
+          <img src="/assets/images/dark-seamless-gutter-on-wood-sided-florence-ms-h-480.webp" alt="Dark blue/black metal seamless aluminum gutter installed on wood-sided home eave in Mississippi" width="900" height="600" loading="lazy" style="border-radius: var(--radius-md); box-shadow: var(--shadow-lg);">
         </div>
       </div>
     </div>
@@ -178,7 +178,7 @@ include $_SERVER['DOCUMENT_ROOT'] . '/includes/head.php';
           <p>For homes with copper or specialty roof flashing, we can match colors to existing trim within reason. For exact copper matches, see our <a href="/services/copper-gutters/" style="color: var(--color-accent); border-bottom: 1px solid currentColor;">copper gutter service</a>.</p>
         </div>
         <div class="reveal-right">
-          <img src="https://i.imgur.com/RzYB8p1.jpeg" alt="Color sample lineup for aluminum seamless gutter installations including white, almond, bronze, charcoal options" width="900" height="675" loading="lazy" style="border-radius: var(--radius-md); box-shadow: var(--shadow-lg);">
+          <img src="/assets/images/color-sample-lineup-of-seamless-gutter-options-i-480.webp" alt="Color sample lineup for aluminum seamless gutter installations including white, almond, bronze, charcoal options" width="900" height="675" loading="lazy" style="border-radius: var(--radius-md); box-shadow: var(--shadow-lg);">
         </div>
       </div>
     </div>

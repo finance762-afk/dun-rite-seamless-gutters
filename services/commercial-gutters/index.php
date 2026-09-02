@@ -6,8 +6,8 @@
 $pageTitle       = "Commercial Gutters in Mississippi | Dun-Rite Seamless Gutters";
 $pageDescription = "Large-scale commercial gutter systems across Mississippi. Office buildings, retail, multi-family, industrial. Custom sizing, high-flow profiles, copper specialty. Dun-Rite Seamless Gutters.";
 $canonicalUrl    = "https://dunrite-gutters.com/services/commercial-gutters/";
-$ogImage         = "https://i.imgur.com/F4Wh56M.jpeg";
-$heroImage       = "https://i.imgur.com/F4Wh56M.jpeg";
+$ogImage         = "/assets/images/commercial-building-gutter-installation-in-missi-480.webp";
+$heroImage       = "/assets/images/commercial-building-gutter-installation-in-missi-480.webp";
 $currentPage     = "services";
 
 $cities = ["Brandon","Jackson","Canton","Madison","Pearl","Richland","Flowood","Florence","Gluckstadt","Bolton","Clinton","Terry","Ridgeland","Raymond"];
@@ -73,7 +73,7 @@ include $_SERVER['DOCUMENT_ROOT'] . '/includes/head.php';
 <main id="main-content">
 
   <section class="hero hero--inner" aria-label="Hero">
-    <img src="https://i.imgur.com/F4Wh56M.jpeg" alt="Mississippi commercial building under construction with metal awnings" class="hero-bg" width="1920" height="1080" loading="eager" fetchpriority="high">
+    <img src="/assets/images/commercial-building-gutter-installation-in-missi-480.webp" alt="Mississippi commercial building under construction with metal awnings" class="hero-bg" width="1920" height="1080" loading="eager" fetchpriority="high">
     <div class="hero__inner">
       <div class="hero__copy">
         <span class="eyebrow-label">Office · Retail · Multi-Family · Industrial</span>
@@ -180,13 +180,13 @@ include $_SERVER['DOCUMENT_ROOT'] . '/includes/head.php';
 
       <div class="grid-3">
         <div class="reveal-up reveal-delay-1" style="border-radius: var(--radius-md); overflow: hidden; box-shadow: var(--shadow-md);">
-          <img src="https://i.imgur.com/6xCAwdl.jpeg" alt="Two-story Southern commercial building with arches and columns featuring Dun-Rite seamless gutter installation" width="800" height="600" loading="lazy" style="aspect-ratio: 4/3; object-fit: cover; width: 100%;">
+          <img src="/assets/images/two-story-southern-commercial-building-with-arch-480.webp" alt="Two-story Southern commercial building with arches and columns featuring Dun-Rite seamless gutter installation" width="800" height="600" loading="lazy" style="aspect-ratio: 4/3; object-fit: cover; width: 100%;">
         </div>
         <div class="reveal-up reveal-delay-2" style="border-radius: var(--radius-md); overflow: hidden; box-shadow: var(--shadow-md);">
-          <img src="https://i.imgur.com/xL8tLae.jpeg" alt="Brick commercial building exterior with seamless gutter system installed by Dun-Rite Mississippi" width="800" height="600" loading="lazy" style="aspect-ratio: 4/3; object-fit: cover; width: 100%;">
+          <img src="/assets/images/brick-commercial-building-exterior-with-seamless-480.webp" alt="Brick commercial building exterior with seamless gutter system installed by Dun-Rite Mississippi" width="800" height="600" loading="lazy" style="aspect-ratio: 4/3; object-fit: cover; width: 100%;">
         </div>
         <div class="reveal-up reveal-delay-3" style="border-radius: var(--radius-md); overflow: hidden; box-shadow: var(--shadow-md);">
-          <img src="https://i.imgur.com/1wIIiZW.jpeg" alt="Two-story estate with arched columns and commercial-grade gutter installation by Dun-Rite Mississippi" width="800" height="600" loading="lazy" style="aspect-ratio: 4/3; object-fit: cover; width: 100%;">
+          <img src="/assets/images/two-story-estate-with-arched-columns-and-commerc-480.webp" alt="Two-story estate with arched columns and commercial-grade gutter installation by Dun-Rite Mississippi" width="800" height="600" loading="lazy" style="aspect-ratio: 4/3; object-fit: cover; width: 100%;">
         </div>
       </div>
     </div>

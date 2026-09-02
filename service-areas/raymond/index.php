@@ -6,8 +6,8 @@
 $pageTitle       = "Gutter Services in Raymond, MS | Dun-Rite Seamless Gutters";
 $pageDescription = "Seamless gutter installation in Raymond, Mississippi — Hinds County seat with historic district. Civil War history, Hinds CC, and rural surrounding properties. Free estimates from Dun-Rite.";
 $canonicalUrl    = "https://dunrite-gutters.com/service-areas/raymond/";
-$ogImage         = "https://i.imgur.com/VWdSAg5.jpeg";
-$heroImage       = "https://i.imgur.com/VWdSAg5.jpeg";
+$ogImage         = "/assets/images/raymond-ms-historic-home-with-back-porch-and-sea-480.webp";
+$heroImage       = "/assets/images/raymond-ms-historic-home-with-back-porch-and-sea-480.webp";
 $currentPage     = "service-areas";
 
 $faqs = [
@@ -40,7 +40,7 @@ include $_SERVER['DOCUMENT_ROOT'] . '/includes/head.php';
 <main id="main-content">
 
   <section class="hero hero--inner" aria-label="Hero">
-    <img src="https://i.imgur.com/VWdSAg5.jpeg" alt="Raymond MS historic home with back porch and seamless gutters" class="hero-bg" width="1920" height="1080" loading="eager" fetchpriority="high">
+    <img src="/assets/images/raymond-ms-historic-home-with-back-porch-and-sea-480.webp" alt="Raymond MS historic home with back porch and seamless gutters" class="hero-bg" width="1920" height="1080" loading="eager" fetchpriority="high">
     <div class="hero__inner">
       <div class="hero__copy">
         <span class="eyebrow-label">Raymond, MS · 25 Miles from HQ</span>
@@ -146,7 +146,7 @@ include $_SERVER['DOCUMENT_ROOT'] . '/includes/head.php';
           <p>25 miles from Madison HQ. Free travel both ways.</p>
         </div>
         <div class="reveal-right">
-          <img src="https://i.imgur.com/INwo4Si.jpeg" alt="Raymond MS historic home with custom seamless gutters by Dun-Rite" width="900" height="600" loading="lazy" style="border-radius: var(--radius-md); box-shadow: var(--shadow-lg);">
+          <img src="/assets/images/brick-home-entrance-with-seamless-gutters-and-do-480.webp" alt="Raymond MS historic home with custom seamless gutters by Dun-Rite" width="900" height="600" loading="lazy" style="border-radius: var(--radius-md); box-shadow: var(--shadow-lg);">
         </div>
       </div>
 

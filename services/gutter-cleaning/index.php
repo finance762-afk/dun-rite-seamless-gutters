@@ -6,8 +6,8 @@
 $pageTitle       = "Gutter Cleaning in Madison, MS | Dun-Rite Seamless Gutters";
 $pageDescription = "Professional gutter cleaning across central Mississippi. Twice-yearly maintenance prevents foundation damage, fascia rot, and overflow. Schedule with Dun-Rite Seamless Gutters today.";
 $canonicalUrl    = "https://dunrite-gutters.com/services/gutter-cleaning/";
-$ogImage         = "https://i.imgur.com/jAqOpHk.jpeg";
-$heroImage       = "https://i.imgur.com/jAqOpHk.jpeg";
+$ogImage         = "/assets/images/gloved-hand-removing-leaves-from-clogged-residen-480.webp";
+$heroImage       = "/assets/images/gloved-hand-removing-leaves-from-clogged-residen-480.webp";
 $currentPage     = "services";
 
 $cities = ["Brandon","Jackson","Canton","Madison","Pearl","Richland","Flowood","Florence","Gluckstadt","Bolton","Clinton","Terry","Ridgeland","Raymond"];
@@ -72,7 +72,7 @@ include $_SERVER['DOCUMENT_ROOT'] . '/includes/head.php';
 <main id="main-content">
 
   <section class="hero hero--inner" aria-label="Hero">
-    <img src="https://i.imgur.com/jAqOpHk.jpeg" alt="Gloved hand cleaning leaves from a gutter — Dun-Rite cleaning service" class="hero-bg" width="1920" height="1080" loading="eager" fetchpriority="high">
+    <img src="/assets/images/gloved-hand-removing-leaves-from-clogged-residen-480.webp" alt="Gloved hand cleaning leaves from a gutter — Dun-Rite cleaning service" class="hero-bg" width="1920" height="1080" loading="eager" fetchpriority="high">
     <div class="hero__inner">
       <div class="hero__copy">
         <span class="eyebrow-label">Twice-Yearly · Overflow Prevention</span>

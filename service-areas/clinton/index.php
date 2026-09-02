@@ -6,8 +6,8 @@
 $pageTitle       = "Gutter Services in Clinton, MS | Dun-Rite Seamless Gutters";
 $pageDescription = "Seamless gutter installation in Clinton, Mississippi — Olde Towne, The Traceway, and the Mississippi College area. Mature pecan canopy specialists. Free estimates from Dun-Rite.";
 $canonicalUrl    = "https://dunrite-gutters.com/service-areas/clinton/";
-$ogImage         = "https://i.imgur.com/7Je9z8J.jpeg";
-$heroImage       = "https://i.imgur.com/7Je9z8J.jpeg";
+$ogImage         = "/assets/images/brick-clinton-ms-home-with-dormers-and-seamless-480.webp";
+$heroImage       = "/assets/images/brick-clinton-ms-home-with-dormers-and-seamless-480.webp";
 $currentPage     = "service-areas";
 
 $faqs = [
@@ -40,7 +40,7 @@ include $_SERVER['DOCUMENT_ROOT'] . '/includes/head.php';
 <main id="main-content">
 
   <section class="hero hero--inner" aria-label="Hero">
-    <img src="https://i.imgur.com/7Je9z8J.jpeg" alt="Brick Clinton MS home with dormers and seamless gutters" class="hero-bg" width="1920" height="1080" loading="eager" fetchpriority="high">
+    <img src="/assets/images/brick-clinton-ms-home-with-dormers-and-seamless-480.webp" alt="Brick Clinton MS home with dormers and seamless gutters" class="hero-bg" width="1920" height="1080" loading="eager" fetchpriority="high">
     <div class="hero__inner">
       <div class="hero__copy">
         <span class="eyebrow-label">Clinton, MS · 18 Miles from HQ</span>
@@ -146,7 +146,7 @@ include $_SERVER['DOCUMENT_ROOT'] . '/includes/head.php';
           <p>18 miles from Madison HQ. Free travel.</p>
         </div>
         <div class="reveal-right">
-          <img src="https://i.imgur.com/7Je9z8J.jpeg" alt="Clinton MS brick home with dormers and seamless gutters by Dun-Rite" width="900" height="600" loading="lazy" style="border-radius: var(--radius-md); box-shadow: var(--shadow-lg);">
+          <img src="/assets/images/brick-clinton-ms-home-with-dormers-and-seamless-480.webp" alt="Clinton MS brick home with dormers and seamless gutters by Dun-Rite" width="900" height="600" loading="lazy" style="border-radius: var(--radius-md); box-shadow: var(--shadow-lg);">
         </div>
       </div>
 

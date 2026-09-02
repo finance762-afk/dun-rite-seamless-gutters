@@ -6,8 +6,8 @@
 $pageTitle       = "Gutter Services in Madison, MS | Seamless, Copper, Cleaning, Repair";
 $pageDescription = "Eight gutter services across central Mississippi. Seamless installation, copper specialty, gutter guards, cleaning, repair, commercial, custom downspouts. 25-year warranty. Free estimates.";
 $canonicalUrl    = "https://dunrite-gutters.com/services/";
-$ogImage         = "https://i.imgur.com/2HO8Y5F.jpeg";
-$heroImage       = "https://i.imgur.com/2HO8Y5F.jpeg";
+$ogImage         = "/assets/images/worker-installing-seamless-gutters-on-a-tile-roo-480.webp";
+$heroImage       = "/assets/images/worker-installing-seamless-gutters-on-a-tile-roo-480.webp";
 $currentPage     = "services";
 
 $cities = ["Brandon","Jackson","Canton","Madison","Pearl","Richland","Flowood","Florence","Gluckstadt","Bolton","Clinton","Terry","Ridgeland","Raymond"];
@@ -57,7 +57,7 @@ $schemaGraph = [
       "@id"          => "https://dunrite-gutters.com/#org",
       "name"         => "Dun-Rite Seamless Gutters, Inc.",
       "url"          => "https://dunrite-gutters.com",
-      "logo"         => "https://i.imgur.com/xRVJ7rY.jpeg",
+      "logo"         => "/assets/images/logo.jpeg",
       "foundingDate" => "1996"
     ],
   ]
@@ -72,7 +72,7 @@ include $_SERVER['DOCUMENT_ROOT'] . '/includes/head.php';
 
   <!-- HERO -->
   <section class="hero hero--inner" aria-label="Hero">
-    <img src="https://i.imgur.com/2HO8Y5F.jpeg" alt="Worker installing seamless gutters on a tile-roof Mississippi home" class="hero-bg" width="1920" height="1080" loading="eager" fetchpriority="high">
+    <img src="/assets/images/worker-installing-seamless-gutters-on-a-tile-roo-480.webp" alt="Worker installing seamless gutters on a tile-roof Mississippi home" class="hero-bg" width="1920" height="1080" loading="eager" fetchpriority="high">
     <div class="hero__inner">
       <div class="hero__copy">
         <span class="eyebrow-label">What We Offer</span>
@@ -133,7 +133,7 @@ include $_SERVER['DOCUMENT_ROOT'] . '/includes/head.php';
         <a href="/services/seamless-gutter-installation/" class="service-card-with-image card-tint-1 reveal-up reveal-delay-1">
           <div class="service-card__image">
             <picture>
-              <img src="https://i.imgur.com/3nVl1Ha.jpeg" alt="Seamless gutter installation on a Mississippi home — custom on-site forming" width="800" height="480" loading="lazy">
+              <img src="/assets/images/seamless-gutter-installation-on-yellow-two-story-480.webp" alt="Seamless gutter installation on a Mississippi home — custom on-site forming" width="800" height="480" loading="lazy">
             </picture>
           </div>
           <div class="service-card__body">
@@ -152,7 +152,7 @@ include $_SERVER['DOCUMENT_ROOT'] . '/includes/head.php';
         <a href="/services/aluminum-gutters/" class="service-card-with-image card-tint-2 reveal-up reveal-delay-2">
           <div class="service-card__image">
             <picture>
-              <img src="https://i.imgur.com/8tTXO7O.jpeg" alt="Aluminum seamless gutters installed on a brick home in Madison, Mississippi" width="800" height="480" loading="lazy">
+              <img src="/assets/images/aluminum-gutters-installed-on-modern-white-sided-480.webp" alt="Aluminum seamless gutters installed on a brick home in Madison, Mississippi" width="800" height="480" loading="lazy">
             </picture>
           </div>
           <div class="service-card__body">
@@ -171,7 +171,7 @@ include $_SERVER['DOCUMENT_ROOT'] . '/includes/head.php';
         <a href="/services/copper-gutters/" class="service-card-with-image card-tint-3 copper-feature reveal-up reveal-delay-3">
           <div class="service-card__image">
             <picture>
-              <img src="https://i.imgur.com/a54eolx.jpeg" alt="Hand-soldered copper gutters on a high-end Mississippi home — Dun-Rite specialty work" width="800" height="480" loading="lazy">
+              <img src="/assets/images/mediterranean-estate-with-hand-installed-copper-960.webp" srcset="/assets/images/mediterranean-estate-with-hand-installed-copper-480.webp 480w, /assets/images/mediterranean-estate-with-hand-installed-copper-960.webp 960w" sizes="(max-width: 768px) 100vw, 800px" alt="Hand-soldered copper gutters on a high-end Mississippi home — Dun-Rite specialty work" width="800" height="480" loading="lazy">
             </picture>
           </div>
           <div class="service-card__body">
@@ -190,7 +190,7 @@ include $_SERVER['DOCUMENT_ROOT'] . '/includes/head.php';
         <a href="/services/gutter-guards/" class="service-card-with-image card-tint-1 reveal-up reveal-delay-4">
           <div class="service-card__image">
             <picture>
-              <img src="https://i.imgur.com/v9flHNM.jpeg" alt="Micro-mesh gutter guard installed on K-style aluminum gutters in central Mississippi" width="800" height="480" loading="lazy">
+              <img src="/assets/images/micro-mesh-gutter-guard-installed-on-k-style-alu-480.webp" alt="Micro-mesh gutter guard installed on K-style aluminum gutters in central Mississippi" width="800" height="480" loading="lazy">
             </picture>
           </div>
           <div class="service-card__body">
@@ -209,7 +209,7 @@ include $_SERVER['DOCUMENT_ROOT'] . '/includes/head.php';
         <a href="/services/gutter-cleaning/" class="service-card-with-image card-tint-3 reveal-up reveal-delay-1">
           <div class="service-card__image">
             <picture>
-              <img src="https://i.imgur.com/jAqOpHk.jpeg" alt="Technician cleaning debris from gutters on a two-story home in Jackson, Mississippi" width="800" height="480" loading="lazy">
+              <img src="/assets/images/gloved-hand-removing-leaves-from-clogged-residen-480.webp" alt="Technician cleaning debris from gutters on a two-story home in Jackson, Mississippi" width="800" height="480" loading="lazy">
             </picture>
           </div>
           <div class="service-card__body">
@@ -228,7 +228,7 @@ include $_SERVER['DOCUMENT_ROOT'] . '/includes/head.php';
         <a href="/services/gutter-repair-replacement/" class="service-card-with-image card-tint-2 reveal-up reveal-delay-2">
           <div class="service-card__image">
             <picture>
-              <img src="https://i.imgur.com/Hr2Nlwl.jpeg" alt="Gutter repair and sagging section replacement on a ranch-style Mississippi home" width="800" height="480" loading="lazy">
+              <img src="/assets/images/worker-installing-replacement-gutters-on-mississ-480.webp" alt="Gutter repair and sagging section replacement on a ranch-style Mississippi home" width="800" height="480" loading="lazy">
             </picture>
           </div>
           <div class="service-card__body">
@@ -247,7 +247,7 @@ include $_SERVER['DOCUMENT_ROOT'] . '/includes/head.php';
         <a href="/services/commercial-gutters/" class="service-card-with-image card-tint-1 reveal-up reveal-delay-3">
           <div class="service-card__image">
             <picture>
-              <img src="https://i.imgur.com/F4Wh56M.jpeg" alt="Commercial gutter installation on a retail building in the greater Jackson, Mississippi area" width="800" height="480" loading="lazy">
+              <img src="/assets/images/commercial-building-gutter-installation-in-missi-480.webp" alt="Commercial gutter installation on a retail building in the greater Jackson, Mississippi area" width="800" height="480" loading="lazy">
             </picture>
           </div>
           <div class="service-card__body">
@@ -266,7 +266,7 @@ include $_SERVER['DOCUMENT_ROOT'] . '/includes/head.php';
         <a href="/services/custom-downspouts/" class="service-card-with-image card-tint-3 reveal-up reveal-delay-4">
           <div class="service-card__image">
             <picture>
-              <img src="https://i.imgur.com/iX7CNj7.jpeg" alt="Custom round copper downspout installed on a Madison, Mississippi home" width="800" height="480" loading="lazy">
+              <img src="/assets/images/custom-downspout-drainage-installation-at-buildi-480.webp" alt="Custom round copper downspout installed on a Madison, Mississippi home" width="800" height="480" loading="lazy">
             </picture>
           </div>
           <div class="service-card__body">

@@ -8,7 +8,7 @@ $currentPage = $currentPage ?? '';
 <nav class="navbar" role="navigation" aria-label="Primary">
   <div class="navbar-inner">
     <a href="/" class="navbar-brand" aria-label="Dun-Rite Seamless Gutters home">
-      <img src="https://i.imgur.com/xRVJ7rY.jpeg" alt="Dun-Rite Seamless Gutters, Inc." class="navbar-logo" width="60" height="60">
+      <img src="/assets/images/logo.jpeg" alt="Dun-Rite Seamless Gutters, Inc." class="navbar-logo" width="60" height="60">
     </a>
 
     <ul class="nav-links">

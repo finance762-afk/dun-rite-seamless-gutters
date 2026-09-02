@@ -6,8 +6,8 @@
 $pageTitle       = "Frequently Asked Questions | Dun-Rite Seamless Gutters Mississippi";
 $pageDescription = "Common questions about gutter installation, pricing, materials, copper specialty, gutter guards, and service areas in Mississippi. Answers from Dun-Rite Seamless Gutters.";
 $canonicalUrl    = "https://dunrite-gutters.com/faq/";
-$ogImage         = "https://i.imgur.com/2HO8Y5F.jpeg";
-$heroImage       = "https://i.imgur.com/2HO8Y5F.jpeg";
+$ogImage         = "/assets/images/worker-installing-seamless-gutters-on-a-tile-roo-480.webp";
+$heroImage       = "/assets/images/worker-installing-seamless-gutters-on-a-tile-roo-480.webp";
 $currentPage     = "faq";
 
 $sections = [
@@ -124,7 +124,7 @@ include $_SERVER['DOCUMENT_ROOT'] . '/includes/head.php';
 
   <!-- HERO (60vh, no form) -->
   <section class="hero hero--inner" aria-label="FAQ hero" style="min-height: 60vh;">
-    <img src="https://i.imgur.com/2HO8Y5F.jpeg" alt="Worker installing seamless gutters on a tile-roof Mississippi home" class="hero-bg" width="1920" height="1080" loading="eager" fetchpriority="high">
+    <img src="/assets/images/worker-installing-seamless-gutters-on-a-tile-roo-480.webp" alt="Worker installing seamless gutters on a tile-roof Mississippi home" class="hero-bg" width="1920" height="1080" loading="eager" fetchpriority="high">
     <div class="hero__inner" style="display:block; text-align:center; max-width: 720px;">
       <div class="hero__copy">
         <span class="eyebrow-label">Questions We Hear Every Week</span>

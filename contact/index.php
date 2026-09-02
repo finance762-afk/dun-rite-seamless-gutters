@@ -6,8 +6,8 @@
 $pageTitle       = "Contact Dun-Rite Seamless Gutters | Madison, MS Estimates";
 $pageDescription = "Get a free seamless gutter estimate from Dun-Rite Seamless Gutters in Madison, MS. Call (601) 750-1800 or submit our form. Same-day callbacks. Service across 14 Mississippi cities.";
 $canonicalUrl    = "https://dunrite-gutters.com/contact/";
-$ogImage         = "https://i.imgur.com/kRJ17by.jpeg";
-$heroImage       = "https://i.imgur.com/kRJ17by.jpeg";
+$ogImage         = "/assets/images/dun-rite-seamless-gutters-service-truck-on-a-mis-480.webp";
+$heroImage       = "/assets/images/dun-rite-seamless-gutters-service-truck-on-a-mis-480.webp";
 $currentPage     = "contact";
 
 $cities = ["Brandon","Jackson","Canton","Madison","Pearl","Richland","Flowood","Florence","Gluckstadt","Bolton","Clinton","Terry","Ridgeland","Raymond"];
@@ -86,7 +86,7 @@ include $_SERVER['DOCUMENT_ROOT'] . '/includes/head.php';
 
   <!-- HERO (60vh, no form — full form is below) -->
   <section class="hero hero--inner" aria-label="Contact hero" style="min-height: 60vh;">
-    <img src="https://i.imgur.com/kRJ17by.jpeg" alt="Dun-Rite Seamless Gutters service truck on a Mississippi installation jobsite" class="hero-bg" width="1920" height="1080" loading="eager" fetchpriority="high">
+    <img src="/assets/images/dun-rite-seamless-gutters-service-truck-on-a-mis-480.webp" alt="Dun-Rite Seamless Gutters service truck on a Mississippi installation jobsite" class="hero-bg" width="1920" height="1080" loading="eager" fetchpriority="high">
     <div class="hero__inner" style="display:block; text-align:center; max-width: 720px;">
       <div class="hero__copy">
         <span class="eyebrow-label">Get Your Free Estimate</span>

@@ -6,8 +6,8 @@
 $pageTitle       = "Gutter Repair & Replacement in Madison, MS | Dun-Rite";
 $pageDescription = "Sagging gutter repair, leaking seam fixes, and full system replacement across central Mississippi. Same-day estimates. 25-year warranty on replacements. Dun-Rite Seamless Gutters.";
 $canonicalUrl    = "https://dunrite-gutters.com/services/gutter-repair-replacement/";
-$ogImage         = "https://i.imgur.com/Hr2Nlwl.jpeg";
-$heroImage       = "https://i.imgur.com/Hr2Nlwl.jpeg";
+$ogImage         = "/assets/images/worker-installing-replacement-gutters-on-mississ-480.webp";
+$heroImage       = "/assets/images/worker-installing-replacement-gutters-on-mississ-480.webp";
 $currentPage     = "services";
 
 $cities = ["Brandon","Jackson","Canton","Madison","Pearl","Richland","Flowood","Florence","Gluckstadt","Bolton","Clinton","Terry","Ridgeland","Raymond"];
@@ -72,7 +72,7 @@ include $_SERVER['DOCUMENT_ROOT'] . '/includes/head.php';
 <main id="main-content">
 
   <section class="hero hero--inner" aria-label="Hero">
-    <img src="https://i.imgur.com/Hr2Nlwl.jpeg" alt="Worker on ladder installing replacement gutters in Mississippi" class="hero-bg" width="1920" height="1080" loading="eager" fetchpriority="high">
+    <img src="/assets/images/worker-installing-replacement-gutters-on-mississ-480.webp" alt="Worker on ladder installing replacement gutters in Mississippi" class="hero-bg" width="1920" height="1080" loading="eager" fetchpriority="high">
     <div class="hero__inner">
       <div class="hero__copy">
         <span class="eyebrow-label">Sagging · Leaking · Storm Damage</span>
@@ -205,7 +205,7 @@ include $_SERVER['DOCUMENT_ROOT'] . '/includes/head.php';
           <p>If a tree fell on your gutter, hail just dented your downspouts, or wind ripped a run off your fascia, call within 72 hours of the storm. Earlier documentation helps your claim and gets you on our schedule before the post-storm rush.</p>
         </div>
         <div class="reveal-right">
-          <img src="https://i.imgur.com/v9I4W31.jpeg" alt="Worker installing replacement black metal downspout to stucco wall after storm damage in Mississippi" width="900" height="600" loading="lazy" style="border-radius: var(--radius-md); box-shadow: var(--shadow-lg);">
+          <img src="/assets/images/worker-installing-replacement-black-metal-downsp-480.webp" alt="Worker installing replacement black metal downspout to stucco wall after storm damage in Mississippi" width="900" height="600" loading="lazy" style="border-radius: var(--radius-md); box-shadow: var(--shadow-lg);">
         </div>
       </div>
 

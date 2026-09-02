@@ -6,8 +6,8 @@
 $pageTitle       = "Seamless Gutter Installation in Madison, MS | Dun-Rite";
 $pageDescription = "Custom seamless aluminum gutter installation across central Mississippi. 5-inch and 6-inch K-style profiles formed on-site. 25-year warranty. Free estimates from Dun-Rite Seamless Gutters.";
 $canonicalUrl    = "https://dunrite-gutters.com/services/seamless-gutter-installation/";
-$ogImage         = "https://i.imgur.com/3nVl1Ha.jpeg";
-$heroImage       = "https://i.imgur.com/3nVl1Ha.jpeg";
+$ogImage         = "/assets/images/seamless-gutter-installation-on-yellow-two-story-480.webp";
+$heroImage       = "/assets/images/seamless-gutter-installation-on-yellow-two-story-480.webp";
 $currentPage     = "services";
 
 $cities = ["Brandon","Jackson","Canton","Madison","Pearl","Richland","Flowood","Florence","Gluckstadt","Bolton","Clinton","Terry","Ridgeland","Raymond"];
@@ -80,7 +80,7 @@ include $_SERVER['DOCUMENT_ROOT'] . '/includes/head.php';
 
   <!-- HERO -->
   <section class="hero hero--inner" aria-label="Hero">
-    <img src="https://i.imgur.com/3nVl1Ha.jpeg" alt="Yellow two-story Madison MS home with custom seamless gutter installation" class="hero-bg" width="1920" height="1080" loading="eager" fetchpriority="high">
+    <img src="/assets/images/seamless-gutter-installation-on-yellow-two-story-480.webp" alt="Yellow two-story Madison MS home with custom seamless gutter installation" class="hero-bg" width="1920" height="1080" loading="eager" fetchpriority="high">
     <div class="hero__inner">
       <div class="hero__copy">
         <span class="eyebrow-label">Residential · 5-inch &amp; 6-inch K-style</span>
@@ -140,7 +140,7 @@ include $_SERVER['DOCUMENT_ROOT'] . '/includes/head.php';
           <p>The result: a gutter system that doesn't leak at year five, doesn't sag at year ten, and stays installed until you decide to replace it.</p>
         </div>
         <div class="reveal-right">
-          <img src="https://i.imgur.com/BxWg36W.jpeg" alt="Hand using yellow screwdriver to secure metal seamless gutter to fascia in Mississippi" width="900" height="600" loading="lazy" style="border-radius: var(--radius-md); box-shadow: var(--shadow-lg);">
+          <img src="/assets/images/hand-using-yellow-screwdriver-to-secure-metal-se-480.webp" alt="Hand using yellow screwdriver to secure metal seamless gutter to fascia in Mississippi" width="900" height="600" loading="lazy" style="border-radius: var(--radius-md); box-shadow: var(--shadow-lg);">
         </div>
       </div>
     </div>
@@ -192,7 +192,7 @@ include $_SERVER['DOCUMENT_ROOT'] . '/includes/head.php';
     <div class="container">
       <div class="split">
         <div class="reveal-left">
-          <img src="https://i.imgur.com/RzYB8p1.jpeg" alt="Color sample lineup of seamless gutter options including white, black, and copper from Dun-Rite" width="900" height="675" loading="lazy" style="border-radius: var(--radius-md); box-shadow: var(--shadow-lg);">
+          <img src="/assets/images/color-sample-lineup-of-seamless-gutter-options-i-480.webp" alt="Color sample lineup of seamless gutter options including white, black, and copper from Dun-Rite" width="900" height="675" loading="lazy" style="border-radius: var(--radius-md); box-shadow: var(--shadow-lg);">
         </div>
         <div class="reveal-right">
           <span class="eyebrow-label">Finishes</span>

@@ -6,8 +6,8 @@
 $pageTitle       = "Accessibility Statement | Dun-Rite Seamless Gutters";
 $pageDescription = "Dun-Rite Seamless Gutters' commitment to accessibility. WCAG 2.1 Level AA conformance and feedback channel.";
 $canonicalUrl    = "https://dunrite-gutters.com/accessibility/";
-$ogImage         = "https://i.imgur.com/xRVJ7rY.jpeg";
-$heroImage       = "https://i.imgur.com/lHGkpv5.jpeg";
+$ogImage         = "/assets/images/logo.jpeg";
+$heroImage       = "/assets/images/brick-stucco-mississippi-home-with-arched-entry-480.webp";
 $currentPage     = "accessibility";
 
 $companyName       = "Dun-Rite Seamless Gutters, Inc.";
@@ -43,7 +43,7 @@ include $_SERVER['DOCUMENT_ROOT'] . '/includes/head.php';
 <main id="main-content">
 
   <section class="hero hero--inner hero--legal" aria-label="Accessibility Statement">
-    <img src="https://i.imgur.com/lHGkpv5.jpeg" alt="Brick stucco Madison MS home — Dun-Rite Seamless Gutters" class="hero-bg" width="1920" height="1080" loading="eager" fetchpriority="high">
+    <img src="/assets/images/brick-stucco-mississippi-home-with-arched-entry-480.webp" alt="Brick stucco Madison MS home — Dun-Rite Seamless Gutters" class="hero-bg" width="1920" height="1080" loading="eager" fetchpriority="high">
     <div class="hero__inner">
       <div class="hero__copy">
         <span class="eyebrow-label">Legal</span>

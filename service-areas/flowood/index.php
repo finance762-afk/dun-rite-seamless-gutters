@@ -6,8 +6,8 @@
 $pageTitle       = "Gutter Services in Flowood, MS | Dun-Rite Seamless Gutters";
 $pageDescription = "Seamless gutter installation in Flowood, Mississippi — including the Lakeland Drive corridor, Sandalwood, and Lakeland Heights. Free estimates from Dun-Rite Seamless Gutters.";
 $canonicalUrl    = "https://dunrite-gutters.com/service-areas/flowood/";
-$ogImage         = "https://i.imgur.com/8tTXO7O.jpeg";
-$heroImage       = "https://i.imgur.com/8tTXO7O.jpeg";
+$ogImage         = "/assets/images/aluminum-gutters-installed-on-modern-white-sided-480.webp";
+$heroImage       = "/assets/images/aluminum-gutters-installed-on-modern-white-sided-480.webp";
 $currentPage     = "service-areas";
 
 $faqs = [
@@ -40,7 +40,7 @@ include $_SERVER['DOCUMENT_ROOT'] . '/includes/head.php';
 <main id="main-content">
 
   <section class="hero hero--inner" aria-label="Hero">
-    <img src="https://i.imgur.com/8tTXO7O.jpeg" alt="Modern white-sided Flowood MS home with seamless gutter installation" class="hero-bg" width="1920" height="1080" loading="eager" fetchpriority="high">
+    <img src="/assets/images/aluminum-gutters-installed-on-modern-white-sided-480.webp" alt="Modern white-sided Flowood MS home with seamless gutter installation" class="hero-bg" width="1920" height="1080" loading="eager" fetchpriority="high">
     <div class="hero__inner">
       <div class="hero__copy">
         <span class="eyebrow-label">Flowood, MS · 20 Miles from HQ</span>
@@ -146,7 +146,7 @@ include $_SERVER['DOCUMENT_ROOT'] . '/includes/head.php';
           <p>20 miles from Madison HQ. No travel surcharge.</p>
         </div>
         <div class="reveal-right">
-          <img src="https://i.imgur.com/oaW4wFF.jpeg" alt="Dark seamless gutter installed on wood-sided Flowood MS home eave by Dun-Rite" width="900" height="600" loading="lazy" style="border-radius: var(--radius-md); box-shadow: var(--shadow-lg);">
+          <img src="/assets/images/dark-seamless-gutter-on-wood-sided-florence-ms-h-480.webp" alt="Dark seamless gutter installed on wood-sided Flowood MS home eave by Dun-Rite" width="900" height="600" loading="lazy" style="border-radius: var(--radius-md); box-shadow: var(--shadow-lg);">
         </div>
       </div>
 

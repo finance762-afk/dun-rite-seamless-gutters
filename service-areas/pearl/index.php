@@ -6,8 +6,8 @@
 $pageTitle       = "Gutter Services in Pearl, MS | Dun-Rite Seamless Gutters";
 $pageDescription = "Seamless gutter installation in Pearl, Mississippi — Pearl River suburb. 1970s-80s ranch home specialists. Free estimates from Dun-Rite Seamless Gutters.";
 $canonicalUrl    = "https://dunrite-gutters.com/service-areas/pearl/";
-$ogImage         = "https://i.imgur.com/2HYt7pb.jpeg";
-$heroImage       = "https://i.imgur.com/2HYt7pb.jpeg";
+$ogImage         = "/assets/images/brick-pearl-ms-home-with-stucco-accent-and-seaml-480.webp";
+$heroImage       = "/assets/images/brick-pearl-ms-home-with-stucco-accent-and-seaml-480.webp";
 $currentPage     = "service-areas";
 
 $faqs = [
@@ -40,7 +40,7 @@ include $_SERVER['DOCUMENT_ROOT'] . '/includes/head.php';
 <main id="main-content">
 
   <section class="hero hero--inner" aria-label="Hero">
-    <img src="https://i.imgur.com/2HYt7pb.jpeg" alt="Brick Pearl MS home with stucco accent and seamless gutters" class="hero-bg" width="1920" height="1080" loading="eager" fetchpriority="high">
+    <img src="/assets/images/brick-pearl-ms-home-with-stucco-accent-and-seaml-480.webp" alt="Brick Pearl MS home with stucco accent and seamless gutters" class="hero-bg" width="1920" height="1080" loading="eager" fetchpriority="high">
     <div class="hero__inner">
       <div class="hero__copy">
         <span class="eyebrow-label">Pearl, MS · 15 Miles from HQ</span>
@@ -146,7 +146,7 @@ include $_SERVER['DOCUMENT_ROOT'] . '/includes/head.php';
           <p>15 miles from Madison HQ. No travel surcharge ever.</p>
         </div>
         <div class="reveal-right">
-          <img src="https://i.imgur.com/8tTXO7O.jpeg" alt="Pearl MS modern home with seamless gutters by Dun-Rite" width="900" height="600" loading="lazy" style="border-radius: var(--radius-md); box-shadow: var(--shadow-lg);">
+          <img src="/assets/images/aluminum-gutters-installed-on-modern-white-sided-480.webp" alt="Pearl MS modern home with seamless gutters by Dun-Rite" width="900" height="600" loading="lazy" style="border-radius: var(--radius-md); box-shadow: var(--shadow-lg);">
         </div>
       </div>
 

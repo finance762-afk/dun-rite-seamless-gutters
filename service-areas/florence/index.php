@@ -6,8 +6,8 @@
 $pageTitle       = "Gutter Services in Florence, MS | Dun-Rite Seamless Gutters";
 $pageDescription = "Seamless gutter installation in Florence, Mississippi — semi-rural Rankin County. Larger lots, mature trees, custom downspout work. Free estimates from Dun-Rite Seamless Gutters.";
 $canonicalUrl    = "https://dunrite-gutters.com/service-areas/florence/";
-$ogImage         = "https://i.imgur.com/oaW4wFF.jpeg";
-$heroImage       = "https://i.imgur.com/oaW4wFF.jpeg";
+$ogImage         = "/assets/images/dark-seamless-gutter-on-wood-sided-florence-ms-h-480.webp";
+$heroImage       = "/assets/images/dark-seamless-gutter-on-wood-sided-florence-ms-h-480.webp";
 $currentPage     = "service-areas";
 
 $faqs = [
@@ -39,7 +39,7 @@ include $_SERVER['DOCUMENT_ROOT'] . '/includes/head.php';
 <main id="main-content">
 
   <section class="hero hero--inner" aria-label="Hero">
-    <img src="https://i.imgur.com/oaW4wFF.jpeg" alt="Dark seamless gutter on wood-sided Florence MS home eave" class="hero-bg" width="1920" height="1080" loading="eager" fetchpriority="high">
+    <img src="/assets/images/dark-seamless-gutter-on-wood-sided-florence-ms-h-480.webp" alt="Dark seamless gutter on wood-sided Florence MS home eave" class="hero-bg" width="1920" height="1080" loading="eager" fetchpriority="high">
     <div class="hero__inner">
       <div class="hero__copy">
         <span class="eyebrow-label">Florence, MS · 25 Miles from HQ</span>
@@ -145,7 +145,7 @@ include $_SERVER['DOCUMENT_ROOT'] . '/includes/head.php';
           <p>25 miles from Madison HQ. Free travel both ways.</p>
         </div>
         <div class="reveal-right">
-          <img src="https://i.imgur.com/Hr2Nlwl.jpeg" alt="Florence MS rural home with seamless gutter installation by Dun-Rite" width="900" height="600" loading="lazy" style="border-radius: var(--radius-md); box-shadow: var(--shadow-lg);">
+          <img src="/assets/images/worker-installing-replacement-gutters-on-mississ-480.webp" alt="Florence MS rural home with seamless gutter installation by Dun-Rite" width="900" height="600" loading="lazy" style="border-radius: var(--radius-md); box-shadow: var(--shadow-lg);">
         </div>
       </div>
 

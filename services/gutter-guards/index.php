@@ -6,8 +6,8 @@
 $pageTitle       = "Gutter Guards & Leaf Protection in Madison, MS | Dun-Rite";
 $pageDescription = "Mesh and screen gutter guards installed across central Mississippi. Stop leaves, debris, and clogs. Reduce cleaning frequency. Free estimates from Dun-Rite Seamless Gutters.";
 $canonicalUrl    = "https://dunrite-gutters.com/services/gutter-guards/";
-$ogImage         = "https://i.imgur.com/v9flHNM.jpeg";
-$heroImage       = "https://i.imgur.com/v9flHNM.jpeg";
+$ogImage         = "/assets/images/micro-mesh-gutter-guard-installed-on-k-style-alu-480.webp";
+$heroImage       = "/assets/images/micro-mesh-gutter-guard-installed-on-k-style-alu-480.webp";
 $currentPage     = "services";
 
 $cities = ["Brandon","Jackson","Canton","Madison","Pearl","Richland","Flowood","Florence","Gluckstadt","Bolton","Clinton","Terry","Ridgeland","Raymond"];
@@ -72,7 +72,7 @@ include $_SERVER['DOCUMENT_ROOT'] . '/includes/head.php';
 <main id="main-content">
 
   <section class="hero hero--inner" aria-label="Hero">
-    <img src="https://i.imgur.com/v9flHNM.jpeg" alt="Worker installing mesh gutter guard on a Mississippi home" class="hero-bg" width="1920" height="1080" loading="eager" fetchpriority="high">
+    <img src="/assets/images/micro-mesh-gutter-guard-installed-on-k-style-alu-480.webp" alt="Worker installing mesh gutter guard on a Mississippi home" class="hero-bg" width="1920" height="1080" loading="eager" fetchpriority="high">
     <div class="hero__inner">
       <div class="hero__copy">
         <span class="eyebrow-label">Leaf Protection · Mesh Systems · Clog Prevention</span>
@@ -192,7 +192,7 @@ include $_SERVER['DOCUMENT_ROOT'] . '/includes/head.php';
           <p>We evaluate your existing gutter system as part of every free estimate. If it's in good shape, retrofitting guards is a 2–4 hour job per home. If it needs <a href="/services/gutter-repair-replacement/" style="color: var(--color-accent); border-bottom: 1px solid currentColor;">repair or replacement</a>, we'll quote both pieces together — most homeowners find that combining gutter replacement with new guards saves significantly versus doing them separately.</p>
         </div>
         <div class="reveal-right">
-          <img src="https://i.imgur.com/EtRNOH2.jpeg" alt="Close-up of installed mesh gutter guard on a seamless aluminum gutter system in Mississippi by Dun-Rite" width="900" height="675" loading="lazy" style="border-radius: var(--radius-md); box-shadow: var(--shadow-lg);">
+          <img src="/assets/images/close-up-of-installed-gutter-guard-mesh-leaf-pro-480.webp" alt="Close-up of installed mesh gutter guard on a seamless aluminum gutter system in Mississippi by Dun-Rite" width="900" height="675" loading="lazy" style="border-radius: var(--radius-md); box-shadow: var(--shadow-lg);">
         </div>
       </div>
     </div>

@@ -6,8 +6,8 @@
 $pageTitle       = "Gutter Services in Brandon, MS | Dun-Rite Seamless Gutters";
 $pageDescription = "Seamless gutter installation in Brandon, Mississippi — including Castlewoods, Whisper Lake, and Crosswinds. New construction and Reservoir-area homes. Free estimates from Dun-Rite.";
 $canonicalUrl    = "https://dunrite-gutters.com/service-areas/brandon/";
-$ogImage         = "https://i.imgur.com/3nVl1Ha.jpeg";
-$heroImage       = "https://i.imgur.com/3nVl1Ha.jpeg";
+$ogImage         = "/assets/images/seamless-gutter-installation-on-yellow-two-story-480.webp";
+$heroImage       = "/assets/images/seamless-gutter-installation-on-yellow-two-story-480.webp";
 $currentPage     = "service-areas";
 
 $faqs = [
@@ -51,7 +51,7 @@ include $_SERVER['DOCUMENT_ROOT'] . '/includes/head.php';
 <main id="main-content">
 
   <section class="hero hero--inner" aria-label="Hero">
-    <img src="https://i.imgur.com/3nVl1Ha.jpeg" alt="Yellow two-story Brandon MS home with seamless gutter installation" class="hero-bg" width="1920" height="1080" loading="eager" fetchpriority="high">
+    <img src="/assets/images/seamless-gutter-installation-on-yellow-two-story-480.webp" alt="Yellow two-story Brandon MS home with seamless gutter installation" class="hero-bg" width="1920" height="1080" loading="eager" fetchpriority="high">
     <div class="hero__inner">
       <div class="hero__copy">
         <span class="eyebrow-label">Brandon, MS · 30 Miles from HQ</span>
@@ -150,7 +150,7 @@ include $_SERVER['DOCUMENT_ROOT'] . '/includes/head.php';
     <div class="container">
       <div class="split">
         <div class="reveal-left">
-          <img src="https://i.imgur.com/dRN7AE6.jpeg" alt="Two-story Brandon MS home with balcony and seamless gutter installation by Dun-Rite" width="900" height="600" loading="lazy" style="border-radius: var(--radius-md); box-shadow: var(--shadow-lg);">
+          <img src="/assets/images/two-story-mississippi-home-with-balcony-and-seam-480.webp" alt="Two-story Brandon MS home with balcony and seamless gutter installation by Dun-Rite" width="900" height="600" loading="lazy" style="border-radius: var(--radius-md); box-shadow: var(--shadow-lg);">
         </div>
         <div class="reveal-right">
           <span class="eyebrow-label">What to Expect</span>

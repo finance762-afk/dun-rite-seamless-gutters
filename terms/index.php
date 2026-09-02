@@ -6,8 +6,8 @@
 $pageTitle       = "Terms of Service | Dun-Rite Seamless Gutters";
 $pageDescription = "Terms governing use of dunrite-gutters.com and the services provided by Dun-Rite Seamless Gutters, Inc., a Mississippi corporation.";
 $canonicalUrl    = "https://dunrite-gutters.com/terms/";
-$ogImage         = "https://i.imgur.com/xRVJ7rY.jpeg";
-$heroImage       = "https://i.imgur.com/lHGkpv5.jpeg";
+$ogImage         = "/assets/images/logo.jpeg";
+$heroImage       = "/assets/images/brick-stucco-mississippi-home-with-arched-entry-480.webp";
 $currentPage     = "terms";
 
 $companyName       = "Dun-Rite Seamless Gutters, Inc.";
@@ -46,7 +46,7 @@ include $_SERVER['DOCUMENT_ROOT'] . '/includes/head.php';
 <main id="main-content">
 
   <section class="hero hero--inner hero--legal" aria-label="Terms of Service">
-    <img src="https://i.imgur.com/lHGkpv5.jpeg" alt="Brick stucco Madison MS home — Dun-Rite Seamless Gutters" class="hero-bg" width="1920" height="1080" loading="eager" fetchpriority="high">
+    <img src="/assets/images/brick-stucco-mississippi-home-with-arched-entry-480.webp" alt="Brick stucco Madison MS home — Dun-Rite Seamless Gutters" class="hero-bg" width="1920" height="1080" loading="eager" fetchpriority="high">
     <div class="hero__inner">
       <div class="hero__copy">
         <span class="eyebrow-label">Legal</span>

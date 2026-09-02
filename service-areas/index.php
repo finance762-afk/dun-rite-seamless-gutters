@@ -6,8 +6,8 @@
 $pageTitle       = "Service Areas in Central Mississippi | Dun-Rite Seamless Gutters";
 $pageDescription = "Seamless gutter installation across 14 Mississippi cities including Madison, Jackson, Brandon, Flowood, Ridgeland, Clinton, and more. Free estimates from Dun-Rite Seamless Gutters.";
 $canonicalUrl    = "https://dunrite-gutters.com/service-areas/";
-$ogImage         = "https://i.imgur.com/kRJ17by.jpeg";
-$heroImage       = "https://i.imgur.com/kRJ17by.jpeg";
+$ogImage         = "/assets/images/dun-rite-seamless-gutters-service-truck-on-a-mis-480.webp";
+$heroImage       = "/assets/images/dun-rite-seamless-gutters-service-truck-on-a-mis-480.webp";
 $currentPage     = "service-areas";
 
 $cities = [
@@ -70,7 +70,7 @@ include $_SERVER['DOCUMENT_ROOT'] . '/includes/head.php';
 
   <!-- HERO -->
   <section class="hero hero--inner" aria-label="Hero">
-    <img src="https://i.imgur.com/kRJ17by.jpeg" alt="Dun-Rite Seamless Gutters service truck on a Mississippi installation jobsite" class="hero-bg" width="1920" height="1080" loading="eager" fetchpriority="high">
+    <img src="/assets/images/dun-rite-seamless-gutters-service-truck-on-a-mis-480.webp" alt="Dun-Rite Seamless Gutters service truck on a Mississippi installation jobsite" class="hero-bg" width="1920" height="1080" loading="eager" fetchpriority="high">
     <div class="hero__inner">
       <div class="hero__copy">
         <span class="eyebrow-label">14 Mississippi Cities Served</span>

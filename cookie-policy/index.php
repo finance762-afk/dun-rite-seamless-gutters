@@ -6,8 +6,8 @@
 $pageTitle       = "Cookie Policy | Dun-Rite Seamless Gutters";
 $pageDescription = "How dunrite-gutters.com uses cookies and similar tracking technologies. Disclosures for Google Analytics, Google Fonts, and third-party services.";
 $canonicalUrl    = "https://dunrite-gutters.com/cookie-policy/";
-$ogImage         = "https://i.imgur.com/xRVJ7rY.jpeg";
-$heroImage       = "https://i.imgur.com/lHGkpv5.jpeg";
+$ogImage         = "/assets/images/logo.jpeg";
+$heroImage       = "/assets/images/brick-stucco-mississippi-home-with-arched-entry-480.webp";
 $currentPage     = "cookie-policy";
 
 $companyName       = "Dun-Rite Seamless Gutters, Inc.";
@@ -44,7 +44,7 @@ include $_SERVER['DOCUMENT_ROOT'] . '/includes/head.php';
 <main id="main-content">
 
   <section class="hero hero--inner hero--legal" aria-label="Cookie Policy">
-    <img src="https://i.imgur.com/lHGkpv5.jpeg" alt="Brick stucco Madison MS home — Dun-Rite Seamless Gutters" class="hero-bg" width="1920" height="1080" loading="eager" fetchpriority="high">
+    <img src="/assets/images/brick-stucco-mississippi-home-with-arched-entry-480.webp" alt="Brick stucco Madison MS home — Dun-Rite Seamless Gutters" class="hero-bg" width="1920" height="1080" loading="eager" fetchpriority="high">
     <div class="hero__inner">
       <div class="hero__copy">
         <span class="eyebrow-label">Legal</span>
@@ -94,7 +94,6 @@ include $_SERVER['DOCUMENT_ROOT'] . '/includes/head.php';
     <ul>
       <li><strong>Google Fonts</strong> (fonts.googleapis.com, fonts.gstatic.com) — for site typography.</li>
       <li><strong>Lucide Icons</strong> (unpkg.com) — for site icons.</li>
-      <li><strong>Imgur</strong> (i.imgur.com) — for hosted images.</li>
       <li><strong>Formsubmit.co</strong> — for processing contact form submissions (only when you submit a form).</li>
     </ul>
 

@@ -6,8 +6,8 @@
 $pageTitle       = "Custom Downspouts in Madison, MS | Round, Square, Decorative";
 $pageDescription = "Custom downspout installation across central Mississippi. Round, square, oversized, and decorative copper downspouts. Color-matched to your gutters. Dun-Rite Seamless Gutters.";
 $canonicalUrl    = "https://dunrite-gutters.com/services/custom-downspouts/";
-$ogImage         = "https://i.imgur.com/iX7CNj7.jpeg";
-$heroImage       = "https://i.imgur.com/iX7CNj7.jpeg";
+$ogImage         = "/assets/images/custom-downspout-drainage-installation-at-buildi-480.webp";
+$heroImage       = "/assets/images/custom-downspout-drainage-installation-at-buildi-480.webp";
 $currentPage     = "services";
 
 $cities = ["Brandon","Jackson","Canton","Madison","Pearl","Richland","Flowood","Florence","Gluckstadt","Bolton","Clinton","Terry","Ridgeland","Raymond"];
@@ -72,7 +72,7 @@ include $_SERVER['DOCUMENT_ROOT'] . '/includes/head.php';
 <main id="main-content">
 
   <section class="hero hero--inner" aria-label="Hero">
-    <img src="https://i.imgur.com/iX7CNj7.jpeg" alt="Worker installing white PVC downspout drainage at a Mississippi home" class="hero-bg" width="1920" height="1080" loading="eager" fetchpriority="high">
+    <img src="/assets/images/custom-downspout-drainage-installation-at-buildi-480.webp" alt="Worker installing white PVC downspout drainage at a Mississippi home" class="hero-bg" width="1920" height="1080" loading="eager" fetchpriority="high">
     <div class="hero__inner">
       <div class="hero__copy">
         <span class="eyebrow-label">Round · Square · Oversized · Decorative</span>
@@ -206,7 +206,7 @@ include $_SERVER['DOCUMENT_ROOT'] . '/includes/head.php';
           <p>We use 4-inch corrugated or smooth PVC pipe, hand-trenched or machine-trenched depending on landscape disruption tolerance. Pipe terminates at a daylight discharge, French drain, or popup emitter. Cost typically runs $300–$800 per drainage run depending on length and trenching access.</p>
         </div>
         <div class="reveal-right">
-          <img src="https://i.imgur.com/TiVJmgu.jpeg" alt="Seamless gutter and downspout corner detail with proper drainage installation by Dun-Rite Mississippi" width="900" height="600" loading="lazy" style="border-radius: var(--radius-md); box-shadow: var(--shadow-lg);">
+          <img src="/assets/images/seamless-gutter-and-downspout-corner-detail-with-480.webp" alt="Seamless gutter and downspout corner detail with proper drainage installation by Dun-Rite Mississippi" width="900" height="600" loading="lazy" style="border-radius: var(--radius-md); box-shadow: var(--shadow-lg);">
         </div>
       </div>
     </div>
@@ -217,7 +217,7 @@ include $_SERVER['DOCUMENT_ROOT'] . '/includes/head.php';
     <div class="container">
       <div class="split">
         <div class="reveal-left">
-          <img src="https://i.imgur.com/v9I4W31.jpeg" alt="Worker installing black metal downspout on stucco home wall in Mississippi by Dun-Rite" width="900" height="600" loading="lazy" style="border-radius: var(--radius-md); box-shadow: var(--shadow-lg);">
+          <img src="/assets/images/worker-installing-replacement-black-metal-downsp-480.webp" alt="Worker installing black metal downspout on stucco home wall in Mississippi by Dun-Rite" width="900" height="600" loading="lazy" style="border-radius: var(--radius-md); box-shadow: var(--shadow-lg);">
         </div>
         <div class="reveal-right">
           <span class="eyebrow-label">Retrofit Work</span>

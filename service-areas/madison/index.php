@@ -6,8 +6,8 @@
 $pageTitle       = "Gutter Services in Madison, MS | Dun-Rite Home Base";
 $pageDescription = "Madison's gutter specialist since 1996. Seamless installation, copper, gutter guards, cleaning, and repair throughout Reunion, Lake Caroline, Old Annandale, and all Madison neighborhoods. Free estimates.";
 $canonicalUrl    = "https://dunrite-gutters.com/service-areas/madison/";
-$ogImage         = "https://i.imgur.com/lHGkpv5.jpeg";
-$heroImage       = "https://i.imgur.com/lHGkpv5.jpeg";
+$ogImage         = "/assets/images/brick-stucco-mississippi-home-with-arched-entry-480.webp";
+$heroImage       = "/assets/images/brick-stucco-mississippi-home-with-arched-entry-480.webp";
 $currentPage     = "service-areas";
 
 $faqs = [
@@ -67,7 +67,7 @@ include $_SERVER['DOCUMENT_ROOT'] . '/includes/head.php';
 <main id="main-content">
 
   <section class="hero hero--inner" aria-label="Hero">
-    <img src="https://i.imgur.com/lHGkpv5.jpeg" alt="Brick stucco Madison MS home with arched entry and seamless gutters" class="hero-bg" width="1920" height="1080" loading="eager" fetchpriority="high">
+    <img src="/assets/images/brick-stucco-mississippi-home-with-arched-entry-480.webp" alt="Brick stucco Madison MS home with arched entry and seamless gutters" class="hero-bg" width="1920" height="1080" loading="eager" fetchpriority="high">
     <div class="hero__inner">
       <div class="hero__copy">
         <span class="eyebrow-label">Madison, MS · Home Base Since 1996</span>
@@ -132,8 +132,8 @@ include $_SERVER['DOCUMENT_ROOT'] . '/includes/head.php';
         </div>
 
         <div class="about-image-stack reveal-right">
-          <img src="https://i.imgur.com/qJMX4SH.png" alt="Mark Dungan, owner of Dun-Rite Seamless Gutters in Madison MS since 1996" class="about-image-primary" width="900" height="675" loading="lazy">
-          <img src="https://i.imgur.com/lHGkpv5.jpeg" alt="Brick stucco Madison home with arched entry and seamless gutters by Dun-Rite" class="about-image-secondary" width="600" height="500" loading="lazy">
+          <img src="/assets/images/mark-dungan-owner-of-dun-rite-seamless-gutters-s-960.webp" srcset="/assets/images/mark-dungan-owner-of-dun-rite-seamless-gutters-s-480.webp 480w, /assets/images/mark-dungan-owner-of-dun-rite-seamless-gutters-s-960.webp 960w" sizes="(max-width: 768px) 100vw, 900px" alt="Mark Dungan, owner of Dun-Rite Seamless Gutters in Madison MS since 1996" class="about-image-primary" width="900" height="675" loading="lazy">
+          <img src="/assets/images/brick-stucco-mississippi-home-with-arched-entry-480.webp" alt="Brick stucco Madison home with arched entry and seamless gutters by Dun-Rite" class="about-image-secondary" width="600" height="500" loading="lazy">
         </div>
       </div>
     </div>
@@ -250,7 +250,7 @@ include $_SERVER['DOCUMENT_ROOT'] . '/includes/head.php';
     <div class="container">
       <div class="split">
         <div class="reveal-left">
-          <img src="https://i.imgur.com/3nVl1Ha.jpeg" alt="Yellow two-story Madison MS home with custom seamless gutters by Dun-Rite" width="900" height="600" loading="lazy" style="border-radius: var(--radius-md); box-shadow: var(--shadow-lg);">
+          <img src="/assets/images/seamless-gutter-installation-on-yellow-two-story-480.webp" alt="Yellow two-story Madison MS home with custom seamless gutters by Dun-Rite" width="900" height="600" loading="lazy" style="border-radius: var(--radius-md); box-shadow: var(--shadow-lg);">
         </div>
         <div class="reveal-right">
           <span class="eyebrow-label">What to Expect</span>

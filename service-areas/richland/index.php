@@ -6,8 +6,8 @@
 $pageTitle       = "Gutter Services in Richland, MS | Dun-Rite Seamless Gutters";
 $pageDescription = "Seamless gutter installation in Richland, Mississippi — I-20/Highway 49 working-class suburb. 1970s-80s ranch home replacement specialists. Free estimates from Dun-Rite.";
 $canonicalUrl    = "https://dunrite-gutters.com/service-areas/richland/";
-$ogImage         = "https://i.imgur.com/k3pvmNe.jpeg";
-$heroImage       = "https://i.imgur.com/k3pvmNe.jpeg";
+$ogImage         = "/assets/images/richland-ms-home-with-seamless-gutter-installati-480.webp";
+$heroImage       = "/assets/images/richland-ms-home-with-seamless-gutter-installati-480.webp";
 $currentPage     = "service-areas";
 
 $faqs = [
@@ -40,7 +40,7 @@ include $_SERVER['DOCUMENT_ROOT'] . '/includes/head.php';
 <main id="main-content">
 
   <section class="hero hero--inner" aria-label="Hero">
-    <img src="https://i.imgur.com/k3pvmNe.jpeg" alt="Richland MS home with seamless gutter installation" class="hero-bg" width="1920" height="1080" loading="eager" fetchpriority="high">
+    <img src="/assets/images/richland-ms-home-with-seamless-gutter-installati-480.webp" alt="Richland MS home with seamless gutter installation" class="hero-bg" width="1920" height="1080" loading="eager" fetchpriority="high">
     <div class="hero__inner">
       <div class="hero__copy">
         <span class="eyebrow-label">Richland, MS · 20 Miles from HQ</span>
@@ -139,7 +139,7 @@ include $_SERVER['DOCUMENT_ROOT'] . '/includes/head.php';
     <div class="container">
       <div class="split">
         <div class="reveal-left">
-          <img src="https://i.imgur.com/3IyAuXz.jpeg" alt="Richland MS ranch home with replacement seamless gutters by Dun-Rite" width="900" height="600" loading="lazy" style="border-radius: var(--radius-md); box-shadow: var(--shadow-lg);">
+          <img src="/assets/images/brick-home-with-dark-roof-and-white-gutters-in-j-480.webp" alt="Richland MS ranch home with replacement seamless gutters by Dun-Rite" width="900" height="600" loading="lazy" style="border-radius: var(--radius-md); box-shadow: var(--shadow-lg);">
         </div>
         <div class="reveal-right">
           <span class="eyebrow-label">What to Expect</span>

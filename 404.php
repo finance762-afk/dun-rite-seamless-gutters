@@ -8,8 +8,8 @@ $noIndex         = true;
 $pageTitle       = "Page Not Found | Dun-Rite Seamless Gutters";
 $pageDescription = "The page you're looking for couldn't be found. Browse our services, service areas, or contact us directly.";
 $canonicalUrl    = "https://dunrite-gutters.com/404";
-$ogImage         = "https://i.imgur.com/kRJ17by.jpeg";
-$heroImage       = "https://i.imgur.com/jAqOpHk.jpeg";
+$ogImage         = "/assets/images/dun-rite-seamless-gutters-service-truck-on-a-mis-480.webp";
+$heroImage       = "/assets/images/gloved-hand-removing-leaves-from-clogged-residen-480.webp";
 $currentPage     = "404";
 
 include $_SERVER['DOCUMENT_ROOT'] . '/includes/head.php';
@@ -19,7 +19,7 @@ include $_SERVER['DOCUMENT_ROOT'] . '/includes/head.php';
 <main id="main-content">
 
   <section class="hero hero--inner" aria-label="Page not found" style="min-height: 60vh;">
-    <img src="https://i.imgur.com/jAqOpHk.jpeg" alt="Gloved hand cleaning gutters — Dun-Rite Seamless Gutters Mississippi" class="hero-bg" width="1920" height="1080" loading="eager" fetchpriority="high">
+    <img src="/assets/images/gloved-hand-removing-leaves-from-clogged-residen-480.webp" alt="Gloved hand cleaning gutters — Dun-Rite Seamless Gutters Mississippi" class="hero-bg" width="1920" height="1080" loading="eager" fetchpriority="high">
     <div class="hero__inner" style="display:block; text-align:center; max-width: 720px;">
       <div class="hero__copy">
         <span class="eyebrow-label">404 · Page Not Found</span>

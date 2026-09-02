@@ -6,8 +6,8 @@
 $pageTitle       = "About Dun-Rite Seamless Gutters | Mark Dungan, Madison MS";
 $pageDescription = "Mark Dungan founded Dun-Rite Seamless Gutters in 1996. 30 years of seamless gutter installation, copper specialty, and rain-carrying systems across central Mississippi. Family-owned and Mississippi licensed.";
 $canonicalUrl    = "https://dunrite-gutters.com/about/";
-$ogImage         = "https://i.imgur.com/qJMX4SH.png";
-$heroImage       = "https://i.imgur.com/lHGkpv5.jpeg";
+$ogImage         = "/assets/images/mark-dungan-owner-of-dun-rite-seamless-gutters-s-960.webp";
+$heroImage       = "/assets/images/brick-stucco-mississippi-home-with-arched-entry-480.webp";
 $currentPage     = "about";
 
 $schemaGraph = [
@@ -35,7 +35,7 @@ $schemaGraph = [
       "@id"          => "https://dunrite-gutters.com/#org",
       "name"         => "Dun-Rite Seamless Gutters, Inc.",
       "url"          => "https://dunrite-gutters.com",
-      "logo"         => "https://i.imgur.com/xRVJ7rY.jpeg",
+      "logo"         => "/assets/images/logo.jpeg",
       "foundingDate" => "1996",
       "founder"      => ["@id" => "https://dunrite-gutters.com/#owner"],
     ],
@@ -44,7 +44,7 @@ $schemaGraph = [
       "@id"       => "https://dunrite-gutters.com/#owner",
       "name"      => "Mark Dungan",
       "jobTitle"  => "Owner",
-      "image"     => "https://i.imgur.com/qJMX4SH.png",
+      "image"     => "/assets/images/mark-dungan-owner-of-dun-rite-seamless-gutters-s-960.webp",
       "worksFor"  => ["@id" => "https://dunrite-gutters.com/#business"],
     ],
     [
@@ -72,7 +72,7 @@ include $_SERVER['DOCUMENT_ROOT'] . '/includes/head.php';
 
   <!-- HERO (no form) -->
   <section class="hero hero--inner" aria-label="About Dun-Rite hero">
-    <img src="https://i.imgur.com/lHGkpv5.jpeg" alt="Brick stucco Madison MS home with seamless gutters by Mark Dungan" class="hero-bg" width="1920" height="1080" loading="eager" fetchpriority="high">
+    <img src="/assets/images/brick-stucco-mississippi-home-with-arched-entry-480.webp" alt="Brick stucco Madison MS home with seamless gutters by Mark Dungan" class="hero-bg" width="1920" height="1080" loading="eager" fetchpriority="high">
     <div class="hero__inner" style="display:block; text-align:left; max-width: 720px;">
       <div class="hero__copy">
         <span class="eyebrow-label">Est. 1996 · Madison, MS</span>
@@ -120,8 +120,8 @@ include $_SERVER['DOCUMENT_ROOT'] . '/includes/head.php';
         </div>
 
         <div class="about-image-stack reveal-right">
-          <img src="https://i.imgur.com/qJMX4SH.png" alt="Mark Dungan, owner of Dun-Rite Seamless Gutters since 1996, Madison Mississippi" class="about-image-primary" width="900" height="900" loading="lazy">
-          <img src="https://i.imgur.com/kRJ17by.jpeg" alt="Dun-Rite Seamless Gutters service truck on a Mississippi installation jobsite" class="about-image-secondary" width="600" height="500" loading="lazy">
+          <img src="/assets/images/mark-dungan-owner-of-dun-rite-seamless-gutters-s-960.webp" srcset="/assets/images/mark-dungan-owner-of-dun-rite-seamless-gutters-s-480.webp 480w, /assets/images/mark-dungan-owner-of-dun-rite-seamless-gutters-s-960.webp 960w" sizes="(max-width: 768px) 100vw, 900px" alt="Mark Dungan, owner of Dun-Rite Seamless Gutters since 1996, Madison Mississippi" class="about-image-primary" width="900" height="900" loading="lazy">
+          <img src="/assets/images/dun-rite-seamless-gutters-service-truck-on-a-mis-480.webp" alt="Dun-Rite Seamless Gutters service truck on a Mississippi installation jobsite" class="about-image-secondary" width="600" height="500" loading="lazy">
         </div>
       </div>
     </div>
@@ -224,7 +224,7 @@ include $_SERVER['DOCUMENT_ROOT'] . '/includes/head.php';
         <h2>Mississippi <span class="text-accent">Licensed</span> &amp; Fully Insured.</h2>
       </div>
       <div style="text-align:center; max-width: 700px; margin: 0 auto;" class="reveal-up">
-        <img src="https://i.imgur.com/WbrtNRS.png"
+        <img src="/assets/images/dun-rite-seamless-gutters-is-homeadvisor-approve-480.webp"
              alt="Dun-Rite Seamless Gutters HomeAdvisor approved, BBB accredited, and Home Builders Association member"
              style="max-width: 100%; height: auto; display:block; margin: 0 auto;"
              width="700" height="120" loading="lazy">
