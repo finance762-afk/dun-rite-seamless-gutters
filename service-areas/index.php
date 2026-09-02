@@ -53,11 +53,6 @@ $schemaGraph = [
         ["@type" => "ListItem", "position" => 2, "name" => "Service Areas", "item" => "https://dunrite-gutters.com/service-areas/"],
       ]
     ],
-    [
-      "@type" => "AggregateRating",
-      "itemReviewed" => ["@id" => "https://dunrite-gutters.com/#business"],
-      "ratingValue" => "5.0", "reviewCount" => "27"
-    ],
   ]
 ];
 $schemaMarkup = '<script type="application/ld+json">' . json_encode($schemaGraph, JSON_UNESCAPED_SLASHES | JSON_UNESCAPED_UNICODE) . '</script>';

@@ -60,11 +60,6 @@ $schemaGraph = [
           "closes"    => "17:00"
         ]
       ],
-      "aggregateRating" => [
-        "@type"       => "AggregateRating",
-        "ratingValue" => "5.0",
-        "reviewCount" => "27"
-      ],
       "sameAs" => [
         "https://www.facebook.com/dunritegutters/",
         "https://share.google/ILoTdINgp3QYNTw3",

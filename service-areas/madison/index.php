@@ -51,11 +51,6 @@ $schemaGraph = [
       "@type" => "FAQPage",
       "mainEntity" => array_map(fn($f) => ["@type" => "Question", "name" => $f["q"], "acceptedAnswer" => ["@type" => "Answer", "text" => $f["a"]]], $faqs)
     ],
-    [
-      "@type" => "AggregateRating",
-      "itemReviewed" => ["@id" => "https://dunrite-gutters.com/#business"],
-      "ratingValue" => "5.0", "reviewCount" => "27"
-    ],
   ]
 ];
 $schemaMarkup = '<script type="application/ld+json">' . json_encode($schemaGraph, JSON_UNESCAPED_SLASHES | JSON_UNESCAPED_UNICODE) . '</script>';

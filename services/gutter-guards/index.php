@@ -52,11 +52,6 @@ $schemaGraph = [
       "mainEntity" => array_map(fn($f) => ["@type" => "Question", "name" => $f["q"], "acceptedAnswer" => ["@type" => "Answer", "text" => $f["a"]]], $faqs)
     ],
     [
-      "@type" => "AggregateRating",
-      "itemReviewed" => ["@id" => "https://dunrite-gutters.com/#business"],
-      "ratingValue" => "5.0", "reviewCount" => "27"
-    ],
-    [
       "@type" => "HowTo",
       "name"  => "How Gutter Guard Installation Works",
       "step"  => array_map(fn($s, $i) => ["@type" => "HowToStep", "position" => $i + 1, "name" => $s["name"], "text" => $s["text"]], $howToSteps, array_keys($howToSteps))

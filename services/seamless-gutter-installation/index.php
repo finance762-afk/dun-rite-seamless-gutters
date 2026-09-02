@@ -56,11 +56,6 @@ $schemaGraph = [
       ], $faqs)
     ],
     [
-      "@type" => "AggregateRating",
-      "itemReviewed" => ["@id" => "https://dunrite-gutters.com/#business"],
-      "ratingValue" => "5.0", "reviewCount" => "27"
-    ],
-    [
       "@type" => "HowTo",
       "name"  => "How Seamless Gutter Installation Works",
       "step"  => array_map(fn($s, $i) => [

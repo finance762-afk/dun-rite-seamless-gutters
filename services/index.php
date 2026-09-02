@@ -47,12 +47,6 @@ $schemaGraph = [
       ]
     ],
     [
-      "@type"        => "AggregateRating",
-      "itemReviewed" => ["@id" => "https://dunrite-gutters.com/#business"],
-      "ratingValue"  => "5.0",
-      "reviewCount"  => "27"
-    ],
-    [
       "@type"        => "Organization",
       "@id"          => "https://dunrite-gutters.com/#org",
       "name"         => "Dun-Rite Seamless Gutters, Inc.",
