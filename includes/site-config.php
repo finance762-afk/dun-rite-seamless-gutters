@@ -1,4 +1,5 @@
 <?php
+$googleAnalyticsId = 'G-VHW4JJ50J0'; // Google Analytics 4 (ga4-fleet)
 // Loads per-site config written by site-verify and post-deploy Edge Functions.
 // Sets $gscVerification (string) and $ga4MeasurementId (string) for use in head.php / footer.php.
 $__siteConfigPath = __DIR__ . '/site-config.json';

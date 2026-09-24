@@ -86,6 +86,11 @@ require_once __DIR__ . '/site-config.php';
 <!-- JSON-LD Schema -->
 <?php if (!empty($schemaMarkup)) echo $schemaMarkup; ?>
 <?php require_once __DIR__ . '/edit-mode.php'; ?>
+  <?php if (!empty($googleAnalyticsId) && preg_match('/^G-[A-Z0-9]{6,}$/', $googleAnalyticsId) && strpos($googleAnalyticsId, 'XXXX') === false): ?>
+  <!-- Google Analytics 4 (ga4-fleet) -->
+  <script async src="https://www.googletagmanager.com/gtag/js?id=<?php echo htmlspecialchars($googleAnalyticsId, ENT_QUOTES, 'UTF-8'); ?>"></script>
+  <script>window.dataLayer=window.dataLayer||[];function gtag(){dataLayer.push(arguments);}gtag('js',new Date());gtag('config','<?php echo htmlspecialchars($googleAnalyticsId, ENT_QUOTES, 'UTF-8'); ?>');</script>
+  <?php endif; ?>
 </head>
 <body>
 <a class="skip-link" href="#main-content">Skip to content</a>
