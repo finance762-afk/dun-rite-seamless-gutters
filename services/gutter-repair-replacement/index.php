@@ -3,8 +3,8 @@
  * Dun-Rite — Gutter Repair & Replacement
  */
 
-$pageTitle       = "Gutter Repair & Replacement in Madison, MS | Dun-Rite";
-$pageDescription = "Sagging gutter repair, leaking seam fixes, and full system replacement across central Mississippi. Same-day estimates. 25-year warranty on replacements. Dun-Rite Seamless Gutters.";
+$pageTitle       = "Gutter Repair in Madison & Jackson, MS | Since 1996";
+$pageDescription = "Gutter repair near you in Madison & Jackson, MS: sagging, leaks, storm damage. Seamless aluminum & copper since 1996. Free estimate, call (601) 750-1800.";
 $canonicalUrl    = "https://dunrite-gutters.com/services/gutter-repair-replacement/";
 $ogImage         = "https://i.imgur.com/Hr2Nlwl.jpeg";
 $heroImage       = "https://i.imgur.com/Hr2Nlwl.jpeg";
@@ -17,6 +17,8 @@ $faqs = [
   ["q" => "Should I repair or replace my gutters?", "a" => "If your gutters are under 15 years old and the issues are localized (one sagging section, a leaking corner, a couple pulled hangers), repair is usually the right call — typically $150–$600 per repair. If your gutters are 20+ years old, have multiple problems, or sagging is widespread, full replacement saves money long-term and starts your 25-year warranty fresh."],
   ["q" => "Can sagging gutters be fixed?", "a" => "Yes — sagging gutters are typically fixed by replacing failed hangers with hidden hangers spaced every 24 inches. If the gutter material itself is bent or warped from a sagged section, that section may need replacement. Cost runs $150–$400 for hanger work; full section replacement runs $300–$800."],
   ["q" => "Do you handle insurance claims for storm damage?", "a" => "Yes. We work directly with homeowners insurance adjusters on storm damage claims (hail, wind, fallen branches). We provide photo documentation, written damage assessments, and itemized repair quotes formatted for adjuster review. Most claims close within 2–3 weeks."],
+  ["q" => "How much does gutter repair cost in Madison and Jackson, MS?", "a" => "Most gutter repairs in Madison, Jackson, and central Mississippi run $150–$600 per section. Hanger work on sagging gutters runs $150–$400, and replacing a damaged section runs $300–$800. Full system replacement starts at $1,200 with a 25-year manufacturer warranty. Every estimate from Dun-Rite Seamless Gutters is free and written."],
+  ["q" => "Why do gutters leak at the corners and seams?", "a" => "Leaks at corners and seams come from sealant failure at the miters and seams, caused by age and thermal cycling. You'll see standing water or drips at the corners during rain. Resealing is a quick, inexpensive repair; ignored, the overflow rots the fascia behind the gutter, and a rotted fascia has to be repaired before the gutter can be re-hung."],
   ["q" => "How long do gutter repairs last?", "a" => "Quality repairs (hanger replacement, sealed corners, section replacement) last 10–20 years. Repairs we perform are warrantied for 2 years on labor; we honor manufacturer warranties on any new materials installed. If repairs are stacking up year over year, full replacement is usually the more economical choice."],
 ];
 
@@ -71,7 +73,7 @@ include $_SERVER['DOCUMENT_ROOT'] . '/includes/head.php';
     <div class="hero__inner">
       <div class="hero__copy">
         <span class="eyebrow-label">Sagging · Leaking · Storm Damage</span>
-        <h1>Gutter Repair &amp; Replacement in <span class="text-accent">Mississippi.</span></h1>
+        <h1>Gutter Repair &amp; Replacement in <span class="text-accent">Madison &amp; Jackson, MS.</span></h1>
         <p class="hero__subhead">One sagging section, a leaking seam, or a 30-year-old system that's done? We handle repairs and full replacements with same-day estimates.</p>
         <div class="hero__ctas">
           <a href="#hero-form-heading" class="btn-primary">Same-Day Estimate</a>
@@ -108,8 +110,8 @@ include $_SERVER['DOCUMENT_ROOT'] . '/includes/head.php';
   <section class="section">
     <div class="container">
       <div class="answer-block reveal-up">
-        <h2>Gutter Repair &amp; Replacement in Mississippi: Same-Day Estimates</h2>
-        <p>Whether you have one sagging section, a leaking seam, or a 30-year-old system that's reached the end of its life, Dun-Rite repairs and replaces gutters across central Mississippi. Most repairs run $150–$600 per section. Full replacement starts at $1,200 with our 25-year manufacturer warranty. We provide same-day written estimates and work directly with insurance adjusters on storm damage claims.</p>
+        <h2>How Much Does Gutter Repair Cost in Madison &amp; Jackson, MS?</h2>
+        <p>Most gutter repairs in Madison, Jackson, and central Mississippi run $150–$600 per section. Dun-Rite Seamless Gutters has repaired and replaced gutters here since 1996 — one sagging section, a leaking seam, or a 30-year-old system that has reached the end of its life. Full replacement starts at $1,200 with our 25-year manufacturer warranty. We provide same-day written estimates and work directly with insurance adjusters on storm damage claims.</p>
       </div>
     </div>
   </section>
@@ -183,6 +185,15 @@ include $_SERVER['DOCUMENT_ROOT'] . '/includes/head.php';
       </div>
 
       <div class="prose reveal-up" style="margin-top: var(--space-lg);">
+        <h3>What Affects the Price of a Gutter Repair?</h3>
+        <ul style="padding-left: var(--space-md); margin: var(--space-md) 0;">
+          <li><strong>Hangers or material:</strong> re-hanging a sagging run with hidden hangers every 24 inches runs $150–$400; a bent or warped section that has to be replaced runs $300–$800.</li>
+          <li><strong>How many sections:</strong> most repairs are priced per section at $150–$600, so a problem confined to 1–2 sections stays a repair; multiple failing sections usually point to replacement.</li>
+          <li><strong>Fascia condition:</strong> a gutter pulling off the house usually means rotted wood fascia behind it, and the fascia must be repaired before the gutter is re-hung.</li>
+          <li><strong>Downspout sizing:</strong> pooling at the foundation is often an undersized downspout or a missing splash block — a downspout fix, not a gutter fix.</li>
+          <li><strong>Repair vs. replacement math:</strong> if repair would cost under 30% of a full replacement, repair it; over 50%, replacement (from $1,200, with a 25-year manufacturer warranty) is the better value.</li>
+          <li><strong>Storm damage:</strong> hail, wind, and fallen-branch damage is documented with photos and itemized quotes for your insurance adjuster.</li>
+        </ul>
         <p>We give you the honest answer at the free estimate. If repair makes more sense than replacement, we'll quote the repair. We don't push replacement on customers whose gutters have another 5–10 years left in them.</p>
       </div>
     </div>

@@ -3,8 +3,8 @@
  * Dun-Rite — Pearl, MS
  */
 
-$pageTitle       = "Gutter Services in Pearl, MS | Dun-Rite Seamless Gutters";
-$pageDescription = "Seamless gutter installation in Pearl, Mississippi — Pearl River suburb. 1970s-80s ranch home specialists. Free estimates from Dun-Rite Seamless Gutters.";
+$pageTitle       = "Gutter Installation & Repair Pearl MS | Since 1996";
+$pageDescription = "Gutter installation & repair in Pearl, MS since 1996: seamless aluminum & copper gutters, 1970s-80s ranch home specialists. Free estimates, call (601) 750-1800.";
 $canonicalUrl    = "https://dunrite-gutters.com/service-areas/pearl/";
 $ogImage         = "https://i.imgur.com/2HYt7pb.jpeg";
 $heroImage       = "https://i.imgur.com/2HYt7pb.jpeg";

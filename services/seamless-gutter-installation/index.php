@@ -3,8 +3,8 @@
  * Dun-Rite — Seamless Gutter Installation
  */
 
-$pageTitle       = "Seamless Gutter Installation in Madison, MS | Dun-Rite";
-$pageDescription = "Custom seamless aluminum gutter installation across central Mississippi. 5-inch and 6-inch K-style profiles formed on-site. 25-year warranty. Free estimates from Dun-Rite Seamless Gutters.";
+$pageTitle       = "Seamless Gutter Installation Madison, MS | Since 1996";
+$pageDescription = "Seamless gutter installation in Madison, MS since 1996. Aluminum & copper, 5 and 6-inch K-style formed on-site, 25-year warranty. Free estimate: (601) 750-1800.";
 $canonicalUrl    = "https://dunrite-gutters.com/services/seamless-gutter-installation/";
 $ogImage         = "https://i.imgur.com/3nVl1Ha.jpeg";
 $heroImage       = "https://i.imgur.com/3nVl1Ha.jpeg";

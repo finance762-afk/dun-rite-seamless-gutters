@@ -3,8 +3,8 @@
  * Dun-Rite — Raymond, MS
  */
 
-$pageTitle       = "Gutter Services in Raymond, MS | Dun-Rite Seamless Gutters";
-$pageDescription = "Seamless gutter installation in Raymond, Mississippi — Hinds County seat with historic district. Civil War history, Hinds CC, and rural surrounding properties. Free estimates from Dun-Rite.";
+$pageTitle       = "Gutter Installation & Repair Raymond MS | Since 1996";
+$pageDescription = "Gutter installation & repair in Raymond, MS since 1996: seamless aluminum & copper, historic district to rural properties. Free estimates: (601) 750-1800.";
 $canonicalUrl    = "https://dunrite-gutters.com/service-areas/raymond/";
 $ogImage         = "https://i.imgur.com/VWdSAg5.jpeg";
 $heroImage       = "https://i.imgur.com/VWdSAg5.jpeg";

@@ -3,8 +3,8 @@
  * Dun-Rite — Copper Gutters (SIGNATURE PREMIUM PAGE)
  */
 
-$pageTitle       = "Copper Gutters in Mississippi | Specialty Installation by Dun-Rite";
-$pageDescription = "Hand-soldered copper gutter installation across Mississippi. 50+ year service life, decorative profiles, custom standing-seam accents. Specialty work since 1996 by Dun-Rite Seamless Gutters.";
+$pageTitle       = "Copper Gutters in Mississippi | Since 1996 | Free Estimates";
+$pageDescription = "Hand-soldered copper gutters in Madison, Jackson and central Mississippi since 1996. Seamless aluminum also available. Free estimate: call (601) 750-1800.";
 $canonicalUrl    = "https://dunrite-gutters.com/services/copper-gutters/";
 $ogImage         = "https://i.imgur.com/a54eolx.jpeg";
 $heroImage       = "https://i.imgur.com/a54eolx.jpeg";

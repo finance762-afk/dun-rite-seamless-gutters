@@ -3,8 +3,8 @@
  * Dun-Rite — Gutter Guards & Leaf Protection
  */
 
-$pageTitle       = "Gutter Guards & Leaf Protection in Madison, MS | Dun-Rite";
-$pageDescription = "Mesh and screen gutter guards installed across central Mississippi. Stop leaves, debris, and clogs. Reduce cleaning frequency. Free estimates from Dun-Rite Seamless Gutters.";
+$pageTitle       = "Gutter Guards in Madison & Jackson, MS | Since 1996";
+$pageDescription = "Gutter guards in Madison & Jackson, MS: mesh and screen leaf protection on seamless aluminum & copper gutters, since 1996. Free estimate: (601) 750-1800.";
 $canonicalUrl    = "https://dunrite-gutters.com/services/gutter-guards/";
 $ogImage         = "https://i.imgur.com/v9flHNM.jpeg";
 $heroImage       = "https://i.imgur.com/v9flHNM.jpeg";
@@ -17,6 +17,8 @@ $faqs = [
   ["q" => "Do gutter guards really work?", "a" => "Yes — when installed correctly. Quality mesh and screen guards stop 95%+ of leaves, pine needles, and large debris from entering your gutter trough. They don't eliminate maintenance entirely (fine pollen and dust still accumulate on top), but they reduce cleaning frequency from twice yearly to once every 3–5 years."],
   ["q" => "Will I still need gutter cleaning with guards?", "a" => "You'll still need occasional maintenance — typically once every 3–5 years for the gutters themselves, plus annual top-of-guard sweeping for homes under heavy tree canopy. Guards dramatically reduce labor and risk, but no system is fully maintenance-free."],
   ["q" => "How much do gutter guards cost?", "a" => "Mesh and screen gutter guards typically run $7–$12 per linear foot installed in Mississippi, depending on system type and gutter compatibility. A typical 200-LF home runs $1,400–$2,400 for a complete guard installation. Foam inserts run cheaper but don't last as long."],
+  ["q" => "Which type of gutter guard is best for my home?", "a" => "It depends on your trees. Fine stainless micro-mesh is best for pine straw and small debris and lasts 15+ years. Large-hole aluminum or copper screen is best for big oak leaves and lasts 10–15 years. Foam inserts are the lowest-cost option but last only 5–7 years. Dun-Rite Seamless Gutters brings physical samples to the free estimate."],
+  ["q" => "Are gutter guards worth it?", "a" => "For homes under heavy oak, pine, pecan, or magnolia, yes: guards pay for themselves in 4–6 years versus repeated cleanings, and they are especially valuable on two-story homes where ladder work is dangerous. If your home has no tree coverage, guards may not be worth the cost, and Dun-Rite will tell you so at the estimate."],
   ["q" => "Can guards be added to my existing gutters?", "a" => "In most cases, yes. We can retrofit mesh and screen guards onto existing aluminum or steel gutters with no modification. Sagging or damaged gutters need to be repaired or replaced first — we'll evaluate your existing system at the free estimate."],
 ];
 
@@ -71,7 +73,7 @@ include $_SERVER['DOCUMENT_ROOT'] . '/includes/head.php';
     <div class="hero__inner">
       <div class="hero__copy">
         <span class="eyebrow-label">Leaf Protection · Mesh Systems · Clog Prevention</span>
-        <h1>Gutter Guards in <span class="text-accent">Mississippi.</span></h1>
+        <h1>Gutter Guards in <span class="text-accent">Madison &amp; Jackson, MS.</span></h1>
         <p class="hero__subhead">Stop leaves, pine needles, and debris from clogging your system. Protect your foundation, fascia, and landscaping.</p>
         <div class="hero__ctas">
           <a href="#hero-form-heading" class="btn-primary">Get Free Estimate</a>
@@ -108,8 +110,8 @@ include $_SERVER['DOCUMENT_ROOT'] . '/includes/head.php';
   <section class="section">
     <div class="container">
       <div class="answer-block reveal-up">
-        <h2>Gutter Guards in Mississippi: Honest Answers</h2>
-        <p>Gutter guards stop leaves, pine needles, and debris from clogging your gutters — preventing the overflow, fascia rot, and foundation water damage that come with neglected systems. Dun-Rite installs mesh and screen guard systems across central Mississippi compatible with new or existing gutters. Most installations run $7–$12 per linear foot installed. Properly installed guards reduce gutter cleaning frequency from twice yearly to once every 3–5 years.</p>
+        <h2>How Much Do Gutter Guards Cost in Madison &amp; Jackson, MS?</h2>
+        <p>Mesh and screen gutter guards in Madison, Jackson, and central Mississippi typically run $7–$12 per linear foot installed — $1,400–$2,400 for a typical 200-foot home. Dun-Rite Seamless Gutters, installing gutters since 1996, fits guards to new or existing gutters to stop the leaves, pine needles, and debris that cause overflow, fascia rot, and foundation water damage. Properly installed guards reduce gutter cleaning frequency from twice yearly to once every 3–5 years.</p>
       </div>
     </div>
   </section>

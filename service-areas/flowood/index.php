@@ -3,8 +3,8 @@
  * Dun-Rite — Flowood, MS
  */
 
-$pageTitle       = "Gutter Services in Flowood, MS | Dun-Rite Seamless Gutters";
-$pageDescription = "Seamless gutter installation in Flowood, Mississippi — including the Lakeland Drive corridor, Sandalwood, and Lakeland Heights. Free estimates from Dun-Rite Seamless Gutters.";
+$pageTitle       = "Gutter Installation & Repair Flowood MS | Since 1996";
+$pageDescription = "Gutter installation & repair in Flowood, MS since 1996: seamless aluminum & copper gutters, Sandalwood to Lakeland Drive. Free estimates, call (601) 750-1800.";
 $canonicalUrl    = "https://dunrite-gutters.com/service-areas/flowood/";
 $ogImage         = "https://i.imgur.com/8tTXO7O.jpeg";
 $heroImage       = "https://i.imgur.com/8tTXO7O.jpeg";
@@ -82,6 +82,10 @@ include $_SERVER['DOCUMENT_ROOT'] . '/includes/head.php';
       <div class="answer-block reveal-up">
         <h2>Gutter Services in Flowood, Mississippi</h2>
         <p>Dun-Rite Seamless Gutters provides seamless installation, copper, gutter guards, cleaning, and repair services in Flowood, Mississippi. From our Madison headquarters 20 miles to the northwest, we serve residential homes throughout Sandalwood, Lakeland Heights, and the eastern Castlewoods area, plus commercial properties along the Lakeland Drive retail corridor. Free estimates with no travel charges. Call (601) 750-1800.</p>
+      </div>
+      <div class="prose reveal-up" style="margin-top: var(--space-lg);">
+        <h3>What Gutter Problems Are Common in Flowood Homes?</h3>
+        <p>Flowood's needs split by neighborhood. In Sandalwood and the older Flowood streets, 1970s and 1980s ranch homes are 40+ years past their original installation: pulled hangers, failed corner seals, and undersized downspouts are the norm, and oak and pine canopy keeps the gutters full. Newer Lakeland Heights subdivisions have younger landscaping and fewer clogs. Along the Lakeland Drive corridor, strip centers, medical offices, and restaurants need high-flow profiles installed around tenant hours. For the older homes, Dun-Rite Seamless Gutters usually recommends <a href="/services/gutter-repair-replacement/" style="color: var(--color-accent); border-bottom: 1px solid currentColor;">full gutter replacement in Flowood</a> over piecemeal repair; for Lakeland Drive properties, see <a href="/services/commercial-gutters/" style="color: var(--color-accent); border-bottom: 1px solid currentColor;">commercial gutters for Flowood businesses</a>.</p>
       </div>
     </div>
   </section>

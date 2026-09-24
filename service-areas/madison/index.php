@@ -3,8 +3,8 @@
  * Dun-Rite — Madison, MS (HOME BASE — Premium 800+ words)
  */
 
-$pageTitle       = "Gutter Services in Madison, MS | Dun-Rite Home Base";
-$pageDescription = "Madison's gutter specialist since 1996. Seamless installation, copper, gutter guards, cleaning, and repair throughout Reunion, Lake Caroline, Old Annandale, and all Madison neighborhoods. Free estimates.";
+$pageTitle       = "Gutter Installation & Repair Madison MS | Since 1996";
+$pageDescription = "Gutter installation & repair in Madison, MS since 1996: seamless aluminum & copper, Reunion to Lake Caroline, our home base. Free estimates: (601) 750-1800.";
 $canonicalUrl    = "https://dunrite-gutters.com/service-areas/madison/";
 $ogImage         = "https://i.imgur.com/lHGkpv5.jpeg";
 $heroImage       = "https://i.imgur.com/lHGkpv5.jpeg";

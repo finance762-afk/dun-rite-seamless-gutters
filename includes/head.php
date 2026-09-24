@@ -77,7 +77,7 @@ require_once __DIR__ . '/site-config.php';
 <?php endif; ?>
 
 <!-- Stylesheet -->
-<link rel="stylesheet" href="/assets/css/styles.css?v=10">
+<link rel="stylesheet" href="/assets/css/styles.css?v=11">
 
 <?php if (!empty($useSwiper)): ?>
 <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/swiper@11/swiper-bundle.min.css">

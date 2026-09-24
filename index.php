@@ -4,8 +4,8 @@
  * Phase 2 Build | Premium Tier
  */
 
-$pageTitle       = "Dun-Rite Seamless Gutters | Madison, MS Gutter Installation | Est. 1996";
-$pageDescription = "Mississippi's seamless gutter specialists since 1996. Aluminum, copper, gutter guards, cleaning, repair. 25-year warranty. Free estimates across the greater Jackson area. Call (601) 750-1800.";
+$pageTitle       = "Seamless Gutters Madison & Jackson MS | Since 1996";
+$pageDescription = "Seamless gutter installation and repair in Madison & Jackson, MS since 1996. Aluminum & copper gutters, guards, cleaning. Free estimates: call (601) 750-1800.";
 $canonicalUrl    = "https://dunrite-gutters.com/";
 $ogImage         = "https://images.unsplash.com/photo-1665442348932-6e16d72fe163?q=80&w=1600&auto=format&fit=crop";
 $currentPage     = "home";
@@ -266,6 +266,23 @@ include $_SERVER['DOCUMENT_ROOT'] . '/includes/head.php';
       <div class="services-grid">
         <article class="service-card-with-image card-tint-1 reveal-up reveal-delay-1">
           <div class="service-card__image">
+            <img src="https://i.imgur.com/Hr2Nlwl.jpeg" alt="Worker installing replacement gutters on Mississippi home" width="600" height="360" loading="lazy">
+          </div>
+          <div class="service-card__body">
+            <div class="service-card__icon"><i data-lucide="wrench"></i></div>
+            <h3>Gutter Repair &amp; Replacement</h3>
+            <p class="service-card__desc">Fix sagging gutters, replace damaged sections, or full system replacement.</p>
+            <ul>
+              <li>Same-day estimates</li>
+              <li>Insurance claim support</li>
+              <li>Storm damage specialists</li>
+            </ul>
+            <a href="/services/gutter-repair-replacement/" class="service-card__cta">Learn more</a>
+          </div>
+        </article>
+
+        <article class="service-card-with-image card-tint-2 reveal-up reveal-delay-2">
+          <div class="service-card__image">
             <img src="https://i.imgur.com/3nVl1Ha.jpeg" alt="Seamless gutter installation on yellow two-story Mississippi home" width="600" height="360" loading="lazy">
           </div>
           <div class="service-card__body">
@@ -281,7 +298,7 @@ include $_SERVER['DOCUMENT_ROOT'] . '/includes/head.php';
           </div>
         </article>
 
-        <article class="service-card-with-image card-tint-2 reveal-up reveal-delay-2">
+        <article class="service-card-with-image card-tint-3 reveal-up reveal-delay-3">
           <div class="service-card__image">
             <img src="https://i.imgur.com/8tTXO7O.jpeg" alt="Aluminum gutters installed on modern white-sided Mississippi home" width="600" height="360" loading="lazy">
           </div>
@@ -298,7 +315,7 @@ include $_SERVER['DOCUMENT_ROOT'] . '/includes/head.php';
           </div>
         </article>
 
-        <article class="service-card-with-image card-tint-3 reveal-up reveal-delay-3">
+        <article class="service-card-with-image card-tint-1 reveal-up reveal-delay-1">
           <div class="service-card__image">
             <img src="https://i.imgur.com/OWQAw0g.jpeg" alt="Hand-soldered copper gutters with standing-seam awning" width="600" height="360" loading="lazy">
           </div>
@@ -315,7 +332,7 @@ include $_SERVER['DOCUMENT_ROOT'] . '/includes/head.php';
           </div>
         </article>
 
-        <article class="service-card-with-image card-tint-1 reveal-up reveal-delay-1">
+        <article class="service-card-with-image card-tint-3 reveal-up reveal-delay-2">
           <div class="service-card__image">
             <img src="https://i.imgur.com/EtRNOH2.jpeg" alt="Close-up of installed gutter guard mesh leaf protection" width="600" height="360" loading="lazy">
           </div>
@@ -332,7 +349,7 @@ include $_SERVER['DOCUMENT_ROOT'] . '/includes/head.php';
           </div>
         </article>
 
-        <article class="service-card-with-image card-tint-3 reveal-up reveal-delay-2">
+        <article class="service-card-with-image card-tint-2 reveal-up reveal-delay-3">
           <div class="service-card__image">
             <img src="https://i.imgur.com/jAqOpHk.jpeg" alt="Gloved hand removing leaves from clogged residential gutter" width="600" height="360" loading="lazy">
           </div>
@@ -346,23 +363,6 @@ include $_SERVER['DOCUMENT_ROOT'] . '/includes/head.php';
               <li>Downspout flushing included</li>
             </ul>
             <a href="/services/gutter-cleaning/" class="service-card__cta">Learn more</a>
-          </div>
-        </article>
-
-        <article class="service-card-with-image card-tint-2 reveal-up reveal-delay-3">
-          <div class="service-card__image">
-            <img src="https://i.imgur.com/Hr2Nlwl.jpeg" alt="Worker installing replacement gutters on Mississippi home" width="600" height="360" loading="lazy">
-          </div>
-          <div class="service-card__body">
-            <div class="service-card__icon"><i data-lucide="wrench"></i></div>
-            <h3>Gutter Repair &amp; Replacement</h3>
-            <p class="service-card__desc">Fix sagging gutters, replace damaged sections, or full system replacement.</p>
-            <ul>
-              <li>Same-day estimates</li>
-              <li>Insurance claim support</li>
-              <li>Storm damage specialists</li>
-            </ul>
-            <a href="/services/gutter-repair-replacement/" class="service-card__cta">Learn more</a>
           </div>
         </article>
 
@@ -587,6 +587,26 @@ include $_SERVER['DOCUMENT_ROOT'] . '/includes/head.php';
 
       <div class="gallery-cta-row reveal-up">
         <a href="/service-areas/">See More Recent Installs &rarr;</a>
+      </div>
+
+      <div class="home-areas reveal-up">
+        <h3>Seamless Gutters Across 14 Central Mississippi Cities</h3>
+        <nav class="area-pills area-pills--links" aria-label="Service areas">
+        <a href="/service-areas/madison/">Gutters in Madison</a>
+        <a href="/service-areas/ridgeland/">Gutters in Ridgeland</a>
+        <a href="/service-areas/jackson/">Gutters in Jackson</a>
+        <a href="/service-areas/gluckstadt/">Gutters in Gluckstadt</a>
+        <a href="/service-areas/canton/">Gutters in Canton</a>
+        <a href="/service-areas/flowood/">Gutters in Flowood</a>
+        <a href="/service-areas/brandon/">Gutters in Brandon</a>
+        <a href="/service-areas/pearl/">Gutters in Pearl</a>
+        <a href="/service-areas/richland/">Gutters in Richland</a>
+        <a href="/service-areas/clinton/">Gutters in Clinton</a>
+        <a href="/service-areas/florence/">Gutters in Florence</a>
+        <a href="/service-areas/terry/">Gutters in Terry</a>
+        <a href="/service-areas/raymond/">Gutters in Raymond</a>
+        <a href="/service-areas/bolton/">Gutters in Bolton</a>
+        </nav>
       </div>
     </div>
   </section>

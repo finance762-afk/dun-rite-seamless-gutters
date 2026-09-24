@@ -3,8 +3,8 @@
  * Dun-Rite — Aluminum Gutters
  */
 
-$pageTitle       = "Aluminum Gutters Installation in Madison, MS | Dun-Rite";
-$pageDescription = "Aluminum seamless gutter installation across central Mississippi. Lightweight, rust-proof, 25+ color options, 25-year warranty. Free estimates from Dun-Rite Seamless Gutters.";
+$pageTitle       = "Aluminum Gutters Madison, MS | Since 1996 | Free Estimates";
+$pageDescription = "Seamless aluminum gutters in Madison, MS and central Mississippi since 1996. Rust-proof, 25+ colors, 25-year warranty. Copper too. Free estimate (601) 750-1800.";
 $canonicalUrl    = "https://dunrite-gutters.com/services/aluminum-gutters/";
 $ogImage         = "https://i.imgur.com/8tTXO7O.jpeg";
 $heroImage       = "https://i.imgur.com/8tTXO7O.jpeg";

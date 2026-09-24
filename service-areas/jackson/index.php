@@ -3,8 +3,8 @@
  * Dun-Rite — Jackson, MS
  */
 
-$pageTitle       = "Gutter Services in Jackson, MS | Dun-Rite Seamless Gutters";
-$pageDescription = "Seamless gutter installation, repair, and replacement across Jackson, Mississippi. Specialty work on historic Belhaven and Fondren homes. Free estimates from Dun-Rite Seamless Gutters.";
+$pageTitle       = "Gutter Installation & Repair Jackson MS | Since 1996";
+$pageDescription = "Gutter installation & repair in Jackson, MS since 1996: seamless aluminum & copper, Belhaven, Fondren and Eastover homes. Free estimates: (601) 750-1800.";
 $canonicalUrl    = "https://dunrite-gutters.com/service-areas/jackson/";
 $ogImage         = "https://i.imgur.com/3IyAuXz.jpeg";
 $heroImage       = "https://i.imgur.com/3IyAuXz.jpeg";
@@ -93,6 +93,10 @@ include $_SERVER['DOCUMENT_ROOT'] . '/includes/head.php';
       <div class="answer-block reveal-up">
         <h2>Gutter Services in Jackson, Mississippi</h2>
         <p>Dun-Rite Seamless Gutters provides seamless gutter installation, copper specialty work, gutter guards, cleaning, and repair services in Jackson, Mississippi. From our Madison headquarters 15 miles north, we work on Belhaven Victorians, Fondren bungalows, Eastover ranches, and Northeast Jackson colonials. Free estimates with no travel charges. Insurance documentation for storm damage. Call (601) 750-1800.</p>
+      </div>
+      <div class="prose reveal-up" style="margin-top: var(--space-lg);">
+        <h3>What Gutter Problems Are Common in Jackson Homes?</h3>
+        <p>Jackson's gutter problems come from its age. Belhaven Victorians, Fondren bungalows, and Eastover homes date from the 1920s through the 1950s, and many are on their second or third gutter system — built before anyone sized gutters for today's storm runoff. 1950s Northeast Jackson colonials still carry 2x3 downspouts that overflow and push water toward the foundation, and the mature oak, pine, and pecan canopy clogs gutters faster than twice-yearly cleaning can keep up with. That is why most Jackson calls start as <a href="/services/gutter-repair-replacement/" style="color: var(--color-accent); border-bottom: 1px solid currentColor;">gutter repair in Jackson</a> and end with a fascia check and a replacement quote, and why Dun-Rite Seamless Gutters installs more <a href="/services/gutter-guards/" style="color: var(--color-accent); border-bottom: 1px solid currentColor;">gutter guards for Jackson's oak canopy</a> than in any other city it serves.</p>
       </div>
     </div>
   </section>

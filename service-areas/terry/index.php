@@ -3,8 +3,8 @@
  * Dun-Rite — Terry, MS
  */
 
-$pageTitle       = "Gutter Services in Terry, MS | Dun-Rite Seamless Gutters";
-$pageDescription = "Seamless gutter installation in Terry, Mississippi — rural Hinds County. Highway 51 corridor and surrounding agricultural properties. Free estimates from Dun-Rite Seamless Gutters.";
+$pageTitle       = "Gutter Installation & Repair Terry MS | Since 1996";
+$pageDescription = "Gutter installation & repair in Terry, MS since 1996: seamless aluminum & copper, Highway 51 corridor and rural properties. Free estimates: (601) 750-1800.";
 $canonicalUrl    = "https://dunrite-gutters.com/service-areas/terry/";
 $ogImage         = "https://i.imgur.com/Npb0ETl.jpeg";
 $heroImage       = "https://i.imgur.com/Npb0ETl.jpeg";

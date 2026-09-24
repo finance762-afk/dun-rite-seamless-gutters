@@ -3,8 +3,8 @@
  * Dun-Rite — Contact (Full expanded form, no map)
  */
 
-$pageTitle       = "Contact Dun-Rite Seamless Gutters | Madison, MS Estimates";
-$pageDescription = "Get a free seamless gutter estimate from Dun-Rite Seamless Gutters in Madison, MS. Call (601) 750-1800 or submit our form. Same-day callbacks. Service across 14 Mississippi cities.";
+$pageTitle       = "Contact Dun-Rite | Free Gutter Estimates | (601) 750-1800";
+$pageDescription = "Get a free gutter estimate in Madison, Jackson or 12 more MS cities. Seamless aluminum & copper gutters since 1996. Same-day callbacks. Call (601) 750-1800.";
 $canonicalUrl    = "https://dunrite-gutters.com/contact/";
 $ogImage         = "https://i.imgur.com/kRJ17by.jpeg";
 $heroImage       = "https://i.imgur.com/kRJ17by.jpeg";

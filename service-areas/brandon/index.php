@@ -3,8 +3,8 @@
  * Dun-Rite — Brandon, MS
  */
 
-$pageTitle       = "Gutter Services in Brandon, MS | Dun-Rite Seamless Gutters";
-$pageDescription = "Seamless gutter installation in Brandon, Mississippi — including Castlewoods, Whisper Lake, and Crosswinds. New construction and Reservoir-area homes. Free estimates from Dun-Rite.";
+$pageTitle       = "Gutter Installation & Repair Brandon MS | Since 1996";
+$pageDescription = "Gutter installation & repair in Brandon, MS since 1996: seamless aluminum & copper gutters, from Castlewoods to the Reservoir. Free estimates: (601) 750-1800.";
 $canonicalUrl    = "https://dunrite-gutters.com/service-areas/brandon/";
 $ogImage         = "https://i.imgur.com/3nVl1Ha.jpeg";
 $heroImage       = "https://i.imgur.com/3nVl1Ha.jpeg";
@@ -93,6 +93,10 @@ include $_SERVER['DOCUMENT_ROOT'] . '/includes/head.php';
       <div class="answer-block reveal-up">
         <h2>Gutter Services in Brandon, Mississippi</h2>
         <p>Dun-Rite Seamless Gutters provides seamless installation, copper, gutter guards, cleaning, and repair services in Brandon, Mississippi. From our Madison headquarters 30 miles northwest, we work on Castlewoods custom homes, Whisper Lake new construction, and the Reservoir-area properties along the north shore. Free estimates with no travel charges. Builder partnerships welcome. Call (601) 750-1800.</p>
+      </div>
+      <div class="prose reveal-up" style="margin-top: var(--space-lg);">
+        <h3>What Gutter Problems Are Common in Brandon Homes?</h3>
+        <p>Brandon's challenge is size and shade rather than age. Most homes are under 30 years old, but the Castlewoods, Whisper Lake, and Crosswinds builds have large rooflines — often 3,000+ square feet — with steep architectural pitches that overwhelm standard 5-inch gutters in a Mississippi downpour. Along the Reservoir north shore, mature water oaks add acorns to the leaf load. Dun-Rite Seamless Gutters usually specifies <a href="/services/seamless-gutter-installation/" style="color: var(--color-accent); border-bottom: 1px solid currentColor;">6-inch seamless gutter installation for larger Brandon rooflines</a>, paired with <a href="/services/gutter-guards/" style="color: var(--color-accent); border-bottom: 1px solid currentColor;">screen-style gutter guards for Brandon's water oaks</a>, which handle acorn-sized debris better than mesh.</p>
       </div>
     </div>
   </section>

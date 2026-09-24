@@ -3,8 +3,8 @@
  * Dun-Rite — Ridgeland, MS
  */
 
-$pageTitle       = "Gutter Services in Ridgeland, MS | Dun-Rite Seamless Gutters";
-$pageDescription = "Seamless gutter installation in Ridgeland, Mississippi — including Bridgewater, Trace Harbor, and Lake Castle. Closest neighbor to Madison HQ. Free estimates from Dun-Rite Seamless Gutters.";
+$pageTitle       = "Gutter Installation & Repair Ridgeland MS | Since 1996";
+$pageDescription = "Gutter installation & repair in Ridgeland, MS since 1996: seamless aluminum & copper gutters, Bridgewater to Lake Castle. Free estimates, call (601) 750-1800.";
 $canonicalUrl    = "https://dunrite-gutters.com/service-areas/ridgeland/";
 $ogImage         = "https://i.imgur.com/GO8sZjl.jpeg";
 $heroImage       = "https://i.imgur.com/GO8sZjl.jpeg";
@@ -82,6 +82,10 @@ include $_SERVER['DOCUMENT_ROOT'] . '/includes/head.php';
       <div class="answer-block reveal-up">
         <h2>Gutter Services in Ridgeland, Mississippi</h2>
         <p>Dun-Rite Seamless Gutters provides seamless installation, copper, gutter guards, cleaning, and repair services in Ridgeland, Mississippi. From our Madison headquarters just 3 miles north, Ridgeland is our closest neighbor — Bridgewater, Trace Harbor, Lake Castle, and the affluent 1980s-90s neighborhoods all get same-week scheduling priority. Free estimates with no travel charges. Call (601) 750-1800.</p>
+      </div>
+      <div class="prose reveal-up" style="margin-top: var(--space-lg);">
+        <h3>What Gutter Problems Are Common in Ridgeland Homes?</h3>
+        <p>Most Ridgeland homes in Bridgewater, Trace Harbor, and Lake Castle were built in the 1980s and 1990s, so their original gutters are now 30–40 years old. The failures Dun-Rite Seamless Gutters sees most often are failed corner sealants, sagging from years of leaf-load, and undersized 2x3 downspouts. On top of that, the magnolia and oak shade along Old Trace Park and in Bridgewater drops leathery magnolia leaves that don't break down and clog quickly. On aging systems, <a href="/services/gutter-repair-replacement/" style="color: var(--color-accent); border-bottom: 1px solid currentColor;">gutter replacement in Ridgeland</a> usually beats piecemeal repair, and <a href="/services/gutter-guards/" style="color: var(--color-accent); border-bottom: 1px solid currentColor;">gutter guards for magnolia-heavy Ridgeland lots</a> cut down the cleanings.</p>
       </div>
     </div>
   </section>

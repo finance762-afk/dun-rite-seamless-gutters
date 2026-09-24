@@ -2550,6 +2550,27 @@ body { padding-top: 0; }
   font-size: 0.88rem;
   font-weight: 600;
 }
+.area-pills--links a {
+  display: inline-flex;
+  align-items: center;
+  min-height: 44px;
+  padding: 6px 16px;
+  background: rgba(15, 76, 129, 0.06);
+  color: var(--color-primary);
+  border-radius: var(--radius-pill);
+  font-size: 0.92rem;
+  font-weight: 600;
+  transition: background var(--transition-base), color var(--transition-base);
+}
+.area-pills--links a:hover,
+.area-pills--links a:focus-visible {
+  background: var(--color-primary);
+  color: #fff;
+}
+.home-areas {
+  margin-top: var(--space-xl);
+  text-align: center;
+}
 
 /* ==========================================================================
    X) SERVICE-AREAS COMPONENTS

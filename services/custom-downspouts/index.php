@@ -3,8 +3,8 @@
  * Dun-Rite — Custom Downspouts
  */
 
-$pageTitle       = "Custom Downspouts in Madison, MS | Round, Square, Decorative";
-$pageDescription = "Custom downspout installation across central Mississippi. Round, square, oversized, and decorative copper downspouts. Color-matched to your gutters. Dun-Rite Seamless Gutters.";
+$pageTitle       = "Custom Downspouts Madison, MS | Since 1996 | Free Estimates";
+$pageDescription = "Custom downspouts in Madison, MS: round, square, oversized and copper, matched to seamless aluminum & copper gutters since 1996. Free estimate: (601) 750-1800.";
 $canonicalUrl    = "https://dunrite-gutters.com/services/custom-downspouts/";
 $ogImage         = "https://i.imgur.com/iX7CNj7.jpeg";
 $heroImage       = "https://i.imgur.com/iX7CNj7.jpeg";

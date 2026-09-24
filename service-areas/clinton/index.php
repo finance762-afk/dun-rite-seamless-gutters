@@ -3,8 +3,8 @@
  * Dun-Rite — Clinton, MS
  */
 
-$pageTitle       = "Gutter Services in Clinton, MS | Dun-Rite Seamless Gutters";
-$pageDescription = "Seamless gutter installation in Clinton, Mississippi — Olde Towne, The Traceway, and the Mississippi College area. Mature pecan canopy specialists. Free estimates from Dun-Rite.";
+$pageTitle       = "Gutter Installation & Repair Clinton MS | Since 1996";
+$pageDescription = "Gutter installation & repair in Clinton, MS since 1996: seamless aluminum & copper gutters, Olde Towne to The Traceway. Free estimates, call (601) 750-1800.";
 $canonicalUrl    = "https://dunrite-gutters.com/service-areas/clinton/";
 $ogImage         = "https://i.imgur.com/7Je9z8J.jpeg";
 $heroImage       = "https://i.imgur.com/7Je9z8J.jpeg";
@@ -82,6 +82,10 @@ include $_SERVER['DOCUMENT_ROOT'] . '/includes/head.php';
       <div class="answer-block reveal-up">
         <h2>Gutter Services in Clinton, Mississippi</h2>
         <p>Dun-Rite Seamless Gutters provides seamless installation, copper, gutter guards, cleaning, and repair services in Clinton, Mississippi. From our Madison headquarters 18 miles to the northeast, we serve homes throughout Olde Towne Clinton, The Traceway, and the Mississippi College area. The mature pecan canopy makes gutter guards essential for most Clinton properties. Free estimates with no travel charges. Call (601) 750-1800.</p>
+      </div>
+      <div class="prose reveal-up" style="margin-top: var(--space-lg);">
+        <h3>What Gutter Problems Are Common in Clinton Homes?</h3>
+        <p>Clinton's defining gutter problem is pecans. Olde Towne and the older streets around Mississippi College sit under mature pecan trees whose debris is heavier than most leaves and turns sticky when wet — without guards, fall cleanings come every two months. Many Olde Towne homes are also 75–100+ years old, with non-standard fascia depths and irregular rooflines, so Dun-Rite Seamless Gutters inspects the wood fascia before quoting and forms every run on-site. The usual answer is <a href="/services/gutter-guards/" style="color: var(--color-accent); border-bottom: 1px solid currentColor;">heavy screen gutter guards for Clinton's pecan canopy</a> and <a href="/services/seamless-gutter-installation/" style="color: var(--color-accent); border-bottom: 1px solid currentColor;">seamless gutters custom-formed for Olde Towne rooflines</a>.</p>
       </div>
     </div>
   </section>

@@ -3,8 +3,8 @@
  * Dun-Rite — Bolton, MS
  */
 
-$pageTitle       = "Gutter Services in Bolton, MS | Dun-Rite Seamless Gutters";
-$pageDescription = "Seamless gutter installation in Bolton, Mississippi — rural Hinds County. Larger acreage, mature trees, custom rural builds. Free estimates from Dun-Rite Seamless Gutters.";
+$pageTitle       = "Gutter Installation & Repair Bolton MS | Since 1996";
+$pageDescription = "Gutter installation & repair in Bolton, MS since 1996: seamless aluminum & copper gutters, built for rural Hinds County acreage. Free estimates: (601) 750-1800.";
 $canonicalUrl    = "https://dunrite-gutters.com/service-areas/bolton/";
 $ogImage         = "https://i.imgur.com/u0mERob.jpeg";
 $heroImage       = "https://i.imgur.com/u0mERob.jpeg";

@@ -3,8 +3,8 @@
  * Dun-Rite — Gutter Cleaning
  */
 
-$pageTitle       = "Gutter Cleaning in Madison, MS | Dun-Rite Seamless Gutters";
-$pageDescription = "Professional gutter cleaning across central Mississippi. Twice-yearly maintenance prevents foundation damage, fascia rot, and overflow. Schedule with Dun-Rite Seamless Gutters today.";
+$pageTitle       = "Gutter Cleaning in Madison & Jackson, MS | Since 1996";
+$pageDescription = "Gutter cleaning in Madison & Jackson, MS from a seamless aluminum & copper gutter installer since 1996. Downspouts flushed. Free estimate: (601) 750-1800.";
 $canonicalUrl    = "https://dunrite-gutters.com/services/gutter-cleaning/";
 $ogImage         = "https://i.imgur.com/jAqOpHk.jpeg";
 $heroImage       = "https://i.imgur.com/jAqOpHk.jpeg";
@@ -17,6 +17,8 @@ $faqs = [
   ["q" => "How often should gutters be cleaned in Mississippi?", "a" => "Most central Mississippi homes need gutter cleaning twice a year — once in late spring (after pollen and oak catkins drop) and once after fall leaf-drop in November. Homes under heavy oak or pine canopy may need quarterly cleanings. Homes with no significant tree coverage may get by with once a year."],
   ["q" => "How much does gutter cleaning cost?", "a" => "Most Mississippi homes run $150–$300 per cleaning depending on home size, number of stories, and accessibility. We discount recurring service plans — twice-yearly customers typically save 15–20% versus single-visit pricing. Quotes are free."],
   ["q" => "Do you offer recurring cleaning service?", "a" => "Yes. Most customers schedule twice-yearly (spring + fall) recurring cleanings on autopay. We send reminders, handle scheduling, and provide a written inspection report after each visit. Quarterly plans available for high-debris properties."],
+  ["q" => "What is included in a Dun-Rite gutter cleaning?", "a" => "Every Dun-Rite Seamless Gutters cleaning includes hand-removal of all debris from the gutter trough (bagged and hauled away), a high-pressure flush of every downspout, a splash-block check, a fascia inspection, a test of every hanger and downspout strap, and a written report with photos delivered the same day."],
+  ["q" => "What are the signs my gutters need cleaning now?", "a" => "Schedule a cleaning if water overflows the front edge of the gutter during rain, the gutter sags or pulls away from the fascia, plants are growing in the trough, the fascia or soffit shows water staining or peeling paint, or flowerbeds below the downspouts are washing out. Most homes are scheduled within 5 business days."],
   ["q" => "What if you find damage during cleaning?", "a" => "Our cleaning includes a written inspection report with photos of any issues we spot — sagging gutters, broken hangers, fascia damage, or seam leaks. We'll provide a separate repair quote you can take or leave. We never start work beyond the cleaning without your authorization."],
 ];
 
@@ -71,7 +73,7 @@ include $_SERVER['DOCUMENT_ROOT'] . '/includes/head.php';
     <div class="hero__inner">
       <div class="hero__copy">
         <span class="eyebrow-label">Twice-Yearly · Overflow Prevention</span>
-        <h1>Gutter Cleaning Services in <span class="text-accent">Madison, MS.</span></h1>
+        <h1>Gutter Cleaning Services in <span class="text-accent">Madison &amp; Jackson, MS.</span></h1>
         <p class="hero__subhead">Spring and fall maintenance. Foundation protection. Fascia preservation. Done by professionals — not on a ladder by yourself.</p>
         <div class="hero__ctas">
           <a href="#hero-form-heading" class="btn-primary">Schedule Cleaning</a>
@@ -108,8 +110,8 @@ include $_SERVER['DOCUMENT_ROOT'] . '/includes/head.php';
   <section class="section">
     <div class="container">
       <div class="answer-block reveal-up">
-        <h2>Gutter Cleaning in Mississippi: What It Costs &amp; When to Schedule</h2>
-        <p>Most Mississippi homes need professional gutter cleaning twice a year — once in late spring and once after fall leaf-drop. Clogged gutters cause foundation damage, fascia rot, basement flooding, and landscape erosion. Dun-Rite Seamless Gutters provides scheduled cleanings across 14 cities with full debris removal, downspout flushing, and a written inspection report identifying any repairs needed. Most homes run $150–$300 per cleaning with recurring service discounts available.</p>
+        <h2>How Much Does Gutter Cleaning Cost in Madison &amp; Jackson, MS?</h2>
+        <p>Gutter cleaning in Madison, Jackson, and central Mississippi runs $150–$300 per visit for most homes, and most homes need it twice a year — once in late spring and once after fall leaf-drop. Clogged gutters cause foundation damage, fascia rot, basement flooding, and landscape erosion. Dun-Rite Seamless Gutters, installing gutters since 1996, provides scheduled cleanings across 14 cities with full debris removal, downspout flushing, and a written inspection report identifying any repairs needed. Recurring plans save 15–20% versus single visits.</p>
       </div>
     </div>
   </section>

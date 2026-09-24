@@ -3,8 +3,8 @@
  * Dun-Rite — About / Owner Story
  */
 
-$pageTitle       = "About Dun-Rite Seamless Gutters | Mark Dungan, Madison MS";
-$pageDescription = "Mark Dungan founded Dun-Rite Seamless Gutters in 1996. 30 years of seamless gutter installation, copper specialty, and rain-carrying systems across central Mississippi. Family-owned and Mississippi licensed.";
+$pageTitle       = "About Dun-Rite Seamless Gutters | Madison MS Since 1996";
+$pageDescription = "Dun-Rite Seamless Gutters, founded by Mark Dungan in Madison, MS in 1996. Seamless aluminum & copper gutters across central MS. Free estimates: (601) 750-1800.";
 $canonicalUrl    = "https://dunrite-gutters.com/about/";
 $ogImage         = "https://i.imgur.com/qJMX4SH.png";
 $heroImage       = "https://i.imgur.com/lHGkpv5.jpeg";

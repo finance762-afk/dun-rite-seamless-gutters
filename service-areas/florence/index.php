@@ -3,8 +3,8 @@
  * Dun-Rite — Florence, MS
  */
 
-$pageTitle       = "Gutter Services in Florence, MS | Dun-Rite Seamless Gutters";
-$pageDescription = "Seamless gutter installation in Florence, Mississippi — semi-rural Rankin County. Larger lots, mature trees, custom downspout work. Free estimates from Dun-Rite Seamless Gutters.";
+$pageTitle       = "Gutter Installation & Repair Florence MS | Since 1996";
+$pageDescription = "Gutter installation & repair in Florence, MS since 1996: seamless aluminum & copper, for larger semi-rural Rankin County lots. Free estimates: (601) 750-1800.";
 $canonicalUrl    = "https://dunrite-gutters.com/service-areas/florence/";
 $ogImage         = "https://i.imgur.com/oaW4wFF.jpeg";
 $heroImage       = "https://i.imgur.com/oaW4wFF.jpeg";

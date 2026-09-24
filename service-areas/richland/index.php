@@ -3,8 +3,8 @@
  * Dun-Rite — Richland, MS
  */
 
-$pageTitle       = "Gutter Services in Richland, MS | Dun-Rite Seamless Gutters";
-$pageDescription = "Seamless gutter installation in Richland, Mississippi — I-20/Highway 49 working-class suburb. 1970s-80s ranch home replacement specialists. Free estimates from Dun-Rite.";
+$pageTitle       = "Gutter Installation & Repair Richland MS | Since 1996";
+$pageDescription = "Gutter installation & repair in Richland, MS since 1996: seamless aluminum & copper, 1970s-80s ranch replacement specialists. Free estimates: (601) 750-1800.";
 $canonicalUrl    = "https://dunrite-gutters.com/service-areas/richland/";
 $ogImage         = "https://i.imgur.com/k3pvmNe.jpeg";
 $heroImage       = "https://i.imgur.com/k3pvmNe.jpeg";

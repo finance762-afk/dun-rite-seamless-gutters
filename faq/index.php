@@ -3,8 +3,8 @@
  * Dun-Rite — FAQ (Premium, 5 sections, 30 questions)
  */
 
-$pageTitle       = "Frequently Asked Questions | Dun-Rite Seamless Gutters Mississippi";
-$pageDescription = "Common questions about gutter installation, pricing, materials, copper specialty, gutter guards, and service areas in Mississippi. Answers from Dun-Rite Seamless Gutters.";
+$pageTitle       = "Gutter FAQs Madison & Jackson MS | Dun-Rite Since 1996";
+$pageDescription = "Answers on gutter cost, seamless aluminum vs copper, guards, cleaning and repair in Madison & Jackson, MS, from Dun-Rite, here since 1996. Call (601) 750-1800.";
 $canonicalUrl    = "https://dunrite-gutters.com/faq/";
 $ogImage         = "https://i.imgur.com/2HO8Y5F.jpeg";
 $heroImage       = "https://i.imgur.com/2HO8Y5F.jpeg";

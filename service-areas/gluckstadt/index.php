@@ -3,8 +3,8 @@
  * Dun-Rite — Gluckstadt, MS
  */
 
-$pageTitle       = "Gutter Services in Gluckstadt, MS | Dun-Rite Seamless Gutters";
-$pageDescription = "Seamless gutter installation in Gluckstadt, Mississippi — the state's newest incorporated city. New construction specialists. Free estimates from Dun-Rite Seamless Gutters.";
+$pageTitle       = "Gutter Installation & Repair Gluckstadt MS | Since 1996";
+$pageDescription = "Gutter installation & repair in Gluckstadt, MS since 1996: seamless aluminum & copper gutters, new construction specialists. Free estimates: (601) 750-1800.";
 $canonicalUrl    = "https://dunrite-gutters.com/service-areas/gluckstadt/";
 $ogImage         = "https://i.imgur.com/dRN7AE6.jpeg";
 $heroImage       = "https://i.imgur.com/dRN7AE6.jpeg";

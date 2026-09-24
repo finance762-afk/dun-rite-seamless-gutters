@@ -3,8 +3,8 @@
  * Dun-Rite — Commercial Gutters
  */
 
-$pageTitle       = "Commercial Gutters in Mississippi | Dun-Rite Seamless Gutters";
-$pageDescription = "Large-scale commercial gutter systems across Mississippi. Office buildings, retail, multi-family, industrial. Custom sizing, high-flow profiles, copper specialty. Dun-Rite Seamless Gutters.";
+$pageTitle       = "Commercial Gutters Mississippi | Since 1996 | Free Estimates";
+$pageDescription = "Commercial gutters in Madison, Jackson & central Mississippi since 1996. Seamless aluminum & copper, high-flow profiles. Free estimates: call (601) 750-1800.";
 $canonicalUrl    = "https://dunrite-gutters.com/services/commercial-gutters/";
 $ogImage         = "https://i.imgur.com/F4Wh56M.jpeg";
 $heroImage       = "https://i.imgur.com/F4Wh56M.jpeg";

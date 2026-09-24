@@ -3,8 +3,8 @@
  * Dun-Rite — Canton, MS
  */
 
-$pageTitle       = "Gutter Services in Canton, MS | Dun-Rite Seamless Gutters";
-$pageDescription = "Seamless gutter installation in Canton, Mississippi — historic home specialists. Mississippi's antique capital. Free estimates from Dun-Rite Seamless Gutters.";
+$pageTitle       = "Gutter Installation & Repair Canton MS | Since 1996";
+$pageDescription = "Gutter installation & repair in Canton, MS since 1996: seamless aluminum & copper gutters, historic home specialists. Free estimates, call (601) 750-1800.";
 $canonicalUrl    = "https://dunrite-gutters.com/service-areas/canton/";
 $ogImage         = "https://i.imgur.com/INwo4Si.jpeg";
 $heroImage       = "https://i.imgur.com/INwo4Si.jpeg";
