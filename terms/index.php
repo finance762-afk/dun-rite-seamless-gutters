@@ -1,14 +1,12 @@
 <?php
-/**
- * Dun-Rite — Terms of Service
- */
+/** Legal page — Terms of Service (text unchanged from the v6.1 build; chrome migrated to v7) */
+require_once $_SERVER['DOCUMENT_ROOT'] . '/includes/config.php';
 
 $pageTitle       = "Terms of Service | Dun-Rite Seamless Gutters";
 $pageDescription = "Terms governing use of dunrite-gutters.com and the services provided by Dun-Rite Seamless Gutters, Inc., a Mississippi corporation.";
-$canonicalUrl    = "https://dunrite-gutters.com/terms/";
-$ogImage         = "https://i.imgur.com/xRVJ7rY.jpeg";
-$heroImage       = "https://i.imgur.com/lHGkpv5.jpeg";
-$currentPage     = "terms";
+$currentPage     = 'terms';
+$canonicalUrl    = $siteUrl . '/terms/';
+$pageType        = 'other';
 
 $companyName       = "Dun-Rite Seamless Gutters, Inc.";
 $companyEntityType = "Corporation";
@@ -18,55 +16,27 @@ $companyPhone      = "(601) 750-1800";
 $companyAddress    = "115 Cherrybrook Dr, Madison, MS 39110";
 $lastUpdated       = date('F j, Y');
 
-$schemaGraph = [
-  "@context" => "https://schema.org",
-  "@graph" => [
-    [
-      "@type" => "WebPage",
-      "@id"   => $canonicalUrl . "#webpage",
-      "url"   => $canonicalUrl,
-      "name"  => $pageTitle,
-      "description" => $pageDescription,
-    ],
-    [
-      "@type" => "BreadcrumbList",
-      "itemListElement" => [
-        ["@type" => "ListItem", "position" => 1, "name" => "Home", "item" => "https://dunrite-gutters.com/"],
-        ["@type" => "ListItem", "position" => 2, "name" => "Terms of Service", "item" => $canonicalUrl],
-      ]
-    ],
-  ]
+$schemaNodes = [
+    ['@type' => 'WebPage', '@id' => $siteUrl . '/terms/#webpage', 'url' => $siteUrl . '/terms/', 'name' => $pageTitle, 'description' => $pageDescription],
+    dr_breadcrumb_node(['Terms of Service' => '/terms/']),
 ];
-$schemaMarkup = '<script type="application/ld+json">' . json_encode($schemaGraph, JSON_UNESCAPED_SLASHES | JSON_UNESCAPED_UNICODE) . '</script>';
 
 include $_SERVER['DOCUMENT_ROOT'] . '/includes/head.php';
+include $_SERVER['DOCUMENT_ROOT'] . '/includes/header.php';
 ?>
-<?php include $_SERVER['DOCUMENT_ROOT'] . '/includes/nav.php'; ?>
-
 <main id="main-content">
 
-  <section class="hero hero--inner hero--legal" aria-label="Terms of Service">
-    <img src="https://i.imgur.com/lHGkpv5.jpeg" alt="Brick stucco Madison MS home — Dun-Rite Seamless Gutters" class="hero-bg" width="1920" height="1080" loading="eager" fetchpriority="high">
-    <div class="hero__inner">
-      <div class="hero__copy">
-        <span class="eyebrow-label">Legal</span>
-        <h1>Terms of Service</h1>
-        <span class="section-subtitle">the legal stuff, in plain language</span>
-        <p class="hero__phone" style="opacity: 0.8;">Last Updated: <?php echo $lastUpdated; ?></p>
-      </div>
+  <section class="hero hero--legal">
+    <div class="container">
+      <?php echo dr_breadcrumb(['Terms of Service' => null]); ?>
+      <p class="eyebrow">Legal</p>
+      <h1>Terms of Service</h1>
+      <p>Last Updated: <?php echo $lastUpdated; ?></p>
     </div>
   </section>
 
-  <nav class="breadcrumb" aria-label="Breadcrumb">
+  <section class="section">
     <div class="container">
-      <ol>
-        <li><a href="/">Home</a></li>
-        <li class="breadcrumb-sep" aria-hidden="true">›</li>
-        <li aria-current="page">Terms of Service</li>
-      </ol>
-    </div>
-  </nav>
-
   <article class="legal-prose">
 
     <h2>1. Acceptance of Terms</h2>
@@ -123,7 +93,8 @@ include $_SERVER['DOCUMENT_ROOT'] . '/includes/head.php';
     </p>
 
   </article>
+    </div>
+  </section>
 
 </main>
-
 <?php include $_SERVER['DOCUMENT_ROOT'] . '/includes/footer.php'; ?>

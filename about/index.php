@@ -1,249 +1,137 @@
 <?php
-/**
- * Dun-Rite — About / Owner Story
- */
+/** About — Mark Dungan and Dun-Rite Seamless Gutters, Inc. */
+require_once $_SERVER['DOCUMENT_ROOT'] . '/includes/config.php';
 
-$pageTitle       = "About Dun-Rite Seamless Gutters | Madison MS Since 1996";
-$pageDescription = "Dun-Rite Seamless Gutters, founded by Mark Dungan in Madison, MS in 1996. Seamless aluminum & copper gutters across central MS. Free estimates: (601) 750-1800.";
-$canonicalUrl    = "https://dunrite-gutters.com/about/";
-$ogImage         = "https://i.imgur.com/qJMX4SH.png";
-$heroImage       = "https://i.imgur.com/lHGkpv5.jpeg";
-$currentPage     = "about";
+$pageTitle       = 'About Dun-Rite Seamless Gutters | Mark Dungan, Madison MS';
+$pageDescription = 'Mark Dungan founded Dun-Rite Seamless Gutters, Inc. in Madison, MS in 1996. Who does the work, what the company is licensed and insured for, and how to reach it.';
+$currentPage     = 'about';
+$canonicalUrl    = $siteUrl . '/about/';
+$pageType        = 'about';
 
-$schemaGraph = [
-  "@context" => "https://schema.org",
-  "@graph" => [
-    [
-      "@type"       => ["LocalBusiness", "RoofingContractor"],
-      "@id"         => "https://dunrite-gutters.com/#business",
-      "name"        => "Dun-Rite Seamless Gutters, Inc.",
-      "url"         => "https://dunrite-gutters.com",
-      "telephone"   => "+16017501800",
-      "foundingDate" => "1996",
-      "founder"     => ["@id" => "https://dunrite-gutters.com/#owner"],
-      "address"     => [
-        "@type"           => "PostalAddress",
-        "streetAddress"   => "115 Cherrybrook Dr",
-        "addressLocality" => "Madison",
-        "addressRegion"   => "MS",
-        "postalCode"      => "39110",
-        "addressCountry"  => "US"
-      ],
-    ],
-    [
-      "@type"        => "Organization",
-      "@id"          => "https://dunrite-gutters.com/#org",
-      "name"         => "Dun-Rite Seamless Gutters, Inc.",
-      "url"          => "https://dunrite-gutters.com",
-      "logo"         => "https://i.imgur.com/xRVJ7rY.jpeg",
-      "foundingDate" => "1996",
-      "founder"      => ["@id" => "https://dunrite-gutters.com/#owner"],
-    ],
-    [
-      "@type"     => "Person",
-      "@id"       => "https://dunrite-gutters.com/#owner",
-      "name"      => "Mark Dungan",
-      "jobTitle"  => "Owner",
-      "image"     => "https://i.imgur.com/qJMX4SH.png",
-      "worksFor"  => ["@id" => "https://dunrite-gutters.com/#business"],
-    ],
-    [
-      "@type" => "BreadcrumbList",
-      "itemListElement" => [
-        ["@type" => "ListItem", "position" => 1, "name" => "Home", "item" => "https://dunrite-gutters.com/"],
-        ["@type" => "ListItem", "position" => 2, "name" => "About", "item" => $canonicalUrl],
-      ]
-    ],
-  ]
+$schemaNodes = [
+    dr_breadcrumb_node(['About' => '/about/']),
+    ['@type' => 'AboutPage', 'url' => $siteUrl . '/about/', 'name' => 'About ' . $siteName, 'about' => ['@id' => $siteUrl . '/#business']],
+    ['@type' => 'Person', '@id' => $siteUrl . '/#owner', 'name' => $ownerName, 'jobTitle' => 'Founder and owner', 'worksFor' => ['@id' => $siteUrl . '/#business']],
 ];
-$schemaMarkup = '<script type="application/ld+json">' . json_encode($schemaGraph, JSON_UNESCAPED_SLASHES | JSON_UNESCAPED_UNICODE) . '</script>';
 
 include $_SERVER['DOCUMENT_ROOT'] . '/includes/head.php';
+include $_SERVER['DOCUMENT_ROOT'] . '/includes/header.php';
 ?>
-<?php include $_SERVER['DOCUMENT_ROOT'] . '/includes/nav.php'; ?>
-
 <main id="main-content">
 
-  <!-- HERO (no form) -->
-  <section class="hero hero--inner" aria-label="About Dun-Rite hero">
-    <img src="https://i.imgur.com/lHGkpv5.jpeg" alt="Brick stucco Madison MS home with seamless gutters by Mark Dungan" class="hero-bg" width="1920" height="1080" loading="eager" fetchpriority="high">
-    <div class="hero__inner" style="display:block; text-align:left; max-width: 720px;">
-      <div class="hero__copy">
-        <span class="eyebrow-label">Est. 1996 · Madison, MS</span>
-        <h1>Three Decades of <span class="text-accent">Mississippi</span> Gutters.</h1>
-        <p class="hero__subhead">Mark Dungan started Dun-Rite Seamless Gutters in 1996 with a single goal: do gutters right, the first time, on every Mississippi home. Thirty years later, the standard hasn't changed.</p>
-        <div class="hero__ctas">
-          <a href="/contact/" class="btn-primary">Get Free Estimate</a>
-          <a href="tel:+16017501800" class="btn-secondary btn-on-dark">Call (601) 750-1800</a>
-        </div>
-        <p class="hero__phone">Mon–Fri 8AM–5PM · 14 Mississippi cities served</p>
-      </div>
-    </div>
-    <div class="section-divider section-divider--bottom" aria-hidden="true">
-      <svg viewBox="0 0 1440 100" preserveAspectRatio="none">
-        <path fill="#FFFFFF" d="M0,64 C240,96 480,32 720,48 C960,64 1200,96 1440,72 L1440,100 L0,100 Z"></path>
-      </svg>
-    </div>
-  </section>
-
-  <nav class="breadcrumb" aria-label="Breadcrumb">
+  <section class="hero hero--interior">
+    <span class="grain" aria-hidden="true"></span>
     <div class="container">
-      <ol>
-        <li><a href="/">Home</a></li>
-        <li class="breadcrumb-sep" aria-hidden="true">›</li>
-        <li aria-current="page">About</li>
-      </ol>
+      <div class="hero-text">
+        <?php echo dr_breadcrumb(['About' => null]); ?>
+        <p class="hero-eyebrow">Est. 1996 &middot; Madison, MS</p>
+        <h1>About Dun-Rite Seamless Gutters, Inc.</h1>
+        <p class="hero-answer">Dun-Rite Seamless Gutters, Inc. is a gutter company founded by Mark Dungan in Madison, Mississippi in 1996. It installs, repairs and cleans gutters for homeowners, builders and commercial property managers in 14 cities around Jackson, and Mark still inspects every estimate himself.</p>
+      </div>
     </div>
-  </nav>
+  </section>
 
-  <!-- OWNER STORY (asymmetric image stack) -->
-  <section class="section section-alt" aria-label="Owner story">
-    <svg class="floating-accent float-animate-slow" style="bottom: 40px; right: 6%; width: 80px; height: 110px; opacity: 0.06;" viewBox="0 0 60 80" aria-hidden="true">
-      <path fill="#B87333" d="M30 0 C30 0 0 35 0 55 A30 25 0 0 0 60 55 C60 35 30 0 30 0 Z"/>
-    </svg>
+  <section class="section">
+    <div class="container split">
+      <div class="about-copy">
+        <p class="eyebrow">The owner</p>
+        <h2>Who is Mark Dungan?</h2>
+        <p>Mark Dungan is the founder and owner of Dun-Rite Seamless Gutters, Inc. He started the company in Madison in 1996 and has run it from there ever since. He personally inspects every estimate and supervises every commercial installation.</p>
+        <p>The line on the company logo, "Rain Carrying Systems," is a plain description of the work. Every one of the eight services Dun-Rite offers is about gutters, downspouts or the drains they feed.</p>
+        <p>Mark works with a small team of long-tenured installers who have trained on the company's installation standard: .032 gauge aluminum, hidden hangers every 24 inches, corners sealed inside and out, and a quarter inch of fall per 10 feet. That standard is described step by step on the <a href="/services/seamless-gutter-installation/">seamless gutter installation page</a>.</p>
+      </div>
+      <figure class="photo-figure">
+        <?php echo dr_picture('mark-dungan-owner', 'Mark Dungan, founder of Dun-Rite Seamless Gutters, Inc.', ['sizes' => '(max-width: 900px) 100vw, 46vw']); ?>
+        <figcaption>Mark Dungan, founder and owner.</figcaption>
+      </figure>
+    </div>
+  </section>
 
+  <?php
+  $ctaBandHeading = 'Ask Mark to look at your gutters';
+  include $_SERVER['DOCUMENT_ROOT'] . '/includes/cta-band.php';
+  ?>
+
+  <section class="section">
+    <div class="container credentials">
+      <div class="about-copy">
+        <p class="eyebrow">Credentials</p>
+        <h2>Is Dun-Rite licensed and insured?</h2>
+        <p>Yes. Dun-Rite Seamless Gutters, Inc. is a Mississippi-licensed corporation and carries both Workers' Compensation and General Liability insurance. Builder partners can request a certificate of insurance with the builder named as additional insured.</p>
+        <ul>
+          <li>BBB accredited: <a href="https://www.bbb.org/us/ms/madison/profile/gutters/dun-rite-seamless-gutters-0523-145212331" target="_blank" rel="noopener">see the BBB profile</a></li>
+          <li>HomeAdvisor approved</li>
+          <li>Member of the Home Builders Association</li>
+          <li>Listed on <a href="https://www.yelp.com/biz/dun-rite-seamless-gutters-madison-6" target="_blank" rel="noopener">Yelp</a>, <a href="https://www.facebook.com/dunritegutters/" target="_blank" rel="noopener">Facebook</a> and <a href="<?php echo h($gbpUrl); ?>" target="_blank" rel="noopener">Google</a></li>
+        </ul>
+      </div>
+      <?php echo dr_picture('credential-badges', 'HomeAdvisor Top Rated, Best of HomeAdvisor 2016 Winner, BBB Accredited Business and Home Builders Association of Jackson badges', ['sizes' => '(max-width: 800px) 100vw, 46vw']); ?>
+    </div>
+  </section>
+
+  <section class="section section--tint">
     <div class="container">
-      <div class="about-grid">
-        <div class="reveal-left">
-          <span class="eyebrow-label">Meet the Owner</span>
-          <h2>Mark Dungan: <span class="text-accent">Mississippi's</span> Gutter Specialist.</h2>
-          <span class="section-subtitle">30 years on Mississippi roofs</span>
-          <p style="margin-top: var(--space-md);">Mark Dungan founded Dun-Rite Seamless Gutters in Madison, Mississippi in 1996. Before starting Dun-Rite, Mark spent years installing gutters for other companies and watching corners get cut — thin-gauge aluminum, sectional gutters that leaked within five years, sloppy installs that pulled fascia loose. He started Dun-Rite with one rule: do it right or don't do it at all.</p>
-          <p>Thirty years later, Mark still personally inspects every estimate and supervises every commercial install. Dun-Rite has grown to serve 14 Mississippi cities and built a reputation for hand-soldered copper work that few installers in the state can match — but the owner is still the one walking your roofline before quoting your job.</p>
-          <p>Mark is supported by a small team of long-tenured installers who've been with Dun-Rite for years. Every one of them is trained on Dun-Rite's installation standard: hidden hangers, sealed corners, properly pitched runs, color-matched fasteners, and a final inspection before paperwork. Nothing leaves a Dun-Rite jobsite half-finished.</p>
-        </div>
-
-        <div class="about-image-stack reveal-right">
-          <img src="https://i.imgur.com/qJMX4SH.png" alt="Mark Dungan, owner of Dun-Rite Seamless Gutters since 1996, Madison Mississippi" class="about-image-primary" width="900" height="900" loading="lazy">
-          <img src="https://i.imgur.com/kRJ17by.jpeg" alt="Dun-Rite Seamless Gutters service truck on a Mississippi installation jobsite" class="about-image-secondary" width="600" height="500" loading="lazy">
-        </div>
+      <div class="section-head">
+        <p class="eyebrow">In writing</p>
+        <h2>What does Dun-Rite put in writing?</h2>
+        <p>Dun-Rite Seamless Gutters, Inc. puts the estimate and both warranties in writing. Every installation carries a 25-year manufacturer warranty on materials and a 2-year labor warranty on the workmanship. The estimate itself is free, measured on site and carries no obligation.</p>
+      </div>
+      <div class="table-wrap">
+        <table class="data-table">
+          <caption>What a Dun-Rite customer receives, and when.</caption>
+          <thead><tr><th scope="col">Document</th><th scope="col">What it covers</th><th scope="col">When you get it</th></tr></thead>
+          <tbody>
+            <tr><th scope="row">Written estimate</th><td>The price, after measuring on site and evaluating water flow</td><td>After the on-site visit</td></tr>
+            <tr><th scope="row">Material warranty</th><td>25 years, from the manufacturer</td><td>With a new installation</td></tr>
+            <tr><th scope="row">Labor warranty</th><td>2 years, from Dun-Rite</td><td>With a new installation</td></tr>
+            <tr><th scope="row">Cleaning report</th><td>Written findings with photos, including the fascia</td><td>Same day as a <a href="/services/gutter-cleaning/">cleaning visit</a></td></tr>
+            <tr><th scope="row">Storm damage file</th><td>Photos, damage assessment, itemized quote</td><td>For <a href="/services/gutter-repair-replacement/">insurance claims</a></td></tr>
+          </tbody>
+        </table>
       </div>
     </div>
   </section>
 
-  <!-- COMPANY STANDARDS -->
-  <section class="section" aria-label="Standards">
-    <div class="container">
-      <div class="section-title reveal-up">
-        <span class="eyebrow-label">What We Stand Behind</span>
-        <h2>Three Standards That Haven't <span class="text-accent">Changed Since 1996.</span></h2>
-        <span class="section-subtitle">do it once, do it right</span>
-      </div>
-
-      <div class="sub-service-grid">
-        <div class="sub-service-card card-tint-1 reveal-up reveal-delay-1">
-          <div class="sub-service-icon"><i data-lucide="package"></i></div>
-          <h3>High-Quality Materials Only</h3>
-          <p>We install .032 gauge aluminum (heavier than home-center .027), hand-soldered copper, and steel where appropriate. Never the cheapest material — always the right material for the job.</p>
-        </div>
-        <div class="sub-service-card card-tint-3 reveal-up reveal-delay-2">
-          <div class="sub-service-icon"><i data-lucide="ruler"></i></div>
-          <h3>On-Site Custom Forming</h3>
-          <p>Our truck-mounted brake forms each gutter section to your home's exact roofline. No prefab, no off-the-shelf compromises, no seams every 10 feet.</p>
-        </div>
-        <div class="sub-service-card card-tint-2 reveal-up reveal-delay-3">
-          <div class="sub-service-icon"><i data-lucide="shield-check"></i></div>
-          <h3>Backed in Writing</h3>
-          <p>25-year manufacturer warranty on materials. 2-year labor warranty. Workers' Compensation and General Liability insurance. Documented in writing, every job.</p>
-        </div>
-      </div>
-    </div>
-  </section>
-
-  <!-- STATS -->
-  <section class="section section-alt" aria-label="By the numbers">
-    <div class="stat-watermark" style="top: 10%; left: 50%; transform: translateX(-50%);">1996</div>
-    <div class="container" style="position: relative; z-index: 2;">
-      <div class="section-title reveal-up">
-        <span class="eyebrow-label">By the Numbers</span>
-        <h2>Three Decades on <span class="text-accent">Mississippi</span> Roofs.</h2>
-        <span class="section-subtitle">measured in years and warranties</span>
-      </div>
-
-      <div class="stats-grid">
-        <div class="stat-block reveal-scale reveal-delay-1">
-          <span class="stat-number" data-counter data-target="30" data-suffix="+">0</span>
-          <span class="stat-label">Years in Business</span>
-        </div>
-        <div class="stat-block reveal-scale reveal-delay-2">
-          <span class="stat-number" data-counter data-target="14">0</span>
-          <span class="stat-label">Mississippi Cities Served</span>
-        </div>
-        <div class="stat-block reveal-scale reveal-delay-3">
-          <span class="stat-number" data-counter data-target="25">0</span>
-          <span class="stat-label">Year Material Warranty</span>
-        </div>
-        <div class="stat-block reveal-scale reveal-delay-4">
-          <span class="stat-number">5.0</span>
-          <span class="stat-label">Average Customer Rating</span>
-        </div>
-      </div>
-    </div>
-  </section>
-
-  <!-- BUILDERS / ARCHITECTS / HOMEOWNERS -->
   <section class="section">
     <div class="container">
-      <div class="section-title reveal-up">
-        <span class="eyebrow-label">Who We Work With</span>
-        <h2>Builders, Architects, and <span class="text-accent">Custom Home Owners.</span></h2>
-        <span class="section-subtitle">three audiences, one standard</span>
+      <div class="section-head">
+        <p class="eyebrow">Customers</p>
+        <h2>Who does Dun-Rite work for?</h2>
+        <p>Dun-Rite Seamless Gutters, Inc. works for three kinds of customer: homeowners, builders and commercial property managers. The materials and the installation standard are the same for all three; what changes is the paperwork and the schedule.</p>
       </div>
-
-      <div class="sub-service-grid">
-        <div class="sub-service-card card-tint-1 reveal-up reveal-delay-1">
-          <div class="sub-service-icon"><i data-lucide="construction"></i></div>
+      <div class="grid-3">
+        <div class="card card-tint-1">
+          <h3>Homeowners</h3>
+          <p>Replacement systems, repairs, guards and cleaning on houses across the 14 cities. Written quotes and no trip charge.</p>
+          <p><a href="/service-areas/">See the cities served</a></p>
+        </div>
+        <div class="card card-tint-2">
           <h3>Builders</h3>
-          <p>Ongoing partnerships with central Mississippi builders. Pre-construction consultation, drawing review, phased installs synchronized to other trades, certificate of insurance with builder named as additional insured, and AIA-formatted billing on request.</p>
+          <p>Ongoing builder partnerships across central Mississippi, with certificates of insurance and standard contractor billing terms.</p>
+          <p><a href="/services/seamless-gutter-installation/">Gutters for new homes</a></p>
         </div>
-        <div class="sub-service-card card-tint-3 reveal-up reveal-delay-2">
-          <div class="sub-service-icon"><i data-lucide="pen-tool"></i></div>
-          <h3>Architects</h3>
-          <p>We fabricate to drawing — half-round, ogee, custom copper profiles, decorative endcaps, ornamental brackets. If you can sketch it, we can build it. Period-appropriate work for historic restorations, custom profiles for high-design new builds.</p>
-        </div>
-        <div class="sub-service-card card-tint-2 reveal-up reveal-delay-3">
-          <div class="sub-service-icon"><i data-lucide="home"></i></div>
-          <h3>Custom Home Owners</h3>
-          <p>From single-family Madison residences to lakefront properties on the Reservoir, we work with homeowners directly on copper installations, gutter guards, replacement projects, and full system upgrades. Free estimates, written quotes, no high-pressure sales.</p>
+        <div class="card card-tint-3">
+          <h3>Commercial property managers</h3>
+          <p>Office, retail, multi-family and industrial buildings, with drawing review, phased installation and AIA billing on request.</p>
+          <p><a href="/services/commercial-gutters/">Commercial gutter installation</a></p>
         </div>
       </div>
     </div>
   </section>
 
-  <!-- TRUST BADGES -->
-  <section class="section section-alt" aria-label="Trust accreditations">
+  <section class="closing-cta">
+    <span class="grain" aria-hidden="true"></span>
     <div class="container">
-      <div class="section-title reveal-up">
-        <span class="eyebrow-label">Trusted &amp; Accredited</span>
-        <h2>Mississippi <span class="text-accent">Licensed</span> &amp; Fully Insured.</h2>
-      </div>
-      <div style="text-align:center; max-width: 700px; margin: 0 auto;" class="reveal-up">
-        <img src="https://i.imgur.com/WbrtNRS.png"
-             alt="Dun-Rite Seamless Gutters HomeAdvisor approved, BBB accredited, and Home Builders Association member"
-             style="max-width: 100%; height: auto; display:block; margin: 0 auto;"
-             width="700" height="120" loading="lazy">
-        <p style="margin-top: var(--space-md); color: var(--color-text-light); font-size: 0.95rem;">
-          Mississippi licensed and fully insured. Member of the Home Builders Association. BBB accredited.
-          <br>Workers' Compensation + General Liability coverage on every job.
-        </p>
-      </div>
-    </div>
-  </section>
-
-  <!-- CLOSING CTA -->
-  <section class="closing-cta" aria-label="Get an estimate from Mark">
-    <div class="closing-cta__inner reveal-up">
-      <span class="section-subtitle" style="color: var(--color-accent);">ready when you are</span>
-      <h2>Get Mark on <span class="text-accent">Your Roofline.</span></h2>
-      <p>Free on-site estimates across all 14 Mississippi cities we serve. Most quotes scheduled within 48 hours. Mark or a senior team member at every estimate.</p>
       <div>
-        <a href="/contact/" class="btn-primary">Get Free Estimate</a>
-        <a href="tel:+16017501800" class="closing-cta__phone">Or Call (601) 750-1800</a>
+        <h2>Reach the Dun-Rite office</h2>
+        <p><?php echo h($address['street']); ?>, <?php echo h($address['city']); ?>, <?php echo h($address['state']); ?> <?php echo h($address['zip']); ?>. <?php echo h($businessHours); ?>.</p>
       </div>
-      <p class="closing-cta__meta">Mon–Fri 8AM–5PM · 115 Cherrybrook Dr · Madison, MS 39110</p>
+      <div class="actions">
+        <a class="btn btn-accent btn-lg" href="/contact/">Contact Dun-Rite</a>
+        <a class="btn btn-outline-white btn-lg" href="tel:+<?php echo h($phoneRaw); ?>"><?php echo icon('phone', 18); ?> Call <?php echo h($phone); ?></a>
+      </div>
     </div>
   </section>
 
 </main>
-
 <?php include $_SERVER['DOCUMENT_ROOT'] . '/includes/footer.php'; ?>

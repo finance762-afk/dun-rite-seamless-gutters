@@ -1,374 +1,136 @@
 <?php
-/**
- * Dun-Rite — Contact (Full expanded form, no map)
- */
+/** Contact — full estimate form (Page One leads endpoint), NAP, hours, directions */
+require_once $_SERVER['DOCUMENT_ROOT'] . '/includes/config.php';
 
-$pageTitle       = "Contact Dun-Rite | Free Gutter Estimates | (601) 750-1800";
-$pageDescription = "Get a free gutter estimate in Madison, Jackson or 12 more MS cities. Seamless aluminum & copper gutters since 1996. Same-day callbacks. Call (601) 750-1800.";
-$canonicalUrl    = "https://dunrite-gutters.com/contact/";
-$ogImage         = "https://i.imgur.com/kRJ17by.jpeg";
-$heroImage       = "https://i.imgur.com/kRJ17by.jpeg";
-$currentPage     = "contact";
+$pageTitle       = 'Contact Dun-Rite Seamless Gutters | Madison, MS';
+$pageDescription = 'Contact Dun-Rite Seamless Gutters, Inc. at 115 Cherrybrook Dr, Madison, MS. Call (601) 750-1800, Mon–Fri 8 AM – 5 PM, or request a written gutter estimate online.';
+$currentPage     = 'contact';
+$canonicalUrl    = $siteUrl . '/contact/';
+$pageType        = 'contact';
 
-$cities = ["Brandon","Jackson","Canton","Madison","Pearl","Richland","Flowood","Florence","Gluckstadt","Bolton","Clinton","Terry","Ridgeland","Raymond"];
-$serviceOptions = [
-  'Seamless Gutter Installation',
-  'Aluminum Gutters',
-  'Copper Gutters',
-  'Gutter Guards & Leaf Protection',
-  'Gutter Cleaning',
-  'Gutter Repair & Replacement',
-  'Commercial Gutters',
-  'Custom Downspouts',
-  'Multiple services',
-  'Not Sure / General Inquiry',
+$schemaNodes = [
+    dr_breadcrumb_node(['Contact' => '/contact/']),
+    ['@type' => 'ContactPage', 'url' => $siteUrl . '/contact/', 'name' => 'Contact ' . $siteName, 'about' => ['@id' => $siteUrl . '/#business']],
 ];
-
-$contactFaqs = [
-  ["q" => "How quickly will you respond after I submit?", "a" => "Same-day callback during business hours (Mon–Fri 8 AM – 5 PM). Submissions after hours or on weekends get a callback first thing the next business day."],
-  ["q" => "Do you do estimates over the phone or by photos?", "a" => "We provide ballpark estimates over the phone for general scope, but every quote is finalized in person — gutter installation requires accurate measurements of your roofline that can't be done from photos alone."],
-  ["q" => "What information should I have ready when I call?", "a" => "Your address, the type of work (new install, replacement, cleaning, repair), the number of stories on your home, and any specific concerns (storm damage, leak locations, etc.). We'll handle the rest."],
-];
-
-$schemaGraph = [
-  "@context" => "https://schema.org",
-  "@graph" => [
-    [
-      "@type"     => ["LocalBusiness", "RoofingContractor"],
-      "@id"       => "https://dunrite-gutters.com/#business",
-      "name"      => "Dun-Rite Seamless Gutters, Inc.",
-      "url"       => "https://dunrite-gutters.com",
-      "telephone" => "+16017501800",
-      "email"     => "mark.dungan@yahoo.com",
-      "address"   => [
-        "@type"           => "PostalAddress",
-        "streetAddress"   => "115 Cherrybrook Dr",
-        "addressLocality" => "Madison",
-        "addressRegion"   => "MS",
-        "postalCode"      => "39110",
-        "addressCountry"  => "US"
-      ],
-      "openingHoursSpecification" => [
-        ["@type" => "OpeningHoursSpecification", "dayOfWeek" => ["Monday","Tuesday","Wednesday","Thursday","Friday"], "opens" => "08:00", "closes" => "17:00"]
-      ],
-    ],
-    [
-      "@type" => "ContactPage",
-      "@id"   => $canonicalUrl . "#contactpage",
-      "url"   => $canonicalUrl,
-      "name"  => "Contact Dun-Rite Seamless Gutters",
-    ],
-    [
-      "@type" => "BreadcrumbList",
-      "itemListElement" => [
-        ["@type" => "ListItem", "position" => 1, "name" => "Home", "item" => "https://dunrite-gutters.com/"],
-        ["@type" => "ListItem", "position" => 2, "name" => "Contact", "item" => $canonicalUrl],
-      ]
-    ],
-    [
-      "@type" => "FAQPage",
-      "mainEntity" => array_map(fn($f) => ["@type" => "Question", "name" => $f["q"], "acceptedAnswer" => ["@type" => "Answer", "text" => $f["a"]]], $contactFaqs)
-    ],
-  ]
-];
-$schemaMarkup = '<script type="application/ld+json">' . json_encode($schemaGraph, JSON_UNESCAPED_SLASHES | JSON_UNESCAPED_UNICODE) . '</script>';
 
 include $_SERVER['DOCUMENT_ROOT'] . '/includes/head.php';
+include $_SERVER['DOCUMENT_ROOT'] . '/includes/header.php';
 ?>
-<?php include $_SERVER['DOCUMENT_ROOT'] . '/includes/nav.php'; ?>
-
 <main id="main-content">
 
-  <!-- HERO (60vh, no form — full form is below) -->
-  <section class="hero hero--inner" aria-label="Contact hero" style="min-height: 60vh;">
-    <img src="https://i.imgur.com/kRJ17by.jpeg" alt="Dun-Rite Seamless Gutters service truck on a Mississippi installation jobsite" class="hero-bg" width="1920" height="1080" loading="eager" fetchpriority="high">
-    <div class="hero__inner" style="display:block; text-align:center; max-width: 720px;">
-      <div class="hero__copy">
-        <span class="eyebrow-label">Get Your Free Estimate</span>
-        <h1>Let's Talk About <span class="text-accent">Your Gutters.</span></h1>
-        <p class="hero__subhead" style="margin-left:auto; margin-right:auto;">Free on-site estimates across 14 Mississippi cities. Same-day callbacks. Most quotes scheduled within 48 hours of your first call.</p>
-        <div class="hero__ctas" style="justify-content:center;">
-          <a href="tel:+16017501800" class="btn-primary">Call (601) 750-1800</a>
-          <a href="mailto:mark.dungan@yahoo.com" class="btn-secondary btn-on-dark">Email Mark</a>
+  <section class="hero hero--interior">
+    <span class="grain" aria-hidden="true"></span>
+    <div class="container">
+      <div class="hero-text">
+        <?php echo dr_breadcrumb(['Contact' => null]); ?>
+        <p class="hero-eyebrow">Madison, MS &middot; Mon–Fri 8 AM – 5 PM</p>
+        <h1>Contact Dun-Rite Seamless Gutters in Madison, MS</h1>
+        <p class="hero-answer">Dun-Rite Seamless Gutters, Inc. is a gutter installer at 115 Cherrybrook Dr in Madison, Mississippi. Call (601) 750-1800 during office hours or send the form below; the office calls back the same business day, and most estimate visits are scheduled within 48 hours.</p>
+        <div class="hero-actions">
+          <a class="btn btn-accent btn-lg" href="tel:+<?php echo h($phoneRaw); ?>"><?php echo icon('phone', 18); ?> Call <?php echo h($phone); ?></a>
+          <a class="btn btn-secondary btn-lg" href="mailto:<?php echo h($email); ?>"><?php echo icon('mail', 18); ?> Email the office</a>
         </div>
       </div>
     </div>
-    <div class="section-divider section-divider--bottom" aria-hidden="true">
-      <svg viewBox="0 0 1440 100" preserveAspectRatio="none">
-        <path fill="#FFFFFF" d="M0,64 C240,96 480,32 720,48 C960,64 1200,96 1440,72 L1440,100 L0,100 Z"></path>
-      </svg>
-    </div>
   </section>
 
-  <nav class="breadcrumb" aria-label="Breadcrumb">
-    <div class="container">
-      <ol>
-        <li><a href="/">Home</a></li>
-        <li class="breadcrumb-sep" aria-hidden="true">›</li>
-        <li aria-current="page">Contact</li>
-      </ol>
-    </div>
-  </nav>
-
-  <!-- THE EXPANDED FORM -->
-  <div class="contact-grid">
-
-    <!-- Form column -->
-    <div class="contact-form-card">
-      <h2>Request Your Free Estimate</h2>
-      <p class="form-intro">Fill out the form below and we'll respond within one business day. Required fields marked with *.</p>
-
-      <form action="https://db.pageone.cloud/functions/v1/leads/dun-rite" method="POST" enctype="multipart/form-data" class="contact-form" novalidate>
-
-        <!-- Formsubmit hidden fields -->
-        <input type="hidden" name="_next" value="https://dunrite-gutters.com/thank-you/">
-        <input type="hidden" name="_captcha" value="false">
-        <input type="hidden" name="_honey" value="">
-        <input type="hidden" name="_template" value="table">
-        <input type="hidden" name="_subject" value="New Contact Form Submission – Dun-Rite Seamless Gutters (Full Form)">
-        <input type="hidden" name="_cc" value="CustomerService@pageoneinsights.com">
-        <input type="hidden" name="_source" value="<?php echo htmlspecialchars($_SERVER['REQUEST_URI'] ?? '/contact/'); ?>">
-
-        <!-- Name -->
-        <div class="form-group form-group--floating">
-          <input type="text" id="contact-name" name="Name" placeholder=" " required autocomplete="name">
-          <label for="contact-name">Full Name *</label>
+  <section class="section">
+    <div class="container estimate">
+      <div>
+        <div class="section-head">
+          <p class="eyebrow">Written estimates</p>
+          <h2>Request a gutter estimate</h2>
+          <p>Tell Dun-Rite what you need and where the property is. Fields marked * are required.</p>
         </div>
-
-        <!-- Phone + Email row -->
-        <div class="form-row">
-          <div class="form-group form-group--floating">
-            <input type="tel" id="contact-phone" name="Phone" placeholder=" " required autocomplete="tel" pattern="[0-9\-\(\)\s\+]{10,}">
-            <label for="contact-phone">Phone *</label>
+        <form class="contact-form" action="<?php echo h($formAction); ?>" method="POST">
+          <?php echo p1_lead_hidden_fields('contact'); ?>
+          <div class="form-grid">
+            <div class="field full"><label for="contact-name">Full name *</label><input id="contact-name" type="text" name="name" autocomplete="name" required></div>
+            <div class="field"><label for="contact-phone">Phone *</label><input id="contact-phone" type="tel" name="phone" autocomplete="tel" required></div>
+            <div class="field"><label for="contact-email">Email *</label><input id="contact-email" type="email" name="email" autocomplete="email" required></div>
+            <div class="field full"><label for="contact-street">Property address</label><input id="contact-street" type="text" name="address_street" autocomplete="street-address"></div>
+            <div class="field"><label for="contact-city">City</label>
+              <select id="contact-city" name="address_city">
+                <option value="">Select a city</option>
+                <?php foreach ($serviceAreas as $ctCity): ?>
+                <option value="<?php echo h($ctCity); ?>"><?php echo h($ctCity); ?></option>
+                <?php endforeach; ?>
+                <option value="Other">Other</option>
+              </select>
+            </div>
+            <div class="field"><label for="contact-service">Service needed</label><select id="contact-service" name="service"><?php echo p1_service_options(); ?></select></div>
+            <input type="hidden" name="address_state" value="MS">
+            <div class="field full"><label for="contact-message">What is going on with the gutters?</label><textarea id="contact-message" name="message" rows="4"></textarea></div>
           </div>
-          <div class="form-group form-group--floating">
-            <input type="email" id="contact-email" name="Email" placeholder=" " required autocomplete="email">
-            <label for="contact-email">Email *</label>
-          </div>
-        </div>
 
-        <!-- Service Address -->
-        <div class="form-group form-group--floating">
-          <input type="text" id="contact-address" name="Service Address" placeholder=" " autocomplete="street-address">
-          <label for="contact-address">Service Address (where the work would be done)</label>
-        </div>
-
-        <!-- City + Service row -->
-        <div class="form-row">
-          <div class="form-group form-group--select">
-            <label for="contact-city" class="form-group__select-label">City</label>
-            <select id="contact-city" name="City">
-              <option value="">— Select a city —</option>
-              <?php foreach ($cities as $city): ?>
-                <option value="<?php echo htmlspecialchars($city); ?>"><?php echo htmlspecialchars($city); ?></option>
-              <?php endforeach; ?>
-              <option value="Other">Other</option>
-            </select>
-          </div>
-          <div class="form-group form-group--select">
-            <label for="contact-service" class="form-group__select-label">Service Needed *</label>
-            <select id="contact-service" name="Service" required>
-              <option value="">— Select a service —</option>
-              <?php foreach ($serviceOptions as $opt): ?>
-                <option value="<?php echo htmlspecialchars($opt); ?>"><?php echo htmlspecialchars($opt); ?></option>
-              <?php endforeach; ?>
-            </select>
-          </div>
-        </div>
-
-        <!-- Preferred Contact Time -->
-        <div class="form-group form-group--radio-group">
-          <span class="form-group__select-label">Preferred Contact Time</span>
-          <div class="radio-row">
-            <label><input type="radio" name="Preferred Contact Time" value="Morning (8-12)"> Morning (8–12)</label>
-            <label><input type="radio" name="Preferred Contact Time" value="Afternoon (12-5)"> Afternoon (12–5)</label>
-            <label><input type="radio" name="Preferred Contact Time" value="Anytime" checked> Anytime</label>
-          </div>
-        </div>
-
-        <!-- Source -->
-        <div class="form-group form-group--select">
-          <label for="contact-source" class="form-group__select-label">How Did You Hear About Us?</label>
-          <select id="contact-source" name="How Heard">
-            <option value="">— Select one —</option>
-            <option value="Google Search">Google Search</option>
-            <option value="Facebook">Facebook</option>
-            <option value="Referral">Referral</option>
-            <option value="Drove by truck">Drove by truck</option>
-            <option value="BBB / HomeAdvisor">BBB / HomeAdvisor</option>
-            <option value="Existing customer">Existing customer</option>
-            <option value="Other">Other</option>
-          </select>
-        </div>
-
-        <!-- Photo upload -->
-        <div class="form-group form-group--file">
-          <label for="contact-photos">Upload Photos (optional)</label>
-          <input type="file" id="contact-photos" name="Photos[]" multiple accept=".jpg,.jpeg,.png,.heic">
-          <span class="form-help">Photos of damage or your gutters · Max 5 files · 5MB each · JPG / PNG / HEIC</span>
-        </div>
-
-        <!-- Notes -->
-        <div class="form-group form-group--floating">
-          <textarea id="contact-notes" name="Message" placeholder=" " rows="4"></textarea>
-          <label for="contact-notes">Brief Notes (optional)</label>
-        </div>
-
-        <!-- v6.1 TCPA consent -->
-        <div class="form-consent">
-          <label class="consent-checkbox">
-            <input type="checkbox" name="consent" required>
-            <span>I agree to the <a href="/privacy-policy/" target="_blank" rel="noopener">Privacy Policy</a> and <a href="/terms/" target="_blank" rel="noopener">Terms of Service</a>, and consent to be contacted by Dun-Rite Seamless Gutters by phone, text, or email regarding my inquiry. Message and data rates may apply. Consent is not a condition of purchase.</span>
-          </label>
-        </div>
-
-        <!-- spam shield: signed render timestamp + JS interaction signal -->
-        <?php $__ft_ts = (string) time(); ?>
-        <input type="hidden" name="_ft" value="<?php echo $__ft_ts . '.' . hash_hmac('sha256', $__ft_ts, 'bac7714a8f41505ab12d75311ccbb11a6374e38b1a010d69111c84a652cfa0f3'); ?>">
-        <input type="hidden" name="_js" value="" class="js-shield-field">
-        <?php if (empty($GLOBALS['__js_shield'])) { $GLOBALS['__js_shield'] = 1; ?>
-        <script>(function(){var d=document,f=function(){var i,e=d.querySelectorAll('.js-shield-field');for(i=0;i<e.length;i++)e[i].value='1';d.removeEventListener('pointerdown',f);d.removeEventListener('keydown',f);};d.addEventListener('pointerdown',f);d.addEventListener('keydown',f);})();</script>
-        <?php } ?>
-        <?php if (empty($GLOBALS['__p1_consent_css'])) { $GLOBALS['__p1_consent_css'] = 1; ?>
-        <style>
-        .p1-consent{margin:14px 0;text-align:left}
-        .p1-consent-set{border:0;margin:0;padding:0}
-        .p1-consent-legend{font-size:13px;font-weight:600;padding:0;margin-bottom:6px}
-        .p1-consent-item{display:flex;gap:8px;align-items:flex-start;margin-bottom:8px;font-size:12px;line-height:1.5;cursor:pointer}
-        .p1-consent-item input{margin:2px 0 0;flex:0 0 auto;width:16px;height:16px;cursor:pointer}
-        .p1-consent-line{display:flex;gap:8px;align-items:flex-start;font-size:12px;line-height:1.45;cursor:pointer}
-        .p1-consent-line input{margin:2px 0 0;flex:0 0 auto;width:16px;height:16px;cursor:pointer}
-        .p1-consent a{text-decoration:underline}
-        </style>
-        <?php } ?>
-        <!-- TCPA 2025/2026 consent — terms_accepted is REQUIRED by the leads endpoint -->
-        <div class="p1-consent">
-          <fieldset class="p1-consent-set">
-            <legend class="p1-consent-legend">Communication Consent</legend>
-            <label class="p1-consent-item">
+          <fieldset class="form-consent-fieldset">
+            <legend class="form-consent-legend">Communication consent</legend>
+            <label class="form-consent-item">
               <input type="checkbox" name="email_opt_in" value="yes">
-              <span><strong>Email updates (optional):</strong> I agree to receive emails from <?php echo htmlspecialchars($siteName ?? ($site['name'] ?? 'us')); ?>
-              about my inquiry, services, and promotions. I can unsubscribe at any time.</span>
+              <span class="consent-label"><strong>Email updates (optional):</strong> I agree to receive emails from <?php echo h($siteName); ?> about my inquiry, services, promotions and news. I can unsubscribe at any time via the link in any email or by emailing <?php echo h($contactEmail); ?>. Message frequency varies.</span>
             </label>
-            <label class="p1-consent-item">
+            <label class="form-consent-item">
               <input type="checkbox" name="sms_opt_in" value="yes">
-              <span><strong>SMS/Text messages (optional):</strong> I agree to receive text messages from
-              <?php echo htmlspecialchars($siteName ?? ($site['name'] ?? 'us')); ?> at the number provided (appointment reminders, service updates, offers).
-              Message frequency varies. Message and data rates may apply. Reply STOP to unsubscribe,
-              HELP for help. <strong>Consent is not a condition of purchase.</strong></span>
+              <span class="consent-label"><strong>SMS/text messages (optional):</strong> I agree to receive text messages from <?php echo h($siteName); ?> at the phone number I provided. Message types may include appointment reminders, service updates and promotional offers. Message frequency varies. Message and data rates may apply. Reply STOP to unsubscribe, HELP for help. <strong>Consent is not a condition of purchase.</strong></span>
             </label>
-            <label class="p1-consent-item">
+            <label class="form-consent-item form-consent-required">
               <input type="checkbox" name="terms_accepted" value="yes" required>
-              <span>I have read and agree to the <a href="/terms/" target="_blank" rel="noopener">Terms of Service</a> and <a href="/privacy-policy/" target="_blank" rel="noopener">Privacy Policy</a> *</span>
+              <span class="consent-label">I have read and agree to the <a href="/privacy-policy/" target="_blank" rel="noopener">Privacy Policy</a> and <a href="/terms/" target="_blank" rel="noopener">Terms of Service</a>. *</span>
             </label>
           </fieldset>
-        </div>
-        <input type="hidden" name="_consent_version" value="v2.1">
-        <input type="hidden" name="_consent_page" value="<?php echo htmlspecialchars($_SERVER['REQUEST_URI'] ?? ''); ?>">
-        <button type="submit" class="btn-primary" style="width:100%; padding: 14px 24px; font-size: 1rem; font-weight: 700;">Submit My Estimate Request</button>
 
-        <span class="contact-form__trust">Mississippi licensed &amp; fully insured · Est. 1996 · We respond same-day on weekdays</span>
-
-        <!-- File size validation -->
-        <script>
-          document.querySelector('input[type="file"]')?.addEventListener('change', function(e) {
-            const maxSize = 5 * 1024 * 1024; // 5MB per file
-            const maxFiles = 5;
-            const files = e.target.files;
-            if (files.length > maxFiles) {
-              alert('Maximum ' + maxFiles + ' files. You selected ' + files.length + '.');
-              e.target.value = '';
-              return;
-            }
-            for (let f of files) {
-              if (f.size > maxSize) {
-                alert('File "' + f.name + '" is ' + (f.size/1024/1024).toFixed(1) + 'MB. Each file must be under 5MB.');
-                e.target.value = '';
-                return;
-              }
-            }
-          });
-        </script>
-
-      </form>
-    </div>
-
-    <!-- Info card column -->
-    <aside class="contact-info-card">
-      <h3>Visit Our Office</h3>
-      <div class="info-row">
-        <i data-lucide="map-pin"></i>
-        <span>115 Cherrybrook Dr<br>Madison, MS 39110</span>
-      </div>
-      <div class="info-row">
-        <i data-lucide="phone"></i>
-        <a href="tel:+16017501800">(601) 750-1800</a>
-      </div>
-      <div class="info-row">
-        <i data-lucide="mail"></i>
-        <a href="mailto:mark.dungan@yahoo.com">mark.dungan@yahoo.com</a>
-      </div>
-      <div class="info-row">
-        <i data-lucide="clock"></i>
-        <span>Mon–Fri 8 AM – 5 PM<br>Sat–Sun Closed</span>
+          <button type="submit" class="btn btn-accent btn-lg">Send my estimate request</button>
+        </form>
       </div>
 
-      <hr>
-
-      <h4>Service Area</h4>
-      <p style="font-size: 0.95rem; color: var(--color-text-light); margin-bottom: var(--space-sm);">We serve 14 Mississippi cities from our Madison HQ. Free travel within service area — no trip fees.</p>
-      <a href="/service-areas/" style="color: var(--color-accent); font-weight: 600;">View All 14 Cities →</a>
-
-      <hr>
-
-      <h4>Connect</h4>
-      <div style="display:flex; flex-wrap:wrap; gap: var(--space-xs);">
-        <a href="https://www.facebook.com/dunritegutters/" target="_blank" rel="noopener" style="font-size: 0.9rem; color: var(--color-primary);">Facebook</a>
-        <span style="color: var(--color-text-muted);">·</span>
-        <a href="https://share.google/ILoTdINgp3QYNTw3" target="_blank" rel="noopener" style="font-size: 0.9rem; color: var(--color-primary);">Google</a>
-        <span style="color: var(--color-text-muted);">·</span>
-        <a href="https://www.yelp.com/biz/dun-rite-seamless-gutters-madison-6" target="_blank" rel="noopener" style="font-size: 0.9rem; color: var(--color-primary);">Yelp</a>
-        <span style="color: var(--color-text-muted);">·</span>
-        <a href="https://www.bbb.org/us/ms/madison/profile/gutters/dun-rite-seamless-gutters-0523-145212331" target="_blank" rel="noopener" style="font-size: 0.9rem; color: var(--color-primary);">BBB</a>
-      </div>
-    </aside>
-
-  </div>
-
-  <!-- CONTACT FAQs -->
-  <section class="section section-alt" aria-label="Contact FAQs">
-    <div class="container">
-      <div class="section-title reveal-up">
-        <span class="eyebrow-label">Before You Submit</span>
-        <h2>Quick Answers About <span class="text-accent">Reaching Us.</span></h2>
-      </div>
-
-      <div class="faq-list">
-        <?php foreach ($contactFaqs as $faq): ?>
-        <div class="faq-item reveal-up">
-          <button class="faq-question" aria-expanded="false"><?php echo htmlspecialchars($faq["q"]); ?></button>
-          <div class="faq-answer">
-            <div class="faq-answer-inner"><p><?php echo htmlspecialchars($faq["a"]); ?></p></div>
+      <aside class="page-rail" aria-label="Office details">
+        <div class="rail-card">
+          <h3>Office</h3>
+          <div class="nap">
+            <div><?php echo icon('map-pin', 18); ?><span><?php echo h($address['street']); ?><br><?php echo h($address['city']); ?>, <?php echo h($address['state']); ?> <?php echo h($address['zip']); ?></span></div>
+            <div><?php echo icon('phone', 18); ?><a href="tel:+<?php echo h($phoneRaw); ?>"><?php echo h($phone); ?></a></div>
+            <div><?php echo icon('mail', 18); ?><a href="mailto:<?php echo h($email); ?>"><?php echo h($email); ?></a></div>
+            <div><?php echo icon('clock', 18); ?><span>Mon–Fri 8 AM – 5 PM<br>Sat–Sun Closed</span></div>
           </div>
+          <a class="btn btn-secondary" href="<?php echo h($directionsUrl); ?>" target="_blank" rel="noopener"><?php echo icon('route', 18); ?> Get directions</a>
         </div>
-        <?php endforeach; ?>
-      </div>
+        <div class="rail-card rail-card--tint">
+          <h3>Service area</h3>
+          <p>14 cities within about 30 miles of Madison, with no travel fees.</p>
+          <a href="/service-areas/">Check your town</a>
+        </div>
+        <div class="rail-card">
+          <h3>Find Dun-Rite online</h3>
+          <ul>
+            <?php foreach ($socialLinks as $ctLabel => $ctUrl): ?>
+            <li><a href="<?php echo h($ctUrl); ?>" target="_blank" rel="noopener"><?php echo h($ctLabel); ?></a></li>
+            <?php endforeach; ?>
+          </ul>
+        </div>
+      </aside>
     </div>
   </section>
 
-  <!-- CLOSING CTA -->
-  <section class="closing-cta" aria-label="Prefer to talk first">
-    <div class="closing-cta__inner reveal-up">
-      <span class="section-subtitle" style="color: var(--color-accent);">no form needed</span>
-      <h2>Prefer to <span class="text-accent">Talk First?</span></h2>
-      <p>No problem. Call (601) 750-1800 anytime during business hours. Mark or a senior team member is always available.</p>
-      <div>
-        <a href="tel:+16017501800" class="btn-primary">Call (601) 750-1800</a>
+  <section class="section section--tint">
+    <div class="container split">
+      <div class="about-copy">
+        <p class="eyebrow">After you send it</p>
+        <h2>What happens after you contact Dun-Rite?</h2>
+        <p>After you contact Dun-Rite Seamless Gutters, Inc., the office calls you back during business hours to set an estimate visit. Most visits are scheduled within 48 hours. Nothing is charged for the visit or the written quote.</p>
+        <ol class="next-steps">
+          <li><strong>A callback</strong>The office returns your call or form the same business day, Monday to Friday.</li>
+          <li><strong>An on-site visit</strong>The roofline is measured and the water flow off the roof is checked.</li>
+          <li><strong>A written quote</strong>You receive the price in writing, with no obligation. Mark Dungan personally inspects every estimate.</li>
+        </ol>
       </div>
-      <p class="closing-cta__meta">Mon–Fri 8AM–5PM · Madison, MS · Mississippi Licensed &amp; Insured</p>
+      <div class="about-copy">
+        <p class="eyebrow">Before you call</p>
+        <h2>What should you have ready when you call?</h2>
+        <p>Have three things ready when you call Dun-Rite: the property address, whether the house is one story or two, and what the gutters are doing wrong. Those are the details that set an installation price, along with the downspout count, which is worked out on site.</p>
+        <p>If you already know what you need, the <a href="/services/">services page</a> lists typical prices for each job, and the <a href="/faq/">gutter FAQ</a> covers scheduling, rain delays and warranties.</p>
+      </div>
     </div>
   </section>
 
 </main>
-
 <?php include $_SERVER['DOCUMENT_ROOT'] . '/includes/footer.php'; ?>
