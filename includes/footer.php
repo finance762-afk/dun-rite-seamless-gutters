@@ -19,7 +19,7 @@
         </div>
       </div>
       <div class="footer-col">
-        <h4>Services</h4>
+        <h3>Services</h3>
         <ul>
           <?php foreach ($services as $footSvc): ?>
           <li><a href="/services/<?php echo h($footSvc['slug']); ?>/"><?php echo h($footSvc['nav']); ?></a></li>
@@ -28,7 +28,7 @@
         </ul>
       </div>
       <div class="footer-col">
-        <h4>Service areas</h4>
+        <h3>Service areas</h3>
         <ul class="footer-areas">
           <?php foreach ($serviceAreaData as $footArea): ?>
           <li><a href="/service-areas/<?php echo h($footArea['slug']); ?>/"><?php echo h($footArea['name']); ?></a></li>
@@ -36,14 +36,14 @@
         </ul>
       </div>
       <div class="footer-col">
-        <h4>Contact</h4>
+        <h3>Contact</h3>
         <ul class="footer-contact">
           <li><?php echo icon('map-pin', 18); ?><span><?php echo h($address['street']); ?>, <?php echo h($address['city']); ?>, <?php echo h($address['state']); ?> <?php echo h($address['zip']); ?></span></li>
           <li><?php echo icon('phone', 18); ?><a href="tel:+<?php echo h($phoneRaw); ?>"><?php echo h($phone); ?></a></li>
           <li><?php echo icon('mail', 18); ?><a href="mailto:<?php echo h($email); ?>"><?php echo h($email); ?></a></li>
           <li><?php echo icon('clock', 18); ?><span><?php echo h($businessHours); ?></span></li>
         </ul>
-        <h4 class="footer-h4-gap">Company</h4>
+        <h3 class="footer-h4-gap">Company</h3>
         <ul>
           <li><a href="/about/">About <?php echo h($ownerName); ?></a></li>
           <li><a href="/faq/">Gutter FAQ</a></li>

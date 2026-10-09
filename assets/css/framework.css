@@ -613,6 +613,7 @@ html.js-anim .reveal-d1, html.js-anim .reveal-delay-1 { transition-delay: .08s }
 :root {
   --color-logo-ground: #01447B;                 /* the blue field of the client's logo file */
   --nav-height: 88px; --navbar-height: 88px;
+  --color-accent-bright: color-mix(in srgb, #B87333 58%, white);   /* lighter than the framework's 80% mix: 4.5:1+ for small eyebrows on the navy bands */
   --bg-alt: var(--color-paper-2); --container-max: var(--container);   /* aliases the shared v8 components read */
 }
 /* Header: solid bar in the logo's own blue so the boxed logo sits flush */
@@ -766,3 +767,6 @@ input, select, textarea { font-size: 1rem; }
 .hero--interior > .container > .hero-text { max-width: 46rem; }
 .hero--legal .breadcrumb { color: rgba(255,255,255,.72); }
 .hero--legal p { color: rgba(255,255,255,.85); }
+
+.site-footer h3 { font-family: var(--font-accent); font-weight: 700; font-size: .8rem; letter-spacing: .14em; text-transform: uppercase; color: var(--color-accent-bright); margin: 0 0 .9rem; }
+.site-footer h3.footer-h4-gap { margin-top: 1.5rem; }

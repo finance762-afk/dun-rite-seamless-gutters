@@ -188,7 +188,7 @@ function dr_service_cards(array $slugs, string $sizes = '(max-width: 720px) 100v
         $s = dr_service($slug);
         if (!$s) continue;
         $tint = ($n % 3) + 1;
-        $out .= '<a class="service-card-with-image card-tint-' . $tint . ' reveal-up reveal-delay-' . $tint . '" href="/services/' . h($s['slug']) . '/">'
+        $out .= '<a class="service-card-with-image card-tint-' . $tint . '" href="/services/' . h($s['slug']) . '/">'
               . '<div class="service-card__image">' . dr_picture($s['image'], $s['alt'], ['sizes' => $sizes]) . '</div>'
               . '<div class="service-card__body"><span class="service-card__icon">' . icon($s['icon'], 22) . '</span>'
               . '<h3>' . h($s['name']) . '</h3><p class="service-card__desc">' . h($s['description']) . '</p><ul>';

@@ -131,7 +131,7 @@ include $_SERVER['DOCUMENT_ROOT'] . '/includes/header.php';
 
   <section class="section" id="process">
     <div class="container split">
-      <div class="about-copy reveal-left">
+      <div class="about-copy">
         <p class="eyebrow">The Dun-Rite process</p>
         <h2>How does a Dun-Rite gutter job go, start to finish?</h2>
         <p>A Dun-Rite gutter job has four steps: an on-site estimate, forming the gutters at your house, hanging them, and hauling the old ones away. Mark Dungan personally inspects every estimate, and most single-story homes are finished in one day.</p>
@@ -142,7 +142,7 @@ include $_SERVER['DOCUMENT_ROOT'] . '/includes/header.php';
           <li><strong>Old gutters removed</strong>Removal and disposal of the old system is part of every quote, and the finished job is covered by the material and labor warranties.</li>
         </ol>
       </div>
-      <div class="reveal-right">
+      <div>
         <figure class="photo-figure">
           <?php echo dr_picture('covered-patio-bronze-gutters', 'Rear covered patio on a light stucco home with a bronze gutter and downspout at the roof corner', ['sizes' => '(max-width: 900px) 100vw, 46vw']); ?>
           <figcaption>A bronze gutter and downspout at the corner of a rear covered patio.</figcaption>
@@ -154,7 +154,7 @@ include $_SERVER['DOCUMENT_ROOT'] . '/includes/header.php';
   <section class="section on-dark" id="copper">
     <span class="grain" aria-hidden="true"></span>
     <div class="container split">
-      <div class="reveal-left">
+      <div>
         <div class="photo-pair">
           <figure class="photo-figure">
             <?php echo dr_picture('copper-gutters-brick-awning', 'Copper gutter and a standing-seam copper awning on a red brick home', ['sizes' => '(max-width: 640px) 100vw, 24vw']); ?>
@@ -164,7 +164,7 @@ include $_SERVER['DOCUMENT_ROOT'] . '/includes/header.php';
           </figure>
         </div>
       </div>
-      <div class="about-copy reveal-right">
+      <div class="about-copy">
         <p class="eyebrow">Signature work</p>
         <h2>Why do people call Dun-Rite for copper gutters?</h2>
         <p>Dun-Rite Seamless Gutters, Inc. hand-solders every copper seam with lead-free tin solder instead of riveting or caulking it. Copper has been the company's specialty since 1996, on luxury homes, historic properties and commercial estates across central Mississippi.</p>

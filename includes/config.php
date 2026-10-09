@@ -164,7 +164,7 @@ if (is_readable($__siteConfigPath)) {
 }
 
 /* --- Assets --- */
-$cssVersion     = '20261009a';   // bump whenever framework.css changes (and regenerate includes/critical.css)
+$cssVersion     = '20261009b';   // bump whenever framework.css changes (and regenerate includes/critical.css)
 $defaultOgImage = 'og-default.jpg';
 
 /* --- Verified Local Partner badge: slug is filled by scripts/partner-badge-fleet.mjs once the profile is claimed --- */
