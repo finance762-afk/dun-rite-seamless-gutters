@@ -1,315 +1,134 @@
 <?php
-/**
- * Dun-Rite — Gutter Repair & Replacement
- */
+/** Service page — gutter-repair-replacement */
+require_once $_SERVER['DOCUMENT_ROOT'] . '/includes/config.php';
 
-$pageTitle       = "Gutter Repair in Madison & Jackson, MS | Since 1996";
-$pageDescription = "Gutter repair near you in Madison & Jackson, MS: sagging, leaks, storm damage. Seamless aluminum & copper since 1996. Free estimate, call (601) 750-1800.";
-$canonicalUrl    = "https://dunrite-gutters.com/services/gutter-repair-replacement/";
-$ogImage         = "https://i.imgur.com/Hr2Nlwl.jpeg";
-$heroImage       = "https://i.imgur.com/Hr2Nlwl.jpeg";
-$currentPage     = "services";
-
-$cities = ["Brandon","Jackson","Canton","Madison","Pearl","Richland","Flowood","Florence","Gluckstadt","Bolton","Clinton","Terry","Ridgeland","Raymond"];
-$areaServedSchema = array_map(fn($c) => ["@type" => "City", "name" => $c, "addressRegion" => "MS", "addressCountry" => "US"], $cities);
+$pageTitle       = 'Gutter Repair Company in Madison & Jackson, MS | Dun-Rite';
+$pageDescription = 'Dun-Rite is a gutter repair company in Madison, MS serving Jackson and 12 more cities. Repairs $150–$600 per section; replacement from $1,200. Call (601) 750-1800.';
+$currentPage     = 'services';
+$canonicalUrl    = $siteUrl . '/services/gutter-repair-replacement/';
+$pageType        = 'service';
+$serviceSlug     = 'gutter-repair-replacement';
+$service         = dr_service($serviceSlug);
+$heroFormService = $service['name'];
 
 $faqs = [
-  ["q" => "Should I repair or replace my gutters?", "a" => "If your gutters are under 15 years old and the issues are localized (one sagging section, a leaking corner, a couple pulled hangers), repair is usually the right call — typically $150–$600 per repair. If your gutters are 20+ years old, have multiple problems, or sagging is widespread, full replacement saves money long-term and starts your 25-year warranty fresh."],
-  ["q" => "Can sagging gutters be fixed?", "a" => "Yes — sagging gutters are typically fixed by replacing failed hangers with hidden hangers spaced every 24 inches. If the gutter material itself is bent or warped from a sagged section, that section may need replacement. Cost runs $150–$400 for hanger work; full section replacement runs $300–$800."],
-  ["q" => "Do you handle insurance claims for storm damage?", "a" => "Yes. We work directly with homeowners insurance adjusters on storm damage claims (hail, wind, fallen branches). We provide photo documentation, written damage assessments, and itemized repair quotes formatted for adjuster review. Most claims close within 2–3 weeks."],
-  ["q" => "How much does gutter repair cost in Madison and Jackson, MS?", "a" => "Most gutter repairs in Madison, Jackson, and central Mississippi run $150–$600 per section. Hanger work on sagging gutters runs $150–$400, and replacing a damaged section runs $300–$800. Full system replacement starts at $1,200 with a 25-year manufacturer warranty. Every estimate from Dun-Rite Seamless Gutters is free and written."],
-  ["q" => "Why do gutters leak at the corners and seams?", "a" => "Leaks at corners and seams come from sealant failure at the miters and seams, caused by age and thermal cycling. You'll see standing water or drips at the corners during rain. Resealing is a quick, inexpensive repair; ignored, the overflow rots the fascia behind the gutter, and a rotted fascia has to be repaired before the gutter can be re-hung."],
-  ["q" => "How long do gutter repairs last?", "a" => "Quality repairs (hanger replacement, sealed corners, section replacement) last 10–20 years. Repairs we perform are warrantied for 2 years on labor; we honor manufacturer warranties on any new materials installed. If repairs are stacking up year over year, full replacement is usually the more economical choice."],
+    ['q' => 'Is there a gutter repair company near me in the Jackson area?',
+     'a' => 'Dun-Rite Seamless Gutters, Inc. repairs gutters in 14 cities around Jackson from its office at 115 Cherrybrook Dr in Madison: Madison, Ridgeland, Gluckstadt, Canton, Jackson, Clinton, Raymond, Bolton, Terry, Flowood, Pearl, Brandon, Richland and Florence. There are no travel fees inside that area.'],
+    ['q' => 'Should I repair my gutters or replace them?',
+     'a' => 'Repair makes sense when the damage is limited to a section or two and the rest of the system is sound. When several sections sag or leak, a full replacement starting at $1,200 often costs less than repeated $150 to $600 section repairs, and it comes with a 25-year material warranty.'],
+    ['q' => 'Does Dun-Rite help with storm damage insurance claims?',
+     'a' => 'Yes. Dun-Rite provides adjuster-ready photo documentation, a written damage assessment and an itemized repair quote formatted for adjuster review. In its experience most claims close in two to three weeks.'],
+    ['q' => 'How fast can I get a repair estimate?',
+     'a' => 'Dun-Rite offers same-day repair estimates. Call (601) 750-1800 during office hours, Monday to Friday, 8 AM to 5 PM.'],
 ];
 
-$howToSteps = [
-  ["name" => "On-Site Assessment + Written Estimate", "text" => "Same-day visits in most cases. We inspect, photograph, and provide a written quote — itemized for repair scope or full replacement options."],
-  ["name" => "Repair Scope or Replacement Planning", "text" => "Walk you through the options. If insurance is involved, we provide adjuster-ready documentation. No pressure — just the honest path forward."],
-  ["name" => "Material Order or Fabrication", "text" => "Stock materials available for next-day repair. Custom colors or copper specialty work scheduled within 1–2 weeks of approval."],
-  ["name" => "Installation + Warranty Paperwork", "text" => "Repair or replacement installed with the same standards as a new build. 2-year labor warranty + applicable manufacturer warranty paperwork on the day of completion."],
+$schemaNodes = [
+    dr_breadcrumb_node(['Services' => '/services/', $service['name'] => '/services/' . $serviceSlug . '/']),
+    dr_service_node($service, 'Gutter repair and replacement: sagging gutters, leaking corners and seams, gutters pulled off the fascia, and storm damage with insurance claim documentation. Repairs $150 to $600 per section; full replacement from $1,200.'),
+    dr_faq_node($faqs),
 ];
-
-$schemaGraph = [
-  "@context" => "https://schema.org",
-  "@graph" => [
-    [
-      "@type"       => "Service",
-      "@id"         => $canonicalUrl . "#service",
-      "serviceType" => "Gutter Repair and Replacement",
-      "name"        => "Gutter Repair & Replacement in Mississippi",
-      "description" => $pageDescription,
-      "provider"    => ["@id" => "https://dunrite-gutters.com/#business"],
-      "areaServed"  => $areaServedSchema,
-    ],
-    [
-      "@type" => "BreadcrumbList",
-      "itemListElement" => [
-        ["@type" => "ListItem", "position" => 1, "name" => "Home", "item" => "https://dunrite-gutters.com/"],
-        ["@type" => "ListItem", "position" => 2, "name" => "Services", "item" => "https://dunrite-gutters.com/services/"],
-        ["@type" => "ListItem", "position" => 3, "name" => "Gutter Repair & Replacement", "item" => $canonicalUrl],
-      ]
-    ],
-    [
-      "@type" => "FAQPage",
-      "mainEntity" => array_map(fn($f) => ["@type" => "Question", "name" => $f["q"], "acceptedAnswer" => ["@type" => "Answer", "text" => $f["a"]]], $faqs)
-    ],
-    [
-      "@type" => "HowTo",
-      "name"  => "How Gutter Repair Works",
-      "step"  => array_map(fn($s, $i) => ["@type" => "HowToStep", "position" => $i + 1, "name" => $s["name"], "text" => $s["text"]], $howToSteps, array_keys($howToSteps))
-    ],
-  ]
-];
-$schemaMarkup = '<script type="application/ld+json">' . json_encode($schemaGraph, JSON_UNESCAPED_SLASHES | JSON_UNESCAPED_UNICODE) . '</script>';
 
 include $_SERVER['DOCUMENT_ROOT'] . '/includes/head.php';
+include $_SERVER['DOCUMENT_ROOT'] . '/includes/header.php';
 ?>
-<?php include $_SERVER['DOCUMENT_ROOT'] . '/includes/nav.php'; ?>
-
 <main id="main-content">
 
-  <section class="hero hero--inner" aria-label="Hero">
-    <img src="https://i.imgur.com/Hr2Nlwl.jpeg" alt="Worker on ladder installing replacement gutters in Mississippi" class="hero-bg" width="1920" height="1080" loading="eager" fetchpriority="high">
-    <div class="hero__inner">
-      <div class="hero__copy">
-        <span class="eyebrow-label">Sagging · Leaking · Storm Damage</span>
-        <h1>Gutter Repair &amp; Replacement in <span class="text-accent">Madison &amp; Jackson, MS.</span></h1>
-        <p class="hero__subhead">One sagging section, a leaking seam, or a 30-year-old system that's done? We handle repairs and full replacements with same-day estimates.</p>
-        <div class="hero__ctas">
-          <a href="#hero-form-heading" class="btn-primary">Same-Day Estimate</a>
-          <a href="tel:+16017501800" class="btn-secondary btn-on-dark">Call (601) 750-1800</a>
-        </div>
-        <p class="hero__phone">Mon–Fri 8AM–5PM · Storm damage response same week</p>
-      </div>
-      <?php
-        $preselectedService = 'Gutter Repair & Replacement';
-        $heroFormHeading    = 'Same-Day Repair Estimate';
-        $heroFormSubheading = 'Storm damage · Insurance claims supported';
-        include $_SERVER['DOCUMENT_ROOT'] . '/includes/hero-form.php';
-      ?>
-    </div>
-    <div class="section-divider section-divider--bottom" aria-hidden="true">
-      <svg viewBox="0 0 1440 100" preserveAspectRatio="none">
-        <path fill="#FFFFFF" d="M0,100 Q360,0 720,50 T1440,50 L1440,100 Z"/>
-      </svg>
-    </div>
-  </section>
-
-  <nav class="breadcrumb" aria-label="Breadcrumb">
-    <div class="container">
-      <ol>
-        <li><a href="/">Home</a></li>
-        <li class="breadcrumb-sep" aria-hidden="true">›</li>
-        <li><a href="/services/">Services</a></li>
-        <li class="breadcrumb-sep" aria-hidden="true">›</li>
-        <li aria-current="page">Gutter Repair &amp; Replacement</li>
-      </ol>
-    </div>
-  </nav>
-
-  <section class="section">
-    <div class="container">
-      <div class="answer-block reveal-up">
-        <h2>How Much Does Gutter Repair Cost in Madison &amp; Jackson, MS?</h2>
-        <p>Most gutter repairs in Madison, Jackson, and central Mississippi run $150–$600 per section. Dun-Rite Seamless Gutters has repaired and replaced gutters here since 1996 — one sagging section, a leaking seam, or a 30-year-old system that has reached the end of its life. Full replacement starts at $1,200 with our 25-year manufacturer warranty. We provide same-day written estimates and work directly with insurance adjusters on storm damage claims.</p>
-      </div>
-    </div>
-  </section>
-
-  <!-- COMMON PROBLEMS -->
-  <section class="section section-alt">
-    <div class="container">
-      <div class="section-title reveal-up">
-        <span class="eyebrow-label">Common Issues</span>
-        <h2>What Are the Most Common <span class="text-accent">Gutter Problems</span> in Mississippi?</h2>
-        <span class="section-subtitle">four issues, four causes</span>
-      </div>
-
-      <div class="grid-2">
-        <div class="sub-service-card card-tint-1 reveal-up reveal-delay-1">
-          <div class="sub-service-icon"><i data-lucide="trending-down"></i></div>
-          <h3>Sagging Gutters</h3>
-          <p>Failed hangers from age, leaf-load, or improper original spacing. The gutter no longer maintains pitch, causing pooling and overflow.</p>
-        </div>
-        <div class="sub-service-card card-tint-3 reveal-up reveal-delay-2">
-          <div class="sub-service-icon"><i data-lucide="droplet"></i></div>
-          <h3>Leaking Corners &amp; Seams</h3>
-          <p>Sealant failure at miters and seams from age or thermal cycling. Standing water visible at corners during rain. Easy to fix; expensive if ignored.</p>
-        </div>
-        <div class="sub-service-card card-tint-2 reveal-up reveal-delay-3">
-          <div class="sub-service-icon"><i data-lucide="alert-triangle"></i></div>
-          <h3>Pulled-Off Fascia</h3>
-          <p>The entire gutter run pulling away from the house — usually because the wood fascia behind has rotted from years of overflow. Requires fascia repair before re-hanging.</p>
-        </div>
-        <div class="sub-service-card card-tint-1 reveal-up reveal-delay-4">
-          <div class="sub-service-icon"><i data-lucide="waves"></i></div>
-          <h3>Pooling Water at Downspouts</h3>
-          <p>Downspout undersized for runoff load, or splash blocks missing/damaged. Water dumping next to foundation. Easy fix with the right downspout sizing.</p>
+  <section class="hero hero--interior">
+    <span class="grain" aria-hidden="true"></span>
+    <div class="container hero-grid hero-grid--form">
+      <div class="hero-text">
+        <?php echo dr_breadcrumb(['Services' => '/services/', $service['nav'] => null]); ?>
+        <p class="hero-eyebrow">Gutter repair company &middot; Madison, MS</p>
+        <h1>Gutter Repair &amp; Replacement in Madison and Jackson, MS</h1>
+        <p class="hero-answer">Dun-Rite Seamless Gutters, Inc. is a gutter repair company and gutter installer based in Madison, Mississippi. Repairs cost $150 to $600 per section, and a full replacement starts at $1,200. Sagging runs, leaking corners, gutters pulled off the fascia and storm damage are the usual calls.</p>
+        <div class="hero-actions">
+          <a class="btn btn-accent btn-lg hero-form-open" href="/contact/" data-service="<?php echo h($service['name']); ?>">Request an estimate</a>
+          <a class="link-call" href="tel:+<?php echo h($phoneRaw); ?>"><?php echo icon('phone', 18); ?> <?php echo h($phone); ?></a>
         </div>
       </div>
-    </div>
-  </section>
-
-  <!-- REPAIR VS REPLACE -->
-  <section class="section">
-    <div class="container">
-      <div class="section-title reveal-up">
-        <span class="eyebrow-label">Decision Guide</span>
-        <h2>Should You <span class="text-accent">Repair or Replace</span> Your Gutters?</h2>
-        <span class="section-subtitle">honest checklists</span>
-      </div>
-
-      <div class="decision-split reveal-up">
-        <div class="decision-card decision-card--repair">
-          <h3>When Does Repair Make Sense?</h3>
-          <ul>
-            <li>Gutters are under 15 years old</li>
-            <li>Issues are localized to 1–2 sections</li>
-            <li>Material itself is sound (no bends, holes, rust)</li>
-            <li>Hangers can be replaced without re-hanging the whole run</li>
-            <li>Color and profile still match your home</li>
-            <li>Cost of repair is under 30% of full replacement</li>
-          </ul>
-        </div>
-        <div class="decision-card decision-card--replace">
-          <h3>When Is Replacement Smarter?</h3>
-          <ul>
-            <li>Gutters are 20+ years old</li>
-            <li>Multiple sections need work</li>
-            <li>Material is bent, holed, or rust-stained</li>
-            <li>You're tired of yearly repair calls</li>
-            <li>You want to upgrade to 6-inch profile or copper</li>
-            <li>Repair costs exceed 50% of full replacement</li>
-          </ul>
-        </div>
-      </div>
-
-      <div class="prose reveal-up" style="margin-top: var(--space-lg);">
-        <h3>What Affects the Price of a Gutter Repair?</h3>
-        <ul style="padding-left: var(--space-md); margin: var(--space-md) 0;">
-          <li><strong>Hangers or material:</strong> re-hanging a sagging run with hidden hangers every 24 inches runs $150–$400; a bent or warped section that has to be replaced runs $300–$800.</li>
-          <li><strong>How many sections:</strong> most repairs are priced per section at $150–$600, so a problem confined to 1–2 sections stays a repair; multiple failing sections usually point to replacement.</li>
-          <li><strong>Fascia condition:</strong> a gutter pulling off the house usually means rotted wood fascia behind it, and the fascia must be repaired before the gutter is re-hung.</li>
-          <li><strong>Downspout sizing:</strong> pooling at the foundation is often an undersized downspout or a missing splash block — a downspout fix, not a gutter fix.</li>
-          <li><strong>Repair vs. replacement math:</strong> if repair would cost under 30% of a full replacement, repair it; over 50%, replacement (from $1,200, with a 25-year manufacturer warranty) is the better value.</li>
-          <li><strong>Storm damage:</strong> hail, wind, and fallen-branch damage is documented with photos and itemized quotes for your insurance adjuster.</li>
-        </ul>
-        <p>We give you the honest answer at the free estimate. If repair makes more sense than replacement, we'll quote the repair. We don't push replacement on customers whose gutters have another 5–10 years left in them.</p>
-      </div>
-    </div>
-  </section>
-
-  <!-- STORM DAMAGE -->
-  <section class="section section-alt">
-    <div class="container">
-      <div class="split">
-        <div class="reveal-left">
-          <span class="eyebrow-label">Insurance Claims</span>
-          <h2>How Do You Handle <span class="text-accent">Storm Damage</span> Claims?</h2>
-          <p style="margin-top: var(--space-md);">Mississippi storms — hail, straight-line winds, fallen branches — regularly damage gutter systems. We work directly with homeowners insurance adjusters and provide adjuster-ready documentation: photo evidence of damage, written impact descriptions, and itemized repair quotes formatted exactly the way adjusters need them.</p>
-          <p>Most claims process in 2–3 weeks. We don't get paid until the work is approved and complete. We never ask for upfront payment on insurance work — that's a contractor scam to avoid in any trade.</p>
-          <p>If a tree fell on your gutter, hail just dented your downspouts, or wind ripped a run off your fascia, call within 72 hours of the storm. Earlier documentation helps your claim and gets you on our schedule before the post-storm rush.</p>
-        </div>
-        <div class="reveal-right">
-          <img src="https://i.imgur.com/v9I4W31.jpeg" alt="Worker installing replacement black metal downspout to stucco wall after storm damage in Mississippi" width="900" height="600" loading="lazy" style="border-radius: var(--radius-md); box-shadow: var(--shadow-lg);">
-        </div>
-      </div>
-
-      <div class="mid-cta-line reveal-up">
-        Just had storm damage? <a href="/contact/">Call (601) 750-1800 today</a> — we typically have post-storm documentation appointments same week.
-      </div>
-    </div>
-  </section>
-
-  <!-- PROCESS -->
-  <section class="section">
-    <div class="container">
-      <div class="section-title reveal-up">
-        <span class="eyebrow-label">How It Works</span>
-        <h2>From Damage Assessment to <span class="text-accent">Fixed.</span></h2>
-        <span class="section-subtitle">most repairs done within a week</span>
-      </div>
-
-      <div class="process-grid">
-        <?php $icons = ["clipboard-check","route","truck","shield-check"]; ?>
-        <?php foreach ($howToSteps as $i => $step): ?>
-        <div class="process-step reveal-up reveal-delay-<?php echo $i + 1; ?>">
-          <div class="process-step__num"><?php echo $i + 1; ?></div>
-          <div class="process-step__icon"><i data-lucide="<?php echo $icons[$i]; ?>"></i></div>
-          <h3><?php echo $step["name"]; ?></h3>
-          <p><?php echo $step["text"]; ?></p>
-        </div>
-        <?php endforeach; ?>
-      </div>
-    </div>
-  </section>
-
-  <!-- FAQ -->
-  <section class="section section-alt">
-    <div class="container">
-      <div class="section-title reveal-up">
-        <span class="eyebrow-label">Frequently Asked</span>
-        <h2>Repair &amp; Replacement <span class="text-accent">Questions.</span></h2>
-      </div>
-
-      <div class="faq-list">
-        <?php foreach ($faqs as $faq): ?>
-        <div class="faq-item reveal-up">
-          <button class="faq-question" aria-expanded="false"><?php echo htmlspecialchars($faq["q"]); ?></button>
-          <div class="faq-answer">
-            <div class="faq-answer-inner"><p><?php echo htmlspecialchars($faq["a"]); ?></p></div>
-          </div>
-        </div>
-        <?php endforeach; ?>
-      </div>
-
-      <p class="last-updated">Last Updated: <?php echo date('F Y'); ?></p>
+      <?php include $_SERVER['DOCUMENT_ROOT'] . '/includes/hero-form.php'; ?>
     </div>
   </section>
 
   <section class="section">
-    <div class="container">
-      <div class="section-title reveal-up">
-        <span class="eyebrow-label">Related Services</span>
-        <h2>You Might Also <span class="text-accent">Need.</span></h2>
-      </div>
+    <div class="container page-grid">
+      <article class="prose">
+        <h2>How much does gutter repair cost in Mississippi?</h2>
+        <p>Gutter repair from Dun-Rite Seamless Gutters, Inc. costs $150 to $600 per section. The price depends on what failed: re-hanging a sagging run sits at the low end, and rebuilding a section torn off in a storm sits at the high end. When the whole system is past repair, full replacement starts at $1,200.</p>
+        <dl class="fact-list">
+          <div><dt>Repair, per section</dt><dd>$150 – $600</dd></div>
+          <div><dt>Full replacement</dt><dd>From $1,200</dd></div>
+          <div><dt>Repair estimates</dt><dd>Same day</dd></div>
+          <div><dt>Warranty on replacement</dt><dd>25-year, materials</dd></div>
+        </dl>
 
-      <div class="related-services-grid">
-        <a href="/services/seamless-gutter-installation/" class="related-card reveal-up reveal-delay-1">
-          <div class="related-card__icon"><i data-lucide="ruler"></i></div>
-          <h3>Seamless Gutter Installation</h3>
-          <p>Full replacement with custom-formed seamless aluminum, 25+ colors, and 25-year manufacturer warranty.</p>
-          <span class="related-card__link">View Service →</span>
-        </a>
-        <a href="/services/gutter-cleaning/" class="related-card reveal-up reveal-delay-2">
-          <div class="related-card__icon"><i data-lucide="droplets"></i></div>
-          <h3>Gutter Cleaning</h3>
-          <p>Twice-yearly maintenance prevents the conditions that cause sagging, leaks, and fascia rot.</p>
-          <span class="related-card__link">View Service →</span>
-        </a>
-        <a href="/services/aluminum-gutters/" class="related-card reveal-up reveal-delay-3">
-          <div class="related-card__icon"><i data-lucide="shield"></i></div>
-          <h3>Aluminum Gutters</h3>
-          <p>Material specs and color options for full system replacement on Mississippi homes.</p>
-          <span class="related-card__link">View Service →</span>
-        </a>
-      </div>
+        <h2>Which gutter problems does Dun-Rite repair most often?</h2>
+        <p>The four gutter problems Dun-Rite repairs most often are sagging gutters, leaking corners and seams, gutters pulled off the fascia, and water pooling at the downspouts. Each one shows up differently from the ground, and each has a different fix.</p>
+        <div class="table-wrap">
+          <table class="data-table">
+            <caption>Common gutter problems, what you will notice, and the usual repair.</caption>
+            <thead><tr><th scope="col">Problem</th><th scope="col">What you see</th><th scope="col">Usual fix</th></tr></thead>
+            <tbody>
+              <tr><th scope="row">Sagging gutter</th><td>A dip in the run; water standing after rain</td><td>Re-hang on hidden hangers and reset the pitch</td></tr>
+              <tr><th scope="row">Leaking corner or seam</th><td>A drip line or stain below a joint</td><td>Clean and reseal the joint, or replace the section</td></tr>
+              <tr><th scope="row">Pulled off the fascia</th><td>A gap between gutter and board</td><td>Refasten; replace the section if it is bent</td></tr>
+              <tr><th scope="row">Pooling at a downspout</th><td>Standing water or washed-out mulch at the base</td><td>Clear or resize the downspout, or add a <a href="/services/custom-downspouts/">drain tie-in</a></td></tr>
+            </tbody>
+          </table>
+        </div>
+        <figure class="photo-figure">
+          <?php echo dr_picture('eave-ladder-work', 'Installer on an extension ladder working at the eave of a house, seen from below', ['sizes' => '(max-width: 960px) 100vw, 60vw']); ?>
+          <figcaption>Repair work at the eave, reached from an extension ladder.</figcaption>
+        </figure>
+
+        <h2>When is gutter replacement the better choice?</h2>
+        <p>Replacement is the better choice when the cost of fixing sections one at a time approaches the cost of a new system. A full replacement from Dun-Rite starts at $1,200 and carries a 25-year manufacturer warranty on materials, so three or four section repairs on an aging sectional gutter can cost as much as starting over.</p>
+        <p>Older sectional systems are the usual candidates. They have a joint every 10 feet, and once several of those joints leak, resealing them one by one is a short-term fix. A replacement is a <a href="/services/seamless-gutter-installation/">seamless gutter installation</a>: one piece per run, formed on site.</p>
+
+        <h2>How does Dun-Rite handle storm damage and insurance claims?</h2>
+        <p>For storm damage, Dun-Rite documents the damage for your insurance adjuster and then repairs it. Spring thunderstorms and the tail end of Gulf hurricanes both bring wind and falling limbs to central Mississippi, and gutters are usually the first thing a limb hits.</p>
+        <ol class="steps">
+          <li><strong>Estimate</strong>Call the office and the damage is looked at and priced, usually that day.</li>
+          <li><strong>Photo documentation</strong>The damage is photographed in a form an adjuster can use.</li>
+          <li><strong>Written assessment and itemized quote</strong>You receive a written damage assessment and a repair quote itemized for adjuster review.</li>
+          <li><strong>Repair</strong>Once the claim is settled, the sections are repaired or replaced.</li>
+        </ol>
+        <p>Most claims Dun-Rite prepares paperwork for close in two to three weeks. For work that is not storm related, see the full list of <a href="/services/">Dun-Rite gutter services</a>.</p>
+
+        <h2>What do people ask a gutter repair company?</h2>
+        <p>People looking for gutter repair near me in the Jackson area ask Dun-Rite where it works, whether to repair or replace, how insurance claims are handled and how quickly someone can look at the damage.</p>
+        <?php echo dr_faq_list($faqs); ?>
+
+        <p class="last-updated">Last updated: <?php echo date('F Y', filemtime(__FILE__)); ?></p>
+      </article>
+
+      <aside class="page-rail" aria-label="Key facts">
+        <div class="rail-card rail-card--tint">
+          <h3>Repair prices</h3>
+          <ul><li>$150 – $600 per section</li><li>Full replacement from $1,200</li><li>Fast repair estimates</li></ul>
+        </div>
+        <div class="rail-card">
+          <h3>For insurance claims</h3>
+          <ul><li>Adjuster-ready photos</li><li>Written damage assessment</li><li>Itemized repair quote</li></ul>
+        </div>
+        <div class="rail-card">
+          <h3>Warranty on new work</h3>
+          <p>25-year manufacturer warranty on materials and a 2-year labor warranty on installations.</p>
+        </div>
+        <div class="rail-card rail-card--dark">
+          <h3>Talk to the office</h3>
+          <p><?php echo h($businessHours); ?></p>
+          <a class="btn btn-outline-white" href="tel:+<?php echo h($phoneRaw); ?>"><?php echo icon('phone', 18); ?> <?php echo h($phone); ?></a>
+        </div>
+      </aside>
     </div>
   </section>
 
-  <section class="closing-cta" aria-label="Get a same-day estimate">
-    <div class="closing-cta__inner reveal-up">
-      <span class="section-subtitle" style="color: var(--color-accent);">Mark and the team</span>
-      <h2>Ready to Stop the <span class="text-accent">Leak?</span></h2>
-      <p>Same-day repair estimates. Insurance claim documentation. 2-year labor warranty on every fix.</p>
-      <div>
-        <a href="/contact/" class="btn-primary">Get My Repair Estimate</a>
-        <a href="tel:+16017501800" class="closing-cta__phone">Or Call (601) 750-1800</a>
-      </div>
-      <p class="closing-cta__meta">Mon–Fri 8AM–5PM · Madison, MS · Mississippi Licensed &amp; Insured</p>
-    </div>
-  </section>
+  <?php
+  $relatedServices = ['seamless-gutter-installation', 'gutter-cleaning', 'custom-downspouts'];
+  $closingHeading  = 'Get the damage looked at today';
+  include $_SERVER['DOCUMENT_ROOT'] . '/includes/service-close.php';
+  ?>
 
 </main>
-
 <?php include $_SERVER['DOCUMENT_ROOT'] . '/includes/footer.php'; ?>
