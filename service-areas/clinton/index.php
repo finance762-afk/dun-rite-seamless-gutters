@@ -1,208 +1,116 @@
 <?php
-/**
- * Dun-Rite — Clinton, MS
- */
+/** City page — Clinton, MS */
+require_once $_SERVER['DOCUMENT_ROOT'] . '/includes/config.php';
 
-$pageTitle       = "Gutter Installation & Repair Clinton MS | Since 1996";
-$pageDescription = "Gutter installation & repair in Clinton, MS since 1996: seamless aluminum & copper gutters, Olde Towne to The Traceway. Free estimates, call (601) 750-1800.";
-$canonicalUrl    = "https://dunrite-gutters.com/service-areas/clinton/";
-$ogImage         = "https://i.imgur.com/7Je9z8J.jpeg";
-$heroImage       = "https://i.imgur.com/7Je9z8J.jpeg";
-$currentPage     = "service-areas";
+$pageTitle       = 'Gutter Installer in Clinton, MS | Gutters & Gutter Guards';
+$pageDescription = 'Gutter installer for Clinton, MS: Dun-Rite fits gutter guards and seamless gutters under Clinton\'s pecan canopy, from Olde Towne to newer custom homes. Call (601) 750-1800.';
+$currentPage     = 'service-areas';
+$canonicalUrl    = $siteUrl . '/service-areas/clinton/';
+$pageType        = 'city';
+$citySlug        = 'clinton';
 
 $faqs = [
-  ["q" => "What is Dun-Rite's service area boundary?", "a" => "We serve 14 cities across the greater Jackson metro area: Madison (HQ), Jackson, Brandon, Flowood, Ridgeland, Clinton, Canton, Pearl, Gluckstadt, Florence, Richland, Bolton, Terry, and Raymond. Our service radius extends roughly 30 miles in each direction from our Madison headquarters. Outside this range, we evaluate special requests case-by-case — call (601) 750-1800 to ask."],
-  ["q" => "Do you charge travel or trip fees for Clinton jobs?", "a" => "No. Free travel anywhere within our 14-city service area, regardless of distance from our Madison headquarters. The estimate you receive is the price you pay — no fuel surcharges, no trip charges."],
-  ["q" => "How quickly can you schedule a visit in Clinton?", "a" => "Most free estimates in Clinton are scheduled within 48 hours of your call. Standard installations typically begin within 1–2 weeks. Storm damage and emergency repairs are prioritized."],
-  ["q" => "How do you handle Clinton's mature pecan canopy?", "a" => "Pecan trees are the dominant tree in Olde Towne Clinton and the older Mississippi College area neighborhoods. Pecan debris is heavier than most leaves and produces sticky residue when wet. We strongly recommend gutter guards for any Clinton home with pecan trees on the lot — without them, twice-yearly cleaning won't keep up with the seasonal load."],
-  ["q" => "Do you work on the Mississippi College campus area?", "a" => "Yes. We've handled both residential properties around the Mississippi College campus and several institutional and small commercial projects in the area. The historic Olde Towne district often requires custom-formed sections to match irregular rooflines on older homes."],
+    ['q' => 'Which guard is best under pecan trees?',
+     'a' => 'Large-hole screen stops pecan leaves and husks at $7 to $10 per linear foot installed. If catkins and small debris are the main problem, fine mesh at $10 to $14 is the better choice.'],
+    ['q' => 'Can guards be added to the gutters already on my Clinton home?',
+     'a' => 'Yes. Guards fit new or existing gutters, and a typical retrofit takes two to four hours.'],
+    ['q' => 'Does Dun-Rite really come out to Clinton from Madison?',
+     'a' => 'Yes. Clinton is one of the 14 cities served, with no travel fees, and most estimates are scheduled within 48 hours.'],
 ];
 
-$schemaGraph = [
-  "@context" => "https://schema.org",
-  "@graph" => [
-    ["@type" => ["LocalBusiness", "RoofingContractor"], "@id" => $canonicalUrl . "#business", "name" => "Dun-Rite Seamless Gutters – Clinton Service Area", "url" => $canonicalUrl, "telephone" => "+16017501800", "branchOf" => ["@id" => "https://dunrite-gutters.com/#business"], "areaServed" => ["@type" => "City", "name" => "Clinton", "addressRegion" => "MS"]],
-    ["@type" => "BreadcrumbList", "itemListElement" => [
-      ["@type" => "ListItem", "position" => 1, "name" => "Home", "item" => "https://dunrite-gutters.com/"],
-      ["@type" => "ListItem", "position" => 2, "name" => "Service Areas", "item" => "https://dunrite-gutters.com/service-areas/"],
-      ["@type" => "ListItem", "position" => 3, "name" => "Clinton", "item" => $canonicalUrl],
-    ]],
-    ["@type" => "FAQPage", "mainEntity" => array_map(fn($f) => ["@type" => "Question", "name" => $f["q"], "acceptedAnswer" => ["@type" => "Answer", "text" => $f["a"]]], $faqs)],
-  ]
+$schemaNodes = [
+    dr_breadcrumb_node(['Service Areas' => '/service-areas/', 'Clinton' => '/service-areas/clinton/']),
+    ['@type' => 'Service', 'name' => 'Gutter installation and repair in Clinton, MS', 'serviceType' => 'Gutter installation and repair',
+     'provider' => ['@id' => $siteUrl . '/#business'], 'areaServed' => ['@type' => 'City', 'name' => 'Clinton, MS'], 'url' => $siteUrl . '/service-areas/clinton/'],
+    dr_faq_node($faqs),
 ];
-$schemaMarkup = '<script type="application/ld+json">' . json_encode($schemaGraph, JSON_UNESCAPED_SLASHES | JSON_UNESCAPED_UNICODE) . '</script>';
 
 include $_SERVER['DOCUMENT_ROOT'] . '/includes/head.php';
+include $_SERVER['DOCUMENT_ROOT'] . '/includes/header.php';
 ?>
-<?php include $_SERVER['DOCUMENT_ROOT'] . '/includes/nav.php'; ?>
-
 <main id="main-content">
 
-  <section class="hero hero--inner" aria-label="Hero">
-    <img src="https://i.imgur.com/7Je9z8J.jpeg" alt="Brick Clinton MS home with dormers and seamless gutters" class="hero-bg" width="1920" height="1080" loading="eager" fetchpriority="high">
-    <div class="hero__inner">
-      <div class="hero__copy">
-        <span class="eyebrow-label">Clinton, MS · 18 Miles from HQ</span>
-        <h1>Gutter Services in <span class="text-accent">Clinton, MS.</span></h1>
-        <p class="hero__subhead">College town with mature pecan canopy and historic Olde Towne homes. The Mississippi College area homes need experienced installers who know how to work older rooflines.</p>
-        <div class="hero__ctas">
-          <a href="#hero-form-heading" class="btn-primary">Get Free Estimate</a>
-          <a href="tel:+16017501800" class="btn-secondary btn-on-dark">Call (601) 750-1800</a>
-        </div>
-        <p class="hero__phone">Mon–Fri 8AM–5PM · 18 miles SW of Madison HQ</p>
-      </div>
-      <?php
-        $preselectedService = 'Not Sure / General Inquiry';
-        $heroFormHeading    = 'Free Clinton Estimate';
-        $heroFormSubheading = 'Same-day callback · Most quotes scheduled within 48 hours';
-        include $_SERVER['DOCUMENT_ROOT'] . '/includes/hero-form.php';
-      ?>
-    </div>
-    <div class="section-divider section-divider--bottom" aria-hidden="true">
-      <svg viewBox="0 0 1440 80" preserveAspectRatio="none">
-        <polygon fill="#FFFFFF" points="0,80 1440,0 1440,80"/>
-      </svg>
-    </div>
-  </section>
-
-  <nav class="breadcrumb" aria-label="Breadcrumb">
-    <div class="container">
-      <ol>
-        <li><a href="/">Home</a></li>
-        <li class="breadcrumb-sep" aria-hidden="true">›</li>
-        <li><a href="/service-areas/">Service Areas</a></li>
-        <li class="breadcrumb-sep" aria-hidden="true">›</li>
-        <li aria-current="page">Clinton</li>
-      </ol>
-    </div>
-  </nav>
-
-  <section class="section">
-    <div class="container">
-      <div class="answer-block reveal-up">
-        <h2>Gutter Services in Clinton, Mississippi</h2>
-        <p>Dun-Rite Seamless Gutters provides seamless installation, copper, gutter guards, cleaning, and repair services in Clinton, Mississippi. From our Madison headquarters 18 miles to the northeast, we serve homes throughout Olde Towne Clinton, The Traceway, and the Mississippi College area. The mature pecan canopy makes gutter guards essential for most Clinton properties. Free estimates with no travel charges. Call (601) 750-1800.</p>
-      </div>
-      <div class="prose reveal-up" style="margin-top: var(--space-lg);">
-        <h3>What Gutter Problems Are Common in Clinton Homes?</h3>
-        <p>Clinton's defining gutter problem is pecans. Olde Towne and the older streets around Mississippi College sit under mature pecan trees whose debris is heavier than most leaves and turns sticky when wet — without guards, fall cleanings come every two months. Many Olde Towne homes are also 75–100+ years old, with non-standard fascia depths and irregular rooflines, so Dun-Rite Seamless Gutters inspects the wood fascia before quoting and forms every run on-site. The usual answer is <a href="/services/gutter-guards/" style="color: var(--color-accent); border-bottom: 1px solid currentColor;">heavy screen gutter guards for Clinton's pecan canopy</a> and <a href="/services/seamless-gutter-installation/" style="color: var(--color-accent); border-bottom: 1px solid currentColor;">seamless gutters custom-formed for Olde Towne rooflines</a>.</p>
-      </div>
-    </div>
-  </section>
-
-  <section class="section section-alt">
-    <div class="container">
-      <div class="section-title reveal-up">
-        <span class="eyebrow-label">Local Expertise</span>
-        <h2>Why Clinton Homeowners <span class="text-accent">Choose Dun-Rite.</span></h2>
-        <span class="section-subtitle">historic homes, modern installation</span>
-      </div>
-
-      <div class="sub-service-grid">
-        <div class="sub-service-card card-tint-1 reveal-up reveal-delay-1">
-          <div class="sub-service-icon"><i data-lucide="trees"></i></div>
-          <h3>Heavy Pecan Canopy</h3>
-          <p>Olde Towne Clinton and the older Mississippi College area neighborhoods are dominated by mature pecans. Pecan debris is heavier than most leaves and produces sticky residue when wet. Without gutter guards, you're cleaning every 2 months in fall. We install screen-style guards heavy enough to handle pecan loads.</p>
-        </div>
-        <div class="sub-service-card card-tint-3 reveal-up reveal-delay-2">
-          <div class="sub-service-icon"><i data-lucide="building"></i></div>
-          <h3>Historic Olde Towne</h3>
-          <p>Many Olde Towne homes are 75–100+ years old with non-standard fascia depths and irregular rooflines. We custom-form on-site to match any roofline and inspect the wood fascia before quoting — older homes often need fascia repair as part of any gutter project.</p>
-        </div>
-        <div class="sub-service-card card-tint-2 reveal-up reveal-delay-3">
-          <div class="sub-service-icon"><i data-lucide="graduation-cap"></i></div>
-          <h3>College Town Mix</h3>
-          <p>Clinton's housing mix runs from historic Olde Towne to The Traceway custom builds to faculty and rental properties around the Mississippi College campus. We tailor recommendations to each property — copper specialty work on premium addresses, durable aluminum on rental and faculty homes.</p>
+  <section class="hero hero--interior">
+    <span class="grain" aria-hidden="true"></span>
+    <div class="container hero-grid hero-grid--form">
+      <div class="hero-text">
+        <?php echo dr_breadcrumb(['Service Areas' => '/service-areas/', 'Clinton' => null]); ?>
+        <p class="hero-eyebrow">Hinds County &middot; College town</p>
+        <h1>Gutters &amp; Gutter Guards in Clinton, MS</h1>
+        <p class="hero-answer">Dun-Rite Seamless Gutters, Inc. is a gutter installer based in Madison, Mississippi that serves Clinton, the home of Mississippi College. Clinton's mature pecan trees make gutter guards more useful here than almost anywhere else in the 14 cities the company covers.</p>
+        <div class="hero-actions">
+          <a class="btn btn-accent btn-lg hero-form-open" href="/contact/">Request an estimate</a>
+          <a class="link-call" href="tel:+<?php echo h($phoneRaw); ?>"><?php echo icon('phone', 18); ?> <?php echo h($phone); ?></a>
         </div>
       </div>
+      <?php include $_SERVER['DOCUMENT_ROOT'] . '/includes/hero-form.php'; ?>
     </div>
   </section>
 
   <section class="section">
-    <div class="container">
-      <div class="section-title reveal-up">
-        <span class="eyebrow-label">All Services Available</span>
-        <h2>All 8 Gutter Services <span class="text-accent">in Clinton.</span></h2>
-      </div>
+    <div class="container page-grid">
+      <article class="prose">
+        <h2>Why are gutter guards so useful in Clinton?</h2>
+        <p>Gutter guards are useful in Clinton because pecan trees shed something in every season, and Clinton has a mature pecan canopy. Catkins fall in spring, twigs come down in summer storms, and leaves, husks and nuts drop from October into winter. A gutter under a pecan can be cleaned in September and be full again by Thanksgiving.</p>
+        <p>Dun-Rite Seamless Gutters, Inc. installs three guard systems. For pecan debris the large-hole screen, at $7 to $10 per linear foot installed, stops leaves and husks; fine mesh, at $10 to $14, also stops the small material. The <a href="/services/gutter-guards/">gutter guard page</a> compares all three.</p>
+        <figure class="photo-figure">
+          <?php echo dr_picture('gutter-guard-mesh', 'Close-up of a mesh guard seated in a half-round gutter below a shingle roof', ['sizes' => '(max-width: 960px) 100vw, 60vw']); ?>
+          <figcaption>A mesh guard seated in a gutter.</figcaption>
+        </figure>
 
-      <div class="services-in-city">
-        <a href="/services/seamless-gutter-installation/" class="svc-mini-card card-tint-1"><div class="svc-mini-card__icon"><i data-lucide="ruler"></i></div><h3>Seamless Installation</h3><p>Custom-formed for irregular Olde Towne rooflines.</p><span class="svc-mini-card__link">View Service →</span></a>
-        <a href="/services/aluminum-gutters/" class="svc-mini-card card-tint-2"><div class="svc-mini-card__icon"><i data-lucide="shield"></i></div><h3>Aluminum Gutters</h3><p>25+ colors for historic Clinton home palettes.</p><span class="svc-mini-card__link">View Service →</span></a>
-        <a href="/services/copper-gutters/" class="svc-mini-card card-tint-3"><div class="svc-mini-card__icon"><i data-lucide="sparkles"></i></div><h3>Copper Gutters</h3><p>Specialty work for The Traceway custom homes.</p><span class="svc-mini-card__link">View Service →</span></a>
-        <a href="/services/gutter-guards/" class="svc-mini-card card-tint-1"><div class="svc-mini-card__icon"><i data-lucide="filter"></i></div><h3>Gutter Guards</h3><p>Essential for pecan-heavy Clinton properties.</p><span class="svc-mini-card__link">View Service →</span></a>
-        <a href="/services/gutter-cleaning/" class="svc-mini-card card-tint-3"><div class="svc-mini-card__icon"><i data-lucide="droplets"></i></div><h3>Gutter Cleaning</h3><p>Quarterly plans for pecan-canopy properties.</p><span class="svc-mini-card__link">View Service →</span></a>
-        <a href="/services/gutter-repair-replacement/" class="svc-mini-card card-tint-2"><div class="svc-mini-card__icon"><i data-lucide="wrench"></i></div><h3>Repair &amp; Replacement</h3><p>Historic home replacements with fascia repair.</p><span class="svc-mini-card__link">View Service →</span></a>
-        <a href="/services/commercial-gutters/" class="svc-mini-card card-tint-1"><div class="svc-mini-card__icon"><i data-lucide="building-2"></i></div><h3>Commercial Gutters</h3><p>Olde Towne small commercial and institutional.</p><span class="svc-mini-card__link">View Service →</span></a>
-        <a href="/services/custom-downspouts/" class="svc-mini-card card-tint-3"><div class="svc-mini-card__icon"><i data-lucide="arrow-down-to-line"></i></div><h3>Custom Downspouts</h3><p>Decorative profiles for historic Clinton homes.</p><span class="svc-mini-card__link">View Service →</span></a>
-      </div>
-    </div>
-  </section>
+        <h2>How do gutters differ between Olde Towne and newer Clinton homes?</h2>
+        <p>Olde Towne homes need gutters fitted to old, irregular eaves, while Clinton's newer custom homes need capacity for large roofs. Olde Towne, with its brick streets beside the Mississippi College campus, has houses whose fascia has moved over decades. The newer custom-built homes on the Traceway side of town have long rooflines and steep pitches.</p>
+        <ul>
+          <li>On older houses, sections are formed on site to the measured length of each eave, and a <a href="/services/gutter-repair-replacement/">repair</a> may be all that is needed.</li>
+          <li>On larger new homes, a 6-inch gutter with 3x4 downspouts carries the extra water.</li>
+        </ul>
 
-  <section class="section section-alt">
-    <div class="container">
-      <div class="split-reverse">
-        <div class="reveal-left">
-          <span class="eyebrow-label">What to Expect</span>
-          <h2>What Does a Dun-Rite Install <span class="text-accent">Look Like in Clinton?</span></h2>
-          <p style="margin-top: var(--space-md);">Clinton installations vary widely based on home age. Newer Traceway homes complete in 6–8 hours like any standard install. Older Olde Towne homes take 1–2 days because of fascia repair work — we frequently find soft or rotted wood that needs board-by-board replacement before clean re-installation.</p>
-          <p>We always inspect fascia condition during free estimates and photograph any concerns. Many Clinton repair calls turn into combined repair + gutter projects when we find the actual problem is decades-old fascia rot, not the gutters themselves.</p>
-          <p>18 miles from Madison HQ. Free travel.</p>
+        <h2>What does a gutter cleaning plan cost in Clinton?</h2>
+        <p>A recurring gutter cleaning plan in Clinton costs 15 to 25 percent less per visit than the single-visit price of $150 to $300. Given how pecans shed, homes here without guards are the ones most likely to need the quarterly schedule rather than twice a year.</p>
+        <p>Each <a href="/services/gutter-cleaning/">cleaning visit</a> includes hand removal of debris, flushed downspouts and a written report with photos. Clinton is on the <a href="/service-areas/">Dun-Rite service area list</a> with four other Hinds County cities.</p>
+
+        <h2>What do Clinton homeowners ask Dun-Rite?</h2>
+        <p>Clinton homeowners ask Dun-Rite about pecan debris, fitting guards to existing gutters and how the company reaches the west side of the metro. The short answers are below, and anything not covered can be asked by calling the office at (601) 750-1800 during business hours.</p>
+        <?php echo dr_faq_list($faqs); ?>
+
+        <p class="last-updated">Last updated: <?php echo date('F Y', filemtime(__FILE__)); ?></p>
+      </article>
+
+      <aside class="page-rail" aria-label="Clinton service facts">
+        <div class="rail-card rail-card--tint">
+          <h3>Clinton at a glance</h3>
+          <ul>
+            <li>Hinds County</li>
+            <li>Home of Mississippi College</li>
+            <li>Mature pecan canopy</li>
+            <li>No travel fees</li>
+          </ul>
         </div>
-        <div class="reveal-right">
-          <img src="https://i.imgur.com/7Je9z8J.jpeg" alt="Clinton MS brick home with dormers and seamless gutters by Dun-Rite" width="900" height="600" loading="lazy" style="border-radius: var(--radius-md); box-shadow: var(--shadow-lg);">
+        <div class="rail-card">
+          <h3>Nearby cities</h3>
+          <ul>
+            <li><a href="/service-areas/jackson/">Gutters in Jackson</a></li>
+            <li><a href="/service-areas/raymond/">Gutters in Raymond</a></li>
+            <li><a href="/service-areas/bolton/">Gutters in Bolton</a></li>
+            <li><a href="/service-areas/">All 14 service areas</a></li>
+          </ul>
         </div>
-      </div>
-
-      <div class="mid-cta-line reveal-up">
-        Live in Clinton or near Mississippi College? <a href="/contact/">Schedule a free estimate</a> — most appointments within 48 hours.
-      </div>
-    </div>
-  </section>
-
-  <section class="section">
-    <div class="container">
-      <div class="section-title reveal-up">
-        <span class="eyebrow-label">Frequently Asked</span>
-        <h2>Clinton Service <span class="text-accent">Questions.</span></h2>
-      </div>
-      <div class="faq-list">
-        <?php foreach ($faqs as $faq): ?>
-        <div class="faq-item reveal-up">
-          <button class="faq-question" aria-expanded="false"><?php echo htmlspecialchars($faq["q"]); ?></button>
-          <div class="faq-answer"><div class="faq-answer-inner"><p><?php echo htmlspecialchars($faq["a"]); ?></p></div></div>
+        <div class="rail-card rail-card--dark">
+          <h3>Talk to the office</h3>
+          <p><?php echo h($businessHours); ?></p>
+          <a class="btn btn-outline-white" href="tel:+<?php echo h($phoneRaw); ?>"><?php echo icon('phone', 18); ?> <?php echo h($phone); ?></a>
         </div>
-        <?php endforeach; ?>
-      </div>
+      </aside>
     </div>
   </section>
 
-  <section class="section section-alt">
-    <div class="container">
-      <div class="section-title reveal-up">
-        <span class="eyebrow-label">Neighboring Cities</span>
-        <h2>Also Serving Clinton's <span class="text-accent">Neighbors.</span></h2>
-      </div>
-      <div class="related-services-grid">
-        <a href="/service-areas/jackson/" class="related-card reveal-up reveal-delay-1"><div class="related-card__icon"><i data-lucide="map-pin"></i></div><h3>Jackson (8 mi)</h3><p>State capital, immediate eastern neighbor. Historic Belhaven, Fondren, Eastover.</p><span class="related-card__link">View Jackson →</span></a>
-        <a href="/service-areas/raymond/" class="related-card reveal-up reveal-delay-2"><div class="related-card__icon"><i data-lucide="map-pin"></i></div><h3>Raymond (8 mi)</h3><p>Hinds County seat. Historic small town with Civil War history.</p><span class="related-card__link">View Raymond →</span></a>
-        <a href="/service-areas/bolton/" class="related-card reveal-up reveal-delay-3"><div class="related-card__icon"><i data-lucide="map-pin"></i></div><h3>Bolton (10 mi)</h3><p>Rural Hinds County town. Acreage homes with mature trees.</p><span class="related-card__link">View Bolton →</span></a>
-      </div>
-    </div>
-  </section>
-
-  <section class="closing-cta" aria-label="Clinton estimate">
-    <div class="closing-cta__inner reveal-up">
-      <span class="section-subtitle" style="color: var(--color-accent);">Mark and the team</span>
-      <h2>Ready for a Free <span class="text-accent">Clinton Estimate?</span></h2>
-      <p>Free travel from Madison. 25-year warranty. Mississippi licensed and insured.</p>
-      <div>
-        <a href="/contact/" class="btn-primary">Get My Free Estimate</a>
-        <a href="tel:+16017501800" class="closing-cta__phone">Or Call (601) 750-1800</a>
-      </div>
-      <p class="closing-cta__meta">Mon–Fri 8AM–5PM · Madison, MS · Mississippi Licensed &amp; Insured</p>
-    </div>
-  </section>
+  <?php
+  $relatedServices = ['gutter-guards', 'gutter-cleaning', 'seamless-gutter-installation'];
+  $relatedHeading  = 'Which gutter services are most requested in Clinton?';
+  $relatedText     = 'These are the three services Clinton customers ask Dun-Rite Seamless Gutters, Inc. about most. Each page lists the price range, the materials and what the crew does on site.';
+  $closingHeading  = 'Stop cleaning up after the pecans';
+  include $_SERVER['DOCUMENT_ROOT'] . '/includes/service-close.php';
+  ?>
 
 </main>
-
 <?php include $_SERVER['DOCUMENT_ROOT'] . '/includes/footer.php'; ?>

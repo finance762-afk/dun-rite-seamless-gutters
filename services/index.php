@@ -1,353 +1,105 @@
 <?php
-/**
- * Dun-Rite Seamless Gutters — Services Main Hub
- */
+/** Services hub */
+require_once $_SERVER['DOCUMENT_ROOT'] . '/includes/config.php';
 
-$pageTitle       = "Gutter Services in Madison, MS | Seamless, Copper, Cleaning, Repair";
-$pageDescription = "Eight gutter services across central Mississippi. Seamless installation, copper specialty, gutter guards, cleaning, repair, commercial, custom downspouts. 25-year warranty. Free estimates.";
-$canonicalUrl    = "https://dunrite-gutters.com/services/";
-$ogImage         = "https://i.imgur.com/2HO8Y5F.jpeg";
-$heroImage       = "https://i.imgur.com/2HO8Y5F.jpeg";
-$currentPage     = "services";
+$pageTitle       = 'Gutter Services in Madison & Jackson, MS | Dun-Rite';
+$pageDescription = 'Eight gutter services from Dun-Rite Seamless Gutters, Inc. in Madison, MS: installation, copper, guards, cleaning, repair, commercial and downspouts. Call (601) 750-1800.';
+$currentPage     = 'services';
+$canonicalUrl    = $siteUrl . '/services/';
+$pageType        = 'other';
 
-$cities = ["Brandon","Jackson","Canton","Madison","Pearl","Richland","Flowood","Florence","Gluckstadt","Bolton","Clinton","Terry","Ridgeland","Raymond"];
-$areaServedSchema = array_map(fn($c) => ["@type" => "City", "name" => $c, "addressRegion" => "MS", "addressCountry" => "US"], $cities);
-
-$schemaGraph = [
-  "@context" => "https://schema.org",
-  "@graph" => [
-    [
-      "@type"       => "Service",
-      "@id"         => "https://dunrite-gutters.com/services/#service",
-      "serviceType" => "Gutter Services",
-      "name"        => "Gutter Services in Mississippi",
-      "description" => $pageDescription,
-      "provider"    => ["@id" => "https://dunrite-gutters.com/#business"],
-      "areaServed"  => $areaServedSchema,
-      "hasOfferCatalog" => [
-        "@type" => "OfferCatalog",
-        "name"  => "Gutter Services",
-        "itemListElement" => [
-          ["@type" => "Offer", "itemOffered" => ["@type" => "Service", "name" => "Seamless Gutter Installation"]],
-          ["@type" => "Offer", "itemOffered" => ["@type" => "Service", "name" => "Aluminum Gutters"]],
-          ["@type" => "Offer", "itemOffered" => ["@type" => "Service", "name" => "Copper Gutters"]],
-          ["@type" => "Offer", "itemOffered" => ["@type" => "Service", "name" => "Gutter Guards & Leaf Protection"]],
-          ["@type" => "Offer", "itemOffered" => ["@type" => "Service", "name" => "Gutter Cleaning"]],
-          ["@type" => "Offer", "itemOffered" => ["@type" => "Service", "name" => "Gutter Repair & Replacement"]],
-          ["@type" => "Offer", "itemOffered" => ["@type" => "Service", "name" => "Commercial Gutters"]],
-          ["@type" => "Offer", "itemOffered" => ["@type" => "Service", "name" => "Custom Downspouts"]],
-        ]
-      ]
-    ],
-    [
-      "@type" => "BreadcrumbList",
-      "itemListElement" => [
-        ["@type" => "ListItem", "position" => 1, "name" => "Home", "item" => "https://dunrite-gutters.com/"],
-        ["@type" => "ListItem", "position" => 2, "name" => "Services", "item" => "https://dunrite-gutters.com/services/"],
-      ]
-    ],
-    [
-      "@type"        => "Organization",
-      "@id"          => "https://dunrite-gutters.com/#org",
-      "name"         => "Dun-Rite Seamless Gutters, Inc.",
-      "url"          => "https://dunrite-gutters.com",
-      "logo"         => "https://i.imgur.com/xRVJ7rY.jpeg",
-      "foundingDate" => "1996"
-    ],
-  ]
+$schemaNodes = [
+    dr_breadcrumb_node(['Services' => '/services/']),
+    ['@type' => 'ItemList', 'name' => 'Gutter services from ' . $siteName,
+     'itemListElement' => array_map(fn($i, $s) => ['@type' => 'ListItem', 'position' => $i + 1, 'name' => $s['name'], 'url' => $siteUrl . '/services/' . $s['slug'] . '/'], array_keys($services), $services)],
 ];
-$schemaMarkup = '<script type="application/ld+json">' . json_encode($schemaGraph, JSON_UNESCAPED_SLASHES | JSON_UNESCAPED_UNICODE) . '</script>';
 
 include $_SERVER['DOCUMENT_ROOT'] . '/includes/head.php';
+include $_SERVER['DOCUMENT_ROOT'] . '/includes/header.php';
 ?>
-<?php include $_SERVER['DOCUMENT_ROOT'] . '/includes/nav.php'; ?>
-
 <main id="main-content">
 
-  <!-- HERO -->
-  <section class="hero hero--inner" aria-label="Hero">
-    <img src="https://i.imgur.com/2HO8Y5F.jpeg" alt="Worker installing seamless gutters on a tile-roof Mississippi home" class="hero-bg" width="1920" height="1080" loading="eager" fetchpriority="high">
-    <div class="hero__inner">
-      <div class="hero__copy">
-        <span class="eyebrow-label">What We Offer</span>
-        <h1>Gutter Services in <span class="text-accent">Mississippi.</span></h1>
-        <p class="hero__subhead">Eight services backed by 30 years of experience and a 25-year manufacturer warranty. Residential, commercial, and copper specialty work across the greater Jackson area.</p>
-        <div class="hero__ctas">
-          <a href="#hero-form-heading" class="btn-primary">Get Free Estimate</a>
-          <a href="tel:+16017501800" class="btn-secondary btn-on-dark">Call (601) 750-1800</a>
+  <section class="hero hero--interior">
+    <span class="grain" aria-hidden="true"></span>
+    <div class="container">
+      <div class="hero-text">
+        <?php echo dr_breadcrumb(['Services' => null]); ?>
+        <p class="hero-eyebrow">Gutter installer &middot; Madison, MS</p>
+        <h1>Gutter Services in Madison &amp; Jackson, MS</h1>
+        <p class="hero-answer">Dun-Rite Seamless Gutters, Inc. is a gutter installer based in Madison, Mississippi. It offers eight services, all to do with gutters: new seamless aluminum and copper systems, gutter guards, cleaning, repair and replacement, commercial installation and custom downspouts, in 14 cities around Jackson.</p>
+        <div class="hero-actions">
+          <a class="btn btn-accent btn-lg" href="/contact/" data-open-estimate>Request an estimate</a>
+          <a class="link-call" href="tel:+<?php echo h($phoneRaw); ?>"><?php echo icon('phone', 18); ?> <?php echo h($phone); ?></a>
         </div>
-        <p class="hero__phone">Mon–Fri 8AM–5PM · 14 Mississippi cities served</p>
       </div>
-      <?php
-        $preselectedService = 'Not Sure / General Inquiry';
-        $heroFormHeading    = 'Get Your Free Estimate';
-        $heroFormSubheading = 'Tell us what you need · We will call within 24 hours';
-        include $_SERVER['DOCUMENT_ROOT'] . '/includes/hero-form.php';
-      ?>
-    </div>
-    <div class="section-divider section-divider--bottom" aria-hidden="true">
-      <svg viewBox="0 0 1440 100" preserveAspectRatio="none">
-        <path fill="#FFFFFF" d="M0,64 C240,96 480,32 720,48 C960,64 1200,96 1440,72 L1440,100 L0,100 Z"></path>
-      </svg>
     </div>
   </section>
 
-  <!-- BREADCRUMB -->
-  <nav class="breadcrumb" aria-label="Breadcrumb">
-    <div class="container">
-      <ol>
-        <li><a href="/">Home</a></li>
-        <li class="breadcrumb-sep" aria-hidden="true">›</li>
-        <li aria-current="page">Services</li>
-      </ol>
-    </div>
-  </nav>
-
-  <!-- ANSWER BLOCK / OVERVIEW -->
   <section class="section">
     <div class="container">
-      <div class="answer-block reveal-up">
-        <h2>Our Eight Gutter Services Across Central Mississippi</h2>
-        <p>Dun-Rite Seamless Gutters provides eight gutter services across 14 Mississippi cities: seamless gutter installation, aluminum gutters, copper gutters, gutter guards, gutter cleaning, gutter repair and replacement, commercial gutters, and custom downspouts. Most installations are completed in a single day with a 25-year manufacturer warranty on materials and 2-year labor warranty.</p>
+      <div class="section-head">
+        <p class="eyebrow">What We Do</p>
+        <h2>Which gutter service do you need from <span class="text-accent">Dun-Rite</span>?</h2>
+        <p class="hero-answer">Start with the problem you can see. Water pouring over the edge usually means cleaning, guards or larger downspouts. Drips at joints and sagging runs mean repair. A system older than 20 to 30 years usually means replacement with new seamless gutters. Each card opens a page with prices and specifics.</p>
       </div>
-    </div>
-  </section>
-
-  <!-- 8 SERVICE CARDS -->
-  <section class="section" aria-label="Service catalog">
-    <div class="container">
-      <div class="section-title reveal-up">
-        <span class="eyebrow-label">Eight Services</span>
-        <h2>Pick Your <span class="text-accent">Project.</span></h2>
-        <span class="section-subtitle">we handle every part of your rain-carrying system</span>
-      </div>
-
       <div class="services-grid">
-
-        <a href="/services/seamless-gutter-installation/" class="service-card-with-image card-tint-1 reveal-up reveal-delay-1">
-          <div class="service-card__image">
-            <picture>
-              <img src="https://i.imgur.com/3nVl1Ha.jpeg" alt="Seamless gutter installation on a Mississippi home — custom on-site forming" width="800" height="480" loading="lazy">
-            </picture>
-          </div>
-          <div class="service-card__body">
-            <div class="service-card__icon"><i data-lucide="ruler"></i></div>
-            <h3>Seamless Gutter Installation</h3>
-            <p class="service-card__desc">Custom-formed on-site in 5-inch and 6-inch K-style profiles.</p>
-            <ul>
-              <li>.032 gauge aluminum standard</li>
-              <li>25+ baked-enamel colors</li>
-              <li>Same-day install on most homes</li>
-            </ul>
-            <span class="service-card__cta">View Service</span>
-          </div>
-        </a>
-
-        <a href="/services/aluminum-gutters/" class="service-card-with-image card-tint-2 reveal-up reveal-delay-2">
-          <div class="service-card__image">
-            <picture>
-              <img src="https://i.imgur.com/8tTXO7O.jpeg" alt="Aluminum seamless gutters installed on a brick home in Madison, Mississippi" width="800" height="480" loading="lazy">
-            </picture>
-          </div>
-          <div class="service-card__body">
-            <div class="service-card__icon"><i data-lucide="shield"></i></div>
-            <h3>Aluminum Gutters</h3>
-            <p class="service-card__desc">Lightweight, rust-proof aluminum in dozens of factory finishes.</p>
-            <ul>
-              <li>Rust-proof for life</li>
-              <li>20–30 year service life</li>
-              <li>Most affordable material</li>
-            </ul>
-            <span class="service-card__cta">View Service</span>
-          </div>
-        </a>
-
-        <a href="/services/copper-gutters/" class="service-card-with-image card-tint-3 copper-feature reveal-up reveal-delay-3">
-          <div class="service-card__image">
-            <picture>
-              <img src="https://i.imgur.com/a54eolx.jpeg" alt="Hand-soldered copper gutters on a high-end Mississippi home — Dun-Rite specialty work" width="800" height="480" loading="lazy">
-            </picture>
-          </div>
-          <div class="service-card__body">
-            <div class="service-card__icon"><i data-lucide="sparkles"></i></div>
-            <h3>Copper Gutters</h3>
-            <p class="service-card__desc">Hand-soldered copper specialty work for Mississippi's finest homes.</p>
-            <ul>
-              <li>50+ year service life</li>
-              <li>Develops protective patina</li>
-              <li>Decorative profiles available</li>
-            </ul>
-            <span class="service-card__cta">View Service</span>
-          </div>
-        </a>
-
-        <a href="/services/gutter-guards/" class="service-card-with-image card-tint-1 reveal-up reveal-delay-4">
-          <div class="service-card__image">
-            <picture>
-              <img src="https://i.imgur.com/v9flHNM.jpeg" alt="Micro-mesh gutter guard installed on K-style aluminum gutters in central Mississippi" width="800" height="480" loading="lazy">
-            </picture>
-          </div>
-          <div class="service-card__body">
-            <div class="service-card__icon"><i data-lucide="filter"></i></div>
-            <h3>Gutter Guards &amp; Leaf Protection</h3>
-            <p class="service-card__desc">Mesh and screen guards that keep debris out and water flowing.</p>
-            <ul>
-              <li>Compatible with new or existing</li>
-              <li>Reduces cleaning frequency</li>
-              <li>Mesh, screen, and foam options</li>
-            </ul>
-            <span class="service-card__cta">View Service</span>
-          </div>
-        </a>
-
-        <a href="/services/gutter-cleaning/" class="service-card-with-image card-tint-3 reveal-up reveal-delay-1">
-          <div class="service-card__image">
-            <picture>
-              <img src="https://i.imgur.com/jAqOpHk.jpeg" alt="Technician cleaning debris from gutters on a two-story home in Jackson, Mississippi" width="800" height="480" loading="lazy">
-            </picture>
-          </div>
-          <div class="service-card__body">
-            <div class="service-card__icon"><i data-lucide="droplets"></i></div>
-            <h3>Gutter Cleaning</h3>
-            <p class="service-card__desc">Twice-yearly maintenance to prevent overflow, fascia rot, and foundation damage.</p>
-            <ul>
-              <li>Spring + fall scheduling</li>
-              <li>Full debris removal</li>
-              <li>Downspout flushing included</li>
-            </ul>
-            <span class="service-card__cta">View Service</span>
-          </div>
-        </a>
-
-        <a href="/services/gutter-repair-replacement/" class="service-card-with-image card-tint-2 reveal-up reveal-delay-2">
-          <div class="service-card__image">
-            <picture>
-              <img src="https://i.imgur.com/Hr2Nlwl.jpeg" alt="Gutter repair and sagging section replacement on a ranch-style Mississippi home" width="800" height="480" loading="lazy">
-            </picture>
-          </div>
-          <div class="service-card__body">
-            <div class="service-card__icon"><i data-lucide="wrench"></i></div>
-            <h3>Gutter Repair &amp; Replacement</h3>
-            <p class="service-card__desc">Sagging gutters, leaking seams, and full-system replacement.</p>
-            <ul>
-              <li>Same-day estimates</li>
-              <li>Insurance claim support</li>
-              <li>Storm damage specialists</li>
-            </ul>
-            <span class="service-card__cta">View Service</span>
-          </div>
-        </a>
-
-        <a href="/services/commercial-gutters/" class="service-card-with-image card-tint-1 reveal-up reveal-delay-3">
-          <div class="service-card__image">
-            <picture>
-              <img src="https://i.imgur.com/F4Wh56M.jpeg" alt="Commercial gutter installation on a retail building in the greater Jackson, Mississippi area" width="800" height="480" loading="lazy">
-            </picture>
-          </div>
-          <div class="service-card__body">
-            <div class="service-card__icon"><i data-lucide="building-2"></i></div>
-            <h3>Commercial Gutters</h3>
-            <p class="service-card__desc">Large-scale rain-carrying systems for office, retail, and industrial.</p>
-            <ul>
-              <li>Oversized 7-inch and 8-inch profiles</li>
-              <li>Multi-building complexes</li>
-              <li>Builder partnerships</li>
-            </ul>
-            <span class="service-card__cta">View Service</span>
-          </div>
-        </a>
-
-        <a href="/services/custom-downspouts/" class="service-card-with-image card-tint-3 reveal-up reveal-delay-4">
-          <div class="service-card__image">
-            <picture>
-              <img src="https://i.imgur.com/iX7CNj7.jpeg" alt="Custom round copper downspout installed on a Madison, Mississippi home" width="800" height="480" loading="lazy">
-            </picture>
-          </div>
-          <div class="service-card__body">
-            <div class="service-card__icon"><i data-lucide="arrow-down-to-line"></i></div>
-            <h3>Custom Downspouts</h3>
-            <p class="service-card__desc">Round, square, oversized, and decorative downspouts in any color.</p>
-            <ul>
-              <li>Custom-sized for high flow</li>
-              <li>Underground drainage tie-ins</li>
-              <li>Decorative copper options</li>
-            </ul>
-            <span class="service-card__cta">View Service</span>
-          </div>
-        </a>
-
+        <?php echo dr_service_cards(array_column($services, 'slug'), '(max-width: 720px) 50vw, 25vw'); ?>
       </div>
-    </div>
-
-    <div class="section-divider section-divider--bottom" aria-hidden="true">
-      <svg viewBox="0 0 1440 100" preserveAspectRatio="none">
-        <path fill="#F5F7FA" d="M0,30 C240,80 480,0 720,40 C960,80 1200,10 1440,50 L1440,100 L0,100 Z"></path>
-      </svg>
     </div>
   </section>
 
-  <!-- WHY DUN-RITE -->
-  <section class="section section-alt" aria-label="Why choose Dun-Rite">
+  <section class="section section--tint">
     <div class="container">
-      <div class="section-title reveal-up">
-        <span class="eyebrow-label">Why Choose Dun-Rite</span>
-        <h2>Three Reasons We've Lasted <span class="text-accent">30 Years.</span></h2>
-        <span class="section-subtitle">heritage matters in this trade</span>
+      <div class="section-head">
+        <p class="eyebrow">Side by side</p>
+        <h2>What does each Dun-Rite gutter service cost?</h2>
+        <p>Dun-Rite Seamless Gutters, Inc. prices new systems by the home, copper and guards by the linear foot, cleaning by the visit and repairs by the section. The ranges below are the company's own typical figures; a written quote follows an on-site measurement, and the estimate visit is free.</p>
       </div>
-
-      <div class="why-grid">
-        <div class="why-card card-tint-1 reveal-up reveal-delay-1">
-          <div class="stat-watermark">1996</div>
-          <h3>30 Years on Mississippi Roofs</h3>
-          <p>We've installed gutters on Madison, Jackson, and Brandon homes since 1996. Mark Dungan and the Dun-Rite team have seen every roofline, every flow rate, and every rain pattern central Mississippi throws at us.</p>
-        </div>
-
-        <div class="why-card card-tint-3 reveal-up reveal-delay-2">
-          <h3>On-Site Custom Forming</h3>
-          <p>Every gutter section is formed on-site on our truck-mounted brake — custom-cut to your home's exact roofline. No off-the-shelf compromises. No seams every 10 feet. This is the difference between Dun-Rite and a big-box installer.</p>
-        </div>
-
-        <div class="why-card card-tint-2 reveal-up reveal-delay-3">
-          <h3>25-Year Material Warranty</h3>
-          <p>Backed by a 25-year manufacturer warranty on materials and a 2-year labor warranty on every install. Fully insured for Workers' Comp and General Liability — your property is protected from the moment we set up.</p>
-        </div>
+      <div class="table-wrap">
+        <table class="data-table">
+          <caption>All eight services with Dun-Rite's typical price and timing.</caption>
+          <thead><tr><th scope="col">Service</th><th scope="col">Typical price</th><th scope="col">Typical time on site</th><th scope="col">Service life or interval</th></tr></thead>
+          <tbody>
+            <tr><th scope="row"><a href="/services/seamless-gutter-installation/">Seamless gutter installation</a></th><td>$1,200 – $3,500 per home</td><td>1 day; 1 – 2 for two stories</td><td>20 – 30 years</td></tr>
+            <tr><th scope="row"><a href="/services/aluminum-gutters/">Aluminum gutters</a></th><td>$1,200 – $3,500 per home</td><td>1 day; 1 – 2 for two stories</td><td>20 – 30 years</td></tr>
+            <tr><th scope="row"><a href="/services/copper-gutters/">Copper gutters</a></th><td>$25 – $40 per linear foot</td><td>Quoted per project</td><td>50 to 100+ years</td></tr>
+            <tr><th scope="row"><a href="/services/gutter-guards/">Gutter guards</a></th><td>$3 – $14 per linear foot</td><td>2 – 4 hours for a retrofit</td><td>5 to 15+ years by system</td></tr>
+            <tr><th scope="row"><a href="/services/gutter-cleaning/">Gutter cleaning</a></th><td>$150 – $300 per visit</td><td>One visit</td><td>Twice a year for most homes</td></tr>
+            <tr><th scope="row"><a href="/services/gutter-repair-replacement/">Gutter repair and replacement</a></th><td>$150 – $600 per section; replacement from $1,200</td><td>Estimate the same day</td><td>Replacement: 25-year material warranty</td></tr>
+            <tr><th scope="row"><a href="/services/commercial-gutters/">Commercial gutters</a></th><td>Quoted from drawings</td><td>Phased with the build</td><td>Quoted per project</td></tr>
+            <tr><th scope="row"><a href="/services/custom-downspouts/">Custom downspouts</a></th><td>Drain tie-ins $300 – $800 per run</td><td>Quoted per project</td><td>Sized to roof area</td></tr>
+          </tbody>
+        </table>
       </div>
     </div>
   </section>
 
-  <!-- SERVICE AREA -->
-  <section class="section" aria-label="Service area">
-    <div class="container">
-      <div class="section-title reveal-up">
-        <span class="eyebrow-label">Where We Work</span>
-        <h2>Serving 14 <span class="text-accent">Mississippi Cities.</span></h2>
-        <span class="section-subtitle">across the greater Jackson area</span>
+  <section class="section">
+    <div class="container split">
+      <div class="about-copy">
+        <p class="eyebrow">Common to every job</p>
+        <h2>What is the same on every Dun-Rite job?</h2>
+        <p>Four things are the same on every Dun-Rite job: the estimate is measured on site and written down, the owner inspects it, new installations carry two warranties, and there is no travel fee anywhere in the service area.</p>
+        <ul>
+          <li>Mark Dungan personally inspects every estimate.</li>
+          <li>New installations carry a 25-year manufacturer warranty on materials and a 2-year labor warranty.</li>
+          <li>Removal and disposal of old gutters is included in installation quotes.</li>
+          <li>The <a href="/service-areas/">14 cities in the service area</a> are all covered without trip charges.</li>
+        </ul>
+        <p>For background on the company and its credentials, see <a href="/about/">about Mark Dungan and Dun-Rite</a>.</p>
       </div>
-
-      <div class="area-pills reveal-up">
-        <?php foreach ($cities as $city): ?>
-          <span><?php echo $city; ?></span>
-        <?php endforeach; ?>
-      </div>
-
-      <p style="text-align:center; margin-top: var(--space-md);"><a href="/service-areas/" class="about-text-link">View Our Service Area Map →</a></p>
+      <figure class="photo-figure">
+        <?php echo dr_picture('copper-gutters-stucco-home', 'Two-story stucco home with copper gutters along each roofline', ['sizes' => '(max-width: 900px) 100vw, 46vw']); ?>
+        <figcaption>Copper gutters along both rooflines of a two-story stucco home.</figcaption>
+      </figure>
     </div>
   </section>
 
-  <!-- CLOSING CTA -->
-  <section class="closing-cta" aria-label="Contact us">
-    <div class="closing-cta__inner reveal-up">
-      <span class="section-subtitle" style="color: var(--color-accent);">Mark and the team</span>
-      <h2>Need Something Else? <span class="text-accent">Just Ask.</span></h2>
-      <p>We work on rain-carrying systems, not just gutters. Whatever your project — give us a call and we'll tell you straight whether we're the right fit.</p>
-      <div>
-        <a href="/contact/" class="btn-primary">Get My Free Estimate</a>
-        <a href="tel:+16017501800" class="closing-cta__phone">Or Call (601) 750-1800</a>
-      </div>
-      <p class="closing-cta__meta">Mon–Fri 8AM–5PM · Madison, MS · Mississippi Licensed &amp; Insured</p>
-    </div>
-  </section>
+  <?php
+  $ctaBandHeading = 'Not sure which service you need?';
+  $ctaBandText    = 'Describe what the gutters are doing and Dun-Rite will tell you whether it is a cleaning, a repair or a replacement. The office answers ' . $businessHours . '.';
+  include $_SERVER['DOCUMENT_ROOT'] . '/includes/cta-band.php';
+  ?>
 
 </main>
-
 <?php include $_SERVER['DOCUMENT_ROOT'] . '/includes/footer.php'; ?>

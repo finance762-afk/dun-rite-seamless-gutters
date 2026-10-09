@@ -1,196 +1,126 @@
 <?php
-/**
- * Dun-Rite — FAQ (Premium, 5 sections, 30 questions)
- */
+/** FAQ — answers taken from Dun-Rite's own published answers (llms-full.txt) */
+require_once $_SERVER['DOCUMENT_ROOT'] . '/includes/config.php';
 
-$pageTitle       = "Gutter FAQs Madison & Jackson MS | Dun-Rite Since 1996";
-$pageDescription = "Answers on gutter cost, seamless aluminum vs copper, guards, cleaning and repair in Madison & Jackson, MS, from Dun-Rite, here since 1996. Call (601) 750-1800.";
-$canonicalUrl    = "https://dunrite-gutters.com/faq/";
-$ogImage         = "https://i.imgur.com/2HO8Y5F.jpeg";
-$heroImage       = "https://i.imgur.com/2HO8Y5F.jpeg";
-$currentPage     = "faq";
+$pageTitle       = 'Gutter FAQ for Madison & Jackson, MS | Dun-Rite';
+$pageDescription = 'Dun-Rite Seamless Gutters, Inc. answers gutter questions for Madison and Jackson, MS: cost, materials, installation time, warranty and service area. Call (601) 750-1800.';
+$currentPage     = 'faq';
+$canonicalUrl    = $siteUrl . '/faq/';
+$pageType        = 'faq';
 
-$sections = [
-  [
-    "id" => "general",
-    "title" => "General",
-    "subtitle" => "company, scheduling, and basics",
-    "qas" => [
-      ["q" => "How long has Dun-Rite been in business?", "a" => "Mark Dungan founded Dun-Rite Seamless Gutters in 1996. We've been Mississippi's seamless gutter specialist for 30 years, working with homeowners, builders, and commercial property managers across the greater Jackson area."],
-      ["q" => "Are you licensed and insured?", "a" => "Yes — we're a Mississippi-licensed corporation with full Workers' Compensation and General Liability insurance. We carry COIs (certificates of insurance) for builder partners and provide proof of insurance on request."],
-      ["q" => "Do you do free estimates?", "a" => "Yes, every estimate is free with no obligation. We measure your roofline on-site, evaluate water-flow needs, recommend the right gutter system in writing, and give you time to decide. No high-pressure sales tactics."],
-      ["q" => "How do I schedule an estimate?", "a" => "Call (601) 750-1800 or submit our contact form. Most estimates are scheduled within 48 hours of your first contact. We'll arrive at the agreed time, walk your property, and provide a written quote on the spot or within 24 hours."],
-      ["q" => "Do you work weekends?", "a" => "Our office hours are Monday–Friday, 8 AM – 5 PM. We don't typically schedule new installations on weekends, but we do respond to storm-damage emergencies and active-leak situations outside business hours when possible."],
-      ["q" => "Are you on Google, Facebook, Yelp, or BBB?", "a" => "Yes — we're on Google Business Profile, Facebook (@dunritegutters), Yelp, and we're BBB accredited. Our reputation is built primarily on referrals from satisfied Mississippi homeowners and direct relationships with local builders."],
-    ]
-  ],
-  [
-    "id" => "pricing",
-    "title" => "Pricing",
-    "subtitle" => "what things actually cost",
-    "qas" => [
-      ["q" => "How much do new seamless gutters cost in Mississippi?", "a" => "Most Mississippi homes run $1,200–$3,500 for a complete seamless aluminum gutter system, depending on linear footage, number of stories, and downspout count. Copper gutters typically start at $25–$40 per linear foot installed. We provide free written estimates after measuring on-site."],
-      ["q" => "How much do copper gutters cost?", "a" => "Copper installations typically run $25–$40 per linear foot installed, depending on profile, complexity, and decorative elements. A typical 200-linear-foot copper installation runs $5,000–$8,000. The premium pays off — copper gutters last 50+ years versus 20–30 for aluminum."],
-      ["q" => "How much does gutter cleaning cost?", "a" => "Most Mississippi homes run $150–$300 per cleaning. Larger homes, multi-story properties, and homes with heavy tree coverage may run higher. We offer recurring service plans (twice-yearly or quarterly) at discounted rates compared to single visits."],
-      ["q" => "How much do gutter guards cost?", "a" => "Mesh and screen guard systems run $7–$12 per linear foot installed. A typical 150-foot home runs $1,000–$1,800 for full guard coverage. Guards reduce your gutter cleaning frequency from twice yearly to once every 3–5 years."],
-      ["q" => "Do you charge travel fees?", "a" => "No travel fees within our 14-city Mississippi service area regardless of distance from our Madison HQ. The estimate you receive is the price you pay — no fuel surcharges, no trip charges."],
-      ["q" => "Do you offer financing?", "a" => "We don't offer in-house financing, but we accept all major credit cards. Most homeowners find that gutter projects fit within their HELOC or home improvement budget without separate financing. Larger commercial projects use standard contractor billing terms."],
-    ]
-  ],
-  [
-    "id" => "process",
-    "title" => "Process",
-    "subtitle" => "what installation actually looks like",
-    "qas" => [
-      ["q" => "How long does seamless gutter installation take?", "a" => "Most single-story homes are completed in a single day. Two-story homes or complex rooflines may take 1–2 days. We schedule installations to start by 8 AM and typically finish before 5 PM."],
-      ["q" => "What happens at a free estimate appointment?", "a" => "A Dun-Rite team member walks your roofline (interior measurements not needed), evaluates fascia condition, identifies water-flow concerns, photographs problem areas, and provides a written quote covering linear footage, materials, color/profile selection, downspout placement, and warranty terms."],
-      ["q" => "Do you remove old gutters?", "a" => "Yes. Removal and disposal of existing gutters is included in every installation quote. We haul away all old materials so your property is clean when we leave."],
-      ["q" => "How do I prepare my home before installation day?", "a" => "Move vehicles out of the driveway near the work area. Trim back any branches that block roofline access. If you have specific landscaping you want protected, mark it or note it in your quote. We handle everything else — drop cloths, debris cleanup, and final inspection."],
-      ["q" => "What if it rains on my installation day?", "a" => "We watch the forecast and reschedule if heavy rain is predicted. Light drizzle is typically fine for installation work, but lightning, sustained heavy rain, or high winds will push the install to the next available day. Rescheduling is easy and free."],
-      ["q" => "Will you work directly with my builder or general contractor?", "a" => "Yes. We have ongoing relationships with multiple Mississippi builders and architects, especially for new construction, custom homes, and commercial projects. We work to your builder's schedule, provide additional-insured COIs, and bill via standard contractor terms."],
-    ]
-  ],
-  [
-    "id" => "materials",
-    "title" => "Materials",
-    "subtitle" => "what we install and why",
-    "qas" => [
-      ["q" => "What gauge aluminum do you use?", "a" => "We use .032 gauge aluminum standard — heavier than the .027 gauge sold at home improvement stores. This thicker profile resists denting from ladders, hail, and falling debris."],
-      ["q" => "What's the difference between 5-inch and 6-inch K-style?", "a" => "5-inch is the residential standard for most Mississippi homes. 6-inch is high-flow — handles 50% more water volume and is recommended for homes with steep rooflines, large roof footprints, or heavy regional rainfall. Most Madison and Reservoir-area new construction uses 6-inch."],
-      ["q" => "What colors are available?", "a" => "We stock 25+ baked-enamel colors including white, almond, cream, classic bronze, charcoal, brown, and forest green. Custom color matching is available for specific home palettes. We bring color samples to every estimate."],
-      ["q" => "How long do aluminum gutters last?", "a" => "Properly installed .032 gauge aluminum lasts 20–30 years in Mississippi's climate. Hot summers and humid winters don't shorten lifespan. UV exposure can fade certain colors over decades, but baked-enamel finishes hold color exceptionally well."],
-      ["q" => "Will copper gutters turn green? When?", "a" => "Yes — that's the protective patina. Year 1: bright copper. Years 2–3: bronzing. Years 5–7: brown patina. Years 10–15: classic verdigris green. The patina is the protective layer and shouldn't be cleaned off."],
-      ["q" => "What's the warranty on your work?", "a" => "25-year manufacturer warranty on materials. 2-year warranty on our labor. We register every installation with the manufacturer and provide warranty paperwork at job completion."],
-    ]
-  ],
-  [
-    "id" => "service-areas",
-    "title" => "Service Areas",
-    "subtitle" => "where we work",
-    "qas" => [
-      ["q" => "What is Dun-Rite's service area?", "a" => "We serve 14 Mississippi cities from our Madison HQ: Madison, Jackson, Brandon, Flowood, Ridgeland, Clinton, Canton, Pearl, Gluckstadt, Florence, Richland, Bolton, Terry, and Raymond. Roughly a 30-mile radius from Madison in every direction."],
-      ["q" => "Do you serve cities outside this list?", "a" => "Outside our standard service area, we evaluate special requests case-by-case — call (601) 750-1800 to ask. Distance, project scope, and current schedule all factor in."],
-      ["q" => "How quickly can you get to my city?", "a" => "Most cities in our service area can be scheduled for an estimate within 48 hours. Standard installations begin within 1–2 weeks of signed estimate, depending on material lead times. Madison and the cities closest to our HQ (Ridgeland, Gluckstadt, Canton) often get same-day or next-day estimate windows."],
-      ["q" => "Do you service commercial properties statewide?", "a" => "For larger commercial projects (multi-building complexes, commercial subdivisions), we travel further than our standard 30-mile residential radius. Call us to discuss commercial scope, schedule, and pricing — we've worked across central Mississippi and beyond on commercial work."],
-      ["q" => "I'm in Madison — do I get priority?", "a" => "Yes. Madison is our HQ, and we maintain priority scheduling for Madison residents whenever possible. Same-day or next-day estimates are common for Madison addresses."],
-      ["q" => "Do you serve new construction in any of these cities?", "a" => "Yes — new construction is a significant portion of our work in Reunion, Lake Caroline, Castlewoods, Bridgewater, and the newer subdivisions in Gluckstadt and Brandon. We work directly with builders on phased installs synchronized to construction schedule."],
-    ]
-  ],
+$faqGroups = [
+    'pricing' => ['items' => [
+            ['q' => 'How much do new seamless gutters cost in Mississippi?', 'a' => '$1,200 to $3,500 for most homes. The price depends on linear footage, the number of stories and the downspout count.'],
+            ['q' => 'How much do copper gutters cost?', 'a' => '$25 to $40 per linear foot installed. A typical home with 200 linear feet of gutter runs $5,000 to $8,000.'],
+            ['q' => 'How much does gutter cleaning cost?', 'a' => '$150 to $300 per cleaning. Recurring plans, twice a year or quarterly, are discounted 15 to 25 percent.'],
+            ['q' => 'How much do gutter guards cost?', 'a' => 'Fine mesh is $10 to $14 per linear foot installed, large-hole screen is $7 to $10, and foam inserts are $3 to $6.'],
+            ['q' => 'Does Dun-Rite charge travel fees?', 'a' => 'No. Travel is free within all 14 cities in the service area: no fuel surcharges and no trip charges.'],
+            ['q' => 'Does Dun-Rite offer financing?', 'a' => 'No in-house financing. Major credit cards are accepted, and larger commercial projects use standard contractor billing terms.'],
+        ]],
+    'process' => ['items' => [
+            ['q' => 'How do I schedule an estimate?', 'a' => 'Call (601) 750-1800 or submit the contact form. Most estimates are scheduled within 48 hours.'],
+            ['q' => 'What does the estimate include?', 'a' => 'Every estimate is free and carries no obligation. Dun-Rite measures on site, evaluates how water flows off the roof and provides a written quote.'],
+            ['q' => 'How long does seamless gutter installation take?', 'a' => 'Most single-story homes take one day. Two-story homes and complex rooflines take one to two days.'],
+            ['q' => 'Do you remove old gutters?', 'a' => 'Yes. Removal and disposal are included in every quote.'],
+            ['q' => 'What if it rains on installation day?', 'a' => 'Dun-Rite watches the forecast and reschedules heavy-rain days. Light drizzle is fine; lightning or sustained rain pushes the installation.'],
+            ['q' => 'Will you work with my builder or general contractor?', 'a' => 'Yes. Dun-Rite has ongoing builder partnerships across central Mississippi and provides certificates of insurance to builder partners on request.'],
+        ]],
+    'materials' => ['items' => [
+            ['q' => 'What gauge aluminum do you use?', 'a' => '.032 gauge is standard. It is heavier than the .027 gauge sold at home-improvement stores.'],
+            ['q' => 'Should I get 5-inch or 6-inch K-style gutters?', 'a' => '5-inch is the residential standard. 6-inch is the high-flow profile for steep rooflines, large roof footprints or heavy debris loads.'],
+            ['q' => 'How long do aluminum gutters last?', 'a' => '20 to 30 years when properly installed in Mississippi\'s climate.'],
+            ['q' => 'Will copper turn green, and when?', 'a' => 'Year one is bright copper, years two and three bring bronzing, years five to seven a brown patina, and years ten to fifteen and beyond the classic verdigris green. The patina is protective.'],
+            ['q' => 'What is the warranty?', 'a' => 'A 25-year manufacturer warranty on materials and a 2-year labor warranty.'],
+        ]],
+    'areas' => ['items' => [
+            ['q' => 'What is your service area?', 'a' => 'Madison, Ridgeland, Gluckstadt, Canton, Jackson, Clinton, Raymond, Bolton, Terry, Flowood, Pearl, Brandon, Richland and Florence.'],
+            ['q' => 'Do you serve cities outside this list?', 'a' => 'Case by case. Call (601) 750-1800 to ask; the answer depends on distance, project scope and the current schedule.'],
+            ['q' => 'How quickly can you get to my city?', 'a' => 'Most cities get an estimate within 48 hours. Madison and its closest neighbors, Ridgeland, Gluckstadt and Canton, are often the same day.'],
+            ['q' => 'Do you serve commercial properties statewide?', 'a' => 'For larger commercial projects Dun-Rite travels beyond the 30-mile residential radius. Call to discuss the project.'],
+        ]],
+    'company' => ['items' => [
+            ['q' => 'How long has Dun-Rite been in business?', 'a' => 'Mark Dungan founded Dun-Rite Seamless Gutters in 1996, and the company has operated from Madison, Mississippi since then.'],
+            ['q' => 'Is Dunrite Gutters the same company?', 'a' => 'Yes. Dunrite Gutters, Dun-Rite Gutters and Dun-Rite Seamless Gutters, Inc. are the same business, at 115 Cherrybrook Dr in Madison.'],
+            ['q' => 'Where can I find Dun-Rite online?', 'a' => 'On its Google Business Profile, on Facebook as @dunritegutters, on Yelp and on the BBB, where the company is accredited.'],
+        ]],
 ];
-
-// Flatten all FAQs for FAQPage schema
 $allFaqs = [];
-foreach ($sections as $section) {
-  foreach ($section["qas"] as $qa) {
-    $allFaqs[] = $qa;
-  }
-}
+foreach ($faqGroups as $fqGroup) foreach ($fqGroup['items'] as $fqItem) $allFaqs[] = $fqItem;
 
-$schemaGraph = [
-  "@context" => "https://schema.org",
-  "@graph" => [
-    [
-      "@type" => "WebPage",
-      "@id"   => $canonicalUrl . "#webpage",
-      "url"   => $canonicalUrl,
-      "name"  => $pageTitle,
-      "description" => $pageDescription,
-    ],
-    [
-      "@type" => "BreadcrumbList",
-      "itemListElement" => [
-        ["@type" => "ListItem", "position" => 1, "name" => "Home", "item" => "https://dunrite-gutters.com/"],
-        ["@type" => "ListItem", "position" => 2, "name" => "FAQ", "item" => $canonicalUrl],
-      ]
-    ],
-    [
-      "@type" => "FAQPage",
-      "mainEntity" => array_map(fn($f) => ["@type" => "Question", "name" => $f["q"], "acceptedAnswer" => ["@type" => "Answer", "text" => $f["a"]]], $allFaqs)
-    ],
-  ]
+// FAQPage JSON-LD is built by dr_faq_node() from the same array the page renders.
+$schemaNodes = [
+    dr_breadcrumb_node(['FAQ' => '/faq/']),
+    dr_faq_node($allFaqs),
 ];
-$schemaMarkup = '<script type="application/ld+json">' . json_encode($schemaGraph, JSON_UNESCAPED_SLASHES | JSON_UNESCAPED_UNICODE) . '</script>';
 
 include $_SERVER['DOCUMENT_ROOT'] . '/includes/head.php';
+include $_SERVER['DOCUMENT_ROOT'] . '/includes/header.php';
 ?>
-<?php include $_SERVER['DOCUMENT_ROOT'] . '/includes/nav.php'; ?>
-
 <main id="main-content">
 
-  <!-- HERO (60vh, no form) -->
-  <section class="hero hero--inner" aria-label="FAQ hero" style="min-height: 60vh;">
-    <img src="https://i.imgur.com/2HO8Y5F.jpeg" alt="Worker installing seamless gutters on a tile-roof Mississippi home" class="hero-bg" width="1920" height="1080" loading="eager" fetchpriority="high">
-    <div class="hero__inner" style="display:block; text-align:center; max-width: 720px;">
-      <div class="hero__copy">
-        <span class="eyebrow-label">Questions We Hear Every Week</span>
-        <h1>Mississippi Gutter <span class="text-accent">Questions, Answered.</span></h1>
-        <p class="hero__subhead" style="margin-left:auto; margin-right:auto;">Cost, materials, process, copper specialty, service area — the answers we give Mississippi homeowners and builders every day.</p>
+  <section class="hero hero--interior">
+    <span class="grain" aria-hidden="true"></span>
+    <div class="container">
+      <div class="hero-text">
+        <?php echo dr_breadcrumb(['FAQ' => null]); ?>
+        <p class="hero-eyebrow">Gutter questions, answered</p>
+        <h1>Gutter FAQ for Madison &amp; Jackson, MS Homeowners</h1>
+        <p class="hero-answer">Dun-Rite Seamless Gutters, Inc. is a gutter installer based in Madison, Mississippi. These are the questions its office is asked most, about price, process, materials and service area, with the same answers you would get by calling (601) 750-1800.</p>
       </div>
-    </div>
-    <div class="section-divider section-divider--bottom" aria-hidden="true">
-      <svg viewBox="0 0 1440 100" preserveAspectRatio="none">
-        <path fill="#FFFFFF" d="M0,64 C240,96 480,32 720,48 C960,64 1200,96 1440,72 L1440,100 L0,100 Z"></path>
-      </svg>
     </div>
   </section>
 
-  <nav class="breadcrumb" aria-label="Breadcrumb">
-    <div class="container">
-      <ol>
-        <li><a href="/">Home</a></li>
-        <li class="breadcrumb-sep" aria-hidden="true">›</li>
-        <li aria-current="page">FAQ</li>
-      </ol>
-    </div>
-  </nav>
+  <section class="section">
+    <div class="container page-grid">
+      <div class="prose">
+        <h2 id="pricing">How much do gutters, guards and cleaning cost?</h2>
+        <p>Dun-Rite Seamless Gutters, Inc. quotes most seamless aluminum systems at $1,200 to $3,500, copper at $25 to $40 per linear foot and cleaning at $150 to $300 a visit. These are typical ranges; the written quote after an on-site measurement is the real number.</p>
+        <?php echo dr_faq_list($faqGroups['pricing']['items']); ?>
+        <p>Full price tables are on the <a href="/services/">gutter services page</a>, and the three guard systems are compared on the <a href="/services/gutter-guards/">gutter guard page</a>.</p>
 
-  <!-- STICKY TOC (desktop only) -->
-  <nav class="faq-toc" aria-label="FAQ sections">
-    <div class="faq-toc__inner">
-      <?php foreach ($sections as $section): ?>
-        <a href="#<?php echo $section['id']; ?>"><?php echo htmlspecialchars($section['title']); ?></a>
-      <?php endforeach; ?>
-    </div>
-  </nav>
+        <h2 id="process">How does a gutter installation work?</h2>
+        <p>A Dun-Rite gutter installation starts with a free on-site estimate and usually takes one day on a single-story home. The crew removes the old gutters, forms the new ones at the house and hangs them the same day.</p>
+        <?php echo dr_faq_list($faqGroups['process']['items']); ?>
 
-  <!-- FAQ SECTIONS -->
-  <?php foreach ($sections as $i => $section): ?>
-  <section id="<?php echo $section['id']; ?>" class="section faq-section <?php echo $i % 2 === 0 ? '' : 'section-alt'; ?>" aria-label="<?php echo htmlspecialchars($section['title']); ?> FAQs">
-    <div class="container">
-      <div class="section-title reveal-up">
-        <span class="eyebrow-label"><?php echo htmlspecialchars($section['title']); ?></span>
-        <h2><?php echo htmlspecialchars($section['title']); ?> <span class="text-accent">Questions.</span></h2>
-        <span class="section-subtitle"><?php echo htmlspecialchars($section['subtitle']); ?></span>
+        <h2 id="materials">Which gutter materials and sizes does Dun-Rite use?</h2>
+        <p>Dun-Rite uses .032 gauge aluminum as its standard gutter material and offers copper as a specialty. Aluminum is formed in 5-inch and 6-inch K-style profiles for homes; copper comes in half-round, K-style, ogee and custom profiles.</p>
+        <?php echo dr_faq_list($faqGroups['materials']['items']); ?>
+
+        <h2 id="areas">Where does Dun-Rite work?</h2>
+        <p>Dun-Rite works in 14 Mississippi cities within roughly 30 miles of its Madison office. Requests from farther away are considered case by case, and larger commercial projects regularly extend the range.</p>
+        <?php echo dr_faq_list($faqGroups['areas']['items']); ?>
+        <p>Each city has its own page, linked from the <a href="/service-areas/">service areas overview</a>.</p>
+
+        <h2 id="company">Who is Dun-Rite Seamless Gutters?</h2>
+        <p>Dun-Rite Seamless Gutters, Inc. is a gutter company founded by Mark Dungan in Madison, Mississippi in 1996. It is a Mississippi-licensed corporation with Workers' Compensation and General Liability insurance.</p>
+        <?php echo dr_faq_list($faqGroups['company']['items']); ?>
+
       </div>
 
-      <div class="faq-list">
-        <?php foreach ($section['qas'] as $qa): ?>
-        <div class="faq-item reveal-up">
-          <button class="faq-question" aria-expanded="false"><?php echo htmlspecialchars($qa["q"]); ?></button>
-          <div class="faq-answer">
-            <div class="faq-answer-inner"><p><?php echo htmlspecialchars($qa["a"]); ?></p></div>
-          </div>
+      <aside class="page-rail" aria-label="Jump to a topic">
+        <div class="rail-card">
+          <h3>Jump to</h3>
+          <ul>
+            <li><a href="#pricing">Prices</a></li>
+            <li><a href="#process">Installation process</a></li>
+            <li><a href="#materials">Materials and sizes</a></li>
+            <li><a href="#areas">Service area</a></li>
+            <li><a href="#company">The company</a></li>
+          </ul>
         </div>
-        <?php endforeach; ?>
-      </div>
+        <div class="rail-card rail-card--dark">
+          <h3>Question not here?</h3>
+          <p><?php echo h($businessHours); ?></p>
+          <a class="btn btn-outline-white" href="tel:+<?php echo h($phoneRaw); ?>"><?php echo icon('phone', 18); ?> <?php echo h($phone); ?></a>
+        </div>
+      </aside>
     </div>
   </section>
-  <?php endforeach; ?>
 
-  <!-- CLOSING CTA -->
-  <section class="closing-cta" aria-label="Question not listed">
-    <div class="closing-cta__inner reveal-up">
-      <span class="section-subtitle" style="color: var(--color-accent);">we'll answer it</span>
-      <h2>Question Not <span class="text-accent">Listed?</span></h2>
-      <p>Call us — we'll answer it. (601) 750-1800. Or submit our contact form and we'll respond same-day on weekdays.</p>
-      <div>
-        <a href="/contact/" class="btn-primary">Get Free Estimate</a>
-        <a href="tel:+16017501800" class="closing-cta__phone">Or Call (601) 750-1800</a>
-      </div>
-      <p class="closing-cta__meta">Mon–Fri 8AM–5PM · Madison, MS · Mississippi Licensed &amp; Insured</p>
-    </div>
-  </section>
+  <?php
+  $ctaBandHeading = 'Ask your own gutter question';
+  include $_SERVER['DOCUMENT_ROOT'] . '/includes/cta-band.php';
+  ?>
 
 </main>
-
 <?php include $_SERVER['DOCUMENT_ROOT'] . '/includes/footer.php'; ?>

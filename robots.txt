@@ -28,4 +28,3 @@ Allow: /
 
 # Sitemaps
 Sitemap: https://dunrite-gutters.com/sitemap.xml
-Sitemap: https://dunrite-gutters.com/sitemap-images.xml

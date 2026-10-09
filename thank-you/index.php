@@ -1,39 +1,43 @@
 <?php
-/**
- * Dun-Rite — Thank You (Post-form, NOINDEX)
- */
+/** Thank you — shown after a form submission (noindex) */
+require_once $_SERVER['DOCUMENT_ROOT'] . '/includes/config.php';
 
-$noIndex         = true;
-$pageTitle       = "Thank You — Dun-Rite Seamless Gutters";
-$pageDescription = "Thank you for contacting Dun-Rite Seamless Gutters.";
-$canonicalUrl    = "https://dunrite-gutters.com/thank-you/";
-$ogImage         = "https://i.imgur.com/kRJ17by.jpeg";
-$heroImage       = "https://i.imgur.com/kRJ17by.jpeg";
-$currentPage     = "thank-you";
+$noindex         = true;
+$pageTitle       = 'Thank You | Dun-Rite Seamless Gutters';
+$pageDescription = 'Your message reached Dun-Rite Seamless Gutters, Inc. in Madison, MS.';
+$currentPage     = 'thank-you';
+$canonicalUrl    = $siteUrl . '/thank-you/';
+$pageType        = 'other';
+$schemaNodes     = [['@type' => 'WebPage', 'url' => $siteUrl . '/thank-you/', 'name' => $pageTitle]];
 
 include $_SERVER['DOCUMENT_ROOT'] . '/includes/head.php';
+include $_SERVER['DOCUMENT_ROOT'] . '/includes/header.php';
 ?>
-<?php include $_SERVER['DOCUMENT_ROOT'] . '/includes/nav.php'; ?>
-
 <main id="main-content">
-
-  <section class="hero hero--inner" aria-label="Thank you" style="min-height: 60vh;">
-    <img src="https://i.imgur.com/kRJ17by.jpeg" alt="Dun-Rite Seamless Gutters service truck" class="hero-bg" width="1920" height="1080" loading="eager" fetchpriority="high">
-    <div class="hero__inner" style="display:block; text-align:center; max-width: 720px;">
-      <div class="hero__copy">
-        <span class="eyebrow-label">Message Received</span>
-        <h1>Thanks for <span class="text-accent">Reaching Out.</span></h1>
-        <span class="section-subtitle">we'll be in touch shortly</span>
-        <p class="hero__subhead" style="margin-left:auto; margin-right:auto;">Your inquiry was sent to Mark and the Dun-Rite team. We'll respond within one business day — typically same-day on weekdays. If you need to reach us immediately, call (601) 750-1800.</p>
-        <div class="hero__ctas" style="justify-content:center;">
-          <a href="/" class="btn-secondary btn-on-dark">Back to Homepage</a>
-          <a href="/services/" class="btn-secondary btn-on-dark">View Our Services</a>
-          <a href="tel:+16017501800" class="btn-primary">Call (601) 750-1800</a>
+  <section class="hero hero--interior">
+    <span class="grain" aria-hidden="true"></span>
+    <div class="container">
+      <div class="hero-text">
+        <p class="hero-eyebrow">Message received</p>
+        <h1>Thank you. Your request reached the Dun-Rite office.</h1>
+        <p class="hero-answer">The office returns messages during business hours, <?php echo h($businessHours); ?>, and most estimate visits are scheduled within 48 hours. If it cannot wait, call <?php echo h($phone); ?>.</p>
+        <div class="hero-actions">
+          <a class="btn btn-accent btn-lg" href="tel:+<?php echo h($phoneRaw); ?>"><?php echo icon('phone', 18); ?> Call <?php echo h($phone); ?></a>
+          <a class="btn btn-secondary btn-lg" href="/">Back to the homepage</a>
         </div>
       </div>
     </div>
   </section>
-
+  <section class="section">
+    <div class="container container-narrow">
+      <h2>While you wait</h2>
+      <ul class="pill-links">
+        <li><a href="/services/">Gutter services and prices</a></li>
+        <li><a href="/faq/">Gutter FAQ</a></li>
+        <li><a href="/service-areas/">Service areas</a></li>
+      </ul>
+      <p style="margin-top:1.5rem">Already a Dun-Rite customer? <a class="btn btn-secondary btn-sm" href="<?php echo h($reviewRequestUrl); ?>" target="_blank" rel="noopener">Leave a Google review</a></p>
+    </div>
+  </section>
 </main>
-
 <?php include $_SERVER['DOCUMENT_ROOT'] . '/includes/footer.php'; ?>

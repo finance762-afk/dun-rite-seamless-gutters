@@ -1,14 +1,12 @@
 <?php
-/**
- * Dun-Rite — Cookie Policy
- */
+/** Legal page — Cookie Policy (text unchanged from the v6.1 build; chrome migrated to v7) */
+require_once $_SERVER['DOCUMENT_ROOT'] . '/includes/config.php';
 
 $pageTitle       = "Cookie Policy | Dun-Rite Seamless Gutters";
-$pageDescription = "How dunrite-gutters.com uses cookies and similar tracking technologies. Disclosures for Google Analytics, Google Fonts, and third-party services.";
-$canonicalUrl    = "https://dunrite-gutters.com/cookie-policy/";
-$ogImage         = "https://i.imgur.com/xRVJ7rY.jpeg";
-$heroImage       = "https://i.imgur.com/lHGkpv5.jpeg";
-$currentPage     = "cookie-policy";
+$pageDescription = "How dunrite-gutters.com uses cookies and similar tracking technologies. Disclosures for Google Analytics and the third-party services this site uses.";
+$currentPage     = 'cookie-policy';
+$canonicalUrl    = $siteUrl . '/cookie-policy/';
+$pageType        = 'other';
 
 $companyName       = "Dun-Rite Seamless Gutters, Inc.";
 $companyEmail      = "mark.dungan@yahoo.com";
@@ -16,55 +14,27 @@ $companyPhone      = "(601) 750-1800";
 $companyAddress    = "115 Cherrybrook Dr, Madison, MS 39110";
 $lastUpdated       = date('F j, Y');
 
-$schemaGraph = [
-  "@context" => "https://schema.org",
-  "@graph" => [
-    [
-      "@type" => "WebPage",
-      "@id"   => $canonicalUrl . "#webpage",
-      "url"   => $canonicalUrl,
-      "name"  => $pageTitle,
-      "description" => $pageDescription,
-    ],
-    [
-      "@type" => "BreadcrumbList",
-      "itemListElement" => [
-        ["@type" => "ListItem", "position" => 1, "name" => "Home", "item" => "https://dunrite-gutters.com/"],
-        ["@type" => "ListItem", "position" => 2, "name" => "Cookie Policy", "item" => $canonicalUrl],
-      ]
-    ],
-  ]
+$schemaNodes = [
+    ['@type' => 'WebPage', '@id' => $siteUrl . '/cookie-policy/#webpage', 'url' => $siteUrl . '/cookie-policy/', 'name' => $pageTitle, 'description' => $pageDescription],
+    dr_breadcrumb_node(['Cookie Policy' => '/cookie-policy/']),
 ];
-$schemaMarkup = '<script type="application/ld+json">' . json_encode($schemaGraph, JSON_UNESCAPED_SLASHES | JSON_UNESCAPED_UNICODE) . '</script>';
 
 include $_SERVER['DOCUMENT_ROOT'] . '/includes/head.php';
+include $_SERVER['DOCUMENT_ROOT'] . '/includes/header.php';
 ?>
-<?php include $_SERVER['DOCUMENT_ROOT'] . '/includes/nav.php'; ?>
-
 <main id="main-content">
 
-  <section class="hero hero--inner hero--legal" aria-label="Cookie Policy">
-    <img src="https://i.imgur.com/lHGkpv5.jpeg" alt="Brick stucco Madison MS home — Dun-Rite Seamless Gutters" class="hero-bg" width="1920" height="1080" loading="eager" fetchpriority="high">
-    <div class="hero__inner">
-      <div class="hero__copy">
-        <span class="eyebrow-label">Legal</span>
-        <h1>Cookie Policy</h1>
-        <span class="section-subtitle">what we track and why</span>
-        <p class="hero__phone" style="opacity: 0.8;">Last Updated: <?php echo $lastUpdated; ?></p>
-      </div>
+  <section class="hero hero--legal">
+    <div class="container">
+      <?php echo dr_breadcrumb(['Cookie Policy' => null]); ?>
+      <p class="eyebrow">Legal</p>
+      <h1>Cookie Policy</h1>
+      <p>Last Updated: <?php echo $lastUpdated; ?></p>
     </div>
   </section>
 
-  <nav class="breadcrumb" aria-label="Breadcrumb">
+  <section class="section">
     <div class="container">
-      <ol>
-        <li><a href="/">Home</a></li>
-        <li class="breadcrumb-sep" aria-hidden="true">›</li>
-        <li aria-current="page">Cookie Policy</li>
-      </ol>
-    </div>
-  </nav>
-
   <article class="legal-prose">
 
     <h2>1. Introduction</h2>
@@ -84,18 +54,16 @@ include $_SERVER['DOCUMENT_ROOT'] . '/includes/head.php';
     <h3>B. Analytics Cookies</h3>
     <p>We use Google Analytics 4 to understand how visitors use our site. These cookies are anonymous and aggregated.</p>
     <ul>
+      <li><strong>p1_ft</strong> — first-party cookie set by this site, kept for 30 days. It records the first page you landed on, the referring site, any campaign tags in the link and your device type, so that a form you submit can be matched to how you found us. It is not shared with advertisers.</li>
       <li><strong>_ga, _ga_*, _ga_XXXXXXXX</strong> — Google Analytics 4 cookies for anonymous usage statistics (page views, traffic sources, device types, time on page).</li>
       <li>We anonymize IP addresses before they reach Google.</li>
       <li>Opt-out: install the <a href="https://tools.google.com/dlpage/gaoptout" target="_blank" rel="noopener">Google Analytics Opt-Out Browser Add-on</a>.</li>
     </ul>
 
     <h3>C. Functional Cookies (Third-Party Origins)</h3>
-    <p>Our site loads resources from these third-party services, which may set their own cookies governed by their respective privacy policies:</p>
+    <p>Fonts, icons and images on this site are served from our own domain and set no cookies. Our site uses this third-party service, which is governed by its own privacy policy:</p>
     <ul>
-      <li><strong>Google Fonts</strong> (fonts.googleapis.com, fonts.gstatic.com) — for site typography.</li>
-      <li><strong>Lucide Icons</strong> (unpkg.com) — for site icons.</li>
-      <li><strong>Imgur</strong> (i.imgur.com) — for hosted images.</li>
-      <li><strong>Formsubmit.co</strong> — for processing contact form submissions (only when you submit a form).</li>
+      <li><strong>Page One Insights lead endpoint</strong> (db.pageone.cloud) — processes contact form submissions on our behalf (only when you submit a form).</li>
     </ul>
 
     <h2>4. How to Control Cookies</h2>
@@ -125,7 +93,8 @@ include $_SERVER['DOCUMENT_ROOT'] . '/includes/head.php';
     </p>
 
   </article>
+    </div>
+  </section>
 
 </main>
-
 <?php include $_SERVER['DOCUMENT_ROOT'] . '/includes/footer.php'; ?>

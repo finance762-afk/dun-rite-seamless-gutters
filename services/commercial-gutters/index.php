@@ -1,300 +1,123 @@
 <?php
-/**
- * Dun-Rite — Commercial Gutters
- */
+/** Service page — commercial-gutters */
+require_once $_SERVER['DOCUMENT_ROOT'] . '/includes/config.php';
 
-$pageTitle       = "Commercial Gutters Mississippi | Since 1996 | Free Estimates";
-$pageDescription = "Commercial gutters in Madison, Jackson & central Mississippi since 1996. Seamless aluminum & copper, high-flow profiles. Free estimates: call (601) 750-1800.";
-$canonicalUrl    = "https://dunrite-gutters.com/services/commercial-gutters/";
-$ogImage         = "https://i.imgur.com/F4Wh56M.jpeg";
-$heroImage       = "https://i.imgur.com/F4Wh56M.jpeg";
-$currentPage     = "services";
-
-$cities = ["Brandon","Jackson","Canton","Madison","Pearl","Richland","Flowood","Florence","Gluckstadt","Bolton","Clinton","Terry","Ridgeland","Raymond"];
-$areaServedSchema = array_map(fn($c) => ["@type" => "City", "name" => $c, "addressRegion" => "MS", "addressCountry" => "US"], $cities);
+$pageTitle       = 'Commercial Gutter Installer in Jackson, MS | Dun-Rite';
+$pageDescription = 'Dun-Rite is a commercial gutter installer based in Madison, MS. 7-inch and 8-inch gutters for office, retail, multi-family and industrial buildings. Call (601) 750-1800.';
+$currentPage     = 'services';
+$canonicalUrl    = $siteUrl . '/services/commercial-gutters/';
+$pageType        = 'service';
+$serviceSlug     = 'commercial-gutters';
+$service         = dr_service($serviceSlug);
+$heroFormService = $service['name'];
 
 $faqs = [
-  ["q" => "Do you work with commercial general contractors?", "a" => "Yes. We have ongoing builder partnerships across central Mississippi for new construction, tenant improvement, and renovation work. Single-point project management, milestone-based scheduling, certificate of insurance on file, and AIA-formatted billing on request."],
-  ["q" => "What's the largest commercial property you've gutterized?", "a" => "We've completed multi-building apartment complexes, regional retail centers, and industrial warehouses across the greater Jackson area. Our largest single-project linear footage is over 4,000 LF; our largest multi-building complex spanned 22 buildings. References available on request."],
-  ["q" => "Can you handle multi-building complexes?", "a" => "Yes. Multi-building work is scheduled in coordinated phases with a single project manager assigned. We coordinate with site supervisors, work around tenant occupancy, and stage materials to minimize disruption. Phased billing aligned with installation milestones."],
-  ["q" => "Do you offer commercial gutter cleaning contracts?", "a" => "Yes. Annual and semi-annual maintenance contracts available for commercial properties. Includes scheduled cleaning, downspout flushing, and written inspection reports formatted for property management documentation. Volume pricing on multi-building portfolios."],
+    ['q' => 'Does Dun-Rite take commercial gutter projects outside the Jackson metro?',
+     'a' => 'For larger commercial projects, yes: Dun-Rite travels beyond the roughly 30-mile radius it keeps for residential work. Projects elsewhere in Mississippi are evaluated case by case on distance, scope and schedule, so call (601) 750-1800 with the location and drawings.'],
+    ['q' => 'Can Dun-Rite provide a certificate of insurance for our project?',
+     'a' => 'Yes. Dun-Rite carries Workers\' Compensation and General Liability insurance and issues a certificate of insurance with the builder named as additional insured.'],
+    ['q' => 'Does Dun-Rite bill in AIA format?',
+     'a' => 'Yes, on request. Larger commercial projects are billed on standard contractor terms, and AIA-formatted billing is available.'],
+    ['q' => 'Who runs the job on site?',
+     'a' => 'Mark Dungan, who founded the company in 1996, supervises every commercial installation, and the project has a single point of contact from take-off through the final phase.'],
 ];
 
-$howToSteps = [
-  ["name" => "Pre-Construction Consultation", "text" => "Walk the site with the GC, architect, or property owner. Review architectural drawings, identify roof drainage points, and recommend profile sizing for runoff load."],
-  ["name" => "Drawing Review + Take-Off", "text" => "Complete material take-off from architectural drawings. Profile selection, downspout placement, and drainage tie-in coordination submitted as a written scope."],
-  ["name" => "Material Delivery Scheduling", "text" => "Materials staged to match the project schedule. Single delivery for small projects; phased delivery aligned with installation milestones for large complexes."],
-  ["name" => "Phased Installation", "text" => "Coordinated installation with site supervisor and other trades. Hidden hangers, sealed seams, properly sized downspouts. Daily progress reports on large projects."],
-  ["name" => "Final Inspection + Warranty Paperwork", "text" => "Punch-list walkthrough with the GC and owner. Water-flow testing on every downspout. Manufacturer warranty registration and as-built documentation delivered."],
+$schemaNodes = [
+    dr_breadcrumb_node(['Services' => '/services/', $service['name'] => '/services/' . $serviceSlug . '/']),
+    dr_service_node($service, 'Commercial gutter installation: 7-inch and 8-inch gutter profiles, high-flow downspouts and copper work for office, retail, multi-family and industrial buildings, with single-point project management.'),
+    dr_faq_node($faqs),
 ];
-
-$schemaGraph = [
-  "@context" => "https://schema.org",
-  "@graph" => [
-    [
-      "@type"       => "Service",
-      "@id"         => $canonicalUrl . "#service",
-      "serviceType" => "Commercial Gutter Installation",
-      "name"        => "Commercial Gutters in Mississippi",
-      "description" => $pageDescription,
-      "provider"    => ["@id" => "https://dunrite-gutters.com/#business"],
-      "areaServed"  => $areaServedSchema,
-    ],
-    [
-      "@type" => "BreadcrumbList",
-      "itemListElement" => [
-        ["@type" => "ListItem", "position" => 1, "name" => "Home", "item" => "https://dunrite-gutters.com/"],
-        ["@type" => "ListItem", "position" => 2, "name" => "Services", "item" => "https://dunrite-gutters.com/services/"],
-        ["@type" => "ListItem", "position" => 3, "name" => "Commercial Gutters", "item" => $canonicalUrl],
-      ]
-    ],
-    [
-      "@type" => "FAQPage",
-      "mainEntity" => array_map(fn($f) => ["@type" => "Question", "name" => $f["q"], "acceptedAnswer" => ["@type" => "Answer", "text" => $f["a"]]], $faqs)
-    ],
-    [
-      "@type" => "HowTo",
-      "name"  => "How Commercial Gutter Installation Works",
-      "step"  => array_map(fn($s, $i) => ["@type" => "HowToStep", "position" => $i + 1, "name" => $s["name"], "text" => $s["text"]], $howToSteps, array_keys($howToSteps))
-    ],
-  ]
-];
-$schemaMarkup = '<script type="application/ld+json">' . json_encode($schemaGraph, JSON_UNESCAPED_SLASHES | JSON_UNESCAPED_UNICODE) . '</script>';
 
 include $_SERVER['DOCUMENT_ROOT'] . '/includes/head.php';
+include $_SERVER['DOCUMENT_ROOT'] . '/includes/header.php';
 ?>
-<?php include $_SERVER['DOCUMENT_ROOT'] . '/includes/nav.php'; ?>
-
 <main id="main-content">
 
-  <section class="hero hero--inner" aria-label="Hero">
-    <img src="https://i.imgur.com/F4Wh56M.jpeg" alt="Mississippi commercial building under construction with metal awnings" class="hero-bg" width="1920" height="1080" loading="eager" fetchpriority="high">
-    <div class="hero__inner">
-      <div class="hero__copy">
-        <span class="eyebrow-label">Office · Retail · Multi-Family · Industrial</span>
-        <h1>Commercial Gutters in <span class="text-accent">Mississippi.</span></h1>
-        <p class="hero__subhead">30 years of commercial rain-carrying systems. Oversized profiles, multi-building complexes, and copper specialty for premium projects.</p>
-        <div class="hero__ctas">
-          <a href="#hero-form-heading" class="btn-primary">Project Estimate</a>
-          <a href="tel:+16017501800" class="btn-secondary btn-on-dark">Call (601) 750-1800</a>
+  <section class="hero hero--interior">
+    <span class="grain" aria-hidden="true"></span>
+    <div class="container hero-grid hero-grid--form">
+      <div class="hero-text">
+        <?php echo dr_breadcrumb(['Services' => '/services/', $service['nav'] => null]); ?>
+        <p class="hero-eyebrow">Commercial gutter installer</p>
+        <h1>Commercial Gutter Installation in Jackson &amp; Central Mississippi</h1>
+        <p class="hero-answer">Dun-Rite Seamless Gutters, Inc. is a commercial gutter installer based in Madison, Mississippi. It installs 7-inch and 8-inch gutters and high-flow downspouts on office buildings, retail centers, multi-family complexes and industrial properties, and owner Mark Dungan supervises every commercial installation.</p>
+        <div class="hero-actions">
+          <a class="btn btn-accent btn-lg hero-form-open" href="/contact/" data-service="<?php echo h($service['name']); ?>">Request an estimate</a>
+          <a class="link-call" href="tel:+<?php echo h($phoneRaw); ?>"><?php echo icon('phone', 18); ?> <?php echo h($phone); ?></a>
         </div>
-        <p class="hero__phone">Mon–Fri 8AM–5PM · Builder partnerships standard</p>
       </div>
-      <?php
-        $preselectedService = 'Commercial Gutters';
-        $heroFormHeading    = 'Commercial Project Estimate';
-        $heroFormSubheading = 'Builder partnerships · Single-point project management';
-        include $_SERVER['DOCUMENT_ROOT'] . '/includes/hero-form.php';
-      ?>
-    </div>
-    <div class="section-divider section-divider--bottom" aria-hidden="true">
-      <svg viewBox="0 0 1440 100" preserveAspectRatio="none">
-        <path fill="#FFFFFF" d="M0,50 C180,100 360,0 540,50 C720,100 900,0 1080,50 C1260,100 1440,0 1440,50 L1440,100 L0,100 Z"></path>
-      </svg>
+      <?php include $_SERVER['DOCUMENT_ROOT'] . '/includes/hero-form.php'; ?>
     </div>
   </section>
-
-  <nav class="breadcrumb" aria-label="Breadcrumb">
-    <div class="container">
-      <ol>
-        <li><a href="/">Home</a></li>
-        <li class="breadcrumb-sep" aria-hidden="true">›</li>
-        <li><a href="/services/">Services</a></li>
-        <li class="breadcrumb-sep" aria-hidden="true">›</li>
-        <li aria-current="page">Commercial Gutters</li>
-      </ol>
-    </div>
-  </nav>
 
   <section class="section">
-    <div class="container">
-      <div class="answer-block reveal-up">
-        <h2>Commercial Gutter Installation in Mississippi: 30 Years of Builder Partnerships</h2>
-        <p>Dun-Rite Seamless Gutters has installed commercial rain-carrying systems across central Mississippi since 1996 — from neighborhood retail centers to large multi-family complexes and industrial properties. We specialize in oversized 7-inch and 8-inch profiles, custom downspout sizing for high-volume runoff, and copper installations for premium commercial projects. Our commercial work includes single-point project management, scheduled installation milestones, and direct builder partnerships.</p>
-      </div>
+    <div class="container page-grid">
+      <article class="prose">
+        <h2>What commercial gutter systems does Dun-Rite install?</h2>
+        <p>Dun-Rite Seamless Gutters, Inc. installs oversized 7-inch and 8-inch gutters with downspouts sized for high-flow runoff. Commercial roofs shed far more water per foot of eave than a house, so the residential 5-inch and 6-inch profiles are not used. Copper is available for premium commercial projects.</p>
+        <div class="table-wrap">
+          <table class="data-table">
+            <caption>How Dun-Rite's commercial systems differ from its residential ones.</caption>
+            <thead><tr><th scope="col">Component</th><th scope="col">Commercial</th><th scope="col">Residential, for comparison</th></tr></thead>
+            <tbody>
+              <tr><th scope="row">Gutter profile</th><td>7-inch and 8-inch</td><td>5-inch and 6-inch K-style</td></tr>
+              <tr><th scope="row">Aluminum gauge</th><td>.040 and .050</td><td>.032</td></tr>
+              <tr><th scope="row">Downspout</th><td>4x5 high-flow, about 2,000+ sq ft of roof per spout</td><td>3x4, about 1,200 sq ft per spout</td></tr>
+              <tr><th scope="row">Premium option</th><td>Copper</td><td>Copper</td></tr>
+            </tbody>
+          </table>
+        </div>
+        <p>Downspout capacity is covered in detail on the <a href="/services/custom-downspouts/">custom downspouts page</a>, including the roof area each size can drain.</p>
+
+        <h2>How does Dun-Rite run a commercial gutter project?</h2>
+        <p>Dun-Rite runs a commercial project in six stages, starting before construction and ending with billing in the format the general contractor needs. One person manages the job throughout, and Mark Dungan supervises the installation himself.</p>
+        <ol class="steps">
+          <li><strong>Pre-construction consultation</strong>A meeting with the general contractor, architect or owner to settle scope.</li>
+          <li><strong>Drawing review and take-off</strong>The drawings are reviewed and a material take-off is prepared.</li>
+          <li><strong>Phased installation</strong>Work is installed in phases, with single-point project management.</li>
+          <li><strong>Daily progress reports</strong>On large projects the contractor receives a progress report each day.</li>
+          <li><strong>Billing</strong>Standard contractor terms, in AIA format on request.</li>
+          <li><strong>Insurance paperwork</strong>A certificate of insurance naming the builder as additional insured.</li>
+        </ol>
+        <figure class="photo-figure">
+          <?php echo dr_picture('dark-gutter-tile-roof', 'Long run of dark half-round gutter under a tile roof edge', ['sizes' => '(max-width: 960px) 100vw, 60vw']); ?>
+          <figcaption>A long, continuous gutter run under a tile roof edge.</figcaption>
+        </figure>
+
+        <h2>Who does Dun-Rite work with on commercial jobs?</h2>
+        <p>Dun-Rite works with general contractors, architects and property owners or managers, and it has ongoing partnerships with builders across central Mississippi. The company is a Mississippi-licensed corporation and a member of the Home Builders Association.</p>
+        <p>Dun-Rite sees its highest commercial demand along Lakeland Drive in <a href="/service-areas/flowood/">Flowood</a> and builder work is the norm in the new construction around <a href="/service-areas/gluckstadt/">Gluckstadt</a>. Builders putting up homes rather than commercial space should start with <a href="/services/seamless-gutter-installation/">seamless gutter installation</a>.</p>
+
+        <h2>How far does Dun-Rite travel for commercial work?</h2>
+        <p>Dun-Rite travels beyond its usual 30-mile radius for larger commercial projects. Residential work stays within 14 cities around Madison, but commercial projects typically widen that area. Out-of-area requests are judged on distance, project scope and the current schedule, so the fastest answer is a phone call with the location and the drawings.</p>
+        <p>Back to <a href="/services/">all Dun-Rite gutter services</a>.</p>
+
+        <h2>What do contractors and property managers ask?</h2>
+        <p>Contractors and property managers ask Dun-Rite about travel outside the metro, certificates of insurance, billing format and who supervises the work. The short answers are below, and anything not covered can be asked by calling the office at (601) 750-1800 during business hours.</p>
+        <?php echo dr_faq_list($faqs); ?>
+
+        <p class="last-updated">Last updated: <?php echo date('F Y', filemtime(__FILE__)); ?></p>
+      </article>
+
+      <aside class="page-rail" aria-label="Key facts">
+        <div class="rail-card rail-card--tint">
+          <h3>For the GC</h3>
+          <ul><li>Drawing review and take-off</li><li>Single point of contact</li><li>Daily progress reports on large jobs</li><li>AIA billing on request</li><li>COI naming builder as additional insured</li></ul>
+        </div>
+        <div class="rail-card rail-card--dark">
+          <h3>Talk to the office</h3>
+          <p><?php echo h($businessHours); ?></p>
+          <a class="btn btn-outline-white" href="tel:+<?php echo h($phoneRaw); ?>"><?php echo icon('phone', 18); ?> <?php echo h($phone); ?></a>
+        </div>
+      </aside>
     </div>
   </section>
 
-  <!-- PROPERTY TYPES -->
-  <section class="section section-alt">
-    <div class="container">
-      <div class="section-title reveal-up">
-        <span class="eyebrow-label">Property Types</span>
-        <h2>What Property Types <span class="text-accent">Do You Serve?</span></h2>
-        <span class="section-subtitle">four sectors, one standard</span>
-      </div>
-
-      <div class="grid-2">
-        <div class="sub-service-card card-tint-1 reveal-up reveal-delay-1">
-          <div class="sub-service-icon"><i data-lucide="briefcase"></i></div>
-          <h3>Office Buildings</h3>
-          <p>Class A, B, and C office buildings — single-tenant and multi-tenant. Coordinated installation around occupancy schedules. Custom downspout placement for ground-level landscape integration.</p>
-        </div>
-        <div class="sub-service-card card-tint-3 reveal-up reveal-delay-2">
-          <div class="sub-service-icon"><i data-lucide="store"></i></div>
-          <h3>Retail Centers</h3>
-          <p>Strip centers, big-box, and pad sites. High-flow profiles for large flat-roof drainage points. Phased installation around tenant turnover and grand-opening schedules.</p>
-        </div>
-        <div class="sub-service-card card-tint-2 reveal-up reveal-delay-3">
-          <div class="sub-service-icon"><i data-lucide="building"></i></div>
-          <h3>Multi-Family</h3>
-          <p>Apartment complexes, townhome communities, and senior living. Multi-building project management. Standardized profiles across the complex with property management documentation.</p>
-        </div>
-        <div class="sub-service-card card-tint-1 reveal-up reveal-delay-4">
-          <div class="sub-service-icon"><i data-lucide="factory"></i></div>
-          <h3>Industrial &amp; Warehouse</h3>
-          <p>Heavy commercial and industrial. Oversized profiles for warehouse and manufacturing roof footprints. Coordinated work around production schedules and material loading docks.</p>
-        </div>
-      </div>
-    </div>
-  </section>
-
-  <!-- SIZING -->
-  <section class="section">
-    <div class="container">
-      <div class="section-title reveal-up">
-        <span class="eyebrow-label">Engineering</span>
-        <h2>How Do You Size Gutters for <span class="text-accent">Commercial Flow Rates?</span></h2>
-      </div>
-      <div class="prose reveal-up">
-        <p>Commercial gutter sizing is engineering, not estimating. We calculate runoff capacity from roof square footage, pitch, and Mississippi rainfall intensity (typically designed against a 100-year, 5-minute storm event). For a typical Mississippi commercial property, that means 4–8 inches of rainfall per hour as a design load.</p>
-        <p>Standard 5-inch residential profiles cap out around 5,500 sq ft of roof area; commercial installations frequently need 6-inch, 7-inch, or 8-inch profiles to handle the full runoff without overflow. Downspouts are sized accordingly — 3x4 oversized as standard, 4x5 for high-volume runs.</p>
-        <p>For low-slope and flat-roof commercial properties, internal drains and scupper-fed downspouts may be the right design — we coordinate with the roofing contractor on these systems and handle gutter and downspout installation where they integrate.</p>
-      </div>
-    </div>
-  </section>
-
-  <!-- RECENT PROJECTS -->
-  <section class="section section-alt">
-    <div class="container">
-      <div class="section-title reveal-up">
-        <span class="eyebrow-label">Recent Work</span>
-        <h2>Mississippi Commercial <span class="text-accent">Projects.</span></h2>
-        <span class="section-subtitle">representative installations</span>
-      </div>
-
-      <div class="grid-3">
-        <div class="reveal-up reveal-delay-1" style="border-radius: var(--radius-md); overflow: hidden; box-shadow: var(--shadow-md);">
-          <img src="https://i.imgur.com/6xCAwdl.jpeg" alt="Two-story Southern commercial building with arches and columns featuring Dun-Rite seamless gutter installation" width="800" height="600" loading="lazy" style="aspect-ratio: 4/3; object-fit: cover; width: 100%;">
-        </div>
-        <div class="reveal-up reveal-delay-2" style="border-radius: var(--radius-md); overflow: hidden; box-shadow: var(--shadow-md);">
-          <img src="https://i.imgur.com/xL8tLae.jpeg" alt="Brick commercial building exterior with seamless gutter system installed by Dun-Rite Mississippi" width="800" height="600" loading="lazy" style="aspect-ratio: 4/3; object-fit: cover; width: 100%;">
-        </div>
-        <div class="reveal-up reveal-delay-3" style="border-radius: var(--radius-md); overflow: hidden; box-shadow: var(--shadow-md);">
-          <img src="https://i.imgur.com/1wIIiZW.jpeg" alt="Two-story estate with arched columns and commercial-grade gutter installation by Dun-Rite Mississippi" width="800" height="600" loading="lazy" style="aspect-ratio: 4/3; object-fit: cover; width: 100%;">
-        </div>
-      </div>
-    </div>
-  </section>
-
-  <!-- MULTI-BUILDING -->
-  <section class="section">
-    <div class="container">
-      <div class="section-title reveal-up">
-        <span class="eyebrow-label">Project Management</span>
-        <h2>How Do You Manage <span class="text-accent">Multi-Building</span> Commercial Projects?</h2>
-      </div>
-      <div class="prose reveal-up">
-        <p>Multi-building commercial work needs project management, not just installation. For complexes with 5+ buildings, we assign a single project manager who coordinates with the GC's site supervisor, manages material delivery scheduling, owns the punch list, and reports daily progress.</p>
-        <p>Phased installation is the norm — we work building-by-building or zone-by-zone in coordination with other trades. Gutters typically install after the roofing trade and before the landscape contractor; we work that schedule into the project plan upfront so there's no surprise sequencing.</p>
-        <p>Billing is milestone-based: typically 30% on material delivery, 60% on building-by-building completion, 10% retainage on final punch-list. AIA-formatted invoicing available on request. Certificate of insurance with the GC named as additional insured provided on every commercial job.</p>
-      </div>
-
-      <div class="mid-cta-line reveal-up">
-        Have a commercial project on the boards? <a href="/contact/">Schedule a pre-construction walk</a> with our project manager — we'll review drawings and take-off your scope.
-      </div>
-    </div>
-  </section>
-
-  <!-- PROCESS -->
-  <section class="section section-alt">
-    <div class="container">
-      <div class="section-title reveal-up">
-        <span class="eyebrow-label">How It Works</span>
-        <h2>From Drawings to <span class="text-accent">Final Inspection.</span></h2>
-        <span class="section-subtitle">five phases, one project manager</span>
-      </div>
-
-      <div class="process-grid" style="grid-template-columns: repeat(5, 1fr);">
-        <?php $icons = ["clipboard-pen","file-text","truck","hammer","shield-check"]; ?>
-        <?php foreach ($howToSteps as $i => $step): ?>
-        <div class="process-step reveal-up reveal-delay-<?php echo ($i % 4) + 1; ?>">
-          <div class="process-step__num"><?php echo $i + 1; ?></div>
-          <div class="process-step__icon"><i data-lucide="<?php echo $icons[$i]; ?>"></i></div>
-          <h3><?php echo $step["name"]; ?></h3>
-          <p><?php echo $step["text"]; ?></p>
-        </div>
-        <?php endforeach; ?>
-      </div>
-    </div>
-  </section>
-
-  <!-- FAQ -->
-  <section class="section">
-    <div class="container">
-      <div class="section-title reveal-up">
-        <span class="eyebrow-label">Frequently Asked</span>
-        <h2>Commercial Gutter <span class="text-accent">Questions.</span></h2>
-      </div>
-
-      <div class="faq-list">
-        <?php foreach ($faqs as $faq): ?>
-        <div class="faq-item reveal-up">
-          <button class="faq-question" aria-expanded="false"><?php echo htmlspecialchars($faq["q"]); ?></button>
-          <div class="faq-answer">
-            <div class="faq-answer-inner"><p><?php echo htmlspecialchars($faq["a"]); ?></p></div>
-          </div>
-        </div>
-        <?php endforeach; ?>
-      </div>
-
-      <p class="last-updated">Last Updated: <?php echo date('F Y'); ?></p>
-    </div>
-  </section>
-
-  <section class="section section-alt">
-    <div class="container">
-      <div class="section-title reveal-up">
-        <span class="eyebrow-label">Related Services</span>
-        <h2>You Might Also <span class="text-accent">Need.</span></h2>
-      </div>
-
-      <div class="related-services-grid">
-        <a href="/services/copper-gutters/" class="related-card reveal-up reveal-delay-1">
-          <div class="related-card__icon"><i data-lucide="sparkles"></i></div>
-          <h3>Copper Gutters</h3>
-          <p>Specialty copper installations for premium commercial properties, historic restorations, and luxury developments.</p>
-          <span class="related-card__link">View Service →</span>
-        </a>
-        <a href="/services/custom-downspouts/" class="related-card reveal-up reveal-delay-2">
-          <div class="related-card__icon"><i data-lucide="arrow-down-to-line"></i></div>
-          <h3>Custom Downspouts</h3>
-          <p>Oversized 4x5 profiles, underground drainage tie-ins, and decorative options for commercial projects.</p>
-          <span class="related-card__link">View Service →</span>
-        </a>
-        <a href="/services/seamless-gutter-installation/" class="related-card reveal-up reveal-delay-3">
-          <div class="related-card__icon"><i data-lucide="ruler"></i></div>
-          <h3>Seamless Gutter Installation</h3>
-          <p>Installation methodology and material specs that scale from residential to commercial work.</p>
-          <span class="related-card__link">View Service →</span>
-        </a>
-      </div>
-    </div>
-  </section>
-
-  <section class="closing-cta" aria-label="Get a commercial estimate">
-    <div class="closing-cta__inner reveal-up">
-      <span class="section-subtitle" style="color: var(--color-accent);">Mark and the team</span>
-      <h2>Ready to Talk <span class="text-accent">Commercial?</span></h2>
-      <p>Builder partnerships, single-point project management, AIA-formatted billing on request. References available.</p>
-      <div>
-        <a href="/contact/" class="btn-primary">Schedule a Pre-Construction Walk</a>
-        <a href="tel:+16017501800" class="closing-cta__phone">Or Call (601) 750-1800</a>
-      </div>
-      <p class="closing-cta__meta">Mon–Fri 8AM–5PM · Madison, MS · Mississippi Licensed &amp; Insured</p>
-    </div>
-  </section>
+  <?php
+  $relatedServices = ['custom-downspouts', 'copper-gutters', 'gutter-repair-replacement'];
+  $closingHeading  = 'Send Dun-Rite your drawings';
+  include $_SERVER['DOCUMENT_ROOT'] . '/includes/service-close.php';
+  ?>
 
 </main>
-
 <?php include $_SERVER['DOCUMENT_ROOT'] . '/includes/footer.php'; ?>
