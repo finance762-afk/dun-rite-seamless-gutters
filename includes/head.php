@@ -1,96 +1,105 @@
 <?php
-require_once __DIR__ . '/site-config.php';
 /**
- * Dun-Rite Seamless Gutters, Inc. — head.php
- * Required PHP variables before include:
- *   $pageTitle, $pageDescription, $canonicalUrl, $ogImage, $currentPage
- * Optional:
- *   $schemaMarkup, $heroImage, $useSwiper, $useTilt, $useTyped
+ * head.php — doctype, <head>, meta, OG, critical CSS, one JSON-LD @graph.
+ * Pages set BEFORE the include (after requiring config.php):
+ *   $pageTitle, $pageDescription, $currentPage
+ * Optional: $schemaNodes (array of JSON-LD nodes), $heroPreload (image basename),
+ *           $ogImage (file in /assets/images/), $noindex (bool)
+ * $canonicalUrl is set per page as $siteUrl . '/path/' (computed from the request path if a page omits it).
  */
+$pageTitle       = $pageTitle ?? ($siteName . ' | Madison, MS');
+$pageDescription = $pageDescription ?? ($siteName . ' installs, repairs and cleans gutters in Madison, Jackson and 12 more central Mississippi cities. Call ' . $phone . '.');
+$canonicalUrl    = $canonicalUrl ?? dr_canonical();   // pages set it from $siteUrl + path; this is the fallback
+$ogImageUrl      = $siteUrl . '/assets/images/' . ($ogImage ?? $defaultOgImage);
+
+/* Business node: full on the homepage, a short reference node elsewhere. */
+$businessNode = [
+    '@type'     => ['LocalBusiness', 'RoofingContractor'],
+    '@id'       => $siteUrl . '/#business',
+    'name'      => $siteName,
+    'url'       => $siteUrl . '/',
+    'telephone' => $phone,
+    'email'     => $email,
+    'image'     => $siteUrl . '/assets/images/' . $defaultOgImage,
+    'logo'      => $siteUrl . '/assets/images/logo.jpg',
+    'address'   => [
+        '@type'           => 'PostalAddress',
+        'streetAddress'   => $address['street'],
+        'addressLocality' => $address['city'],
+        'addressRegion'   => $address['state'],
+        'postalCode'      => $address['zip'],
+        'addressCountry'  => 'US',
+    ],
+];
+if (($currentPage ?? '') === 'home') {
+    $businessNode += [
+        'alternateName' => ['Dun-Rite Gutters', 'Dunrite Gutters'],
+        'description'   => $pageDescription,
+        'foundingDate'  => (string) $yearEstablished,
+        'founder'       => ['@type' => 'Person', 'name' => $ownerName],
+        'hasMap'        => $gbpUrl,
+        'openingHoursSpecification' => [[
+            '@type'     => 'OpeningHoursSpecification',
+            'dayOfWeek' => $businessHoursSchema['days'],
+            'opens'     => $businessHoursSchema['opens'],
+            'closes'    => $businessHoursSchema['closes'],
+        ]],
+        'areaServed' => array_map(fn($hdCity) => ['@type' => 'City', 'name' => $hdCity . ', ' . $address['state']], $serviceAreas),
+        'sameAs'     => array_values($socialLinks),
+        'makesOffer' => array_map(fn($hdSvc) => ['@type' => 'Offer', 'itemOffered' => ['@type' => 'Service', 'name' => $hdSvc['name'], 'url' => $siteUrl . '/services/' . $hdSvc['slug'] . '/']], $services),
+    ];
+}
+$schemaGraph = ['@context' => 'https://schema.org', '@graph' => array_merge([$businessNode], $schemaNodes ?? [])];
 ?>
 <!DOCTYPE html>
 <html lang="en">
 <head>
 <meta charset="UTF-8">
 <meta name="viewport" content="width=device-width, initial-scale=1.0">
-
-<!-- Google Search Console Verification -->
-<?php if (!empty($gscVerification)): ?>
-  <meta name="google-site-verification" content="<?php echo htmlspecialchars($gscVerification, ENT_QUOTES, 'UTF-8'); ?>">
-  <?php endif; ?>
-
-<!-- Google Analytics 4 — replace G-MEASUREMENT_ID with the client's GA4 Measurement ID -->
-<!-- <script async src="https://www.googletagmanager.com/gtag/js?id=G-MEASUREMENT_ID"></script>
-<script>
-  window.dataLayer = window.dataLayer || [];
-  function gtag(){dataLayer.push(arguments);}
-  gtag('js', new Date());
-  gtag('config', 'G-MEASUREMENT_ID', {
-    'send_page_view': true,
-    'anonymize_ip': true
-  });
-</script> -->
-
-<title><?php echo htmlspecialchars($pageTitle ?? 'Dun-Rite Seamless Gutters, Inc.'); ?></title>
-<meta name="description" content="<?php echo htmlspecialchars($pageDescription ?? ''); ?>">
-<link rel="canonical" href="<?php echo htmlspecialchars($canonicalUrl ?? ''); ?>">
-
-<?php if (!empty($noIndex)): ?>
+<title><?php echo h($pageTitle); ?></title>
+<meta name="description" content="<?php echo h($pageDescription); ?>">
+<link rel="canonical" href="<?php echo h($canonicalUrl); ?>">
+<?php if (!empty($noindex)): ?>
 <meta name="robots" content="noindex, nofollow">
 <?php else: ?>
 <meta name="robots" content="index, follow, max-image-preview:large, max-snippet:-1, max-video-preview:-1">
 <?php endif; ?>
-<meta name="author" content="Dun-Rite Seamless Gutters, Inc.">
-<meta name="theme-color" content="#0F4C81">
+<?php if (!empty($gscVerification)): ?>
+<meta name="google-site-verification" content="<?php echo h($gscVerification); ?>">
+<?php endif; ?>
+<meta name="theme-color" content="#01447B">
 
-<!-- Open Graph -->
-<meta property="og:title" content="<?php echo htmlspecialchars($pageTitle ?? ''); ?>">
-<meta property="og:description" content="<?php echo htmlspecialchars($pageDescription ?? ''); ?>">
-<meta property="og:url" content="<?php echo htmlspecialchars($canonicalUrl ?? ''); ?>">
-<meta property="og:image" content="<?php echo htmlspecialchars($ogImage ?? 'https://i.imgur.com/xRVJ7rY.jpeg'); ?>">
 <meta property="og:type" content="website">
-<meta property="og:site_name" content="Dun-Rite Seamless Gutters, Inc.">
+<meta property="og:title" content="<?php echo h($pageTitle); ?>">
+<meta property="og:description" content="<?php echo h($pageDescription); ?>">
+<meta property="og:url" content="<?php echo h($canonicalUrl); ?>">
+<meta property="og:image" content="<?php echo h($ogImageUrl); ?>">
+<meta property="og:site_name" content="<?php echo h($siteName); ?>">
 <meta property="og:locale" content="en_US">
 
-<!-- Favicon -->
-<link rel="icon" type="image/jpeg" href="https://i.imgur.com/xRVJ7rY.jpeg">
-<link rel="apple-touch-icon" href="https://i.imgur.com/xRVJ7rY.jpeg">
+<link rel="icon" type="image/png" sizes="32x32" href="/assets/images/logo-favicon-32.png">
+<link rel="apple-touch-icon" href="/assets/images/logo-touch-180.png">
 
-<!-- Preconnect / DNS prefetch -->
-<link rel="preconnect" href="https://fonts.googleapis.com">
-<link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
-<link rel="dns-prefetch" href="https://unpkg.com">
-<link rel="dns-prefetch" href="https://i.imgur.com">
-<link rel="dns-prefetch" href="https://images.unsplash.com">
-<link rel="dns-prefetch" href="https://cdn.jsdelivr.net">
-<link rel="dns-prefetch" href="https://www.googletagmanager.com">
-
-<!-- Google Fonts (3-font system) -->
-<link href="https://fonts.googleapis.com/css2?family=Dancing+Script:wght@500;600&family=Playfair+Display:ital,wght@0,500;0,700;1,500;1,700&family=Source+Sans+3:wght@400;500;600;700&display=swap" rel="stylesheet">
-
-<!-- Preload heading font for LCP -->
-<link rel="preload" as="font" type="font/woff2" href="https://fonts.gstatic.com/s/playfairdisplay/v37/nuFvD-vYSZviVYUb_rj3ij__anPXJzDwcbmjWBN2PKdFvUDQ.woff2" crossorigin>
-
-<?php if (!empty($heroImage)): ?>
-<!-- Preload hero image for LCP -->
-<link rel="preload" as="image" href="<?php echo htmlspecialchars($heroImage); ?>">
+<!-- Self-hosted fonts: preload only the above-the-fold heading face -->
+<link rel="preload" href="/assets/fonts/playfair-display.woff2" as="font" type="font/woff2" crossorigin>
+<?php if (!empty($heroPreload) && ($hdPreloadSet = dr_preload_srcset($heroPreload)) !== ''): ?>
+<link rel="preload" as="image" type="image/avif" imagesrcset="<?php echo h($hdPreloadSet); ?>" imagesizes="100vw" fetchpriority="high">
 <?php endif; ?>
 
-<!-- Stylesheet -->
-<link rel="stylesheet" href="/assets/css/styles.css?v=11">
+<!-- Critical CSS inline; framework.css loads without blocking render -->
+<style><?php include $_SERVER['DOCUMENT_ROOT'] . '/includes/critical.css'; ?></style>
+<link rel="preload" href="/assets/css/framework.css?v=<?php echo h($cssVersion); ?>" as="style" onload="this.onload=null;this.rel='stylesheet'">
+<noscript><link rel="stylesheet" href="/assets/css/framework.css?v=<?php echo h($cssVersion); ?>"></noscript>
 
-<?php if (!empty($useSwiper)): ?>
-<link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/swiper@11/swiper-bundle.min.css">
-<?php endif; ?>
-
-<!-- JSON-LD Schema -->
-<?php if (!empty($schemaMarkup)) echo $schemaMarkup; ?>
+<script type="application/ld+json"><?php echo json_encode($schemaGraph, JSON_UNESCAPED_SLASHES | JSON_UNESCAPED_UNICODE); ?></script>
 <?php require_once __DIR__ . '/edit-mode.php'; ?>
-  <?php if (!empty($googleAnalyticsId) && preg_match('/^G-[A-Z0-9]{6,}$/', $googleAnalyticsId) && strpos($googleAnalyticsId, 'XXXX') === false): ?>
-  <!-- Google Analytics 4 (ga4-fleet) -->
-  <script async src="https://www.googletagmanager.com/gtag/js?id=<?php echo htmlspecialchars($googleAnalyticsId, ENT_QUOTES, 'UTF-8'); ?>"></script>
-  <script>window.dataLayer=window.dataLayer||[];function gtag(){dataLayer.push(arguments);}gtag('js',new Date());gtag('config','<?php echo htmlspecialchars($googleAnalyticsId, ENT_QUOTES, 'UTF-8'); ?>');</script>
-  <?php endif; ?>
+<?php /* GA4 loads on the launch domain only, so local renders and the noindexed preview host do not send pageviews. */
+$hdHost = strtolower((string) ($_SERVER['HTTP_HOST'] ?? ''));
+$hdIsLive = !preg_match('/^(127\.0\.0\.1|localhost)(:\d+)?$|^preview-[a-z0-9-]+\.pageone\.cloud$/', $hdHost);
+if ($hdIsLive && !empty($googleAnalyticsId) && preg_match('/^G-[A-Z0-9]{6,}$/', $googleAnalyticsId) && strpos($googleAnalyticsId, 'XXXX') === false): ?>
+<!-- Google Analytics 4 (ga4-fleet) -->
+<script async src="https://www.googletagmanager.com/gtag/js?id=<?php echo h($googleAnalyticsId); ?>"></script>
+<script>window.dataLayer=window.dataLayer||[];function gtag(){dataLayer.push(arguments);}gtag('js',new Date());gtag('config','<?php echo h($googleAnalyticsId); ?>');</script>
+<?php endif; ?>
 </head>
 <body>
-<a class="skip-link" href="#main-content">Skip to content</a>

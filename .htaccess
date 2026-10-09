@@ -1,36 +1,47 @@
-RewriteEngine On
-RewriteBase /
-
-# Force HTTPS
-RewriteCond %{HTTPS} off
-RewriteRule ^(.*)$ https://%{HTTP_HOST}%{REQUEST_URI} [L,R=301]
-
-# Disable directory listing
+# Dun-Rite Seamless Gutters, Inc. — .htaccess (v7)
 Options -Indexes
+DirectoryIndex index.php index.html
 
-# Skip rewrites for assets and includes
-RewriteCond %{REQUEST_URI} ^/(assets|includes)/ [NC]
-RewriteRule ^ - [L]
-
-# Remove trailing slashes (except for directories with index.php)
-RewriteCond %{REQUEST_FILENAME} !-d
-RewriteCond %{REQUEST_URI} (.+)/$
-RewriteRule ^ %1 [R=301,L]
-
-# Clean URLs — append index.php to subdirectory requests
-RewriteCond %{REQUEST_FILENAME} -d
-RewriteRule ^(.*)$ $1/index.php [L]
-
-# Custom error pages
-ErrorDocument 404 /404.php
-
-# Browser caching for static assets
-<IfModule mod_expires.c>
-  ExpiresActive On
-  ExpiresByType text/css "access plus 1 month"
-  ExpiresByType application/javascript "access plus 1 month"
-  ExpiresByType image/jpeg "access plus 6 months"
-  ExpiresByType image/png "access plus 6 months"
-  ExpiresByType image/webp "access plus 6 months"
-  ExpiresByType image/svg+xml "access plus 6 months"
+<IfModule mod_headers.c>
+  Header always set X-Content-Type-Options "nosniff"
+  Header always set X-Frame-Options "SAMEORIGIN"
+  Header always set Referrer-Policy "strict-origin-when-cross-origin"
+  # Static assets: one year, immutable (css/js are cache-busted with ?v=)
+  <FilesMatch "\.(css|js|woff2|webp|avif|jpe?g|png|svg|ico)$">
+    Header set Cache-Control "public, max-age=31536000, immutable"
+  </FilesMatch>
+  # HTML / PHP: revalidate on every visit
+  <FilesMatch "\.(php|html)$">
+    Header set Cache-Control "no-cache, must-revalidate"
+  </FilesMatch>
 </IfModule>
+
+<IfModule mod_brotli.c>
+  AddOutputFilterByType BROTLI_COMPRESS text/html text/plain text/css application/javascript application/json application/xml image/svg+xml
+</IfModule>
+<IfModule mod_deflate.c>
+  AddOutputFilterByType DEFLATE text/html text/plain text/css application/javascript application/json application/xml image/svg+xml
+</IfModule>
+
+<IfModule mod_rewrite.c>
+  RewriteEngine On
+  RewriteBase /
+
+  # Force HTTPS
+  RewriteCond %{HTTPS} off
+  RewriteRule ^(.*)$ https://%{HTTP_HOST}%{REQUEST_URI} [L,R=301]
+
+  # Dynamic sitemap — /sitemap.xml is served by sitemap.php; the old image sitemap folds into it
+  RewriteRule ^sitemap\.xml$ /sitemap.php [L]
+  RewriteRule ^sitemap-images\.xml$ /sitemap.xml [R=301,L]
+
+  # No rewrites for assets and includes
+  RewriteRule ^(assets|includes)/ - [L]
+
+  # Extensionless URLs for flat .php files (directories fall through to DirectoryIndex)
+  RewriteCond %{REQUEST_FILENAME} !-f
+  RewriteCond %{DOCUMENT_ROOT}/$1.php -f
+  RewriteRule ^([^\.]+)$ $1.php [NC,L]
+</IfModule>
+
+ErrorDocument 404 /404.php
