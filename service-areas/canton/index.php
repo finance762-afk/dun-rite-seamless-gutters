@@ -1,204 +1,122 @@
 <?php
-/**
- * Dun-Rite — Canton, MS
- */
+/** City page — Canton, MS */
+require_once $_SERVER['DOCUMENT_ROOT'] . '/includes/config.php';
 
-$pageTitle       = "Gutter Installation & Repair Canton MS | Since 1996";
-$pageDescription = "Gutter installation & repair in Canton, MS since 1996: seamless aluminum & copper gutters, historic home specialists. Free estimates, call (601) 750-1800.";
-$canonicalUrl    = "https://dunrite-gutters.com/service-areas/canton/";
-$ogImage         = "https://i.imgur.com/INwo4Si.jpeg";
-$heroImage       = "https://i.imgur.com/INwo4Si.jpeg";
-$currentPage     = "service-areas";
+$pageTitle       = 'Gutter Installer in Canton, MS | Historic Home Gutters';
+$pageDescription = 'Gutter installer for Canton, MS: Dun-Rite custom-forms gutters for the older homes around Canton Square, including hand-soldered copper. Call (601) 750-1800 for a written quote.';
+$currentPage     = 'service-areas';
+$canonicalUrl    = $siteUrl . '/service-areas/canton/';
+$pageType        = 'city';
+$citySlug        = 'canton';
 
 $faqs = [
-  ["q" => "What is Dun-Rite's service area boundary?", "a" => "We serve 14 cities across the greater Jackson metro area: Madison (HQ), Jackson, Brandon, Flowood, Ridgeland, Clinton, Canton, Pearl, Gluckstadt, Florence, Richland, Bolton, Terry, and Raymond. Our service radius extends roughly 30 miles in each direction from our Madison headquarters. Outside this range, we evaluate special requests case-by-case — call (601) 750-1800 to ask."],
-  ["q" => "Do you charge travel or trip fees for Canton jobs?", "a" => "No. Free travel anywhere within our 14-city service area. Canton is just 12 miles north of Madison HQ, so there's effectively no travel cost involved. The estimate is the price."],
-  ["q" => "How quickly can you schedule a Canton estimate?", "a" => "Most Canton estimates schedule within 48 hours of your call. Standard installations begin within 1–2 weeks. As a Madison County neighbor, Canton gets near-Madison priority on storm response."],
-  ["q" => "Can you replace gutters on a 100-year-old home in Canton?", "a" => "Yes — and these are some of our favorite jobs. Many Canton historic homes around the courthouse square date to the 1800s and early 1900s. Original wood fascia is often deteriorated and needs replacement before clean gutter installation. We custom-form to match irregular rooflines and recommend appropriate profiles for the home's character. Copper installations look exceptional on Canton's historic architecture."],
-  ["q" => "Do you handle commercial gutter work near Canton Square?", "a" => "Yes. We've worked on small commercial properties around Canton Square and along the Highway 51 corridor. Historic commercial buildings often need custom-formed sections and may benefit from copper specialty work to match the era of construction."],
+    ['q' => 'Does Dun-Rite install copper gutters in Canton?',
+     'a' => 'Yes. Copper has been the company\'s specialty since 1996, and every seam is hand-soldered. Copper costs $25 to $40 per linear foot installed.'],
+    ['q' => 'What if the fascia behind my old gutters is rotten?',
+     'a' => 'It is common on homes 50 to 100 years old, and fascia repair is frequently part of gutter work in Canton. Mention it when you call so it is looked at during the estimate.'],
+    ['q' => 'Is there a trip charge to Canton?',
+     'a' => 'No. Canton is one of the 14 cities Dun-Rite serves without travel fees, and it is close enough to the Madison office that estimates are often scheduled the same day.'],
 ];
 
-$schemaGraph = [
-  "@context" => "https://schema.org",
-  "@graph" => [
-    ["@type" => ["LocalBusiness", "RoofingContractor"], "@id" => $canonicalUrl . "#business", "name" => "Dun-Rite Seamless Gutters – Canton Service Area", "url" => $canonicalUrl, "telephone" => "+16017501800", "branchOf" => ["@id" => "https://dunrite-gutters.com/#business"], "areaServed" => ["@type" => "City", "name" => "Canton", "addressRegion" => "MS"]],
-    ["@type" => "BreadcrumbList", "itemListElement" => [
-      ["@type" => "ListItem", "position" => 1, "name" => "Home", "item" => "https://dunrite-gutters.com/"],
-      ["@type" => "ListItem", "position" => 2, "name" => "Service Areas", "item" => "https://dunrite-gutters.com/service-areas/"],
-      ["@type" => "ListItem", "position" => 3, "name" => "Canton", "item" => $canonicalUrl],
-    ]],
-    ["@type" => "FAQPage", "mainEntity" => array_map(fn($f) => ["@type" => "Question", "name" => $f["q"], "acceptedAnswer" => ["@type" => "Answer", "text" => $f["a"]]], $faqs)],
-  ]
+$schemaNodes = [
+    dr_breadcrumb_node(['Service Areas' => '/service-areas/', 'Canton' => '/service-areas/canton/']),
+    ['@type' => 'Service', 'name' => 'Gutter installation and repair in Canton, MS', 'serviceType' => 'Gutter installation and repair',
+     'provider' => ['@id' => $siteUrl . '/#business'], 'areaServed' => ['@type' => 'City', 'name' => 'Canton, MS'], 'url' => $siteUrl . '/service-areas/canton/'],
+    dr_faq_node($faqs),
 ];
-$schemaMarkup = '<script type="application/ld+json">' . json_encode($schemaGraph, JSON_UNESCAPED_SLASHES | JSON_UNESCAPED_UNICODE) . '</script>';
 
 include $_SERVER['DOCUMENT_ROOT'] . '/includes/head.php';
+include $_SERVER['DOCUMENT_ROOT'] . '/includes/header.php';
 ?>
-<?php include $_SERVER['DOCUMENT_ROOT'] . '/includes/nav.php'; ?>
-
 <main id="main-content">
 
-  <section class="hero hero--inner" aria-label="Hero">
-    <img src="https://i.imgur.com/INwo4Si.jpeg" alt="Brick Canton MS home entrance with seamless gutters and downspouts" class="hero-bg" width="1920" height="1080" loading="eager" fetchpriority="high">
-    <div class="hero__inner">
-      <div class="hero__copy">
-        <span class="eyebrow-label">Canton, MS · 12 Miles from HQ</span>
-        <h1>Gutter Services in <span class="text-accent">Canton, MS.</span></h1>
-        <p class="hero__subhead">Mississippi's antique capital. Historic homes around Canton Square, century-old wood fascia, and rooflines that need an installer with the experience to handle them right.</p>
-        <div class="hero__ctas">
-          <a href="#hero-form-heading" class="btn-primary">Get Free Estimate</a>
-          <a href="tel:+16017501800" class="btn-secondary btn-on-dark">Call (601) 750-1800</a>
-        </div>
-        <p class="hero__phone">Mon–Fri 8AM–5PM · 12 miles north of Madison HQ</p>
-      </div>
-      <?php
-        $preselectedService = 'Not Sure / General Inquiry';
-        $heroFormHeading    = 'Free Canton Estimate';
-        $heroFormSubheading = 'Same-day callback · Most quotes scheduled within 48 hours';
-        include $_SERVER['DOCUMENT_ROOT'] . '/includes/hero-form.php';
-      ?>
-    </div>
-    <div class="section-divider section-divider--bottom" aria-hidden="true">
-      <svg viewBox="0 0 1440 100" preserveAspectRatio="none">
-        <path fill="#FFFFFF" d="M0,100 Q360,0 720,50 T1440,50 L1440,100 Z"/>
-      </svg>
-    </div>
-  </section>
-
-  <nav class="breadcrumb" aria-label="Breadcrumb">
-    <div class="container">
-      <ol>
-        <li><a href="/">Home</a></li>
-        <li class="breadcrumb-sep" aria-hidden="true">›</li>
-        <li><a href="/service-areas/">Service Areas</a></li>
-        <li class="breadcrumb-sep" aria-hidden="true">›</li>
-        <li aria-current="page">Canton</li>
-      </ol>
-    </div>
-  </nav>
-
-  <section class="section">
-    <div class="container">
-      <div class="answer-block reveal-up">
-        <h2>Gutter Services in Canton, Mississippi</h2>
-        <p>Dun-Rite Seamless Gutters provides seamless installation, copper specialty, gutter guards, cleaning, and repair services in Canton, Mississippi — the antique capital of Mississippi. From our Madison headquarters 12 miles south, we serve historic homes around Canton Square, properties along the Highway 51 corridor, and the rural homes throughout Madison County's northern reaches. Free estimates with no travel charges. Call (601) 750-1800.</p>
-      </div>
-    </div>
-  </section>
-
-  <section class="section section-alt">
-    <div class="container">
-      <div class="section-title reveal-up">
-        <span class="eyebrow-label">Local Expertise</span>
-        <h2>Why Canton Homeowners <span class="text-accent">Choose Dun-Rite.</span></h2>
-        <span class="section-subtitle">historic homes need experienced hands</span>
-      </div>
-
-      <div class="sub-service-grid">
-        <div class="sub-service-card card-tint-1 reveal-up reveal-delay-1">
-          <div class="sub-service-icon"><i data-lucide="building"></i></div>
-          <h3>Historic Housing Stock</h3>
-          <p>Many Canton homes around the courthouse square date to the late 1800s and early 1900s. Non-standard fascia depths, irregular rooflines, decorative cornice details — installations require custom on-site forming and an installer who understands historic architecture.</p>
-        </div>
-        <div class="sub-service-card card-tint-3 reveal-up reveal-delay-2">
-          <div class="sub-service-icon"><i data-lucide="alert-triangle"></i></div>
-          <h3>Wood Fascia Repair</h3>
-          <p>Century-old fascia rarely survives intact. Most Canton historic-home gutter projects include fascia inspection and partial replacement. We photograph and quote both pieces together so there are no surprises.</p>
-        </div>
-        <div class="sub-service-card card-tint-2 reveal-up reveal-delay-3">
-          <div class="sub-service-icon"><i data-lucide="sparkles"></i></div>
-          <h3>Copper-Appropriate Architecture</h3>
-          <p>Canton's historic architecture pairs naturally with copper. Many of our copper specialty installations have gone on Canton homes — hand-soldered seams, decorative endcaps, and ornamental brackets that match the era of construction.</p>
+  <section class="hero hero--interior">
+    <span class="grain" aria-hidden="true"></span>
+    <div class="container hero-grid hero-grid--form">
+      <div class="hero-text">
+        <?php echo dr_breadcrumb(['Service Areas' => '/service-areas/', 'Canton' => null]); ?>
+        <p class="hero-eyebrow">Madison County &middot; Historic homes</p>
+        <h1>Gutters for Historic &amp; Older Homes in Canton, MS</h1>
+        <p class="hero-answer">Dun-Rite Seamless Gutters, Inc. is a gutter installer based in Madison, Mississippi, a short drive south of Canton on Highway 51. Around Canton Square the houses date to the mid-1800s, and many homes in town are 50 to 100 years old or more, which changes how gutters have to be made and hung.</p>
+        <div class="hero-actions">
+          <a class="btn btn-accent btn-lg hero-form-open" href="/contact/">Request an estimate</a>
+          <a class="link-call" href="tel:+<?php echo h($phoneRaw); ?>"><?php echo icon('phone', 18); ?> <?php echo h($phone); ?></a>
         </div>
       </div>
+      <?php include $_SERVER['DOCUMENT_ROOT'] . '/includes/hero-form.php'; ?>
     </div>
   </section>
 
   <section class="section">
-    <div class="container">
-      <div class="section-title reveal-up">
-        <span class="eyebrow-label">All Services Available</span>
-        <h2>All 8 Gutter Services <span class="text-accent">in Canton.</span></h2>
-      </div>
+    <div class="container page-grid">
+      <article class="prose">
+        <h2>Why are gutters harder to fit on Canton's older homes?</h2>
+        <p>Gutters are harder to fit on Canton's older homes because nothing on a century-old eave is straight, level or a standard size. Dun-Rite Seamless Gutters, Inc. forms each section on site to the measured length, which matters when two sides of the same porch differ by inches. Stock 10-foot sections assume a house that Canton's historic district does not have.</p>
+        <p>The other issue is the wood. Fascia boards on houses this age have often been wet for years behind a failing gutter, and fascia repair is frequently needed before a new gutter can be fastened. Ask for the fascia to be looked at during the estimate so the written quote reflects it.</p>
 
-      <div class="services-in-city">
-        <a href="/services/seamless-gutter-installation/" class="svc-mini-card card-tint-1"><div class="svc-mini-card__icon"><i data-lucide="ruler"></i></div><h3>Seamless Installation</h3><p>Custom-formed for historic Canton rooflines.</p><span class="svc-mini-card__link">View Service →</span></a>
-        <a href="/services/aluminum-gutters/" class="svc-mini-card card-tint-2"><div class="svc-mini-card__icon"><i data-lucide="shield"></i></div><h3>Aluminum Gutters</h3><p>Period-appropriate colors for historic homes.</p><span class="svc-mini-card__link">View Service →</span></a>
-        <a href="/services/copper-gutters/" class="svc-mini-card card-tint-3"><div class="svc-mini-card__icon"><i data-lucide="sparkles"></i></div><h3>Copper Gutters</h3><p>Specialty work matched to historic architecture.</p><span class="svc-mini-card__link">View Service →</span></a>
-        <a href="/services/gutter-guards/" class="svc-mini-card card-tint-1"><div class="svc-mini-card__icon"><i data-lucide="filter"></i></div><h3>Gutter Guards</h3><p>Mesh and screen for mature Canton tree coverage.</p><span class="svc-mini-card__link">View Service →</span></a>
-        <a href="/services/gutter-cleaning/" class="svc-mini-card card-tint-3"><div class="svc-mini-card__icon"><i data-lucide="droplets"></i></div><h3>Gutter Cleaning</h3><p>Twice-yearly maintenance plans.</p><span class="svc-mini-card__link">View Service →</span></a>
-        <a href="/services/gutter-repair-replacement/" class="svc-mini-card card-tint-2"><div class="svc-mini-card__icon"><i data-lucide="wrench"></i></div><h3>Repair &amp; Replacement</h3><p>Historic home replacement with fascia repair.</p><span class="svc-mini-card__link">View Service →</span></a>
-        <a href="/services/commercial-gutters/" class="svc-mini-card card-tint-1"><div class="svc-mini-card__icon"><i data-lucide="building-2"></i></div><h3>Commercial Gutters</h3><p>Canton Square and Highway 51 commercial.</p><span class="svc-mini-card__link">View Service →</span></a>
-        <a href="/services/custom-downspouts/" class="svc-mini-card card-tint-3"><div class="svc-mini-card__icon"><i data-lucide="arrow-down-to-line"></i></div><h3>Custom Downspouts</h3><p>Decorative profiles for historic homes.</p><span class="svc-mini-card__link">View Service →</span></a>
-      </div>
-    </div>
-  </section>
-
-  <section class="section section-alt">
-    <div class="container">
-      <div class="split">
-        <div class="reveal-left">
-          <img src="https://i.imgur.com/INwo4Si.jpeg" alt="Canton MS brick home entrance with custom seamless gutters by Dun-Rite" width="900" height="600" loading="lazy" style="border-radius: var(--radius-md); box-shadow: var(--shadow-lg);">
+        <h2>Which gutter style suits a house near Canton Square?</h2>
+        <p>A half-round gutter with round downspouts suits most houses near Canton Square, because half-round is the gutter shape of that period. The courthouse square and the streets around it are a historic district, and a modern K-style gutter in white enamel can look out of place on a mid-1800s cornice.</p>
+        <div class="table-wrap">
+          <table class="data-table">
+            <caption>Gutter options for older Canton homes, with Dun-Rite's prices.</caption>
+            <thead><tr><th scope="col">Option</th><th scope="col">Look</th><th scope="col">Installed price</th></tr></thead>
+            <tbody>
+              <tr><th scope="row"><a href="/services/copper-gutters/">Copper, half-round or ogee</a></th><td>Period-correct; weathers from bright to green</td><td>$25 – $40 per linear foot</td></tr>
+              <tr><th scope="row"><a href="/services/aluminum-gutters/">Aluminum in a dark finish</a></th><td>Classic bronze or royal brown recedes against old trim</td><td>$1,200 – $3,500 for most homes</td></tr>
+            </tbody>
+          </table>
         </div>
-        <div class="reveal-right">
-          <span class="eyebrow-label">What to Expect</span>
-          <h2>What Does a Dun-Rite Install <span class="text-accent">Look Like in Canton?</span></h2>
-          <p style="margin-top: var(--space-md);">Canton historic-home installations almost always include fascia inspection and often fascia repair. We allow 1–2 days minimum for any pre-1950 home. Newer Canton properties (Highway 51 corridor and rural builds) install in standard 6–8 hour windows.</p>
-          <p>For copper installations on historic Canton homes, we typically schedule 2–3 weeks ahead for fabrication time. Decorative endcaps, ornamental brackets, and standing-seam accents all hand-formed to match the era.</p>
-          <p>12 miles from Madison HQ. Free travel both ways.</p>
+        <figure class="photo-figure">
+          <?php echo dr_picture('copper-gutters-brick-awning', 'Copper gutter and a standing-seam copper awning on a red brick home', ['sizes' => '(max-width: 960px) 100vw, 60vw']); ?>
+          <figcaption>Copper gutter and a standing-seam copper awning on brick.</figcaption>
+        </figure>
+
+        <h2>Should an old Canton gutter be repaired or replaced?</h2>
+        <p>Repair an old Canton gutter when the damage is confined to a section; replace it when the joints are failing along the whole run. Section repairs cost $150 to $600. Original copper and galvanized gutters can sometimes be kept going, but a system that leaks at every seam is rotting the fascia while it waits.</p>
+        <p>The <a href="/services/gutter-repair-replacement/">repair and replacement page</a> lists the common failures, and the <a href="/service-areas/">service area page</a> shows the rest of Madison County.</p>
+
+        <h2>What do Canton homeowners ask Dun-Rite?</h2>
+        <p>Canton homeowners ask Dun-Rite about copper on historic houses, rotten fascia and whether the drive from Madison adds a fee. The short answers are below, and anything not covered can be asked by calling the office at (601) 750-1800 during business hours.</p>
+        <?php echo dr_faq_list($faqs); ?>
+
+        <p class="last-updated">Last updated: <?php echo date('F Y', filemtime(__FILE__)); ?></p>
+      </article>
+
+      <aside class="page-rail" aria-label="Canton service facts">
+        <div class="rail-card rail-card--tint">
+          <h3>Canton at a glance</h3>
+          <ul>
+            <li>Madison County seat</li>
+            <li>Homes from the mid-1800s near the square</li>
+            <li>Custom-formed sections</li>
+            <li>No travel fees</li>
+          </ul>
         </div>
-      </div>
-
-      <div class="mid-cta-line reveal-up">
-        Own a historic home near Canton Square? <a href="/contact/">Schedule a free Canton estimate</a> — copper consultation included if appropriate.
-      </div>
-    </div>
-  </section>
-
-  <section class="section">
-    <div class="container">
-      <div class="section-title reveal-up">
-        <span class="eyebrow-label">Frequently Asked</span>
-        <h2>Canton Service <span class="text-accent">Questions.</span></h2>
-      </div>
-      <div class="faq-list">
-        <?php foreach ($faqs as $faq): ?>
-        <div class="faq-item reveal-up">
-          <button class="faq-question" aria-expanded="false"><?php echo htmlspecialchars($faq["q"]); ?></button>
-          <div class="faq-answer"><div class="faq-answer-inner"><p><?php echo htmlspecialchars($faq["a"]); ?></p></div></div>
+        <div class="rail-card">
+          <h3>Nearby cities</h3>
+          <ul>
+            <li><a href="/service-areas/gluckstadt/">Gutters in Gluckstadt</a></li>
+            <li><a href="/service-areas/madison/">Gutters in Madison</a></li>
+            <li><a href="/service-areas/ridgeland/">Gutters in Ridgeland</a></li>
+            <li><a href="/service-areas/">All 14 service areas</a></li>
+          </ul>
         </div>
-        <?php endforeach; ?>
-      </div>
+        <div class="rail-card rail-card--dark">
+          <h3>Talk to the office</h3>
+          <p><?php echo h($businessHours); ?></p>
+          <a class="btn btn-outline-white" href="tel:+<?php echo h($phoneRaw); ?>"><?php echo icon('phone', 18); ?> <?php echo h($phone); ?></a>
+        </div>
+      </aside>
     </div>
   </section>
 
-  <section class="section section-alt">
-    <div class="container">
-      <div class="section-title reveal-up">
-        <span class="eyebrow-label">Neighboring Cities</span>
-        <h2>Also Serving Canton's <span class="text-accent">Neighbors.</span></h2>
-      </div>
-      <div class="related-services-grid">
-        <a href="/service-areas/madison/" class="related-card reveal-up reveal-delay-1"><div class="related-card__icon"><i data-lucide="map-pin"></i></div><h3>Madison (12 mi)</h3><p>Our home base. Reunion, Lake Caroline, Old Annandale.</p><span class="related-card__link">View Madison →</span></a>
-        <a href="/service-areas/gluckstadt/" class="related-card reveal-up reveal-delay-2"><div class="related-card__icon"><i data-lucide="map-pin"></i></div><h3>Gluckstadt (7 mi)</h3><p>Mississippi's newest city. Rapid new construction south of Canton.</p><span class="related-card__link">View Gluckstadt →</span></a>
-        <a href="/service-areas/ridgeland/" class="related-card reveal-up reveal-delay-3"><div class="related-card__icon"><i data-lucide="map-pin"></i></div><h3>Ridgeland (15 mi)</h3><p>Affluent Madison County suburb. 1980s-90s neighborhoods.</p><span class="related-card__link">View Ridgeland →</span></a>
-      </div>
-    </div>
-  </section>
-
-  <section class="closing-cta" aria-label="Canton estimate">
-    <div class="closing-cta__inner reveal-up">
-      <span class="section-subtitle" style="color: var(--color-accent);">Mark and the team</span>
-      <h2>Ready for a Free <span class="text-accent">Canton Estimate?</span></h2>
-      <p>Free travel from Madison. 25-year warranty. Historic home specialists. Mississippi licensed and insured.</p>
-      <div>
-        <a href="/contact/" class="btn-primary">Get My Free Estimate</a>
-        <a href="tel:+16017501800" class="closing-cta__phone">Or Call (601) 750-1800</a>
-      </div>
-      <p class="closing-cta__meta">Mon–Fri 8AM–5PM · Madison, MS · Mississippi Licensed &amp; Insured</p>
-    </div>
-  </section>
+  <?php
+  $relatedServices = ['copper-gutters', 'gutter-repair-replacement', 'aluminum-gutters'];
+  $relatedHeading  = 'Which gutter services are most requested in Canton?';
+  $relatedText     = 'These are the three services Canton customers ask Dun-Rite Seamless Gutters, Inc. about most. Each page lists the price range, the materials and what the crew does on site.';
+  $closingHeading  = 'Get gutters that fit an older house';
+  include $_SERVER['DOCUMENT_ROOT'] . '/includes/service-close.php';
+  ?>
 
 </main>
-
 <?php include $_SERVER['DOCUMENT_ROOT'] . '/includes/footer.php'; ?>

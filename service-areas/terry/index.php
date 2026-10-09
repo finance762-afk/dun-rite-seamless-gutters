@@ -1,203 +1,124 @@
 <?php
-/**
- * Dun-Rite — Terry, MS
- */
+/** City page — Terry, MS */
+require_once $_SERVER['DOCUMENT_ROOT'] . '/includes/config.php';
 
-$pageTitle       = "Gutter Installation & Repair Terry MS | Since 1996";
-$pageDescription = "Gutter installation & repair in Terry, MS since 1996: seamless aluminum & copper, Highway 51 corridor and rural properties. Free estimates: (601) 750-1800.";
-$canonicalUrl    = "https://dunrite-gutters.com/service-areas/terry/";
-$ogImage         = "https://i.imgur.com/Npb0ETl.jpeg";
-$heroImage       = "https://i.imgur.com/Npb0ETl.jpeg";
-$currentPage     = "service-areas";
+$pageTitle       = 'Gutter Installer in Terry, MS | Homes, Barns & Shops';
+$pageDescription = 'Gutter installer for Terry, MS: Dun-Rite installs seamless gutters on homes, barns, workshops and detached garages along Highway 51. Call (601) 750-1800 for a written quote.';
+$currentPage     = 'service-areas';
+$canonicalUrl    = $siteUrl . '/service-areas/terry/';
+$pageType        = 'city';
+$citySlug        = 'terry';
 
 $faqs = [
-  ["q" => "What is Dun-Rite's service area boundary?", "a" => "We serve 14 cities across the greater Jackson metro area: Madison (HQ), Jackson, Brandon, Flowood, Ridgeland, Clinton, Canton, Pearl, Gluckstadt, Florence, Richland, Bolton, Terry, and Raymond. Our service radius extends roughly 30 miles in each direction from our Madison headquarters. Outside this range, we evaluate special requests case-by-case — call (601) 750-1800 to ask."],
-  ["q" => "Do you charge travel or trip fees for Terry jobs?", "a" => "No. Free travel anywhere within our 14-city service area. Terry sits at the southern edge of our service radius — about 30 miles from Madison HQ — and the travel is included at no charge."],
-  ["q" => "How quickly can you schedule a visit in Terry?", "a" => "Most free estimates in Terry are scheduled within 48–72 hours of your call. Standard installations begin within 1–2 weeks of the signed estimate. Storm damage and emergency repairs are still prioritized despite the distance."],
-  ["q" => "Do you work with rural Terry homes that have larger lots and outbuildings?", "a" => "Yes. Many Terry properties include detached garages, workshops, barns, or pole buildings in addition to the main residence. We can install gutters on outbuildings during the same visit at the right linear-foot pricing — and properly tied-in downspouts on barns and workshops prevent the muddy entrance areas that come from unmanaged runoff."],
+    ['q' => 'Will Dun-Rite gutter a barn or shop without doing the house?',
+     'a' => 'Yes. Outbuilding work, including barns, workshops and detached garages, is common around Terry and is quoted on the footage of that building.'],
+    ['q' => 'Terry is at the edge of your area. Do you still come out?',
+     'a' => 'Yes. Terry is one of the 14 cities served. Most estimates are scheduled within 48 hours, and there is no trip charge.'],
+    ['q' => 'How long does it take to gutter a house in Terry?',
+     'a' => 'Most single-story homes are finished in one day. Two-story homes or complex rooflines take one to two days.'],
 ];
 
-$schemaGraph = [
-  "@context" => "https://schema.org",
-  "@graph" => [
-    ["@type" => ["LocalBusiness", "RoofingContractor"], "@id" => $canonicalUrl . "#business", "name" => "Dun-Rite Seamless Gutters – Terry Service Area", "url" => $canonicalUrl, "telephone" => "+16017501800", "branchOf" => ["@id" => "https://dunrite-gutters.com/#business"], "areaServed" => ["@type" => "City", "name" => "Terry", "addressRegion" => "MS"]],
-    ["@type" => "BreadcrumbList", "itemListElement" => [
-      ["@type" => "ListItem", "position" => 1, "name" => "Home", "item" => "https://dunrite-gutters.com/"],
-      ["@type" => "ListItem", "position" => 2, "name" => "Service Areas", "item" => "https://dunrite-gutters.com/service-areas/"],
-      ["@type" => "ListItem", "position" => 3, "name" => "Terry", "item" => $canonicalUrl],
-    ]],
-    ["@type" => "FAQPage", "mainEntity" => array_map(fn($f) => ["@type" => "Question", "name" => $f["q"], "acceptedAnswer" => ["@type" => "Answer", "text" => $f["a"]]], $faqs)],
-  ]
+$schemaNodes = [
+    dr_breadcrumb_node(['Service Areas' => '/service-areas/', 'Terry' => '/service-areas/terry/']),
+    ['@type' => 'Service', 'name' => 'Gutter installation and repair in Terry, MS', 'serviceType' => 'Gutter installation and repair',
+     'provider' => ['@id' => $siteUrl . '/#business'], 'areaServed' => ['@type' => 'City', 'name' => 'Terry, MS'], 'url' => $siteUrl . '/service-areas/terry/'],
+    dr_faq_node($faqs),
 ];
-$schemaMarkup = '<script type="application/ld+json">' . json_encode($schemaGraph, JSON_UNESCAPED_SLASHES | JSON_UNESCAPED_UNICODE) . '</script>';
 
 include $_SERVER['DOCUMENT_ROOT'] . '/includes/head.php';
+include $_SERVER['DOCUMENT_ROOT'] . '/includes/header.php';
 ?>
-<?php include $_SERVER['DOCUMENT_ROOT'] . '/includes/nav.php'; ?>
-
 <main id="main-content">
 
-  <section class="hero hero--inner" aria-label="Hero">
-    <img src="https://i.imgur.com/Npb0ETl.jpeg" alt="Terry MS home with porch dormer and seamless gutters" class="hero-bg" width="1920" height="1080" loading="eager" fetchpriority="high">
-    <div class="hero__inner">
-      <div class="hero__copy">
-        <span class="eyebrow-label">Terry, MS · 30 Miles from HQ</span>
-        <h1>Gutter Services in <span class="text-accent">Terry, MS.</span></h1>
-        <p class="hero__subhead">Small rural town in southern Hinds County. Highway 51 corridor homes, semi-agricultural acreage, and outbuildings that benefit from properly installed gutters as much as the main house.</p>
-        <div class="hero__ctas">
-          <a href="#hero-form-heading" class="btn-primary">Get Free Estimate</a>
-          <a href="tel:+16017501800" class="btn-secondary btn-on-dark">Call (601) 750-1800</a>
-        </div>
-        <p class="hero__phone">Mon–Fri 8AM–5PM · 30 miles south of Madison HQ</p>
-      </div>
-      <?php
-        $preselectedService = 'Not Sure / General Inquiry';
-        $heroFormHeading    = 'Free Terry Estimate';
-        $heroFormSubheading = 'Same-day callback · Most quotes scheduled within 48 hours';
-        include $_SERVER['DOCUMENT_ROOT'] . '/includes/hero-form.php';
-      ?>
-    </div>
-    <div class="section-divider section-divider--bottom" aria-hidden="true">
-      <svg viewBox="0 0 1440 100" preserveAspectRatio="none">
-        <path fill="#FFFFFF" d="M0,64 C240,96 480,32 720,48 C960,64 1200,96 1440,72 L1440,100 L0,100 Z"></path>
-      </svg>
-    </div>
-  </section>
-
-  <nav class="breadcrumb" aria-label="Breadcrumb">
-    <div class="container">
-      <ol>
-        <li><a href="/">Home</a></li>
-        <li class="breadcrumb-sep" aria-hidden="true">›</li>
-        <li><a href="/service-areas/">Service Areas</a></li>
-        <li class="breadcrumb-sep" aria-hidden="true">›</li>
-        <li aria-current="page">Terry</li>
-      </ol>
-    </div>
-  </nav>
-
-  <section class="section">
-    <div class="container">
-      <div class="answer-block reveal-up">
-        <h2>Gutter Services in Terry, Mississippi</h2>
-        <p>Dun-Rite Seamless Gutters provides seamless installation, copper, gutter guards, cleaning, and repair services in Terry, Mississippi. From our Madison headquarters 30 miles north, we serve homes around Terry Square, properties along the Highway 51 corridor, and the semi-agricultural acreage that defines this southern Hinds County town. Outbuildings — barns, workshops, detached garages — covered at the same linear-foot rate. Free estimates with no travel charges. Call (601) 750-1800.</p>
-      </div>
-    </div>
-  </section>
-
-  <section class="section section-alt">
-    <div class="container">
-      <div class="section-title reveal-up">
-        <span class="eyebrow-label">Local Expertise</span>
-        <h2>Why Terry Homeowners <span class="text-accent">Choose Dun-Rite.</span></h2>
-        <span class="section-subtitle">small town, full service</span>
-      </div>
-
-      <div class="sub-service-grid">
-        <div class="sub-service-card card-tint-1 reveal-up reveal-delay-1">
-          <div class="sub-service-icon"><i data-lucide="home"></i></div>
-          <h3>Mix of Older &amp; Newer Homes</h3>
-          <p>Terry's housing stock spans older ranch homes near the town center to newer rural custom builds on the surrounding acreage. We tailor recommendations: aluminum replacement for aging in-town homes, 6-inch high-flow profiles on larger custom rural builds, and outbuilding gutters at the same trip.</p>
-        </div>
-        <div class="sub-service-card card-tint-3 reveal-up reveal-delay-2">
-          <div class="sub-service-icon"><i data-lucide="warehouse"></i></div>
-          <h3>Outbuildings Welcome</h3>
-          <p>Many Terry properties include detached garages, workshops, barns, or pole buildings. We install gutters on these the same way we do main residences — typically at the same trip to save you a separate visit. Workshop gutters with proper downspouts dramatically reduce muddy entrance areas.</p>
-        </div>
-        <div class="sub-service-card card-tint-2 reveal-up reveal-delay-3">
-          <div class="sub-service-icon"><i data-lucide="trees"></i></div>
-          <h3>Heavy Tree Coverage</h3>
-          <p>Terry's rural setting comes with mature trees on most properties — pines, oaks, sweetgums. Gutter guards are highly recommended for any home with significant canopy; without them, twice-yearly cleaning quickly falls behind. Quarterly cleaning plans are common for heavy-canopy Terry homes.</p>
+  <section class="hero hero--interior">
+    <span class="grain" aria-hidden="true"></span>
+    <div class="container hero-grid hero-grid--form">
+      <div class="hero-text">
+        <?php echo dr_breadcrumb(['Service Areas' => '/service-areas/', 'Terry' => null]); ?>
+        <p class="hero-eyebrow">Hinds County &middot; Highway 51</p>
+        <h1>Gutters for Homes &amp; Outbuildings in Terry, MS</h1>
+        <p class="hero-answer">Dun-Rite Seamless Gutters, Inc. is a gutter installer based in Madison, Mississippi that serves Terry, the small town on Highway 51 in southern Hinds County. Around Terry the company is asked to gutter barns, workshops and detached garages about as often as houses.</p>
+        <div class="hero-actions">
+          <a class="btn btn-accent btn-lg hero-form-open" href="/contact/">Request an estimate</a>
+          <a class="link-call" href="tel:+<?php echo h($phoneRaw); ?>"><?php echo icon('phone', 18); ?> <?php echo h($phone); ?></a>
         </div>
       </div>
+      <?php include $_SERVER['DOCUMENT_ROOT'] . '/includes/hero-form.php'; ?>
     </div>
   </section>
 
   <section class="section">
-    <div class="container">
-      <div class="section-title reveal-up">
-        <span class="eyebrow-label">All Services Available</span>
-        <h2>All 8 Gutter Services <span class="text-accent">in Terry.</span></h2>
-      </div>
+    <div class="container page-grid">
+      <article class="prose">
+        <h2>Why do barns and workshops in Terry need gutters?</h2>
+        <p>Barns and workshops need gutters because a long metal roof drops all of its water in a line along the wall. On the semi-agricultural land around Terry, that line becomes a trench, the trench becomes a mud hole at the door, and the water finds its way under the slab or the sill. Outbuilding work is common for Dun-Rite Seamless Gutters, Inc. around Terry.</p>
+        <p>Outbuildings suit seamless gutters well. A 60-foot shop wall gets one 60-foot gutter, formed on site from a single coil, where sectional gutters would need five joints. See <a href="/services/seamless-gutter-installation/">how seamless gutters are formed and hung</a>.</p>
 
-      <div class="services-in-city">
-        <a href="/services/seamless-gutter-installation/" class="svc-mini-card card-tint-1"><div class="svc-mini-card__icon"><i data-lucide="ruler"></i></div><h3>Seamless Installation</h3><p>5-inch standard, 6-inch high-flow for larger homes.</p><span class="svc-mini-card__link">View Service →</span></a>
-        <a href="/services/aluminum-gutters/" class="svc-mini-card card-tint-2"><div class="svc-mini-card__icon"><i data-lucide="shield"></i></div><h3>Aluminum Gutters</h3><p>25+ colors for varied Terry palettes.</p><span class="svc-mini-card__link">View Service →</span></a>
-        <a href="/services/copper-gutters/" class="svc-mini-card card-tint-3"><div class="svc-mini-card__icon"><i data-lucide="sparkles"></i></div><h3>Copper Gutters</h3><p>Specialty work for premium rural builds.</p><span class="svc-mini-card__link">View Service →</span></a>
-        <a href="/services/gutter-guards/" class="svc-mini-card card-tint-1"><div class="svc-mini-card__icon"><i data-lucide="filter"></i></div><h3>Gutter Guards</h3><p>Recommended for tree-shaded Terry properties.</p><span class="svc-mini-card__link">View Service →</span></a>
-        <a href="/services/gutter-cleaning/" class="svc-mini-card card-tint-3"><div class="svc-mini-card__icon"><i data-lucide="droplets"></i></div><h3>Gutter Cleaning</h3><p>Quarterly plans for heavy-canopy properties.</p><span class="svc-mini-card__link">View Service →</span></a>
-        <a href="/services/gutter-repair-replacement/" class="svc-mini-card card-tint-2"><div class="svc-mini-card__icon"><i data-lucide="wrench"></i></div><h3>Repair &amp; Replacement</h3><p>Storm damage and aging-system replacements.</p><span class="svc-mini-card__link">View Service →</span></a>
-        <a href="/services/commercial-gutters/" class="svc-mini-card card-tint-1"><div class="svc-mini-card__icon"><i data-lucide="building-2"></i></div><h3>Commercial Gutters</h3><p>Terry Square small commercial buildings.</p><span class="svc-mini-card__link">View Service →</span></a>
-        <a href="/services/custom-downspouts/" class="svc-mini-card card-tint-3"><div class="svc-mini-card__icon"><i data-lucide="arrow-down-to-line"></i></div><h3>Custom Downspouts</h3><p>Underground drainage tie-ins for larger lots.</p><span class="svc-mini-card__link">View Service →</span></a>
-      </div>
-    </div>
-  </section>
-
-  <section class="section section-alt">
-    <div class="container">
-      <div class="split">
-        <div class="reveal-left">
-          <img src="https://i.imgur.com/Hr2Nlwl.jpeg" alt="Terry MS rural home with seamless gutter installation by Dun-Rite" width="900" height="600" loading="lazy" style="border-radius: var(--radius-md); box-shadow: var(--shadow-lg);">
+        <h2>Which downspouts work on a metal-roofed outbuilding?</h2>
+        <p>Larger downspouts work best on a metal-roofed outbuilding, because metal sheds rain faster than shingles do. A 3x4 downspout drains about 1,200 square feet of roof, and a 4x5 about 2,000 or more. A 2x3, the size on many houses, handles only about 600.</p>
+        <div class="table-wrap">
+          <table class="data-table">
+            <caption>Matching downspouts to common Terry buildings, using Dun-Rite's capacity figures.</caption>
+            <thead><tr><th scope="col">Building</th><th scope="col">Example roof area</th><th scope="col">Downspouts that cover it</th></tr></thead>
+            <tbody>
+              <tr><th scope="row">Detached two-car garage</th><td>About 600 sq ft</td><td>One 3x4, or one 2x3 at its limit</td></tr>
+              <tr><th scope="row">30 x 40 workshop</th><td>About 1,200 sq ft</td><td>One 3x4 per side</td></tr>
+              <tr><th scope="row">40 x 60 barn</th><td>About 2,400 sq ft</td><td>Two 3x4, or 4x5 high-flow</td></tr>
+            </tbody>
+          </table>
         </div>
-        <div class="reveal-right">
-          <span class="eyebrow-label">What to Expect</span>
-          <h2>What Does a Dun-Rite Install <span class="text-accent">Look Like in Terry?</span></h2>
-          <p style="margin-top: var(--space-md);">Terry installations vary based on property size. In-town ranch homes complete in 6–8 hours like any standard install. Larger rural acreage with main house plus outbuildings typically run 1–2 days, especially when underground drainage is involved.</p>
-          <p>If you have multiple buildings on the property — barn, workshop, detached garage — let us know at the estimate. We can quote them together and combine the work into one trip rather than scheduling separate visits.</p>
-          <p>30 miles from Madison HQ. Free travel both ways.</p>
+        <p>More on sizes and buried drains is on the <a href="/services/custom-downspouts/">custom downspouts page</a>.</p>
+        <figure class="photo-figure">
+          <?php echo dr_picture('downspout-elbow-eave', 'White downspout elbow connecting a gutter to the wall under a vented soffit', ['sizes' => '(max-width: 960px) 100vw, 60vw']); ?>
+          <figcaption>A downspout elbow at the gutter outlet.</figcaption>
+        </figure>
+
+        <h2>What do gutters cost on a Terry home?</h2>
+        <p>Gutters on a Terry home typically cost $1,200 to $3,500 for a complete aluminum system, the same range as anywhere in the service area. Being at the southern edge of that area does not change the price: there are no travel fees. An outbuilding added to the same visit is quoted on its own footage.</p>
+        <p>Where the old gutters on a farmhouse can be saved, a <a href="/services/gutter-repair-replacement/">section repair</a> costs $150 to $600. Terry is on the <a href="/service-areas/">service area list</a> with the rest of Hinds County.</p>
+
+        <h2>What do Terry property owners ask Dun-Rite?</h2>
+        <p>Terry property owners ask Dun-Rite about outbuildings, travel to the south end of the county and how long a job takes. The short answers are below, and anything not covered can be asked by calling the office at (601) 750-1800 during business hours.</p>
+        <?php echo dr_faq_list($faqs); ?>
+
+        <p class="last-updated">Last updated: <?php echo date('F Y', filemtime(__FILE__)); ?></p>
+      </article>
+
+      <aside class="page-rail" aria-label="Terry service facts">
+        <div class="rail-card rail-card--tint">
+          <h3>Terry at a glance</h3>
+          <ul>
+            <li>Southern Hinds County</li>
+            <li>Highway 51 corridor</li>
+            <li>Barns, workshops and garages</li>
+            <li>No travel fees</li>
+          </ul>
         </div>
-      </div>
-
-      <div class="mid-cta-line reveal-up">
-        Have a Terry property with multiple buildings? <a href="/contact/">Schedule a free estimate</a> — we'll quote main house and outbuildings together.
-      </div>
-    </div>
-  </section>
-
-  <section class="section">
-    <div class="container">
-      <div class="section-title reveal-up">
-        <span class="eyebrow-label">Frequently Asked</span>
-        <h2>Terry Service <span class="text-accent">Questions.</span></h2>
-      </div>
-      <div class="faq-list">
-        <?php foreach ($faqs as $faq): ?>
-        <div class="faq-item reveal-up">
-          <button class="faq-question" aria-expanded="false"><?php echo htmlspecialchars($faq["q"]); ?></button>
-          <div class="faq-answer"><div class="faq-answer-inner"><p><?php echo htmlspecialchars($faq["a"]); ?></p></div></div>
+        <div class="rail-card">
+          <h3>Nearby cities</h3>
+          <ul>
+            <li><a href="/service-areas/florence/">Gutters in Florence</a></li>
+            <li><a href="/service-areas/raymond/">Gutters in Raymond</a></li>
+            <li><a href="/service-areas/jackson/">Gutters in Jackson</a></li>
+            <li><a href="/service-areas/">All 14 service areas</a></li>
+          </ul>
         </div>
-        <?php endforeach; ?>
-      </div>
+        <div class="rail-card rail-card--dark">
+          <h3>Talk to the office</h3>
+          <p><?php echo h($businessHours); ?></p>
+          <a class="btn btn-outline-white" href="tel:+<?php echo h($phoneRaw); ?>"><?php echo icon('phone', 18); ?> <?php echo h($phone); ?></a>
+        </div>
+      </aside>
     </div>
   </section>
 
-  <section class="section section-alt">
-    <div class="container">
-      <div class="section-title reveal-up">
-        <span class="eyebrow-label">Neighboring Cities</span>
-        <h2>Also Serving Terry's <span class="text-accent">Neighbors.</span></h2>
-      </div>
-      <div class="related-services-grid">
-        <a href="/service-areas/florence/" class="related-card reveal-up reveal-delay-1"><div class="related-card__icon"><i data-lucide="map-pin"></i></div><h3>Florence (10 mi)</h3><p>Terry's eastern neighbor in Rankin County. Semi-rural with larger acreage.</p><span class="related-card__link">View Florence →</span></a>
-        <a href="/service-areas/raymond/" class="related-card reveal-up reveal-delay-2"><div class="related-card__icon"><i data-lucide="map-pin"></i></div><h3>Raymond (12 mi)</h3><p>Hinds County seat. Historic district and Hinds CC area.</p><span class="related-card__link">View Raymond →</span></a>
-        <a href="/service-areas/richland/" class="related-card reveal-up reveal-delay-3"><div class="related-card__icon"><i data-lucide="map-pin"></i></div><h3>Richland (15 mi)</h3><p>I-20 corridor working-class suburb. 1970s-80s housing stock.</p><span class="related-card__link">View Richland →</span></a>
-      </div>
-    </div>
-  </section>
-
-  <section class="closing-cta" aria-label="Terry estimate">
-    <div class="closing-cta__inner reveal-up">
-      <span class="section-subtitle" style="color: var(--color-accent);">Mark and the team</span>
-      <h2>Ready for a Free <span class="text-accent">Terry Estimate?</span></h2>
-      <p>Free travel from Madison. 25-year warranty. Outbuildings welcome. Mississippi licensed and insured.</p>
-      <div>
-        <a href="/contact/" class="btn-primary">Get My Free Estimate</a>
-        <a href="tel:+16017501800" class="closing-cta__phone">Or Call (601) 750-1800</a>
-      </div>
-      <p class="closing-cta__meta">Mon–Fri 8AM–5PM · Madison, MS · Mississippi Licensed &amp; Insured</p>
-    </div>
-  </section>
+  <?php
+  $relatedServices = ['seamless-gutter-installation', 'custom-downspouts', 'gutter-repair-replacement'];
+  $relatedHeading  = 'Which gutter services are most requested in Terry?';
+  $relatedText     = 'These are the three services Terry customers ask Dun-Rite Seamless Gutters, Inc. about most. Each page lists the price range, the materials and what the crew does on site.';
+  $closingHeading  = 'Get your house and shop measured';
+  include $_SERVER['DOCUMENT_ROOT'] . '/includes/service-close.php';
+  ?>
 
 </main>
-
 <?php include $_SERVER['DOCUMENT_ROOT'] . '/includes/footer.php'; ?>
